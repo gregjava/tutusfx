@@ -52,20 +52,26 @@
 		<style>
 			* { box-sizing: border-box; top: 0; left: 0; }
 
-			body { font-family: Arial, Helvetica, sans-serif; padding: 10px; background: #f1f1f1; color: #002100; }
+			body { font-family: Arial, Helvetica, sans-serif; padding: 8px; background: #f1f1f1; color: #002100; }
 
 			/* Header/Blog Title */
-			.header { padding: 30px; height: 800px; text-align: center; background: white; color: #002100; text-shadow: -4px 4px 8px #dd3; }
+			.header { padding-top: 10px; height: 600px; text-align: center; background: white; color: #002100; text-shadow: -8px 8px 16px #ff0e; }
 
-			.header h1 { font-size: 50px; font-family: Garamond; font-weight: bolder; font-stretch: expanded; }
+			#headertitle { font-size: 90px; font-family: Garamond; font-weight: bolder; font-stretch: expanded; }
 
-			.header p { font-size: 15px; font-style: italic; font-family: Garamond; font-stretch: condensed; }
+			#headercontent { font-size: 40px; font-style: italic; font-family: Garamond; font-stretch: condensed; }
+			
+			a{ transition: 0.2s ease-out; }
+			
+			.navbar { border-radius: 0px 0px 5px 5px; }
 
 			/* Style the sticky top navigation bar */
-			.topnav { display: block; color:#444; }
+			#topnav { display: block; color:#444; }
 
 			/* Style the sticky top navigation links */
-			.topnav a { background-color: #003200aa; float: left; display: block; color: #f2f2f2; text-align: center; padding: 14px 16px; text-decoration: none; }
+			#topnav a { float: left; display: block; color: #f2f2f2; text-align: center; padding: 14px 16px; text-decoration: none; }
+			
+			#topnav a:hover { background-color: #222; color: #ff0e; }
 
 			/* Change properties of top navigation dropdown items */
 			nav li a{width: 100%; margin:0; padding: 5px; }
@@ -87,19 +93,29 @@
 
 			/* Create two unequal columns that floats next to each other */
 			/* Left column */
-			.leftcolumn {  float: left; width: 25%; padding-left: 20px; }
+			.leftcolumn {  float: left; width: 25%; padding-left: 16px; }
 
 			/* Main column */
-			.maincolumn {   float: left; width: 50%; padding-left: 20px; }
+			.maincolumn {   float: left; width: 50%; padding-left: 16px; }
 
 			/* Right column */
-			.rightcolumn { float: left; width: 25%; padding-left: 20px; }
+			.rightcolumn { float: left; width: 25%; padding-left: 16px; }
 
 			/* Fake image */
-			.fakeimg { background-color: #aaa; width: 100%; padding: 20px; }
+			.fakeimg { background-color: #aaa; width: 100%; padding: 16px; border-radius: 2px; }
+
+			/* Add a card effect for trending trades */
+			.trendingtrades { color: white; padding: 8px; margin-top: 8px; }
+
+			/* Add a card effect for trending trades usernames */
+			.trendingtradeusername { color: #ff0e; }
 
 			/* Add a card effect for articles */
-			.card { background-color: white; padding: 20px; margin-top: 20px; }
+			.card { background-color: white; padding: 16px; margin-top: 16px; border-radius: 3px; }
+			
+			.card a{ text-decoration: none; color: #002100ee; }
+			
+			.card a:hover{ color: #ff0e; }
 
 			/* Add a card effect for returner section at bottom of page */
 			.returner { background-color: #f1f1f1; color: blue; float: right; font-weight: bolder; font-stretch: condensed; }
@@ -107,28 +123,19 @@
 			/* Set container properties */
 			.row { padding: 16px; width: 100%; }
 
-			.sticky { position: fixed; top: 0; width: 98.6%; margin:0 10px; }
+			.sticky { position: fixed; top: 0; width: 98.6%; margin:0 8px; }
 
-			.sticky + .row { padding-top: 102px; }
+			.sticky + .row { padding-top: 100px; }
 
 			/* Clear floats after the columns */
 			.row:after { content: ""; display: table; clear: both; }
 
 			/* Footer */
-			.footer { padding: 20px; text-align: center; background-color: #002100ee; color: #a1a1a1; margin-top: 20px; font-stretch: condensed; font-weight: lighter; }
+			.footer { height: 600px; padding: 16px; text-align: center; background-color: #002100ee; margin-top: 16px; font-stretch: condensed; font-weight: lighter; }
 			
-			.footer a{ margin: 0% 2%; }
-
-			/* Responsive layout - when the screen is between 300px and 900px in height */
-			@media screen and (max-height: 900px) { /* Sticky header height */ .header{ height: 600px; } }
-			@media screen and (max-height: 825px) { /* Sticky header height */ .header{ height: 550px; } }
-			@media screen and (max-height: 750px) { /* Sticky header height */ .header{ height: 500px; } }
-			@media screen and (max-height: 675px) { /* Sticky header height */ .header{ height: 450px; } }
-			@media screen and (max-height: 600px) { /* Sticky header height */ .header{ height: 400px; } }
-			@media screen and (max-height: 525px) { /* Sticky header height */ .header{ height: 350px; } }
-			@media screen and (max-height: 450px) { /* Sticky header height */ .header{ height: 300px; } }
-			@media screen and (max-height: 375px) { /* Sticky header height */ .header{ height: 250px; } }
-			@media screen and (max-height: 300px) { /* Sticky header height */ .header{ height: 200px; } }
+			.footer a{ margin: 0% 2%; color: #a1a1a1; }
+			
+			.footerCard { float: left; width: 25%; height: 547px; background-color: #002100ee; color: #a1a1a1; }
 			
 			/* Responsive layout - when the screen is less than 1200px wide, make the two leftmost columns stack side by side and on top of the third */
 			@media screen and (max-width: 1200px) {
@@ -136,13 +143,13 @@
 				.row { padding: 16px; width: 100%; }
 				
 				/* Left column */
-				.leftcolumn { float: left; width: 35%; padding-left: 10px; }
+				.leftcolumn { float: left; width: 35%; padding-left: 8px; }
 				
 				/* Main column */
-				.maincolumn {   float: left; width: 65%; padding-left: 10px; }
+				.maincolumn {   float: left; width: 65%; padding-left: 8px; }
 
 				/* Right column */
-				.rightcolumn { float: left; width: 100%; padding-left: 10px; }
+				.rightcolumn { float: left; width: 100%; padding-left: 8px; }
 				
 				.footer a{ margin: 0% 1.6%; } 
 			}
@@ -150,56 +157,129 @@
 			/* Responsive layout - when the screen is less than 800px wide, make the three columns stack on top of each other instead of next to each other */
 			@media screen and (max-width: 800px) { .leftcolumn, .maincolumn, .rightcolumn {  width: 100%; padding: 8px; } .footer a{ margin: 0% 1.2%; } }
 
-			/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-			@media screen and (max-width: 400px) { .topnav a { float: none; width: 100%; padding: 4px; } .footer a{ margin: 0% 0.8%; } }
+			/* Responsive layout - when the screen is less than 480px wide, make the navigation links stack on top of each other instead of next to each other */
+			@media screen and (max-width: 480px) { .topnav a { float: none; width: 100%; padding: 4px; } .footer a{ font-size: 80%; margin: 0% 0.8%; } .footerCard { font-size: 80%; height: 547px;} }
+
+			/* Responsive layout - when the screen is less than 345px wide, make the footer cards smaller so as to fit into container frame */
+			@media screen and (max-width: 345px) { .footerCard { font-size: 70%; height: 527px;} }
 			
 			/* For Safari, Mozilla, Chrome and Opera browsers */
 			@-webkit-keyframes pixAnimation {
 				0%   {left:0px; top:0px; background:url("../assets/images/forex_trading_2.jpg") no-repeat center;
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
-				25%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology.jpg") no-repeat center;
+				7%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology.jpg") no-repeat center;
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
-				50%  {left:0px; top:0px; background:url("../assets/images/forex_trading.jpg") no-repeat center;
+				14%  {left:0px; top:0px; background:url("../assets/images/forex_trading.jpg") no-repeat center;
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
-				75%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_3.png") no-repeat center;
+				21%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_3.png") no-repeat center;
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
-				100% {left:0px; top:0px; background:url("../assets/images/forex_trading_4.jpg") no-repeat center;
+				28% {left:0px; top:0px; background:url("../assets/images/forex_trading_3.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				35%   {left:0px; top:0px; background:url("../assets/images/blockchain_technology_2.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				42%  {left:0px; top:0px; background:url("../assets/images/forex_trading_5.jpg") no-repeat center; 
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;}
+				50%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_4.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				57%  {left:0px; top:0px; background:url("../assets/images/forex_trading_4.jpg") no-repeat center; 
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;}
+				64% {left:0px; top:0px; background:url("../assets/images/blockchain_technology_6.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				71%   {left:0px; top:0px; background:url("../assets/images/forex_trading_8.jpg") no-repeat center; 
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;}
+				78%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_5.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				85%  {left:0px; top:0px; background:url("../assets/images/forex_trading_6.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				92%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_7.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				100% {left:0px; top:0px; background:url("../assets/images/forex_trading_7.jpg") no-repeat center;
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
 			}
 			
 			@-moz-keyframes pixAnimation {
 				0%   {left:0px; top:0px; background:url("../assets/images/forex_trading_2.jpg") no-repeat center;
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
-				25%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology.jpg") no-repeat center;
+				7%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology.jpg") no-repeat center;
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
-				50%  {left:0px; top:0px; background:url("../assets/images/forex_trading.jpg") no-repeat center;
+				14%  {left:0px; top:0px; background:url("../assets/images/forex_trading.jpg") no-repeat center;
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
-				75%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_3.png") no-repeat center;
+				21%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_3.png") no-repeat center;
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
-				100% {left:0px; top:0px; background:url("../assets/images/forex_trading_4.jpg") no-repeat center;
+				28% {left:0px; top:0px; background:url("../assets/images/forex_trading_3.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				35%   {left:0px; top:0px; background:url("../assets/images/blockchain_technology_2.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				42%  {left:0px; top:0px; background:url("../assets/images/forex_trading_5.jpg") no-repeat center; 
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;}
+				50%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_4.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				57%  {left:0px; top:0px; background:url("../assets/images/forex_trading_4.jpg") no-repeat center; 
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;}
+				64% {left:0px; top:0px; background:url("../assets/images/blockchain_technology_6.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				71%   {left:0px; top:0px; background:url("../assets/images/forex_trading_8.jpg") no-repeat center; 
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;}
+				78%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_5.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				85%  {left:0px; top:0px; background:url("../assets/images/forex_trading_6.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				92%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_7.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				100% {left:0px; top:0px; background:url("../assets/images/forex_trading_7.jpg") no-repeat center;
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
 			}
 			
 			@-o-keyframes pixAnimation {
 				0%   {left:0px; top:0px; background:url("../assets/images/forex_trading_2.jpg") no-repeat center;
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
-				25%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology.jpg") no-repeat center;
+				7%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology.jpg") no-repeat center;
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
-				50%  {left:0px; top:0px; background:url("../assets/images/forex_trading.jpg") no-repeat center;
+				14%  {left:0px; top:0px; background:url("../assets/images/forex_trading.jpg") no-repeat center;
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
-				75%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_3.png") no-repeat center;
+				21%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_3.png") no-repeat center;
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
-				100% {left:0px; top:0px; background:url("../assets/images/forex_trading_4.jpg") no-repeat center;
+				28% {left:0px; top:0px; background:url("../assets/images/forex_trading_3.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				35%   {left:0px; top:0px; background:url("../assets/images/blockchain_technology_2.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				42%  {left:0px; top:0px; background:url("../assets/images/forex_trading_5.jpg") no-repeat center; 
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;}
+				50%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_4.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				57%  {left:0px; top:0px; background:url("../assets/images/forex_trading_4.jpg") no-repeat center; 
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;}
+				64% {left:0px; top:0px; background:url("../assets/images/blockchain_technology_6.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				71%   {left:0px; top:0px; background:url("../assets/images/forex_trading_8.jpg") no-repeat center; 
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;}
+				78%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_5.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				85%  {left:0px; top:0px; background:url("../assets/images/forex_trading_6.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				92%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_7.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				100% {left:0px; top:0px; background:url("../assets/images/forex_trading_7.jpg") no-repeat center;
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
 			}
 			
 			/* For IE, does not work on <IE9 */
 			@keyframes pixAnimation {
 				0%   {left:0px; top:0px; background:url("../assets/images/forex_trading_2.jpg") no-repeat center; background-size: cover;}
-				25%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology.jpg") no-repeat center; background-size: cover;}
-				50%  {left:0px; top:0px; background:url("../assets/images/forex_trading.jpg") no-repeat center; background-size: cover;}
-				75%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_3.png") no-repeat center; background-size: cover;}
-				100% {left:0px; top:0px; background:url("../assets/images/forex_trading_4.jpg") no-repeat center; background-size: cover;}
+				7%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology.jpg") no-repeat center; background-size: cover;}
+				14%  {left:0px; top:0px; background:url("../assets/images/forex_trading.jpg") no-repeat center; background-size: cover;}
+				21%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_3.png") no-repeat center; background-size: cover;}
+				28% {left:0px; top:0px; background:url("../assets/images/forex_trading_3.jpg") no-repeat center; background-size: cover;}
+				35%   {left:0px; top:0px; background:url("../assets/images/blockchain_technology_2.jpg") no-repeat center; background-size: cover;}
+				42%  {left:0px; top:0px; background:url("../assets/images/forex_trading_5.jpg") no-repeat center; background-size: cover;}
+				50%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_4.jpg") no-repeat center; background-size: cover;}
+				57%  {left:0px; top:0px; background:url("../assets/images/forex_trading_4.jpg") no-repeat center; background-size: cover;}
+				64% {left:0px; top:0px; background:url("../assets/images/blockchain_technology_6.jpg") no-repeat center; background-size: cover;}
+				71%   {left:0px; top:0px; background:url("../assets/images/forex_trading_8.jpg") no-repeat center; background-size: cover;}
+				78%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_5.jpg") no-repeat center; background-size: cover;}
+				85%  {left:0px; top:0px; background:url("../assets/images/forex_trading_6.jpg") no-repeat center; background-size: cover;}
+				92%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_7.jpg") no-repeat center; background-size: cover;}
+				100% {left:0px; top:0px; background:url("../assets/images/forex_trading_7.jpg") no-repeat center; background-size: cover;}
 			}
 			
 			.animatePix{ 
@@ -210,11 +290,11 @@
 	</head>
 	<body>
 		<div class="header animatePix">
-		  <h1>Tutusfx</h1>
-		  <p>An incentivized trade network built on blockchain technology</p>
+		  <h1 id="headertitle">Tutusfx</h1>
+		  <p id="headercontent">An incentivized trade network built on blockchain technology</p>
 		</div>
 		
-		<div class="topnav" id="topnav"><!-- sticky header -->
+		<div id="topnav"><!-- sticky header -->
 			<nav class="navbar navbar-inverse"><!-- right hidden menu -->
 			  <div class="container-fluid">
 				<div class="navbar-header">
@@ -252,13 +332,32 @@
 		  <div class="leftcolumn">
 			<div class="card">
 			  <h3>Instrument Trades</h3>
-			  <div class="fakeimg"><p>Image</p></div>
-			  <div class="fakeimg"><p>Image</p></div>
-			  <div class="fakeimg"><p>Image</p></div>
+			  <div class="fakeimg trendingtrades">
+				<p class="trendingtradeusername">USD/AUD;</p>
+				<p>Current Profit: +$309.82; Profit Margin: +31.01;</p>
+				<p>Trade Volume: $10.00; Token Charges: $2.8;</p>
+				<p><a href="../@guest#609325cwq98">guest#609325cwq98;</a></p>
+			  </div>
+			  <div class="fakeimg trendingtrades">
+				<p class="trendingtradeusername">USD/GBP;</p>
+				<p>Current Profit: +$287.10; Profit Margin: +42.35;</p>
+				<p>Trade Volume: $7.00; Token Charges: $9.35;</p>
+				<p><a href="../@guest#302q25%eo4j">guest#302q25%eo4j;</a></p>
+			  </div>
+			  <div class="fakeimg trendingtrades">
+				<p class="trendingtradeusername">USD/CAD;</p>
+				<p>Current Profit: +$684.37; Profit Margin: +13.70;</p>
+				<p>Trade Volume: $50.00; Token Charges: $0.63;</p>
+				<p><a href="../@guest#48557310~u2">guest#48557310~u2;</a></p>
+			  </div>
 			</div>
 			<div class="card">
 			  <h3>User Account</h3>
-			  <p>Some text..</p>
+			  <p>To trade or build Smart Networks for marketing or social interaction on Tutusfx, 
+			  you are required to <a href="../redirects/registration.html">Register an Account</a>. Registration might take up to 2 weeks to be approved.</a></p>
+			  <p>Once your account has been approved, you can trade, chat, build your own Smart Network and gain rewards and incentives on Tutusfx.</p>
+			  <p>If you are having difficulties with registration or simply want to know more about Tutusfx and/or how you can contribute to it and benefit, 
+			  you can <a href="contact-us-eu/index.html">Contact Us here</a>.</p>
 			</div>
 			<div class="card">
 			  <h2>User Profile</h2>
@@ -291,12 +390,24 @@
 			</div>
 			<div class="card">
 			  <h3>Vote a Witness</h3>
-			  <p>List of top 100 witnesses..</p>
+			  <h4>List of top witnesses</h4>
+			  <p>1. @darkspot</p>
+			  <p>2. @eurogee</p>
+			  <p>3. @thegenius</p>
+			  <p>4. @yogolod</p>
+			  <p>5. @ynl</p>
+			  <p>6. @javakid</p>
+			  <p>7. @icey</p>
+			  <p>8. @barbie23</p>
+			  <p>9. @ultra1</p>
+			  <p>10. @futile</p>
+			  <p style="float: right;"><a href="about-us-eu/index.html">More...</a></p>
 			</div>
 			<div class="card">
 			  <h2>About Us</h2>
 			  <div class="fakeimg" style="height:100px;">Image</div>
-			  <p>Some text about the company in culpa qui officia deserunt mollit anim..</p>
+			  <p>The threshold to create and operate a Marketing Network is quite high! Therefore, a one-stop solution is provided by the Tutusfx Community for anyone to create a unique Network without any thresholds.</p>
+			  <p style="float: right;"><a href="about-us-eu/index.html">More...</a></p>
 			</div>
 			<div class="card returner">
 			  <p><a href="#">Return to top <span class="glyphicon glyphicon-arrow-up"></span></a></p>
@@ -305,16 +416,46 @@
 		</div>
 		
 		<div class="footer">
-		  <a href=""> Sponsorship </a> <a href=""> Fund Safety &amp; Security </a> <a href=""> Sitemap </a> <a href=""> Forums </a> <a href=""> Contact Us </a>
+		  <a href="">Sponsorship</a><a href="">Fund Safety &amp; Security</a><a href="">Sitemap</a><a href="">Forums</a><a href="">Contact Us</a>
+		  <div><p class="card footerCard">QUICK LINKS</p><p class="card footerCard">CHOOSE LANGUAGE</p><p class="card footerCard">RELATED SITES</p><p class="card footerCard">TERMS &amp; CONDITIONS</p></div>
 		</div>
 
 		<script>
+			var header = document.getElementById("topnav"); var sticky = header.offsetTop;
+			var title = document.getElementById("headertitle"); var headercontent = document.getElementById("headercontent");
+			
 			window.onscroll = function() { myFunction() };
 
-			var header = document.getElementById("topnav");
-			var sticky = header.offsetTop;
-
-			function myFunction() { if (window.pageYOffset > sticky) { header.classList.add("sticky"); } else { header.classList.remove("sticky"); } }
+			function myFunction() { 
+				if (window.pageYOffset > sticky) { header.classList.add("sticky"); } 
+				else { 
+					if (window.pageYOffset > 0) {
+					  title.style.fontSize = "90px"; headercontent.style.fontSize = "40px"; title.style.paddingTop = "10px";
+					} if (window.pageYOffset > 50) {
+					  title.style.fontSize = "84px"; headercontent.style.fontSize = "38px"; title.style.paddingTop = "60px";
+					} if (window.pageYOffset > 100) {
+					  title.style.fontSize = "78px"; headercontent.style.fontSize = "36px"; title.style.paddingTop = "110px";
+					} if (window.pageYOffset > 150) {
+					  title.style.fontSize = "72px"; headercontent.style.fontSize = "34px"; title.style.paddingTop = "160px";
+					} if (window.pageYOffset > 200) {
+					  title.style.fontSize = "66px"; headercontent.style.fontSize = "32px"; title.style.paddingTop = "210px";
+					} if (window.pageYOffset > 250) {
+					  title.style.fontSize = "60px"; headercontent.style.fontSize = "30px"; title.style.paddingTop = "260px";
+					} if (window.pageYOffset > 300) {
+					  title.style.fontSize = "54px"; headercontent.style.fontSize = "28px"; title.style.paddingTop = "310px";
+					} if (window.pageYOffset > 350) {
+					  title.style.fontSize = "48px"; headercontent.style.fontSize = "26px"; title.style.paddingTop = "360px";
+					} if (window.pageYOffset > 400) {
+					  title.style.fontSize = "42px"; headercontent.style.fontSize = "24px"; title.style.paddingTop = "410px";
+					} if (window.pageYOffset > 450) {
+					  title.style.fontSize = "36px"; headercontent.style.fontSize = "22px"; title.style.paddingTop = "460px";
+					} if (window.pageYOffset > 500) {
+					  title.style.fontSize = "30px"; headercontent.style.fontSize = "20px"; title.style.paddingTop = "501px";
+					} if (window.pageYOffset > 550) {
+					  title.style.fontSize = "24px"; headercontent.style.fontSize = "18px"; title.style.paddingTop = "550px";
+					} header.classList.remove("sticky");
+				} 
+			}
 			
 			function prevPage(){ window.history.go(-1); }
 			

@@ -56,19 +56,23 @@
 			body { font-family: Arial, Helvetica, sans-serif; padding: 10px; background: #f1f1f1; color: #002100; }
 
 			/* Header/Blog Title */
-			.header { padding: 30px; text-align: center; background: white; color: #002100; text-shadow: -4px 4px 8px #dd3; }
+			.header { padding-top: 10px; height: 600px; text-align: center; background: white; color: #002100; text-shadow: -8px 8px 16px #ff0e; }
 
-			.header h1 { font-size: 50px; font-family: Garamond; font-weight: bolder; font-stretch: expanded; }
+			#headertitle { font-size: 90px; font-family: Garamond; font-weight: bolder; font-stretch: expanded; }
 
-			.header p { font-size: 15px; font-style: italic; font-family: Garamond; font-stretch: condensed; }
+			#headercontent { font-size: 40px; font-style: italic; font-family: Garamond; font-stretch: condensed; }
 			
-			.navbar-header{ color:#444; }
+			a{ transition: 0.2s ease-out; }
+			
+			.navbar { border-radius: 0px 0px 5px 5px; }
 
-			/* Style the top navigation bar */
-			.topnav { display: block; }
+			/* Style the sticky top navigation bar */
+			#topnav { display: block; color:#444; }
 
-			/* Style the topnav links */
-			.topnav a { background-color: #003200aa; float: left; display: block; color: #f2f2f2; text-align: center; padding: 14px 16px; text-decoration: none; }
+			/* Style the sticky top navigation links */
+			#topnav a { float: left; display: block; color: #f2f2f2; text-align: center; padding: 14px 16px; text-decoration: none; }
+			
+			#topnav a:hover { background-color: #222; color: #ff0e; }
 
 			/* Change properties of dropdown menu items */
 			nav li a{width: 100%; margin:0; padding: 5px; }
@@ -111,15 +115,17 @@
 
 			.sticky { position: fixed; top: 0; width: 98.6%; margin:0 10px; }
 
-			.sticky + .row { padding-top: 102px; }
+			.sticky + .row { padding-top: 100px; }
 
 			/* Clear floats after the columns */
 			.row:after { content: ""; display: table; clear: both; }
 
 			/* Footer */
-			.footer { padding: 20px; text-align: center; background-color: #002100ee; color: #a1a1a1; margin-top: 20px; font-stretch: condensed; font-weight: lighter; }
+			.footer { height: 600px; padding: 16px; text-align: center; background-color: #002100ee; margin-top: 16px; font-stretch: condensed; font-weight: lighter; }
 			
-			.footer a{ margin: 0% 2%; }
+			.footer a{ margin: 0% 2%; color: #a1a1a1; }
+			
+			.footerCard { float: left; width: 25%; height: 542px; background-color: #002100ee; color: #a1a1a1; }
 
 			/* Responsive layout - when the screen is less than 1200px wide, make the two leftmost columns stack side by side and on top of the third */
 			@media screen and (max-width: 1200px) {
@@ -139,83 +145,182 @@
 				input[type="text"], input[type="password"], input[type="phone"], input[type="email"]{ width: 81%; margin: 1px; }
 			
 				input[type="submit"]{ background-color: #002100ee; color: #a1a1a1; box-shadow: -2px 1px 2px #aa7; border-radius: 3px; padding: 4px; }
+
+			/* Footer */
+			.footer { height: 600px; padding: 16px; text-align: center; background-color: #002100ee; margin-top: 16px; font-stretch: condensed; font-weight: lighter; }
+			
+			.footer a{ margin: 0% 2%; color: #a1a1a1; }
+			
+			.footerCard { float: left; width: 25%; height: 542px; background-color: #002100ee; color: #a1a1a1; }
+
+			/* Responsive layout - when the screen is less than 1200px wide, make the two leftmost columns stack side by side and on top of the third */
+			@media screen and (max-width: 1200px) {
+				/* Set container properties */
+				.row { padding: 16px; width: 100%; }
+				
+				/* Main column */
+				.maincolumn {   float: left; width: 70%; padding-left: 10px; }
+
+				/* Right column */
+				.rightcolumn { float: left; width: 30%; padding-left: 10px; }
+
+				/* Set labels and inputs */
+				form label{ width: 15%; margin: 1%; }
+				
+				form input{ background-color:#eeeeee; border-radius: 5px; }
+			
+				input[type="text"], input[type="password"], input[type="phone"], input[type="email"]{ width: 81%; margin: 1%; }
+			
+				input[type="submit"]{ background-color: #002100ee; color: #a1a1a1; box-shadow: -2px 1px 2px #aa7; border-radius: 3px; padding: 4px; }
 				
 				.footer a{ margin: 0% 1.6%; }
 			}
 
 			/* Responsive layout - when the screen is less than 800px wide, make the three columns stack on top of each other instead of next to each other */
-			@media screen and (max-width: 800px) { /* Set columns */ .maincolumn, .rightcolumn {  width: 100%; padding: 8px; }
+			@media screen and (max-width: 800px) { .maincolumn, .rightcolumn {  width: 100%; padding: 8px; }
 
 				/* Set labels and inputs */
-				form label{ width: 18%; margin: 1px; }
+				form label{ width: 18%; margin: 1%; }
 				
 				form input{ background-color: #eeeeee; border-radius: 5px; } 
 			
-				input[type="text"], input[type="password"], input[type="phone"], input[type="email"]{ width: 78%; margin: 1px; }
+				input[type="text"], input[type="password"], input[type="phone"], input[type="email"]{ width: 78%; margin: 1%; }
 			
 				input[type="submit"]{ background-color: #002100ee; color: #a1a1a1; box-shadow: -2px 1px 2px #aa7; border-radius: 3px; padding: 3px; }
 				
-				.footer a{ margin: 0% 1.2%; }
+				.footer a{ margin: 0% 1.2%; } .footerCard { font-size: 80%; height: 542px; } }
 			}
 
-			/* Responsive layout - when the screen is less than 400px wide, make the navigation links and input fields stack on top of each other instead of next to each other */
-			@media screen and (max-width: 400px) { /* Set navigation links */ .topnav a { float: none; width: 100%; padding: 4px; }
+			/* Responsive layout - when the screen is less than 480px wide, make the navigation links stack on top of each other instead of next to each other */
+			@media screen and (max-width: 480px) { .topnav a { float: none; width: 100%; padding: 4px; }
 
 				/* Set labels and inputs */
 				input[type="text"], input[type="password"], input[type="phone"], input[type="email"]{ width: 100%; }
 			
-				input[type="submit"]{ background-color: #002100ee; color: #a1a1a1; box-shadow: -1px 1px 1px #aa7; border-radius: 3px; padding: 2px; }
+				input[type="submit"]{ background-color: #002100ee; color: #a1a1a1; box-shadow: -1px 1px 1px #aa7; border-radius: 3px; }
 				
-				.footer a{ margin: 0% 0.8%; }
-			}
+				.footer a{ margin: 0% 0.8%; } .footerCard { font-size: 80%; height: 542px;} }
+
+			/* Responsive layout - when the screen is less than 400px wide, make the footer cards smaller so as to fit into container frame */
+			@media screen and (max-width: 400px) { .footerCard { font-size: 70%; height: 522px;} }
 			
 			/* For Safari, Mozilla, Chrome and Opera browsers */
 			@-webkit-keyframes pixAnimation {
 				0%   {left:0px; top:0px; background:url("../assets/images/forex_trading_2.jpg") no-repeat center;
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
-				25%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology.jpg") no-repeat center;
+				7%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology.jpg") no-repeat center;
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
-				50%  {left:0px; top:0px; background:url("../assets/images/forex_trading.jpg") no-repeat center;
+				14%  {left:0px; top:0px; background:url("../assets/images/forex_trading.jpg") no-repeat center;
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
-				75%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_3.png") no-repeat center;
+				21%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_3.png") no-repeat center;
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
-				100% {left:0px; top:0px; background:url("../assets/images/forex_trading_4.jpg") no-repeat center;
+				28% {left:0px; top:0px; background:url("../assets/images/forex_trading_3.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				35%   {left:0px; top:0px; background:url("../assets/images/blockchain_technology_2.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				42%  {left:0px; top:0px; background:url("../assets/images/forex_trading_5.jpg") no-repeat center; 
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;}
+				50%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_4.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				57%  {left:0px; top:0px; background:url("../assets/images/forex_trading_4.jpg") no-repeat center; 
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;}
+				64% {left:0px; top:0px; background:url("../assets/images/blockchain_technology_6.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				71%   {left:0px; top:0px; background:url("../assets/images/forex_trading_8.jpg") no-repeat center; 
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;}
+				78%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_5.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				85%  {left:0px; top:0px; background:url("../assets/images/forex_trading_6.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				92%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_7.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				100% {left:0px; top:0px; background:url("../assets/images/forex_trading_7.jpg") no-repeat center;
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
 			}
 			
 			@-moz-keyframes pixAnimation {
 				0%   {left:0px; top:0px; background:url("../assets/images/forex_trading_2.jpg") no-repeat center;
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
-				25%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology.jpg") no-repeat center;
+				7%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology.jpg") no-repeat center;
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
-				50%  {left:0px; top:0px; background:url("../assets/images/forex_trading.jpg") no-repeat center;
+				14%  {left:0px; top:0px; background:url("../assets/images/forex_trading.jpg") no-repeat center;
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
-				75%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_3.png") no-repeat center;
+				21%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_3.png") no-repeat center;
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
-				100% {left:0px; top:0px; background:url("../assets/images/forex_trading_4.jpg") no-repeat center;
+				28% {left:0px; top:0px; background:url("../assets/images/forex_trading_3.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				35%   {left:0px; top:0px; background:url("../assets/images/blockchain_technology_2.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				42%  {left:0px; top:0px; background:url("../assets/images/forex_trading_5.jpg") no-repeat center; 
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;}
+				50%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_4.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				57%  {left:0px; top:0px; background:url("../assets/images/forex_trading_4.jpg") no-repeat center; 
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;}
+				64% {left:0px; top:0px; background:url("../assets/images/blockchain_technology_6.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				71%   {left:0px; top:0px; background:url("../assets/images/forex_trading_8.jpg") no-repeat center; 
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;}
+				78%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_5.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				85%  {left:0px; top:0px; background:url("../assets/images/forex_trading_6.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				92%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_7.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				100% {left:0px; top:0px; background:url("../assets/images/forex_trading_7.jpg") no-repeat center;
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
 			}
 			
 			@-o-keyframes pixAnimation {
 				0%   {left:0px; top:0px; background:url("../assets/images/forex_trading_2.jpg") no-repeat center;
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
-				25%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology.jpg") no-repeat center;
+				7%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology.jpg") no-repeat center;
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
-				50%  {left:0px; top:0px; background:url("../assets/images/forex_trading.jpg") no-repeat center;
+				14%  {left:0px; top:0px; background:url("../assets/images/forex_trading.jpg") no-repeat center;
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
-				75%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_3.png") no-repeat center;
+				21%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_3.png") no-repeat center;
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
-				100% {left:0px; top:0px; background:url("../assets/images/forex_trading_4.jpg") no-repeat center;
+				28% {left:0px; top:0px; background:url("../assets/images/forex_trading_3.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				35%   {left:0px; top:0px; background:url("../assets/images/blockchain_technology_2.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				42%  {left:0px; top:0px; background:url("../assets/images/forex_trading_5.jpg") no-repeat center; 
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;}
+				50%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_4.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				57%  {left:0px; top:0px; background:url("../assets/images/forex_trading_4.jpg") no-repeat center; 
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;}
+				64% {left:0px; top:0px; background:url("../assets/images/blockchain_technology_6.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				71%   {left:0px; top:0px; background:url("../assets/images/forex_trading_8.jpg") no-repeat center; 
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;background-size: cover;}
+				78%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_5.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				85%  {left:0px; top:0px; background:url("../assets/images/forex_trading_6.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				92%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_7.jpg") no-repeat center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
+				100% {left:0px; top:0px; background:url("../assets/images/forex_trading_7.jpg") no-repeat center;
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;}
 			}
 			
 			/* For IE, does not work on <IE9 */
 			@keyframes pixAnimation {
 				0%   {left:0px; top:0px; background:url("../assets/images/forex_trading_2.jpg") no-repeat center; background-size: cover;}
-				25%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology.jpg") no-repeat center; background-size: cover;}
-				50%  {left:0px; top:0px; background:url("../assets/images/forex_trading.jpg") no-repeat center; background-size: cover;}
-				75%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_3.png") no-repeat center; background-size: cover;}
-				100% {left:0px; top:0px; background:url("../assets/images/forex_trading_4.jpg") no-repeat center; background-size: cover;}
+				7%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology.jpg") no-repeat center; background-size: cover;}
+				14%  {left:0px; top:0px; background:url("../assets/images/forex_trading.jpg") no-repeat center; background-size: cover;}
+				21%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_3.png") no-repeat center; background-size: cover;}
+				28% {left:0px; top:0px; background:url("../assets/images/forex_trading_3.jpg") no-repeat center; background-size: cover;}
+				35%   {left:0px; top:0px; background:url("../assets/images/blockchain_technology_2.jpg") no-repeat center; background-size: cover;}
+				42%  {left:0px; top:0px; background:url("../assets/images/forex_trading_5.jpg") no-repeat center; background-size: cover;}
+				50%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_4.jpg") no-repeat center; background-size: cover;}
+				57%  {left:0px; top:0px; background:url("../assets/images/forex_trading_4.jpg") no-repeat center; background-size: cover;}
+				64% {left:0px; top:0px; background:url("../assets/images/blockchain_technology_6.jpg") no-repeat center; background-size: cover;}
+				71%   {left:0px; top:0px; background:url("../assets/images/forex_trading_8.jpg") no-repeat center; background-size: cover;}
+				78%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_5.jpg") no-repeat center; background-size: cover;}
+				85%  {left:0px; top:0px; background:url("../assets/images/forex_trading_6.jpg") no-repeat center; background-size: cover;}
+				92%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_7.jpg") no-repeat center; background-size: cover;}
+				100% {left:0px; top:0px; background:url("../assets/images/forex_trading_7.jpg") no-repeat center; background-size: cover;}
 			}
 			
 			.animatePix{ 
@@ -226,11 +331,11 @@
 	</head>
 	<body>
 		<div class="header animatePix">
-		  <h1>Tutusfx</h1>
-		  <p>An incentivized trade network built on blockchain technology</p>
+		  <h1 id="headertitle">Tutusfx</h1>
+		  <p id="headercontent">An incentivized trade network built on blockchain technology</p>
 		</div>
 		
-		<div class="topnav" id="topnav"><!-- sticky header -->
+		<div id="topnav"><!-- sticky header -->
 			<nav class="navbar navbar-inverse"><!-- right hidden menu -->
 			  <div class="container-fluid">
 				<div class="navbar-header">
@@ -307,11 +412,8 @@
 			<div class="card">
 				<h3>About Tutusfx</h3>
 				<p>The threshold to create and operate a Marketing Network is quite high. Therefore, a one-stop solution is provided by the Tutusfx Community for anyone to create a unique Network without any thresholds. 
-				Meanwhile, with the help of TT Token Reward Mode, the operation threshold can be reduced effectively, with a short startup period. 
-				In view of the application experience in blockchain, Tutusfx Community comprises a bottom layer using a decentralized blockchain accounting-book to record the ownership information of trade products, 
-				and deal with the transaction of trade products by virtue of smart contracts so that the ecosystem economy of Network will be transparent and clear; 
-				while the application layer shall make use of efficient centric development architecture so as to fully guarantee the good performance of all read and write operations as well as to effectively avoid the problems of long confirmation duration, 
-				high cost and congestion-inducing, thus the smooth and interactive experience of Network products can be guaranteed at the extreme.</p>
+					Meanwhile, with the help of TT Token Reward Mode, the operation threshold can be reduced effectively, with a short startup period. </p>
+				<p><a href="../eu/about-us-eu/index.html">More</a></p>
 			</div>
 			<div class="card returner">
 			  <p><a href="#">Return to top <span class="glyphicon glyphicon-arrow-up"></span></a></p>
@@ -320,16 +422,46 @@
 		</div>
 		
 		<div class="footer">
-		  <a href="">Sponsorship</a><a href="">Safety &amp; Security of Funds</a><a href="">Sitemap</a><a href="">Forums</a><a href="">Contact Us</a>
+		  <a href="">Sponsorship</a><a href="">Fund Safety &amp; Security</a><a href="">Sitemap</a><a href="">Forums</a><a href="">Contact Us</a>
+		  <div class="footerContent"><p class="card footerCard">QUICK LINKS</p><p class="card footerCard">CHOOSE LANGUAGE</p><p class="card footerCard">RELATED SITES</p><p class="card footerCard">TERMS &amp; CONDITIONS</p></div>
 		</div>
 
 		<script>
+			var header = document.getElementById("topnav"); var sticky = header.offsetTop;
+			var title = document.getElementById("headertitle"); var headercontent = document.getElementById("headercontent");
+			
 			window.onscroll = function() { myFunction() };
 
-			var header = document.getElementById("topnav");
-			var sticky = header.offsetTop;
-
-			function myFunction() { if (window.pageYOffset > sticky) { header.classList.add("sticky"); } else { header.classList.remove("sticky"); } }
+			function myFunction() { 
+				if (window.pageYOffset > sticky) { header.classList.add("sticky"); } 
+				else { 
+					if (window.pageYOffset > 0) {
+					  title.style.fontSize = "90px"; headercontent.style.fontSize = "40px"; title.style.paddingTop = "10px";
+					} if (window.pageYOffset > 50) {
+					  title.style.fontSize = "84px"; headercontent.style.fontSize = "38px"; title.style.paddingTop = "60px";
+					} if (window.pageYOffset > 100) {
+					  title.style.fontSize = "78px"; headercontent.style.fontSize = "36px"; title.style.paddingTop = "110px";
+					} if (window.pageYOffset > 150) {
+					  title.style.fontSize = "72px"; headercontent.style.fontSize = "34px"; title.style.paddingTop = "160px";
+					} if (window.pageYOffset > 200) {
+					  title.style.fontSize = "66px"; headercontent.style.fontSize = "32px"; title.style.paddingTop = "210px";
+					} if (window.pageYOffset > 250) {
+					  title.style.fontSize = "60px"; headercontent.style.fontSize = "30px"; title.style.paddingTop = "260px";
+					} if (window.pageYOffset > 300) {
+					  title.style.fontSize = "54px"; headercontent.style.fontSize = "28px"; title.style.paddingTop = "310px";
+					} if (window.pageYOffset > 350) {
+					  title.style.fontSize = "48px"; headercontent.style.fontSize = "26px"; title.style.paddingTop = "360px";
+					} if (window.pageYOffset > 400) {
+					  title.style.fontSize = "42px"; headercontent.style.fontSize = "24px"; title.style.paddingTop = "410px";
+					} if (window.pageYOffset > 450) {
+					  title.style.fontSize = "36px"; headercontent.style.fontSize = "22px"; title.style.paddingTop = "460px";
+					} if (window.pageYOffset > 500) {
+					  title.style.fontSize = "30px"; headercontent.style.fontSize = "20px"; title.style.paddingTop = "501px";
+					} if (window.pageYOffset > 550) {
+					  title.style.fontSize = "24px"; headercontent.style.fontSize = "18px"; title.style.paddingTop = "550px";
+					} header.classList.remove("sticky");
+				} 
+			}
 			
 			function prevPage(){ window.history.go(-1); }
 			

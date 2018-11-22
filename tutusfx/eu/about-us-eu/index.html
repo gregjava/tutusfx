@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8"><title>Sign Up</title>
+		<meta charset="utf-8"><title>Login</title>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +10,8 @@
 		<script type="text/javascript">
 			WebFontConfig = {
 				google: { families: [ 'Roboto:500,400,300,100,700italic,300italic,700:greek,latin,cyrillic' ] }
-			}; (function(d) {
+			};
+			(function(d) {
 				var wf = d.createElement('script'), s = d.scripts[0];
 				wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js';
 				s.parentNode.insertBefore(wf, s);
@@ -19,7 +20,7 @@
 		<script type='text/javascript'>
             /* <![CDATA[ */
             var ajaxurl = "wp-admin/admin-ajax.html"
-            var siteurl = "eu/index.html"
+            var siteurl = "eu/about-us-eu/index.html"
             var wp_lang = "en" ;
             /* ]]> */
         </script>
@@ -27,7 +28,7 @@
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 					(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','../assets/www.google-analytics.com/analytics.js','ga');
+			})(window,document,'script','../../assets/www.google-analytics.com/analytics.js','ga');
 
 			ga('create', 'UA-112516938-1', 'auto');
 			ga('send', 'pageview');
@@ -42,17 +43,17 @@
 		<meta name="twitter:title" content="tutusfx.com" />
 		<meta name="twitter:domain" content="tutusfx.com" />
 		<meta name="generator" content="WPML ver:3.6.1 stt:5,39,1,4,3,27,40,42,44,47,2,52;" />
-		<meta name='description' content='Registration is easy on Tutusfx. It will only take a minute or two to start getting well paid.' />
+		<meta name='description' content='Login now with your username and passkey, and begin to enjoy all of Tutusfx services and bonuses.' />
 		<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","url":"https:\/\/www.tutusfx.com\/eu\/","name":"tutusfx.com","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.tutusfx.com\/eu\/?s={search_term}","query-input":"required name=search_term"}}</script>
 		<link rel="icon" href="" type="image/x-icon" />
 		<link rel="shortcut icon" href="" type="image/x-icon" />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<script src="../assets/js/jquery.min.js"></script>
-		<script src="../assets/js/bootstrap.min.js"></script>
+		<script src="../../assets/js/jquery.min.js"></script>
+		<script src="../../assets/js/bootstrap.min.js"></script>
 		<style>
 			* { box-sizing: border-box; top: 0; left: 0; }
 
-			body { font-family: Arial, Helvetica, sans-serif; padding: 10px; background: #f1f1f1; color: #002100; }
+			body { font-family: Arial, Helvetica, sans-serif; padding: 8px; background: #f1f1f1; color: #002100; }
 
 			/* Header/Blog Title */
 			.header { padding-top: 10px; height: 600px; text-align: center; background: white; color: #002100; text-shadow: -8px 8px 16px #ff0e; }
@@ -73,53 +74,56 @@
 			
 			#topnav a:hover { background-color: #222; color: #ff0e; }
 
-			/* Change properties of dropdown menu items */
+			/* Change properties of top navigation dropdown items */
 			nav li a{width: 100%; margin:0; padding: 5px; }
 
-			/* Change properties of dropdown menu items */
+			/* Change properties of top navigation dropdown items */
+			nav li button{width: 90%; height: cover; margin:21% 6%; padding: 0.5%; border-color: #333; }
+
+			/* Style the top navigation dropdown items */
+			.nav > li button{float: center; background-color:#002100ee; color: #a1a1a1}
+
+			/* Style the top navigation dropdown items when hovered */
+			.nav > li button:hover{background-color:#232323ee; color: white; }
+
+			/* Style the top navigation dropdown items */
 			.nav > li a{background-color:#002100ee; color: #a1a1a1}
 
-			/* Change properties of dropdown menu items */
+			/* Style the top navigation dropdown items when hovered */
 			.nav > li a:hover{background-color:#232323ee; color: white; }
-			
-			form label{ width: 14%; margin: 1%; }
-			
-			form input{ width: 80%; background-color:#eeeeee; border-radius:5px; }
-			
-			input[type="text"], input[type="password"], input[type="phone"], input[type="email"]{ width: 82%; margin: 1%; }
-			
-			input[type="submit"]{ background-color: #002100ee; color: #a1a1a1; box-shadow: -3px 2px 5px #aa7; border-radius: 5px; padding: 5px; }
 
 			/* Create two unequal columns that floats next to each other */
+			/* Left column */
+			.leftcolumn {  float: left; width: 25%; padding-left: 16px; }
 
 			/* Main column */
-			.maincolumn {   float: left; width: 75%; padding-left: 20px; }
+			.maincolumn {   float: left; width: 50%; padding-left: 16px; }
 
 			/* Right column */
-			.rightcolumn { float: left; width: 25%; padding-left: 20px; }
+			.rightcolumn { float: left; width: 25%; padding-left: 16px; }
 
 			/* Fake image */
-			.fakeimg { background-color: #aaa; width: 100%; padding: 20px; }
+			.fakeimg { background-color: #aaa; width: 100%; padding: 16px; border-radius: 2px; }
 
 			/* Add a card effect for articles */
-			.card { background-color: white; padding: 20px; margin-top: 20px; }
+			.card { background-color: white; padding: 16px; margin-top: 16px; border-radius: 3px; }
+			
+			.card a{ text-decoration: none; color: #002100ee; }
+			
+			.card a:hover{ color: #ff0e; }
 
 			/* Add a card effect for returner section at bottom of page */
 			.returner { background-color: #f1f1f1; color: blue; float: right; font-weight: bolder; font-stretch: condensed; }
 
-			/* Add sticky header */
+			/* Set container properties */
 			.row { padding: 16px; width: 100%; }
 
-			.sticky { position: fixed; top: 0; width: 98.6%; margin:0 10px; }
+			.sticky { position: fixed; top: 0; width: 98.6%; margin:0 8px; }
 
 			.sticky + .row { padding-top: 100px; }
 
 			/* Clear floats after the columns */
 			.row:after { content: ""; display: table; clear: both; }
-			
-			.sendSection{ text-align: center; }
-			
-			.additionalTxt{ text-align: center; }
 
 			/* Footer */
 			.footer { height: 600px; padding: 16px; text-align: center; background-color: #002100ee; margin-top: 16px; font-stretch: condensed; font-weight: lighter; }
@@ -323,7 +327,7 @@
 				</div>
 				<div class="collapse navbar-collapse" id="navi">
 				  <ul class="nav navbar-nav">
-					<li><a href="../eu/index.html">Home</a></li>
+					<li><a href="../index.html">Home</a></li>
 					<li class="dropdown">
 					  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <span class="caret"></span></a>
 					  <ul class="dropdown-menu">
@@ -336,8 +340,8 @@
 					<li><a href="" name="next" onclick="nextPage()">Next <span class="glyphicon glyphicon-arrow-right"></span></a></li>
 				  </ul>
 				  <ul class="nav navbar-nav navbar-right">
-					<li class="active"><a href=""><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-					<li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					<li><a href="../../redirects/registration.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+					<li class="active"><a href="../../redirects/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 				  </ul>
 				</div>
 			  </div>
@@ -347,54 +351,26 @@
 		<div class="row">
 		  <div class="maincolumn">
 			<div class="card">
-				<form name="signupform" action="login.html" onsubmit="return checkData()" method="post">
-					<label>Username: </label><input name="usr" type="text" placeholder="johndoe"></input><br/>
-					<label>Full Name: </label><input name="name" type="text" placeholder="John Doe"></input><br/>
-					<label>Email: </label><input name="email" type="email" placeholder="abc@example.com"></input><br/>
-					<label>BTC Wallet: </label><input name="btcId" type="text" placeholder="Bitcoin Wallet ID" > </input><br/>
-					<label>Phone Number: </label><input name="phone" type="phone" placeholder="+0123456789" > </input><br/>
-					<label>Password: </label><input name="pswd" type="password" placeholder="password" > </input><br/><br/>
-					<div class="sendSection"><input type="submit" value="Send" > </input></div><br/>
-					<div class="additionalTxt">Already registered on Tutusfx? <a href="login.html">Login here</a></div>
-					<script>
-						function checkData(){
-							var x = document.forms["signupform"]["usr"].value, x1 = document.forms["signupform"]["name"].value,
-								x2 = document.forms["signupform"]["email"].value, x3 = document.forms["signupform"]["btcId"].value,
-								x4 = document.forms["signupform"]["phone"].value, x5 = document.forms["signupform"]["pswd"].value;
-							if (x=="") { 
-								alert("Data incomplete! Username has not been filled.\nFill out all the fields on the page."); return false; 
-							} else {
-								if (x1=="") {
-									alert("Data incomplete! Full name has not been filled.\nFill out all the fields on the page."); return false; 
-								} else {
-									if (x2=="") {
-										alert("Data incomplete! Email has not been filled.\nFill out all the fields on the page."); return false; 
-									} else {
-										if (x3=="") {
-											alert("Data incomplete! Bitcoin wallet address has not been filled.\nFill out all the fields on the page."); return false; 
-										} else {
-											if (x4=="") {
-												alert("Data incomplete! Phone number has not been filled.\nFill out all the fields on the page."); return false; 
-											} else {
-												if (x5=="") {
-													alert("Data incomplete! Password has not been filled.\nFill out all the fields on the page."); return false; 
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					</script>
-				</form>
+				<h3>About Tutusfx</h3>
+				<p>The threshold to create and operate a Marketing Network is quite high! Therefore, a one-stop solution is provided by the Tutusfx Community for anyone to create a unique Network without any thresholds. 
+				Meanwhile, with the help of TT Token Reward Mode, the operation threshold can be reduced effectively, with a short startup period. Cryptocurrency, currency and commodity instrument traders have traded for years without incentives or adequate motivation to match their passion for the trends. 
+				Tutusfx presents a system that seeks to improve the analysis and trading of its instrument traders with relevant tools and incentives aimed at motivating traders (and marketers, alike).
+				In view of the application experience in blockchain, Tutusfx Community comprises a bottom layer using a decentralized blockchain accounting-book to record the ownership information of trade products, 
+				and deal with the transaction of trade products by virtue of smart contracts so that the ecosystem economy of Network will be transparent and clear; 
+				while the application layer shall make use of efficient centric development architecture so as to fully guarantee the good performance of all read and write operations as well as to effectively avoid the problems of long confirmation duration, 
+				high cost and congestion-inducing, thus the smooth and interactive experience of Network products can be guaranteed at the extreme.</p>
 			</div>
 		  </div>
 		  <div class="rightcolumn">
 			<div class="card">
-				<h3>About Tutusfx</h3>
-				<p>The threshold to create and operate a Marketing Network is quite high. Therefore, a one-stop solution is provided by the Tutusfx Community for anyone to create a unique Network without any thresholds. 
-				Meanwhile, with the help of TT Token Reward Mode, the operation threshold can be reduced effectively, with a short startup period. </p>
-				<p><a href="../eu/about-us-eu/index.html">More</a></p>
+			  <h3>Trending Post</h3>
+			  <div class="fakeimg"><p>Image</p></div>
+			  <div class="fakeimg"><p>Image</p></div>
+			  <div class="fakeimg"><p>Image</p></div>
+			</div>
+			<div class="card">
+			  <h3>Vote a Witness</h3>
+			  <p>List of top 100 witnesses..</p>
 			</div>
 			<div class="card returner">
 			  <p><a href="#">Return to top <span class="glyphicon glyphicon-arrow-up"></span></a></p>
