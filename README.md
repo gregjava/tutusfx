@@ -1,2 +1,2 @@
 # Tutusfx
-An incentivised forex trade plaftorm, with Smart Networks, built on blockchain technology
+An incentivised forex trade platform, with Smart Networks, built on blockchain technology
