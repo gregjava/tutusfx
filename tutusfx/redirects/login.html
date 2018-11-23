@@ -52,6 +52,8 @@
 		<script src="../assets/js/bootstrap.min.js"></script>
 		<style>
 			* { box-sizing: border-box; top: 0; left: 0; }
+			
+			.rightAlign { float: right; }
 
 			body { font-family: Arial, Helvetica, sans-serif; padding: 10px; background: #f1f1f1; color: #002100; }
 
@@ -62,7 +64,7 @@
 
 			#headercontent { font-size: 40px; font-style: italic; font-family: Garamond; font-stretch: condensed; }
 			
-			a{ transition: 0.2s ease-out; }
+			input[type="submit"], a{ transition: 0.3s ease-out; }
 			
 			.navbar { border-radius: 0px 0px 5px 5px; }
 
@@ -83,16 +85,19 @@
 			/* Change properties of dropdown menu items */
 			.nav > li a:hover{background-color:#232323ee; color: white; }
 			
-			form label{ width: 14%; margin: 1%; }
+			form label{ width: 14%; margin: 1%; padding: 1%; }
 			
 			form input{ width: 80%; background-color:#eeeeee; border-radius:5px; }
 			
-			input[type="text"], input[type="password"], input[type="phone"], input[type="email"]{ width: 82%; margin: 1%; }
+			input[type="text"], input[type="password"], input[type="phone"], input[type="email"]{ width: 82%; margin: 1%; padding: 1%; }
 			
 			input[type="submit"]{ background-color: #002100ee; color: #a1a1a1; box-shadow: -3px 2px 5px #aa7; border-radius: 5px; padding: 5px; }
+			
+			input[type="submit"]:hover{ background-color: #222; color: #ff0e; box-shadow: -4px 4px 6px #aa7; }
+			
+			a:active, input[type="submit"]:active{ background-color: #008700ee; color: white; box-shadow: -2px 1px 3px #ff0e; border-radius: 8px; padding: 4px; }
 
 			/* Create two unequal columns that floats next to each other */
-
 			/* Main column */
 			.maincolumn {   float: left; width: 75%; padding-left: 20px; }
 
@@ -103,7 +108,12 @@
 			.fakeimg { background-color: #aaa; width: 100%; padding: 20px; }
 
 			/* Add a card effect for articles */
-			.card { background-color: white; padding: 20px; margin-top: 20px; }
+			.card { background-color: white; padding: 16px; margin-top: 16px; border-radius: 3px; text-align: justify; }
+			
+			.card a{ text-decoration: none; color: #002100ee; }
+			
+			.card a:hover{ color: #ff0e; }
+
 			
 			.sendSection, .additionalTxt{ text-align: center; }
 
@@ -121,9 +131,11 @@
 			.row:after { content: ""; display: table; clear: both; }
 
 			/* Footer */
-			.footer { height: 600px; padding: 16px; text-align: center; background-color: #002100ee; margin-top: 16px; font-stretch: condensed; font-weight: lighter; }
+			.footer { height: 600px; padding: 16px; text-align: center; background-color: #002100ee; margin-top: 50px; font-stretch: condensed; font-weight: lighter; }
 			
-			.footer a{ margin: 0% 2%; color: #a1a1a1; }
+			.footer a{ transition: 0.3s ease-out; margin: 0% 2%; color: #a1a1a1; }
+			
+			.footer a:hover{ margin: 0% 2%; color: #ff0e; text-decoration: none; }
 			
 			.footerCard { float: left; width: 25%; height: 542px; background-color: #002100ee; color: #a1a1a1; }
 
@@ -373,8 +385,8 @@
 		  <div class="maincolumn">
 			<div class="card">
 				<form name="loginform" action="../eu/index.html" onsubmit="return checkData()" method="post">
-					<label>Username: </label><input name="usr" type="text" placeholder="johndoe"></input><br/>
-					<label>Password: </label><input name="pswd" type="password" placeholder="password"></input><br/><br/>
+					<label>Username: </label><input name="usr" type="text" placeholder="Username"></input><br/>
+					<label>Password: </label><input name="pswd" type="password" placeholder="Password"></input><br/><br/>
 					<div class="sendSection"><input type='submit' value='Send'></input></div><br/>
 					<div class="additionalTxt">New to Tutusfx? <a href="registration.html">Sign up here</a></div>
 					<script>
@@ -413,7 +425,7 @@
 				<h3>About Tutusfx</h3>
 				<p>The threshold to create and operate a Marketing Network is quite high. Therefore, a one-stop solution is provided by the Tutusfx Community for anyone to create a unique Network without any thresholds. 
 					Meanwhile, with the help of TT Token Reward Mode, the operation threshold can be reduced effectively, with a short startup period. </p>
-				<p><a href="../eu/about-us-eu/index.html">More</a></p>
+				<p class="rightAlign"><a href="../eu/about-us-eu/index.html">More</a></p><br/>
 			</div>
 			<div class="card returner">
 			  <p><a href="#">Return to top <span class="glyphicon glyphicon-arrow-up"></span></a></p>
