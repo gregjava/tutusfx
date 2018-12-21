@@ -1,0 +1,82 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+	margin:0;
+	padding:0;
+}
+#login-form {
+	margin:5% auto;
+	max-width:500px;
+}
+/* home page */
+#wrapper{
+	padding-top:50px;
+}
+h2 .div-header{ text-align:center; font-style:bold; font-weight:bolder; font-variant:expanded; }
+/* For Safari, Chrome and Opera browsers, does not work on <IE9 */
+@-webkit-keyframes pixAnimation {
+	from {
+		background: #654123 url("assets/images/paymentplatforms.png") no-repeat fixed top left;
+	} to {
+		background: #654321 url("assets/images/coins.jpg") no-repeat fixed top left;
+	}
+}
+/* Does not work on <IE9 */
+@keyframes pixAnimation {
+	from {
+		background: #654123 url("assets/images/paymentplatforms.png") no-repeat fixed top left;
+	} to {
+		background: #654321 url("assets/images/coins.jpg") no-repeat fixed top left;
+	}
+}
+/* For Safari, Chrome and Opera browsers, does not work on <IE9 */
+@-webkit-keyframes colorAnimation {
+	from {
+		background-color: #abcdef;
+	} to {
+		background-color: #fedcba;
+	}
+}
+/* Does not work on <IE9 */
+@keyframes colorAnimation {
+	from {
+		background-color: #abcdef;
+	} to {
+		background-color: #fedcba;
+	}
+}
+/* For Safari, Chrome and Opera browsers, does not work on <IE9 */
+@-webkit-keyframes borderAnimation {
+	from {
+		border-color: #195; border-style:dotted;
+	} to {
+		border-color: #ff0; border-style:dashed;
+	}
+}
+/* Does not work on <IE9 */
+@keyframes borderAnimation {
+	from {
+		border-color: #195; border-style:dotted;
+	} to {
+		border-color: #ff0; border-style:dashed;
+	}
+}
+.animatePix {
+	width: 100%; height:100%; margin-left:-42%;
+	-webkit-animation: pixAnimation 20s infinite;
+	animation: pixAnimation 20s infinite;
+}
+.animateColor {
+	width: 100%; height:100%; margin-left:-42%;
+	-webkit-animation: colorAnimation 15s infinite;
+	animation: colorAnimation 15s infinite;
+}
+.animateBorder {
+	width: 100%; height:100%; margin-left:-42%;
+	-webkit-animation: borderAnimation 5s infinite;
+	animation: borderAnimation 5s infinite;
+}
+.bottomnote {
+	
+}
