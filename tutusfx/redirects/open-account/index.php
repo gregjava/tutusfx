@@ -177,7 +177,6 @@
 				-o-animation: pixAnimation 30s infinite; animation: pixAnimation 30s infinite; font-weight: bolder;
 			}
 		</style>
-		<?php include '../../assets/db/config.php'; include '../../assets/db/signup.php'; ?>
 	</head>
 	<body>
 		<script type="text/javascript">
@@ -241,7 +240,7 @@
 			
 			function IsLoggedIn(){ return <?php if ( isset($_SESSION['user']) && $_SESSION['user']!=="") echo true; else echo false; ?>; }
         </script>
-		<div id="ratebar"><marquee id="ads" scrolldelay="1s" scrollamount="3">
+		<div id="ratebar"><marquee id="ads" scrolldelay="1s" scrollamount="3"> <?php echo "<span class='positiverate'>Fields marked <em style='color:#ff1234'>red</em> are compulsory for Tutusfx registration. Ensure you fill them accurately.</span>"; ?>
 			<span class="usdcad">USD/CAD: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="usdjpy">USD/JPY: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="usdchf">USD/CHF: <span class="positiverate">000:0000</span></span> &nbsp;
@@ -264,8 +263,10 @@
 			<span class="eurjpy">EUR/JPY: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="chfjpy">CHF/JPY: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="usdsgd">USD/SGD: <span class="positiverate">000:0000</span></span> &nbsp;
-			<span class="usdcad">USD/NGN: <span class="positiverate">000:0000</span></span></marquee><button id="upperclosebtn" onclick="doupperclosing()" class="glyphicon glyphicon-arrow-right rightAlign close-upper"></button></div>
-		<div class="header animatePix">
+			<span class="usdcad">USD/NGN: <span class="positiverate">000:0000</span></span></marquee>
+			<button id="upperclosebtn" onclick="doupperclosing()" class="glyphicon glyphicon-arrow-right rightAlign close-upper"></button>
+		</div>
+		<div id="header" class="animatePix">
 		  <h1 id="headertitle">Tutusfx</h1>
 		  <p id="headercontent">An incentivized trade network built on blockchain technology</p>
 		</div>
@@ -274,24 +275,24 @@
 			<nav class="navbar navbar-inverse"><!-- right hidden menu -->
 			  <div class="container-fluid">
 				<div class="navbar-header">
-				  <button type="button" id="navbar-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#navi">
+				  <button type="button" id="navbar-toggle" drawer.show(); drawer.css("data-toggle","collapse"); data-toggle="collapse" data-target="#navi">
 					<span id="icon-bar1" class="icon-bar"></span>
 					<span id="icon-bar2" class="icon-bar"></span>
 					<span id="icon-bar3" class="icon-bar"></span> 
 					<span id="icon-bar4" class="icon-bar"></span>                        
-				  </button><input type="search" value="" placeholder="Search item"></input><a class="navbar-brand" href="#"><img src="../../assets/images/logo_bar.png" alt="Tutusfx" ></img></a>
+				  </button><input type="search" value="" placeholder="Search item"></input><a class="navbar-brand" href="#"><img src="../../assets/images/logo_bar.png" alt="Tutusfx" /></a>
 				</div>
 				<div class="collapse navbar-collapse" id="navi">
 				  <ul class="nav navbar-nav">
 					<li><a href="../../eu/index.html">Home</a></li>
-					<li><input type="button" id="back" value="Back" onclick="prevPage()"></input></li>
-					<li><input type="button" id="next" value="Next" onclick="nextPage()"></input></li>
+					<li><input type="button" id="back" value="Back" onclick="prevPage()" ></input></li>
+					<li><input type="button" id="next" value="Next" onclick="nextPage()" ></input></li>
 				  </ul>
 				  <ul class="nav navbar-nav navbar-right">
 					<li class="active"><a href=""><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
 					<li><a href="../../redirects/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 					<li class="dropdown">
-					  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <span class="caret"></span></a>
+					  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <span class="caret"></span></a><br/>
 					  <ul class="dropdown-menu">
 						<li><a href="../../eu/faqs/index.html">Frequently Asked Questions</a></li>
 						<li><a href="../../redirects/login.html">App Store</a></li>
@@ -304,7 +305,7 @@
 					  </ul>
 					</li>
 					<li class="dropdown">
-					  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Legal <span class="caret"></span></a>
+					  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Legal <span class="caret"></span></a><br/>
 					  <ul class="dropdown-menu">
 						<li><a href="../../eu/about-us-eu/index.html">About Tutusfx</a></li>
 						<li><a href="../../whitepaper.pdf">Tutusfx Whitepaper</a></li>
@@ -313,13 +314,14 @@
 					  </ul>
 					</li>
 					<li class="dropdown">
-					  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Theme <span class="caret"></span></a>
+					  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Theme <span class="caret"></span></a><br/>
 					  <ul class="dropdown-menu">
-						<li><input type="button" id="nature" value="Nature"></input></li>
-						<li><input type="button" id="night" value="Night"></input></li>
-						<li><input type="button" id="sunny" value="Sunny"></input></li>
-						<li><input type="button" id="cloudy" value="Cloudy"></input></li>
-						<li><input type="button" id="romance" value="Romance"></input></li>
+						<li><input type="button" id="nature" value="Nature" onclick="<?php $_SESSION['theme']='0'; ?>"></input></li>
+						<li><input type="button" id="night" value="Night" onclick="<?php $_SESSION['theme']='1'; ?>"></input></li>
+						<li><input type="button" id="sunny" value="Sunny" onclick="<?php $_SESSION['theme']='2'; ?>"></input></li>
+						<li><input type="button" id="cloudy" value="Cloudy" onclick="<?php $_SESSION['theme']='3'; ?>"></input></li>
+						<li><input type="button" id="romance" value="Romance" onclick="<?php $_SESSION['theme']='4'; ?>"></input></li>
+						<li><input type="button" id="royal" value="Royal" onclick="<?php $_SESSION['theme']='5'; ?>"></input></li>
 					  </ul>
 					</li>
 				  </ul>
@@ -331,18 +333,19 @@
 		<div class="container row">
 		  <div class="maincolumn">
 			<div class="card" id="login-form" >
-				<form method="post" name="signupform" action="../login.html" onsubmit="return checkData()" autocomplete="on" >
-					<div class="form-group">
+				<form method="post" name="signupform" action="../login.html?succ" onsubmit="checkData()" autocomplete="on" >
+					<?php include '../../assets/db/config.php'; include '../../assets/db/signup.php'; ?>
+					<div class="form-group required-group">
 						<div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
 							<input name="acct_name" id="acct_name" type="text" class="form-control" placeholder="Username or Network/Company Name" maxlength="50" value="<?php echo $_SESSION['acct_name'] = $acct_name; ?>" required></input>
 						</div><span class="text-danger"><?php echo $acct_nameError; ?></span>
 					</div>
-					<div class="form-group">
+					<div class="form-group required-group">
 						<div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
 							<input name="fname" id="fname" type="text" class="form-control" placeholder="First Name" maxlength="50" value="<?php echo $_SESSION['fname'] = $fname; ?>"  required></input>
 						</div><span class="text-danger"><?php echo $fnameError; ?></span>
 					</div>
-					<div class="form-group">
+					<div class="form-group required-group">
 						<div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
 							<input name="lname" id="lname" type="text" class="form-control" placeholder="Last Name" maxlength="50" value="<?php echo $_SESSION['lname'] = $lname; ?>"  required></input>
 						</div><span class="text-danger"><?php echo $lnameError; ?></span>
@@ -372,10 +375,10 @@
 							<input name="compadd" id="compadd" type="text" class="form-control" placeholder="Company Address" maxlength="50" value="<?php echo $_SESSION['compadd'] = $compadd; ?>" ></input>
 						</div>
 					</div>
-					<div class="form-group">
+					<div class="form-group required-group">
 						<div class="input-group"> <span class="input-group-addon">Email Add: </span>
 							<input name="email" id="email" type="email" class="form-control" placeholder="abc@example.com" maxlength="50" value="<?php echo $_SESSION['email'] = $email; ?>"  required></input>
-						</div>
+						</div><span class="text-danger"><?php echo $emailError; ?></span>
 					</div>
 					<div class="form-group">
 						<div class="input-group"> <span class="input-group-addon">Zip Code: </span>
@@ -392,38 +395,41 @@
 							<input name="steemId" id="steemId" type="text" class="form-control" placeholder="Steemit User ID" maxlength="50" value="<?php echo $_SESSION['steemId'] = $steemId; ?>" ></input>
 						</div>
 					</div>
-					<div class="form-group">
+					<div class="form-group required-group">
 						<div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></span>
 							<input name="phone" type="phone" id="phone_num" class="form-control" placeholder="+0123456789" maxlength="30" value="<?php echo $_SESSION['phone_num'] = $phone_num; ?>" required> </input>
-						</div>
+						</div><span class="text-danger"><?php echo $phone_numError; ?></span>
 					</div><br/>
-					<div class="form-group contactUs-regardingSelect" required>
+					<div class="form-group contactUs-regardingSelect required-group">
 						<div class="input-group"><span class="input-group-addon">Comment Threshold: </span>
 						<select name="max-comments" id="max-comments" class="form-control" required>
 							<?php for ($itr==0; $itr<1000; $itr++) if ($itr==0) echo "<option value='0'>0</option>"; else echo "<option value='".$itr."'>".$itr."</option>"; ?>
-						</select></div><span class="text-danger"></span>
+						</select></div><span class="text-danger"><?php echo $commentThreshError; ?></span>
 					</div><br/>
-					<div class="form-group contactUs-regardingSelect" required>
+					<div class="form-group contactUs-regardingSelect required-group">
 						<div class="input-group"><span class="input-group-addon">Like Threshold: </span>
 						<select name="max-likes" id="max-likes" class="form-control" required>
 							<?php $itr=0; for ($itr==0; $itr<1000; $itr++) if ($itr==0) echo "<option value='0'>0</option>"; else echo "<option value='".$itr."'>".$itr."</option>"; ?>
-						</select></div><span class="text-danger"></span>
+						</select></div><span class="text-danger"><?php echo $likeThreshError; ?></span>
 					</div><br/>
-					<div class="form-group contactUs-regardingSelect" required>
+					<div class="form-group contactUs-regardingSelect required-group">
 						<div class="input-group"><span class="input-group-addon">Dislike Threshold: </span>
 						<select name="max-dislikes" id="max-dislikes" class="form-control" required>
 							<?php $itr=0; for ($itr==0; $itr<1000; $itr++) if ($itr==0) echo "<option value='0'>0</option>"; else echo "<option value='".$itr."'>".$itr."</option>"; ?>
-						</select></div><span class="text-danger"></span>
+						</select></div><span class="text-danger"><?php echo $dislikeThreshError; ?></span>
 					</div><br/>
-					<div class="form-group contactUs-regardingSelect">
-						<div class="input-group"><span class="input-group-addon">Network Reward: </span><div id="myProgressBar" class="form-control"><div id="progressBar">1%</div></div></div>
-					</div><div style="width: 100%;"><button onclick="move(-1)" style="float: left;">-</button><button onclick="move(+1)" style="float: right;">+</button></div><br/><br/><br/><br/>
+					<form action="" method="post">
+						<div class="form-group contactUs-regardingSelect required-group">
+							<div class="input-group"><span class="input-group-addon">Network Reward: </span><div id="myProgressBar" class="form-control"><div id="progressBar">1%</div></div></div>
+						</div><div style="width: 100%;"><button onclick="move(-1)" style="float: left;">-</button><button onclick="move(+1)" style="float: right;">+</button></div><br/><br/><br/><br/>
+						<script> var width = 1; function move(interval) { if (width >= 100) { width = 1; } else { width+=interval; } progressbar.style.width = width + '%'; progressbar.innerHTML = width + '%'; } </script>
+					</form>
 					<div class="form-group">
 						<div class="input-group"> <span class="input-group-addon">Notify user on reward: </span><input type="radio" class="form-control" ></input></div><br/>
 						<div class="input-group"> <span class="input-group-addon">Notify user on account suspension: </span><input type="radio" class="form-control" ></input></div><br/>
 						<div class="input-group"> <span class="input-group-addon">Notify user on account ban: </span><input type="radio" class="form-control" ></input></div><br/>
 					</div>
-					<div class="form-group contactUs-regardingSelect" required>
+					<div class="form-group contactUs-regardingSelect required-group">
 						<div class="input-group"><span class="input-group-addon">Comment Action: </span>
 						<select name="comment-action" id="comment-action" class="form-control" required>
 							<option value='upvote'>Upvote user</option>
@@ -431,9 +437,9 @@
 							<option value='suspend'>Suspend user</option>
 							<option value='ban'>Ban user</option>
 							<option value='reward'>Reward user</option>
-						</select></div><span class="text-danger"></span>
+						</select></div><span class="text-danger"><?php echo $commentActionError; ?></span>
 					</div><br/>
-					<div class="form-group contactUs-regardingSelect" required>
+					<div class="form-group contactUs-regardingSelect required-group">
 						<div class="input-group"><span class="input-group-addon">Like Action: </span>
 						<select name="like-action" id="like-action" class="form-control" required>
 							<option value='upvote'>Upvote user</option>
@@ -441,9 +447,9 @@
 							<option value='suspend'>Suspend user</option>
 							<option value='ban'>Ban user</option>
 							<option value='reward'>Reward user</option>
-						</select></div><span class="text-danger"></span>
+						</select></div><span class="text-danger"><?php echo $likeActionError; ?></span>
 					</div><br/>
-					<div class="form-group contactUs-regardingSelect" required>
+					<div class="form-group contactUs-regardingSelect required-group">
 						<div class="input-group"><span class="input-group-addon">Dislike Action: </span>
 						<select name="dislike-action" id="dislike-action" class="form-control" required>
 							<option value='upvote'>Upvote user</option>
@@ -451,9 +457,9 @@
 							<option value='suspend'>Suspend user</option>
 							<option value='ban'>Ban user</option>
 							<option value='reward'>Reward user</option>
-						</select></div><span class="text-danger"></span>
+						</select></div><span class="text-danger"><?php echo $dislikeActionError; ?></span>
 					</div><br/>
-					<div class="form-group contactUs-regardingSelect" required>
+					<div class="form-group contactUs-regardingSelect required-group">
 						<div class="input-group"><span class="input-group-addon">Preferred Currency: </span>
 						<select name="currency" id="currency" class="form-control" required>
 							<option value="">Select Preferred Currency</option>
@@ -464,7 +470,7 @@
 							<option value="cad">CAD</option>
 						</select></div><span class="text-danger"><?php echo $currencyError; ?></span>
 					</div><br/>
-					<div class="form-group contactUs-regardingSelect" required>
+					<div class="form-group contactUs-regardingSelect required-group">
 						<div class="input-group"><span class="input-group-addon">Gender: </span>
 						<select name="gender" id="gender" class="form-control" required>
 							<option value="">Select Gender</option>
@@ -472,7 +478,7 @@
 							<option value="female">Female</option>
 						</select></div><span class="text-danger"><?php echo $genderError; ?></span>
 					</div><br/>
-					<div class="form-group contactUs-regardingSelect" required>
+					<div class="form-group contactUs-regardingSelect required-group">
 						<div class="input-group"><span class="input-group-addon">Account Type: </span>
 						<select name="account_type" id="acct_type" class="form-control" required>
 							<option value="">Select Account Type</option>
@@ -481,14 +487,15 @@
 						</select></div><span class="text-danger"><?php echo $acct_typeError; ?></span>
 					</div><br/>
 					
-					<div class="form-group">
+					<div class="form-group required-group">
 						<div class="input-group"><span class="input-group-addon">About Owner: </span>
-						<textarea type="text" name="pm" id="pm" class="form-control" placeholder="Give a brief description of yourself or network\nMax 300 words" maxlength="10000" value="<?php echo $_SESSION['pm'] = $pm; ?>" ><?php echo $pm; ?></textarea><span class="text-danger"></span>
-					</div></div><span class="text-danger"><?php echo $pmError; ?></span><br/>
+						<textarea type="text" name="pm" id="pm" class="form-control" placeholder="Give a brief description of yourself or network\nMax 300 words" maxlength="10000" value="<?php echo $_SESSION['pm'] = $pm; ?>" autocomplete="on" required><?php echo $pm; ?>
+						</textarea></div><span class="text-danger"><?php echo $pmError; ?></span>
+					</div><br/>
 					
 					<!-- echo stream_get_contents(fopen('http://www.tutusfx.com/redirects/trade/traderates.html', "rb")); // use this to open html content on development page -->
 					
-					<div class="form-group contactUs-regardingSelect">
+					<div class="form-group contactUs-regardingSelect required-group">
 						<div class="input-group"><span class="input-group-addon">Country: </span>
 						<form method="post" name="country_form" action="#" autocomplete="on">
 							<select name="country" id="country" class="form-control" required>
@@ -499,29 +506,27 @@
 									try { foreach ( $record as $value ) { echo "<option value=".($value['countryID']).">".($value['countryName'])."</option>"; } } 
 									catch(PDOException $e){ echo "Problem encountered applying PDO: ".$e->getMessage(); }
 								?>
-							</select><span class="text-danger"><?php echo $countryError; ?></span>
-						</form>
-						</div>
+							</select>
+						</form></div><span class="text-danger"><?php echo $countryError; ?></span>
 					</div><br/>
 					
-					<div class="form-group contactUs-regardingSelect">
+					<div class="form-group contactUs-regardingSelect required-group">
 						<div class="input-group"><span class="input-group-addon">Sub-Region: </span>
 							<form method="post" name="state_form" action="#" autocomplete="on">
-								<input name="state" id="state" class="form-control" onclick="getCities()" placeholder="Enter State or Sub-Region" required /><span class="text-danger"></span>
+								<input name="state" id="state" class="form-control" onclick="getCities()" placeholder="Enter State or Sub-Region" required />
 							</form>
-						</div>
+						</div><span class="text-danger"><?php echo $stateError; ?></span>
 					</div><br/>
 					
-					<div class="form-group contactUs-regardingSelect">
+					<div class="form-group contactUs-regardingSelect required-group">
 						<div class="input-group"><span class="input-group-addon">City: </span>
-							<input name="city" id="city" class="form-control" placeholder="Enter City, Town or Area" required /><span class="text-danger"></span>
-						</div>
+							<input name="city" id="city" class="form-control" placeholder="Enter City, Town or Area" required />
+						</div><span class="text-danger"><?php echo $cityError; ?></span>
 					</div><br/>
 					
-					<div class="form-group contactUs-regardingSelect">
+					<div class="form-group contactUs-regardingSelect required-group">
 						<div class="input-group"><span class="input-group-addon">Vote a Witness: </span>
-						<form method="post" name="country_form" action="#" autocomplete="on">
-							<select name="country" id="country" class="form-control" required>
+							<select name="witness" id="witness" class="form-control" required>
 								<option value="">Select Witness</option>
 								<?php
 									$result = $user2->runQuery("SELECT name FROM tutusfxc_blockchain.Witness");
@@ -529,21 +534,18 @@
 									try { foreach ( $record as $value ) { echo "<option value=".($value['id']).">".($value['name'])."</option>"; } } 
 									catch(PDOException $e){ echo "Problem encountered applying PDO: ".$e->getMessage(); }
 								?>
-							</select><span class="text-danger"></span>
-						</form>
-						</div>
+							</select>
+						</div><span class="text-danger"><?php echo $witnessError; ?></span>
 					</div><br/>
-					<div class="sendSection"><input name="btn-signup" id="btn-signup" type="submit" value="Send"> </input></div>
+					<div class="sendSection"><input name="signup" id="btn-signup" type="submit" value="Send"> </input></div>
 					<div class="additionalTxt">Already registered on Tutusfx? <a href="../login.html">Login here</a></div><br/>
 					<script>
 						function checkData(){
 							var x = document.forms["signupform"]["acct_name"].value, x1 = document.forms["signupform"]["fname"].value, x2 = document.forms["signupform"]["lname"].value,
-								x3 = document.forms["signupform"]["jobpos"].value, x4 = document.forms["signupform"]["posdate"].value, x5 = document.forms["signupform"]["jobdate"].value, 
-								x6 = document.forms["signupform"]["compadd"].value, x7 = document.forms["signupform"]["zcode"].value, x8 = document.forms["signupform"]["btcId"].value, 
-								x9 = document.forms["signupform"]["steemId"].value, x10 = document.forms["signupform"]["phone"].value, x11 = document.forms["signupform"]["pwd"].value, 
-								x12 = document.forms["signupform"]["currency"].value, x13 = document.forms["signupform"]["gender"].value, x14 = document.forms["signupform"]["acct_type"].value, 
-								x15 = document.forms["signupform"]["country"].value, x16 = document.forms["signupform"]["state"].value, x17 = document.forms["signupform"]["city"].value,
-								x18 = document.forms["signupform"]["email"].value, x19 = document.forms["signupform"]["pm"].value,x20 = document.forms["signupform"]["company"].value;
+								x3 = document.forms["signupform"]["phone"].value, x4 = document.forms["signupform"]["currency"].value, x5 = document.forms["signupform"]["gender"].value, 
+								x6 = document.forms["signupform"]["acct_type"].value, x7 = document.forms["country_form"]["country"].value, x8 = document.forms["state_form"]["state"].value, 
+								x9 = document.forms["signupform"]["city"].value, x10 = document.forms["signupform"]["email"].value, x11 = document.forms["signupform"]["pm"].value,
+								x12 = document.forms["signupform"]["witness"].value;
 							if (x=="") { 
 								alert("Data incomplete! Username has not been filled.\nFill out all the fields on the page."); return false; 
 							} else {
@@ -554,66 +556,34 @@
 										alert("Data incomplete! Last name has not been filled.\nFill out all the fields on the page."); return false; 
 									} else {
 										if (x3=="") {
-											alert("Data incomplete! Job position has not been filled.\nFill out all the fields on the page."); return false; 
+											alert("Data incomplete! Contact phone number has not been filled.\nFill out all the fields on the page."); return false;
 										} else {
 											if (x4=="") {
-												alert("Data incomplete! Date of assuming job position has not been filled.\nFill out all the fields on the page."); return false; 
+												alert("Data incomplete! A preferred currency has not been selected.\nSelect one from the list provided."); return false;
 											} else {
 												if (x5=="") {
-													alert("Data incomplete! Date of assuming current job has not been filled.\nFill out all the fields on the page."); return false; 
+													alert("Data incomplete! Gender has not been selected.\nSelect one from the list provided."); return false;
 												} else {
 													if (x6=="") {
-														alert("Data incomplete! Address of company/network has not been filled.\nFill out all the fields on the page."); return false; 
+														alert("Data incomplete! Account type has not been selected.\nSelect one from the list provided."); return false;
 													} else {
 														if (x7=="") {
-															alert("Data incomplete! Zip code has not been filled.\nFill out all the fields on the page."); return false; 
+															alert("Data incomplete! Country has not been selected.\nSelect one from the list provided."); return false;
 														} else {
 															if (x8=="") {
-																alert("Data incomplete! Bitcoin wallet address has not been filled.\nFill out all the fields on the page."); return false; 
+																alert("Data incomplete! State has not been selected.\nSelect one from the list provided."); return false;
 															} else {
 																if (x9=="") {
-																	alert("Data incomplete! Steem user ID has not been filled.\nFill out all the fields on the page."); return false; 
+																	alert("Data incomplete! City has not been selected.\nSelect one from the list provided."); return false;
 																} else {
 																	if (x10=="") {
-																		alert("Data incomplete! Contact phone number has not been filled.\nFill out all the fields on the page."); return false;
+																		alert("Data incomplete! Email address has not been filled.\nFill out all the fields on the page."); return false;
 																	} else {
 																		if (x11=="") {
-																			alert("Data incomplete! There seems to be no generated password for the account!\nPlease refresh the page."); return false;
+																			alert("Data incomplete! Write out a short description of the individual or company that owns this account."); return false;
 																		} else {
 																			if (x12=="") {
-																				alert("Data incomplete! A preferred currency has not been selected.\nSelect one from the list provided."); return false;
-																			} else {
-																				if (x13=="") {
-																					alert("Data incomplete! Gender has not been selected.\nSelect one from the list provided."); return false;
-																				} else {
-																					if (x14=="") {
-																						alert("Data incomplete! Account type has not been selected.\nSelect one from the list provided."); return false;
-																					} else {
-																						if (x15=="") {
-																							alert("Data incomplete! Country has not been selected.\nSelect one from the list provided."); return false;
-																						} else {
-																							if (x16=="") {
-																								alert("Data incomplete! State has not been selected.\nSelect one from the list provided."); return false;
-																							} else {
-																								if (x17=="") {
-																									alert("Data incomplete! City has not been selected.\nSelect one from the list provided."); return false;
-																								} else {
-																									if (x18=="") {
-																										alert("Data incomplete! Email address has not been filled.\nFill out all the fields on the page."); return false;
-																									} else {
-																										if (x19=="") {
-																											alert("Data incomplete! Write out a short description of the individual or company that owns this account."); return false;
-																										} else {
-																											if (x20=="") {
-																												alert("Data incomplete! Write out the name of company/institution where you work/study."); return false;
-																											}
-																										}
-																									}
-																								}
-																							}
-																						}
-																					}
-																				}
+																				alert("Data incomplete! Vote for a witness from the list provided."); return false;
 																			}
 																		}
 																	}
@@ -633,26 +603,26 @@
 			</div>
 		  </div>
 		  <div class="rightcolumn">
-			<div class="card">
+			<div class="card" id="segment">
 			  <h3>Blockchain Post 2</h3>
 			  <h5>Title description, Nov 22, 2018</h5>
 			  <div class="fakeimg" style="height:200px;">Image</div>
 			  <p>Some text from Post 2...</p>
 			  <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
 			</div>
-			<div class="card">
+			<div class="card" id="segment">
 			  <h3>Blockchain Post 1</h3>
 			  <h5>Title description, Nov 15, 2018</h5>
 			  <div class="fakeimg" style="height:200px;">Image</div>
 			  <p>Some text from Post 1...</p>
 			  <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
 			</div>
-			<div class="card returner"> <a href="#">Return to top <span class="glyphicon glyphicon-arrow-up"></span></a> </div>
+			<div id="returner" class="card"> <a href="#">Return to top <span class="glyphicon glyphicon-arrow-up"></span></a><br/> </div>
 		  </div>
 		</div>
 		
 		<div class="footer">
-		  <div class="upper-footer"><a href="">Sponsorship</a><a href="">Fund Safety &amp; Security</a><a href="">Sitemap</a><a href="">Networks</a><a href="../../eu/contact-us-eu/">Contact Us</a></div>
+		  <div class="upper-footer"><a href="">Sponsorship</a><a href="">Fund Safety &amp; Security</a><a href="../../eu/sitemap-eu/index.html">Sitemap</a><a href="">Networks</a><a href="../../eu/contact-us-eu/">Contact Us</a></div>
 		  <div class="card clearnav">
 			<div class="footerCard"><h6>QUICK LINKS</h6>
 				<a href="">DEVELOPERS</a><br/>
@@ -668,8 +638,8 @@
 				<a href="../../eu/contact-us-eu/">CONTACT US</a><br/>
 				<a href="">WALLETS</a><br/>
 				<a href="">GUIDE</a><br/>
-				<a href="">FAQ</a><br/>
-				<a href="">CHARTS</a><br/>
+				<a href="../../eu/faqs/index.html">FAQ</a><br/>
+				<a href="../trade/tradingview/index.html">CHARTS</a><br/>
 				<a href="">DEVELOPER DISCORD</a><br/>
 				<a href="">ADVERTISE</a><br/>
 				<a href="">LEGAL</a><br/>
@@ -688,7 +658,9 @@
 				<a href="../../hi-in/redirects/open-account/">TUTUSFX.COM HINDI</a><br/>
 				<a href="../../ar-ar/redirects/open-account/">TUTUSFX.COM ARABIC</a><br/>
 				<a href="../../us/redirects/open-account/">TUTUSFX.COM AMERICAN</a><br/>
-				<a href="../../ru-ru/redirects/open-account/">TUTUSFX.COM RUSSIAN</a><br/><a href="../ms/index.html">TUTUSFX.COM MALAY</a><br/><a href="../pt-pt/index.html">TUTUSFX.COM PORTUGUESE (EU)</a><br/><a href="../pt-br/index.html">TUTUSFX.COM PORTUGUESE (BR)</a><br/>
+				<a href="../../ru-ru/redirects/open-account/">TUTUSFX.COM RUSSIAN</a><br/>
+				<a href="../../ms/redirects/open-account/">TUTUSFX.COM MALAY</a><br/>
+				<a href="../../pt-pt/redirects/open-account/">TUTUSFX.COM PORTUGUESE (EU)</a><br/>
 			</div>
 			<div class="footerCard"><h6>RELATED SITES</h6>
 				<a href="https://www.bitcoin.com">BITCOIN</a><br/>
@@ -720,159 +692,120 @@
 			var rates = document.getElementById("ratebar"); var upperbar = rates.offsetTop;
 			var title = document.getElementById("headertitle"); var headercontent = document.getElementById("headercontent");
 			var footerdiv = document.getElementById("footerDiv"); var footerheader = document.getElementById("footerDivHeader"); 
-			var footertexts = document.getElementById("footerDivTexts"); var footerclosebtn = document.getElementById("close"); 
-			var ads = document.getElementById("ads"); var upperclosebtn = document.getElementById("upperclosebtn"); 
-			var footerclosing = true; var upperclosing = false; var toggledrawer = document.getElementById("navbar-toggle"); 
+			var footertexts = document.getElementById("footerDivTexts"); var footerclosebtn = document.getElementById("close"); var segment = document.getElementById("segment");
+			var ads = document.getElementById("ads"); var progressBar = document.getElementById("progressBar"); var upperclosebtn = document.getElementById("upperclosebtn"); 
+			var footerclosing = true; var upperclosing = false; var toggledrawer = $(".navbar-toggle"); var navheaderlinks = $("nav a"); var navheaderinputs = $("li input");
 			var toggleicons = [document.getElementById("icon-bar1"),document.getElementById("icon-bar2"),document.getElementById("icon-bar3"),document.getElementById("icon-bar4")];
 			var body = $("body"); var marquee = $("marquee"); var select = $("select"); var h3 = $("h3"); var ratebar = $("#ratebar");
-			var positiverate = $(".positiverate"); var negativerate = $(".negativerate"); var fakeimg = $(".fakeimg"); var navbar = $(".navbar");
-			var trendingtrades = $(".trendingtrades"); var trendingtradeusername = $(".trendingtradeusername"); var card = $(".card"); 
-			var topnava = $("#topnav a"); var back = $("#back"); var next = $("#next"); var warningspan = $(".warning span"); var footertopics = $(".upper-footer a");
+			var positiverate = $(".positiverate"); var negativerate = $(".negativerate"); var fakeimg = $(".fakeimg"); var navbar = $(".container-fluid"); var drawer = $(".collapse");
+			var trendingtrades = $(".trendingtrades"); var trendingtradeusername = $(".trendingtradeusername"); var card = $(".card"); var cardlist = $(".cardlist");
+			var topnava = $("#topnav a"); var topnavin = $("#topnav input"); var back = $("#back"); var next = $("#next"); var warningspan = $(".warning span"); var footertopics = $(".upper-footer a");
 			var footer = $(".footer"); var footerCard = $(".footerCard"); var footerDiv = $("#footerDiv"); var footerDivTexts = $("#footerDivTexts"); 
-			var topheader = $("#header"); var myProgress = $("#myProgress"); var progressBar = $("#progressBar"); var returner = $("#returner");
+			var topheader = $("#header"); var myProgress = $("#myProgress"); var returner = $("#returner"); var THEME = 0; var HIDDEN = false; 
 			
-			$("#nature:first").on("mouseover", function() { 
-				body.css("background","#f1f1f1").css("color","#004300").css("fontFamily","Arial, Helvetica, sans-serif");
-				topheader.css("background","#ffffff").css("color","#004300"); 
-				marquee.css("color","#ff0e");
+			function setTheme(THEME){
+				if (THEME==0){
+					body.css("background","#baf1ba").css("color","#004300").css("fontFamily","Arial, Helvetica, sans-serif"); 
+					topheader.css("background","#ffffff").css("color","#004300"); 
+					fakeimg.css("background-color","#aaaaaa"); h3.css("color","#fefefe");
+					navbar.css("background-color","#004300"); navheaderlinks.css("background-color","#004300").css("color","#ffffff"); navheaderinputs.css("background-color","#004300").css("color","#ffffff");
+					myProgress.css("background-color","#ffffff"); card.css("background-color","#004300").css("color","#ffffff");
+					returner.css("background-color","#fefefe").css("color","#004300"); footertopics.css("background-color","#004300").css("color","#000000");
+					topnava.css("background-color","#004300"); topnavin.css("background-color","#004300");
+					back.css("background-color","#004300"); next.css("background-color","#004300");
+					ratebar.css("background-color","#004300");
+					footerDiv.css("background-color","#004300"); footerDivTexts.css("color","#000000");
+					warningspan.css("background-color","#004300").css("color","#a1a1a1");
+					footer.css("background-color","#004300");
+					footerCard.css("background-color","#004300"); header.style.backgroundColor = "#004300"; progressBar.style.background="#004300";
+				} else if (THEME==1) {
+					body.css("background","#444444").css("color","#000000").css("fontFamily","Arial, Helvetica, sans-serif"); 
+					topheader.css("background","#ffffff").css("color","#000000"); 
+					fakeimg.css("background-color","#aaaaaa"); h3.css("color","#fefefe");
+					navbar.css("background-color","#000000"); navheaderlinks.css("background-color","#000000").css("color","#ffffff"); navheaderinputs.css("background-color","#000000").css("color","#ffffff");
+					myProgress.css("background-color","#ffffff"); card.css("background-color","#000000").css("color","#ffffff");
+					returner.css("background-color","#fefefe").css("color","#000000"); footertopics.css("background-color","#000000").css("color","#ffffff");
+					topnava.css("background-color","#000000").css("color","#ffffff"); topnavin.css("background-color","#000000").css("color","#ffffff");
+					back.css("background-color","#000000").css("color","#ffffff"); next.css("background-color","#000000").css("color","#ffffff");
+					ratebar.css("background-color","#000000");
+					footerDiv.css("background-color","#000000"); footerDivTexts.css("color","#ffffff");
+					warningspan.css("background-color","#000000").css("color","#ffffff");
+					footer.css("background-color","#000000");
+					footerCard.css("background-color","#000000"); header.style.backgroundColor = "#000000"; progressBar.style.background="#000000"; 
+				} else if (THEME==2) {
+					body.css("background","#fefefe").css("color","#ffffff").css("fontFamily","Arial, Helvetica, sans-serif"); 
+					topheader.css("background","#000000").css("color","#ffffff");
+					fakeimg.css("background-color","#aaaaaa"); h3.css("color","#000000");
+					navbar.css("background-color","#aaaaaa"); navheaderlinks.css("background-color","#aaaaaa").css("color","#000000"); navheaderinputs.css("background-color","#aaaaaa").css("color","#000000");
+					myProgress.css("background-color","#ffffff"); card.css("background-color","#ffffff").css("color","#000000");
+					returner.css("background-color","#fefefe").css("color","#ffffff"); footertopics.css("background-color","#ffffff").css("color","#000000");
+					topnava.css("background-color","#ffffff").css("color","#000000"); topnavin.css("background-color","#ffffff").css("color","#000000");
+					back.css("background-color","#ffffff").css("color","#000000"); next.css("background-color","#ffffff").css("color","#000000");
+					ratebar.css("background-color","#ffffff").css("color","#000000");
+					footerDiv.css("background-color","#aaaaaa"); footerDivTexts.css("color","#000000");
+					warningspan.css("background-color","#fefefe").css("color","#000000");
+					footer.css("background-color","#ffffff").css("color","#000000");
+					footerCard.css("background-color","#ffffff").css("color","#000000"); header.style.backgroundColor = "#ffffff"; progressBar.style.background="#ffffff"; 
+				} else if (THEME==3) {
+					body.css("background","#babaf1").css("color","#1234ab").css("fontFamily","Arial, Helvetica, sans-serif"); cardlist.css("color","#000000"); 
+					topheader.css("background","#ffffff").css("color","#1234ab");
+					fakeimg.css("background-color","#aaaaaa"); h3.css("color","#000000");
+					navbar.css("background-color","#1234ab"); navheaderlinks.css("background-color","#1234ab").css("color","#ffffff"); navheaderinputs.css("background-color","#1234ab").css("color","#ffffff");
+					myProgress.css("background-color","#ffffff"); card.css("background-color","#1234ab").css("color","#ffffff");
+					returner.css("background-color","#fefefe").css("color","#1234ab"); footertopics.css("background-color","#1234ab").css("color","#000000");
+					topnava.css("background-color","#1234ab"); topnavin.css("background-color","#1234ab");
+					back.css("background-color","#1234ab"); next.css("background-color","#1234ab");
+					ratebar.css("background-color","#1234ab");
+					footerDiv.css("background-color","#1234ab"); footerDivTexts.css("color","#000000");
+					warningspan.css("background-color","#1234ab").css("color","#000000");
+					footer.css("background-color","#1234ab");
+					footerCard.css("background-color","#1234ab"); header.style.backgroundColor = "#1234ab"; progressBar.style.background="#1234ab"; 
+				} else if (THEME==4) { body.css("background","#f1baba").css("color","#ff1234").css("fontFamily","Arial, Helvetica, sans-serif"); 
+					topheader.css("background","#ffffff").css("color","#ff1234");
+					fakeimg.css("background-color","#aaaaaa"); h3.css("color","#004300");
+					navbar.css("background-color","#ff1234"); navheaderlinks.css("background-color","#ff1234").css("color","#ffffff"); navheaderinputs.css("background-color","#ff1234").css("color","#ffffff");
+					myProgress.css("background-color","#ffffff"); card.css("background-color","#ff1234").css("color","#000000");
+					returner.css("background-color","#fefefe").css("color","#ff1234"); footertopics.css("background-color","#ff1234").css("color","#000000");
+					topnava.css("background-color","#ff1234"); topnavin.css("background-color","#ff1234");
+					back.css("background-color","#ff1234"); next.css("background-color","#ff1234");
+					ratebar.css("background-color","#ff1234");
+					footerDiv.css("background-color","#ff1234"); footerDivTexts.css("color","#000000");
+					warningspan.css("background-color","#ff1234").css("color","#000000");
+					footer.css("background-color","#ff1234");
+					footerCard.css("background-color","#ff1234"); header.style.backgroundColor = "#ff1234"; progressBar.style.background="#ff1234"; 
+				} else if (THEME==5) { body.css("background","#f1baf1").css("color","#ff12ff").css("fontFamily","Arial, Helvetica, sans-serif"); 
+					topheader.css("background","#ffffff").css("color","#ff12ff");
+					fakeimg.css("background-color","#aaaaaa"); h3.css("color","#004300");
+					navbar.css("background-color","#ff12ff"); navheaderlinks.css("background-color","#ff12ff").css("color","#ffffff"); navheaderinputs.css("background-color","#ff12ff").css("color","#ffffff");
+					myProgress.css("background-color","#ffffff"); card.css("background-color","#ff12ff").css("color","#000000");
+					returner.css("background-color","#fefefe").css("color","#ff12ff"); footertopics.css("background-color","#ff12ff").css("color","#000000");
+					topnava.css("background-color","#ff12ff"); topnavin.css("background-color","#ff12ff");
+					back.css("background-color","#ff12ff"); next.css("background-color","#ff12ff");
+					ratebar.css("background-color","#ff12ff");
+					footerDiv.css("background-color","#ff12ff"); footerDivTexts.css("color","#000000");
+					warningspan.css("background-color","#ff12ff").css("color","#000000");
+					footer.css("background-color","#ff12ff");
+					footerCard.css("background-color","#ff12ff"); header.style.backgroundColor = "#ff12ff"; progressBar.style.background="#ff12ff"; 
+				} marquee.css("color","#ff0e"); negativerate.css("color","#ff0000");
 				positiverate.css("font-family","Courier New, Times New Roman, Arial").css("color","#ffffff");
-				negativerate.css("color","#ff0000");
 				select.css("background-color","#eeeeee");
-				fakeimg.css("background-color","#aaaaaa");
-				header.style.backgroundColor = "#004300";
-				h3.css("color","#f1f1f1");
-				navbar.css("background-color","#004300");
-				myProgress.css("background-color","#ffffff");
-				progressBar.css("background-color","#004300"); 
 				trendingtradeusername.css("background","none").css("color","#B2D4B2");
 				trendingtrades.css("background-color","none").css("color","#ffffff");
-				card.css("background-color","#004300");
-				returner.css("background-color","#f1f1f1").css("color","#0000ff"); 
-				footertopics.css("background-color","#004300").css("color","#000000");
-				topnava.css("background-color","#004300");
-				back.css("background-color","#004300");
-				next.css("background-color","#004300");
-				ratebar.css("background-color","#004300");
-				footerDiv.css("background-color","#004300"); footerDivTexts.css("color","#000000");
-				warningspan.css("background-color","#004300").css("color","#000000");
-				footer.css("background-color","#004300");
-				footerCard.css("background-color","#004300");
-			}).on("mouseout", function() { });
-			$("#night:first").on("mouseover", function() { 
-				body.css("background","#f1f1f1").css("color","#000000").css("fontFamily","Arial, Helvetica, sans-serif");
-				topheader.css("background","#ffffff").css("color","#000000"); 
-				marquee.css("color","#ff0e");
-				positiverate.css("font-family","Courier New, Times New Roman, Arial").css("color","#ffffff");
-				negativerate.css("color","#ff0000");
-				select.css("background-color","#eeeeee");
-				fakeimg.css("background-color","#aaaaaa");
-				header.style.backgroundColor = "#000000";
-				h3.css("color","#f1f1f1");
-				navbar.css("background-color","#000000");
-				myProgress.css("background-color","#ffffff");
-				progressBar.css("background-color","#000000"); 
-				trendingtradeusername.css("background","none").css("color","#B2D4B2");
-				trendingtrades.css("background-color","none").css("color","#ffffff");
-				card.css("background-color","#000000");
-				returner.css("background-color","#f1f1f1").css("color","#0000ff"); 
-				footertopics.css("background-color","#000000").css("color","#ffffff");
-				topnava.css("background-color","#000000").css("color","#ffffff");
-				back.css("background-color","#000000").css("color","#ffffff");
-				next.css("background-color","#000000").css("color","#ffffff");
-				ratebar.css("background-color","#000000");
-				footerDiv.css("background-color","#000000"); footerDivTexts.css("color","#ffffff");
-				warningspan.css("background-color","#000000").css("color","#ffffff");
-				footer.css("background-color","#000000");
-				footerCard.css("background-color","#000000"); 
-			}).on("mouseout", function() { });
-			$("#sunny:first").on("mouseover", function() { 
-				body.css("background","#f1f1f1").css("color","#ffffff").css("fontFamily","Arial, Helvetica, sans-serif");
-				topheader.css("background","#000000").css("color","#ffffff"); 
-				marquee.css("color","#ff0e");
-				positiverate.css("font-family","Courier New, Times New Roman, Arial").css("color","#000000");
-				negativerate.css("color","#ff0000");
-				select.css("background-color","#eeeeee");
-				fakeimg.css("background-color","#aaaaaa");
-				header.style.backgroundColor = "#ffffff";
-				h3.css("color","#000000");
-				navbar.css("background-color","#ffffff");
-				myProgress.css("background-color","#ffffff");
-				progressBar.css("background-color","#ffffff"); 
-				trendingtradeusername.css("background","none").css("color","#B2D4B2");
-				trendingtrades.css("background-color","none").css("color","#ffffff");
-				card.css("background-color","#ffffff").css("color","#000000");
-				returner.css("background-color","#f1f1f1").css("color","#0000ff"); 
-				footertopics.css("background-color","#ffffff").css("color","#000000");
-				topnava.css("background-color","#ffffff").css("color","#000000");
-				back.css("background-color","#ffffff").css("color","#000000");
-				next.css("background-color","#ffffff").css("color","#000000");
-				ratebar.css("background-color","#ffffff").css("color","#000000");
-				footerDiv.css("background-color","#ffffff"); footerDivTexts.css("color","#000000");
-				warningspan.css("background-color","#ffffff").css("color","#000000");
-				footer.css("background-color","#ffffff").css("color","#000000");
-				footerCard.css("background-color","#ffffff").css("color","#000000");
-			}).on("mouseout", function() { });
-			$("#cloudy:first").on("mouseover", function() { 
-				body.css("background","#f1f1f1").css("color","#1234ff").css("fontFamily","Arial, Helvetica, sans-serif");
-				topheader.css("background","#ffffff").css("color","#1234ff"); 
-				marquee.css("color","#ff0e");
-				positiverate.css("font-family","Courier New, Times New Roman, Arial").css("color","#ffffff");
-				negativerate.css("color","#ff0000");
-				select.css("background-color","#eeeeee");
-				fakeimg.css("background-color","#aaaaaa");
-				header.style.backgroundColor = "#1234ff";
-				h3.css("color","#000000");
-				navbar.css("background-color","#1234ff");
-				myProgress.css("background-color","#ffffff");
-				progressBar.css("background-color","#1234ff"); 
-				trendingtradeusername.css("background","none").css("color","#B2D4B2");
-				trendingtrades.css("background-color","none").css("color","#ffffff");
-				card.css("background-color","#1234ff");
-				returner.css("background-color","#f1f1f1").css("color","#0000ff"); 
-				footertopics.css("background-color","#1234ff").css("color","#000000");
-				topnava.css("background-color","#1234ff");
-				back.css("background-color","#1234ff");
-				next.css("background-color","#1234ff");
-				ratebar.css("background-color","#1234ff");
-				footerDiv.css("background-color","#1234ff"); footerDivTexts.css("color","#000000");
-				warningspan.css("background-color","#1234ff").css("color","#000000");
-				footer.css("background-color","#1234ff");
-				footerCard.css("background-color","#1234ff");
-			}).on("mouseout", function() { });
-			$("#romance:first").on("mouseover", function() { 
-				body.css("background","#f1f1f1").css("color","#000000").css("fontFamily","Arial, Helvetica, sans-serif");
-				topheader.css("background","#ffffff").css("color","#ff1234"); 
-				marquee.css("color","#ff0e");
-				positiverate.css("font-family","Courier New, Times New Roman, Arial").css("color","#ffffff");
-				negativerate.css("color","#ff0000");
-				select.css("background-color","#eeeeee");
-				fakeimg.css("background-color","#aaaaaa");
-				header.style.backgroundColor = "#1234ff";
-				h3.css("color","#004300");
-				navbar.css("background-color","#ff1234");
-				myProgress.css("background-color","#ffffff");
-				progressBar.css("background-color","#ff1234"); 
-				trendingtradeusername.css("background","none").css("color","#B2D4B2");
-				trendingtrades.css("background-color","none").css("color","#ffffff");
-				card.css("background-color","#ff1234").css("color","#ff1234");
-				returner.css("background-color","#f1f1f1").css("color","#0000ff"); 
-				footertopics.css("background-color","#ff1234").css("color","#000000");
-				topnava.css("background-color","#ff1234");
-				back.css("background-color","#ff1234");
-				next.css("background-color","#ff1234");
-				ratebar.css("background-color","#ff1234");
-				footerDiv.css("background-color","#ff1234"); footerDivTexts.css("color","#000000");
-				warningspan.css("background-color","#ff1234").css("color","#000000");
-				footer.css("background-color","#ff1234");
-				footerCard.css("background-color","#ff1234");
-			}).on("mouseout", function() { });
+			}
+			
+			$("#nature:first").on("mouseover", function() { THEME = 0; setTheme(THEME); }).on("mousedown", function() { drawer.hide(); HIDDEN = true; setTheme(THEME); });
+			$("#night:first").on("mouseover", function() { THEME = 1; setTheme(THEME); }).on("mousedown", function() { drawer.hide(); HIDDEN = true; setTheme(THEME); });
+			$("#sunny:first").on("mouseover", function() { THEME = 2; setTheme(THEME); }).on("mousedown", function() { drawer.hide(); HIDDEN = true; setTheme(THEME); });
+			$("#cloudy:first").on("mouseover", function() { THEME = 3; setTheme(THEME); }).on("mousedown", function() { drawer.hide(); HIDDEN = true; setTheme(THEME); });
+			$("#romance:first").on("mouseover", function() { THEME = 4; setTheme(THEME); }).on("mousedown", function() { drawer.hide(); HIDDEN = true; setTheme(THEME); });
+			$("#royal:first").on("mouseover", function() { THEME = 5; setTheme(THEME); }).on("mousedown", function() { drawer.hide(); HIDDEN = true; setTheme(THEME); });
 			
 			function doclose() { 
 				if (footerclosing==true) {
-					footerclosebtn.style.backgroundColor = "#004300"; footerclosebtn.style.color = "white"; footerclosebtn.classList.remove("glyphicon-arrow-up"); footerclosebtn.classList.add("glyphicon-arrow-down");
+					if (THEME==0) { footerclosebtn.style.background="#004300"; footerclosebtn.style.color="white"; } else if (THEME==1) { footerclosebtn.style.background="#000000"; footerclosebtn.style.color="white"; } else if (THEME==2) { footerclosebtn.style.background="#ffffff"; footerclosebtn.style.color="#004300"; } else if (THEME==3) { footerclosebtn.style.background="#1234ab"; footerclosebtn.style.color="#000000"; } else if (THEME==4) { footerclosebtn.style.background="#ff1234"; footerclosebtn.style.color="#000000"; } else if (THEME==5) { footerclosebtn.style.background="#ff12ff"; footerclosebtn.style.color="#ffffff"; } footerclosebtn.classList.remove("glyphicon-arrow-up"); footerclosebtn.classList.add("glyphicon-arrow-down");
 					footerdiv.style.height = "0px"; footerdiv.style.float = "bottom"; footerheader.style.fontSize = "0%"; footertexts.style.fontSize = "0%"; footerclosebtn.style.visibility = "none"; footerclosing = false;
 				} else {
-					footerclosebtn.style.backgroundColor = "white"; footerclosebtn.style.color = "#004300"; footerclosebtn.classList.remove("glyphicon-arrow-down"); footerclosebtn.classList.add("glyphicon-arrow-up");
+					 if (THEME==0) { footerclosebtn.style.background="white"; upperclosebtn.style.color="#004300"; } else if (THEME==1) { footerclosebtn.style.background="white"; footerclosebtn.style.color="#000000"; } else if (THEME==2) { footerclosebtn.style.background="#004300"; footerclosebtn.style.color="#ffffff"; } else if (THEME==3) { footerclosebtn.style.background="#000000"; footerclosebtn.style.color="#1234ab"; } else if (THEME==4) { footerclosebtn.style.background="#000000"; footerclosebtn.style.color="#ff1234"; } else if (THEME==5) { footerclosebtn.style.background="#ffffff"; footerclosebtn.style.color="#ff12ff"; }  footerclosebtn.classList.remove("glyphicon-arrow-down"); footerclosebtn.classList.add("glyphicon-arrow-up");
 					footerdiv.style.height = "30%"; footerdiv.style.top = "70%"; footerheader.style.fontSize = "100%"; footertexts.style.fontSize = "100%"; footerclosing = true;
 				}
 			}
@@ -882,16 +815,16 @@
 				else { upperclosebtn.classList.remove("open-upper"); upperclosebtn.classList.add("close-upper"); upperclosing = true; } myFunction();
 			} myFunction();
 			
-			$("#upperclosebtn:first").on("mouseover", function() { upperclosebtn.style.background = "#004300"; upperclosebtn.style.color = "white"; })
-			.on("mouseout", function() { upperclosebtn.style.background = "white"; upperclosebtn.style.color = "#004300"; });
+			$("#upperclosebtn:first").on("mouseover", function() { if (THEME==0) { upperclosebtn.style.background="#004300"; upperclosebtn.style.color="white"; } else if (THEME==1) { upperclosebtn.style.background="#000000"; upperclosebtn.style.color="white"; } else if (THEME==2) { upperclosebtn.style.background="#ffffff"; upperclosebtn.style.color="#004300"; } else if (THEME==3) { upperclosebtn.style.background="#1234ab"; upperclosebtn.style.color="#000000"; } else if (THEME==4) { upperclosebtn.style.background="#ff1234"; upperclosebtn.style.color="#000000"; } else if (THEME==5) { upperclosebtn.style.background="#ff12ff"; upperclosebtn.style.color="#ffffff"; } })
+			.on("mouseout", function() { if (THEME==0) { upperclosebtn.style.background="white"; upperclosebtn.style.color="#004300"; } else if (THEME==1) { upperclosebtn.style.background="white"; upperclosebtn.style.color="#000000"; } else if (THEME==2) { upperclosebtn.style.background="#004300"; upperclosebtn.style.color="#ffffff"; } else if (THEME==3) { upperclosebtn.style.background="#000000"; upperclosebtn.style.color="#1234ab"; } else if (THEME==4) { upperclosebtn.style.background="#000000"; upperclosebtn.style.color="#ff1234"; } else if (THEME==5) { upperclosebtn.style.background="#ffffff"; upperclosebtn.style.color="#ff12ff"; } });
 			
-			$("#close:first").on("mouseover", function() { footerclosebtn.style.background = "#004300"; footerclosebtn.style.color = "white"; })
-			.on("mouseout", function() { footerclosebtn.style.background = "white"; footerclosebtn.style.color = "#004300"; });
+			$("#close:first").on("mouseover", function() { if (THEME==0) { footerclosebtn.style.background="#004300"; footerclosebtn.style.color="white"; } else if (THEME==1) { footerclosebtn.style.background="#000000"; footerclosebtn.style.color="white"; } else if (THEME==2) { footerclosebtn.style.background="#ffffff"; footerclosebtn.style.color="#004300"; } else if (THEME==3) { footerclosebtn.style.background="#1234ab"; footerclosebtn.style.color="#000000"; } else if (THEME==4) { footerclosebtn.style.background="#ff1234"; footerclosebtn.style.color="#000000"; } else if (THEME==5) { footerclosebtn.style.background="#ff12ff"; footerclosebtn.style.color="#ffffff"; } })
+			.on("mouseout", function() { if (THEME==0) { footerclosebtn.style.background="white"; footerclosebtn.style.color="#004300"; } else if (THEME==1) { footerclosebtn.style.background="white"; footerclosebtn.style.color="#000000"; } else if (THEME==2) { footerclosebtn.style.background="#004300"; footerclosebtn.style.color="#ffffff"; } else if (THEME==3) { footerclosebtn.style.background="#000000"; footerclosebtn.style.color="#1234ab"; } else if (THEME==4) { footerclosebtn.style.background="#000000"; footerclosebtn.style.color="#ff1234"; } else if (THEME==5) { footerclosebtn.style.background="#ffffff"; footerclosebtn.style.color="#ff12ff"; } })
+			.on("mousedown", function() { if (footerclosing==true) { footerdiv.style.background="none"; } else { if (THEME==0) { footerdiv.style.background="#004300"; } else if (THEME==1) { footerdiv.style.background="#000000"; } else if (THEME==2) { footerdiv.style.background="#aaaaaa"; } else if (THEME==3) { footerdiv.style.background="#1234ab"; } else if (THEME==4) { footerdiv.style.background="#ff1234"; } else if (THEME==5) { footerdiv.style.background="#ff12ff"; } } });
 			
-			$("#navbar-toggle:first").on("mouseover", function() { toggledrawer.style.background = "#004300"; toggledrawer.style.transition = "0.3s ease-in"; for (i=0; i<4; i++) toggleicons[i].style.background = "white"; })
-			.on("mouseout", function() { toggledrawer.style.background = "white"; toggledrawer.style.transition = "0.3s ease-out"; for (i=0; i<4; i++) toggleicons[i].style.background = "#004300"; });
-		
-			var width = 1; function move(interval) { if (width >= 100) { width = 1; } else { width+=interval; } progressbar.style.width = width + '%'; progressbar.innerHTML = width + '%'; }
+			$(".navbar-toggle:first").on("mouseover", function() { toggledrawer.css("background","white").css("transition","0.3s ease-out"); for (i=0; i<4; i++) { if (THEME==0) { toggleicons[i].style.background="#004300"; } else if (THEME==1) { toggleicons[i].style.background="#000000"; } else if (THEME==2) { toggleicons[i].style.background="#ffffff"; } else if (THEME==3) { toggleicons[i].style.background="#1234ab"; } else if (THEME==4) { toggleicons[i].style.background="#ff1234"; } else if (THEME==5) { toggleicons[i].style.background="#ff12ff"; } } })
+			.on("mouseout", function() { if (THEME==0) { toggledrawer.css("background","#004300").css("transition","0.3s ease-in"); } else if (THEME==1) { toggledrawer.css("background","#000000").css("transition","0.3s ease-in"); } else if (THEME==2) { toggledrawer.css("background","#aaaaaa").css("transition","0.3s ease-in"); } else if (THEME==3) { toggledrawer.css("background","#1234ab").css("transition","0.3s ease-in"); } else if (THEME==4) { toggledrawer.css("background","#ff1234").css("transition","0.3s ease-in"); } else if (THEME==5) { toggledrawer.css("background","#ff12ff").css("transition","0.3s ease-in"); } for (i=0; i<4; i++) { toggleicons[i].style.background="white"; } })
+			.on("mousedown", function() { if (HIDDEN==true) drawer.show(); drawer.css("data-toggle","collapse"); if (THEME==0) { drawer.css("background","#004300"); } else if (THEME==1) { drawer.css("background","#000000"); } else if (THEME==2) { drawer.css("background","#aaaaaa"); } else if (THEME==3) { drawer.css("background","#1234ab"); } else if (THEME==4) { drawer.css("background","#ff1234"); } else if (THEME==5) { drawer.css("background","#ff12ff"); } });
 			
 			window.onscroll = function() { myFunction() };
 
@@ -899,20 +832,19 @@
 				if (window.pageYOffset > (sticky-(sticky/10)-50)) { 
 					if (upperclosing==true) { if (window.pageYOffset > (sticky-(sticky/10))) { header.classList.remove("sticky"); header.classList.add("sticky2"); } } else { header.classList.remove("sticky2"); header.classList.add("sticky"); } 
 				} else {
-					title.style.paddingTop = (window.pageYOffset+10)+"px"; 
-					title.style.fontSize = (90-(3*window.pageYOffset/25))+"px";
-					headercontent.style.fontSize = (40-(window.pageYOffset/25))+"px";
+					title.style.paddingTop = (window.pageYOffset+10)+"px"; title.style.fontSize = (90-(3*window.pageYOffset/25))+"px"; headercontent.style.fontSize = (40-(window.pageYOffset/25))+"px";
 					if (window.pageYOffset > 250) { (window.pageYOffset/2)+"px"; headercontent.style.fontSize = "0px"; } 
 					if (upperclosing==true) { header.classList.remove("sticky2"); } else { header.classList.remove("sticky"); } 
 				}
-				if (upperclosing==true) { rates.classList.remove("upperbar");
-					rates.style.height = "0px"; rates.style.float = "top";  
+				if (upperclosing==true) { rates.classList.remove("upperbar"); rates.style.height = "0px"; rates.style.float = "top";  
 					upperclosebtn.style.background = "none"; upperclosebtn.style.color = "none"; upperclosebtn.classList.remove("glyphicon-arrow-right"); upperclosebtn.classList.add("glyphicon-arrow-left");
 					ads.style.fontSize = "0%"; upperclosebtn.style.visibility = "none";
-				} else { rates.classList.add("upperbar");
-					rates.style.height = "50px"; rates.style.top = "0px"; rates.style.zIndex = "1000";
-					upperclosebtn.style.background = "white"; upperclosebtn.style.color = "#004300"; upperclosebtn.classList.remove("glyphicon-arrow-left"); upperclosebtn.classList.add("glyphicon-arrow-right");
-					ads.style.fontSize = "100%";
+				} else { rates.classList.add("upperbar"); rates.style.height = "50px"; rates.style.top = "0px"; rates.style.zIndex = "1000"; 
+					if (THEME==0) { rates.style.backgroundColor = "#004300"; } else if (THEME==1){ rates.style.backgroundColor = "#000000"; } else if (THEME==2){ rates.style.backgroundColor = "#aaaaaa"; } else if (THEME==3){ rates.style.backgroundColor = "#1234ab"; } else if (THEME==4){ rates.style.backgroundColor = "#ff1234"; } else if (THEME==5){ rates.style.backgroundColor = "#ff12ff"; }
+					if (THEME==0) { upperclosebtn.style.background = "white"; upperclosebtn.style.color = "#004300"; } else if (THEME==1){ upperclosebtn.style.background = "white"; upperclosebtn.style.color = "#000000"; } else if (THEME==2){ upperclosebtn.style.background = "black"; upperclosebtn.style.color = "#ffffff"; } else if (THEME==3){ upperclosebtn.style.background = "white"; upperclosebtn.style.color = "#1234ab"; } else if (THEME==4){ upperclosebtn.style.background = "black"; upperclosebtn.style.color = "#ff1234"; } else if (THEME==5){ upperclosebtn.style.background = "white"; upperclosebtn.style.color = "#ff12ff"; }
+					if (THEME==0) { segment.style.backgroundColor = "#004300"; } else if (THEME==1){ segment.style.backgroundColor = "#000000"; } else if (THEME==2){ segment.style.backgroundColor = "#aaaaaa"; } else if (THEME==3){ segment.style.backgroundColor = "#1234ab"; } else if (THEME==4){ segment.style.backgroundColor = "#ff1234"; } else if (THEME==5){ segment.style.backgroundColor = "#ff12ff"; }
+					upperclosebtn.classList.remove("glyphicon-arrow-left"); upperclosebtn.classList.add("glyphicon-arrow-right");
+					ads.style.fontSize = "100%"; 
 				}
 			}
 			
@@ -920,11 +852,9 @@
 			
 			function nextPage(){ window.history.go(+1); }
 
-			document.getElementById("country").addEventListener("click", function () { checkCountry(); }, false);
+			/* document.getElementById("country").addEventListener("click", function () { checkCountry(); }, false); */
 
-			document.getElementById("state").addEventListener("click", function () { checkState(); }, false);
-			
-			document.getElementById("jobdatespan").addEventListener("click", function () { alert("Enter the date of assuming your current job"); }, false);
+			/* document.getElementById("state").addEventListener("click", function () { checkState(); }, false); */
 			
 			var d = document.getElementById("currency").addEventListener("click", function () { alert("Select your preferred local transactional currency"); }, false);
 
@@ -932,21 +862,23 @@
 			
 			var e = document.getElementById("gender").addEventListener("click", function () { alert("Select your gender"); }, false);
 
-			var currency = e.options[e.selectedIndex].value;
+			var gender = e.options[e.selectedIndex].value;
 			
 			var f = document.getElementById("acct_type").addEventListener("click", function () { alert("Select your preferred account type"); }, false);
 
-			var currency = f.options[f.selectedIndex].value;
+			var acct_type = f.options[f.selectedIndex].value;
 			
 			var g = document.getElementById("country").addEventListener("click", function () { alert("Select your country"); }, false);
 
-			var currency = g.options[g.selectedIndex].value;
-			
-			document.getElementById("posdatespan").addEventListener("click", function () { alert("Enter the date of assuming your current job position"); }, false);
+			var country = g.options[g.selectedIndex].value;
 
-			document.getElementById("jobdate").addEventListener("click", function () { alert("Enter the date of assuming your current job"); }, false);
+			var h = document.getElementById("jobdate").addEventListener("click", function () { alert("Enter the date of assuming your current job"); }, false);
 
-			document.getElementById("posdate").addEventListener("click", function () { alert("Enter the date of assuming your current job position"); }, false);
+			var jobdate = h.options[h.selectedIndex].value;
+
+			var i = document.getElementById("posdate").addEventListener("click", function () { alert("Enter the date of assuming your current job position"); }, false);
+
+			var posdate = i.options[i.selectedIndex].value;
 		</script>
 	</body>
 </html>
