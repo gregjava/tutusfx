@@ -1,0 +1,5 @@
+{
+    "require": {
+        "tutusfx/tutusfx": "0.1.*"
+    }
+}
