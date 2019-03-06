@@ -320,7 +320,12 @@
 						<li><input type="button" id="night" value="Night" onclick="<?php $_SESSION['theme']='1'; ?>"></input></li>
 						<li><input type="button" id="sunny" value="Sunny" onclick="<?php $_SESSION['theme']='2'; ?>"></input></li>
 						<li><input type="button" id="cloudy" value="Cloudy" onclick="<?php $_SESSION['theme']='3'; ?>"></input></li>
-						<li><input type="button" id="romance" value="Romance" onclick="<?php $_SESSION['theme']='4'; ?>"></input></li><li><input type="button" id="royal" value="Royal" onclick="<?php $_SESSION['theme']='5'; ?>"></input></li>
+						<li><input type="button" id="romance" value="Romance" onclick="<?php $_SESSION['theme']='4'; ?>"></input></li>
+						<li><input type="button" id="royal" value="Royal" onclick="<?php $_SESSION['theme']='5'; ?>"></input></li>
+						<li><input type="button" id="aqua" value="Aqua" onclick="<?php $_SESSION['theme']='6'; ?>"></input></li>
+						<li><input type="button" id="teal" value="Teal" onclick="<?php $_SESSION['theme']='7'; ?>"></input></li>
+						<li><input type="button" id="deeproyal" value="DeepRoyal" onclick="<?php $_SESSION['theme']='8'; ?>"></input></li>
+						<li><input type="button" id="silver" value="Silver" onclick="<?php $_SESSION['theme']='9'; ?>"></input></li>
 					  </ul>
 					</li>
 				  </ul>
@@ -507,7 +512,8 @@
 			var trendingtrades = $(".trendingtrades"); var trendingtradeusername = $(".trendingtradeusername"); var card = $(".card"); var cardlist = $(".cardlist");
 			var topnava = $("#topnav a"); var topnavin = $("#topnav input"); var back = $("#back"); var next = $("#next"); var warningspan = $(".warning span"); var footertopics = $(".upper-footer a");
 			var footer = $(".footer"); var footerCard = $(".footerCard"); var footerDiv = $("#footerDiv"); var footerDivTexts = $("#footerDivTexts"); 
-			var topheader = $("#header"); var myProgress = $("#myProgress"); var returner = $("#returner"); var THEME = 0; var HIDDEN = false; 
+			var topheader = $("#header"); var myProgress = $("#myProgress"); var returner = $("#returner"); var THEME = 0; var HIDDEN = false;
+			
 			
 			function setTheme(THEME){
 				if (THEME==0){
@@ -592,6 +598,58 @@
 					warningspan.css("background-color","#ff12ff").css("color","#000000");
 					footer.css("background-color","#ff12ff");
 					footerCard.css("background-color","#ff12ff"); header.style.backgroundColor = "#ff12ff"; progressBar.style.background="#ff12ff"; 
+				} else if (THEME==6) { body.css("background","#baf1f1").css("color","#12ffff").css("fontFamily","Arial, Helvetica, sans-serif"); 
+					topheader.css("background","#ffffff").css("color","#12ffff");
+					fakeimg.css("background-color","#aaaaaa"); h3.css("color","#004300");
+					navbar.css("background-color","#12ffff"); navheaderlinks.css("background-color","#12ffff").css("color","#ffffff"); navheaderinputs.css("background-color","#12ffff").css("color","#ffffff");
+					myProgress.css("background-color","#ffffff"); card.css("background-color","#12ffff").css("color","#000000");
+					returner.css("background-color","#fefefe").css("color","#12ffff"); footertopics.css("background-color","#12ffff").css("color","#000000");
+					topnava.css("background-color","#12ffff"); topnavin.css("background-color","#12ffff");
+					back.css("background-color","#12ffff"); next.css("background-color","#12ffff");
+					ratebar.css("background-color","#12ffff");
+					footerDiv.css("background-color","#12ffff"); footerDivTexts.css("color","#000000");
+					warningspan.css("background-color","#12ffff").css("color","#000000");
+					footer.css("background-color","#12ffff");
+					footerCard.css("background-color","#12ffff"); header.style.backgroundColor = "#12ffff"; progressBar.style.background="#12ffff"; 
+				} else if (THEME==7) { body.css("background","#f1f1f1").css("color","#008080").css("fontFamily","Arial, Helvetica, sans-serif"); 
+					topheader.css("background","#ffffff").css("color","#008080");
+					fakeimg.css("background-color","#aaaaaa"); h3.css("color","#004300");
+					navbar.css("background-color","#008080"); navheaderlinks.css("background-color","#008080").css("color","#ffffff"); navheaderinputs.css("background-color","#008080").css("color","#ffffff");
+					myProgress.css("background-color","#ffffff"); card.css("background-color","#008080").css("color","#000000");
+					returner.css("background-color","#fefefe").css("color","#008080"); footertopics.css("background-color","#008080").css("color","#000000");
+					topnava.css("background-color","#008080"); topnavin.css("background-color","#008080");
+					back.css("background-color","#008080"); next.css("background-color","#008080");
+					ratebar.css("background-color","#008080");
+					footerDiv.css("background-color","#008080"); footerDivTexts.css("color","#000000");
+					warningspan.css("background-color","#008080").css("color","#000000");
+					footer.css("background-color","#008080");
+					footerCard.css("background-color","#008080"); header.style.backgroundColor = "#008080"; progressBar.style.background="#008080"; 
+				} else if (THEME==8) { body.css("background","#baf1f1").css("color","#800080").css("fontFamily","Arial, Helvetica, sans-serif"); 
+					topheader.css("background","#ffffff").css("color","#008080");
+					fakeimg.css("background-color","#aaaaaa"); h3.css("color","#004300");
+					navbar.css("background-color","#800080"); navheaderlinks.css("background-color","#800080").css("color","#ffffff"); navheaderinputs.css("background-color","#800080").css("color","#ffffff");
+					myProgress.css("background-color","#ffffff"); card.css("background-color","#800080").css("color","#000000");
+					returner.css("background-color","#fefefe").css("color","#800080"); footertopics.css("background-color","#800080").css("color","#000000");
+					topnava.css("background-color","#800080"); topnavin.css("background-color","#800080");
+					back.css("background-color","#800080"); next.css("background-color","#800080");
+					ratebar.css("background-color","#800080");
+					footerDiv.css("background-color","#800080"); footerDivTexts.css("color","#000000");
+					warningspan.css("background-color","#800080").css("color","#000000");
+					footer.css("background-color","#800080");
+					footerCard.css("background-color","#800080"); header.style.backgroundColor = "#800080"; progressBar.style.background="#800080"; 
+				} else if (THEME==9) { body.css("background","#f1f1f1").css("color","#c0c0c0").css("fontFamily","Arial, Helvetica, sans-serif"); 
+					topheader.css("background","#ffffff").css("color","#c0c0c0");
+					fakeimg.css("background-color","#aaaaaa"); h3.css("color","#004300");
+					navbar.css("background-color","#c0c0c0"); navheaderlinks.css("background-color","#c0c0c0").css("color","#ffffff"); navheaderinputs.css("background-color","#c0c0c0").css("color","#ffffff");
+					myProgress.css("background-color","#ffffff"); card.css("background-color","#c0c0c0").css("color","#000000");
+					returner.css("background-color","#fefefe").css("color","#c0c0c0"); footertopics.css("background-color","#c0c0c0").css("color","#000000");
+					topnava.css("background-color","#c0c0c0"); topnavin.css("background-color","#c0c0c0");
+					back.css("background-color","#c0c0c0"); next.css("background-color","#c0c0c0");
+					ratebar.css("background-color","#c0c0c0");
+					footerDiv.css("background-color","#c0c0c0"); footerDivTexts.css("color","#000000");
+					warningspan.css("background-color","#c0c0c0").css("color","#000000");
+					footer.css("background-color","#c0c0c0");
+					footerCard.css("background-color","#c0c0c0"); header.style.backgroundColor = "#c0c0c0"; progressBar.style.background="#c0c0c0"; 
 				} marquee.css("color","#ff0e"); negativerate.css("color","#ff0000");
 				positiverate.css("font-family","Courier New, Times New Roman, Arial").css("color","#ffffff");
 				select.css("background-color","#eeeeee");
@@ -605,6 +663,10 @@
 			$("#cloudy:first").on("mouseover", function() { THEME = 3; setTheme(THEME); }).on("mousedown", function() { drawer.hide(); HIDDEN = true; setTheme(THEME); });
 			$("#romance:first").on("mouseover", function() { THEME = 4; setTheme(THEME); }).on("mousedown", function() { drawer.hide(); HIDDEN = true; setTheme(THEME); });
 			$("#royal:first").on("mouseover", function() { THEME = 5; setTheme(THEME); }).on("mousedown", function() { drawer.hide(); HIDDEN = true; setTheme(THEME); });
+			$("#aqua:first").on("mouseover", function() { THEME = 6; setTheme(THEME); }).on("mousedown", function() { drawer.hide(); HIDDEN = true; setTheme(THEME); });
+			$("#teal:first").on("mouseover", function() { THEME = 7; setTheme(THEME); }).on("mousedown", function() { drawer.hide(); HIDDEN = true; setTheme(THEME); });
+			$("#deeproyal:first").on("mouseover", function() { THEME = 8; setTheme(THEME); }).on("mousedown", function() { drawer.hide(); HIDDEN = true; setTheme(THEME); });
+			$("#silver:first").on("mouseover", function() { THEME = 9; setTheme(THEME); }).on("mousedown", function() { drawer.hide(); HIDDEN = true; setTheme(THEME); });
 			
 			function doclose() { 
 				if (footerclosing==true) {
