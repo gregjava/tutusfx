@@ -65,7 +65,7 @@
 			ga('send', 'pageview');
 		</script>
 		<link rel="canonical" href="/" />
-		<meta property="og:locale" content="en_GB" />
+		<meta property="og:locale" content="en_GB" /><script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content="tutusfx.com | Incentivized Forex Brokerage with Smart Contracts" />
 		<meta property="og:url" content="https://www.tutusfx.com/" />
@@ -240,7 +240,19 @@
 			
 			function IsLoggedIn(){ return <?php if ( isset($_SESSION['user']) && $_SESSION['user']!=="") echo true; else echo false; ?>; }
         </script>
-		<div id="ratebar"><marquee id="ads" scrolldelay="1s" scrollamount="3">
+		<div id="ratebar">
+		<div id="app">
+			{{ message }}
+		</div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello User!'
+            }
+        })
+        
+    </script><marquee id="ads" scrolldelay="1s" scrollamount="3">
 			<span class="usdcad">USD/CAD: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="usdjpy">USD/JPY: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="usdchf">USD/CHF: <span class="positiverate">000:0000</span></span> &nbsp;
@@ -249,14 +261,14 @@
 			<span class="audusd">AUD/USD: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="eurusd">EUR/USD: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="gbpcad">GBP/CAD: <span class="positiverate">000:0000</span></span> &nbsp;
-			<span class="audgbp">AUD/GBP: <span class="positiverate">000:0000</span></span> &nbsp;
+			<span class="audgbp">GBP/AUD: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="gbpjpy">GBP/JPY: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="eurgbp">EUR/GBP: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="gbpchf">GBP/CHF: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="audcad">AUD/CAD: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="cadjpy">CAD/JPY: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="eurcad">EUR/CAD: <span class="positiverate">000:0000</span></span> &nbsp;
-			<span class="chfcad">CHF/CAD: <span class="positiverate">000:0000</span></span> &nbsp;
+			<span class="chfcad">CAD/CHF: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="audjpy">AUD/JPY: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="euraud">EUR/AUD: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="audchf">AUD/CHF: <span class="positiverate">000:0000</span></span> &nbsp;
@@ -289,8 +301,53 @@
 					<li><input type="button" id="next" value="Next" onclick="nextPage()" ></input></li>
 				  </ul>
 				  <ul class="nav navbar-nav navbar-right">
-					<li><a href="redirects/open-account/"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-					<li><a href="redirects/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">View <span class="caret"></span></a>
+					  <ul class="dropdown-menu">
+						<li class="dropdown-submenu"><a class="droplevel2" tabindex="-1" href="#">Tools <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><input tabindex="-1" type="button" id="tradebar" value="Trade Bar" onclick=""></input></li>
+								<li><input tabindex="-1" type="button" id="sitefooter" value="Site Footer" onclick=""></input></li>
+								<li><input tabindex="-1" type="button" id="guide" value="Guide" onclick=""></input></li>
+							</ul>
+						</li>
+						<li class="dropdown-submenu"><a class="droplevel2" tabindex="-1" href="#">Theme <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><input tabindex="-1" type="button" id="nature" value="Nature" onclick="setTheme(0)"></input></li>
+								<li><input tabindex="-1" type="button" id="night" value="Night" onclick="setTheme(1)"></input></li>
+								<li><input tabindex="-1" type="button" id="sunny" value="Sunny" onclick="setTheme(2)"></input></li>
+								<li><input tabindex="-1" type="button" id="cloudy" value="Cloudy" onclick="setTheme(3)"></input></li>
+								<li><input tabindex="-1" type="button" id="romance" value="Romance" onclick="setTheme(4)"></input></li>
+								<li><input tabindex="-1" type="button" id="royal" value="Royal" onclick="setTheme(5)"></input></li>
+								<li><input tabindex="-1" type="button" id="aqua" value="Aqua" onclick="setTheme(6)"></input></li>
+								<li><input tabindex="-1" type="button" id="teal" value="Teal" onclick="setTheme(7)"></input></li>
+								<li><input tabindex="-1" type="button" id="deeproyal" value="DeepRoyal" onclick="setTheme(8)"></input></li>
+								<li><input tabindex="-1" type="button" id="silver" value="Silver" onclick="setTheme(9)"></input></li>
+							</ul>
+						</li>
+					  </ul>
+					</li>
+					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Legal <span class="caret"></span></a>
+					  <ul class="dropdown-menu">
+						<li><a href="eu/about-us-eu/index.html">About Tutusfx</a></li>
+						<li><a href="assets/docs/whitepaper.pdf">Tutusfx Whitepaper</a></li>
+						<li class="dropdown-submenu"><a class="droplevel2" tabindex="-1" href="#">Terms of Service <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><input tabindex="-1" type="button" id="catpolicy" value="Client Categorisation Policy"></input></li>
+								<li><input tabindex="-1" type="button" id="bonuspolicy" value="Bonuses"></input></li>
+								<li><input tabindex="-1" type="button" id="compinfo" value="Company Information"></input></li>
+								<li><input tabindex="-1" type="button" id="complainproc" value="Complaints Procedure for Clients"></input></li>
+								<li><input tabindex="-1" type="button" id="confintpolicy" value="Conflicts of Interest Policy"></input></li>
+								<li><input tabindex="-1" type="button" id="genfeespolicy" value="General Fees"></input></li>
+								<li><input tabindex="-1" type="button" id="compenspolicy" value="Investor Compensation Fund"></input></li>
+								<li><input tabindex="-1" type="button" id="pil3discs" value="Pillar III Disclosures"></input></li>
+								<li><input tabindex="-1" type="button" id="riskdiscs" value="Risk Disclosure"></input></li>
+								<li><input tabindex="-1" type="button" id="usagepolicy" value="Terms of Use"></input></li>
+								<li><input tabindex="-1" type="button" id="bestintpolicy" value="Best Interest and Order Execution Policy"></input></li>
+							</ul>
+						</li>
+						<li><a href="redirects/login.html">Privacy Policy</a></li>
+					  </ul>
+					</li>
 					<li class="dropdown">
 					  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <span class="caret"></span></a>
 					  <ul class="dropdown-menu">
@@ -304,30 +361,8 @@
 						<li><a href="redirects/my-account/change-password/">Reset Password</a></li>
 					  </ul>
 					</li>
-					<li class="dropdown">
-					  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Legal <span class="caret"></span></a>
-					  <ul class="dropdown-menu">
-						<li><a href="eu/about-us-eu/index.html">About Tutusfx</a></li>
-						<li><a href="whitepaper.pdf">Tutusfx Whitepaper</a></li>
-						<li><a href="redirects/login.html">Terms of Service</a></li>
-						<li><a href="redirects/login.html">Privacy Policy</a></li>
-					  </ul>
-					</li>
-					<li class="dropdown">
-					  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Theme <span class="caret"></span></a>
-					  <ul class="dropdown-menu">
-						<li><input type="button" id="nature" value="Nature" onclick="<?php $_SESSION['theme']='0'; ?>"></input></li>
-						<li><input type="button" id="night" value="Night" onclick="<?php $_SESSION['theme']='1'; ?>"></input></li>
-						<li><input type="button" id="sunny" value="Sunny" onclick="<?php $_SESSION['theme']='2'; ?>"></input></li>
-						<li><input type="button" id="cloudy" value="Cloudy" onclick="<?php $_SESSION['theme']='3'; ?>"></input></li>
-						<li><input type="button" id="romance" value="Romance" onclick="<?php $_SESSION['theme']='4'; ?>"></input></li>
-						<li><input type="button" id="royal" value="Royal" onclick="<?php $_SESSION['theme']='5'; ?>"></input></li>
-						<li><input type="button" id="aqua" value="Aqua" onclick="<?php $_SESSION['theme']='6'; ?>"></input></li>
-						<li><input type="button" id="teal" value="Teal" onclick="<?php $_SESSION['theme']='7'; ?>"></input></li>
-						<li><input type="button" id="deeproyal" value="DeepRoyal" onclick="<?php $_SESSION['theme']='8'; ?>"></input></li>
-						<li><input type="button" id="silver" value="Silver" onclick="<?php $_SESSION['theme']='9'; ?>"></input></li>
-					  </ul>
-					</li>
+					<li><a href="redirects/open-account/"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+					<li><a href="redirects/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 				  </ul>
 				</div>
 			  </div>
@@ -337,28 +372,28 @@
 		<div class="container row">
 		  <div class="leftcolumn">
 			<div class="card" id="segment">
-			  <h3>Top Trades</h3>
+			  <h3>Top Trades</h3><hr/>
 			  <div class="fakeimg trendingtrades">
 				<p class="trendingtradeusername">USD/AUD;</p>
 				<p>Current Profit: +$309.82; Profit Margin: +31.01;</p>
 				<p>Trade Volume: $10.00; Token Charges: $2.8;</p>
 				<p><a href="@guest#609325cwq98">guest#609325cwq98;</a></p>
-			  </div>
+			  </div><hr/>
 			  <div class="fakeimg trendingtrades">
 				<p class="trendingtradeusername">USD/GBP;</p>
 				<p>Current Profit: +$287.10; Profit Margin: +42.35;</p>
 				<p>Trade Volume: $7.00; Token Charges: $9.35;</p>
 				<p><a href="@guest#302q25%eo4j">guest#302q25%eo4j;</a></p>
-			  </div>
+			  </div><hr/>
 			  <div class="fakeimg trendingtrades">
 				<p class="trendingtradeusername">USD/CAD;</p>
 				<p>Current Profit: +$684.37; Profit Margin: +13.70;</p>
 				<p>Trade Volume: $50.00; Token Charges: $0.63;</p>
 				<p><a href="@guest#48557310~u2">guest#48557310~u2;</a></p>
-			  </div>
+			  </div><hr/>
 			</div>
 			<div class="card" id="segment">
-			  <h3>Vote a Witness</h3>
+			  <h3>Vote a Witness</h3><hr/>
 			  <h4> &nbsp; &nbsp; &nbsp; <em>List of top witnesses</em></h4>
 			  <p>1. @darkspot</p>
 			  <p>2. @kutygee</p>
@@ -370,64 +405,61 @@
 			  <p>8. @barbie12</p>
 			  <p>9. @ultra1</p>
 			  <p>10. @futile</p>
-			  <p class="rightAlign"><a href="">More...</a></p><br/><p>
+			  <p class="rightAlign"><a href="">More...</a></p><br/><p><hr/>
 			</div>
 		  </div>
 		  <div class="maincolumn">
 			<div class="card" id="segment">
-			  <h3>Trending Posts</h3>
-			  <div class="fakeimg"><p>Image</p></div>
-			  <div class="fakeimg"><p>Image</p></div>
-			  <div class="fakeimg"><p>Image</p></div>
+			  <h3>Trending Posts</h3><hr/>
+			  <div class="fakeimg"><p>Image</p></div><hr/>
+			  <div class="fakeimg"><p>Image</p></div><hr/>
+			  <div class="fakeimg"><p>Image</p></div><hr/>
 			</div>
 			<div class="card tradeview" id="segment">
-				<!-- TradingView Widget BEGIN -->
-				<span id="tradingview-copyright"><a ref="nofollow noopener" target="_blank" href="http://www.tradingview.com/chart" style="color: rgb(255, 255, 255); font-family: &quot;Trebuchet MS&quot;, Tahoma, Arial, sans-serif; font-size: 13px;">Market Quotes by <span style="color: #3BB3E4">TradingView</span></a></span>
-				<script type="text/javascript" src="http://s3.tradingview.com/external-embedding/embed-widget-market-overview.js">
-				{ "showChart": true,
-				  "locale": "en",
-				  "width": "100%",
-				  "height": "100%",
-				  "plotLineColorGrowing": "rgba(60, 188, 152, 1)",
-				  "plotLineColorFalling": "rgba(255, 74, 104, 1)",
-				  "gridLineColor": "rgba(233, 233, 234, 1)",
-				  "scaleFontColor": "rgba(000, 64, 000, 1)",
-				  "belowLineFillColorGrowing": "rgba(60, 188, 152, 0.05)",
-				  "belowLineFillColorFalling": "rgba(255, 74, 104, 0.05)",
-				  "symbolActiveColor": "rgba(64, 64, 64, 1)",
-				  "tabs": [
-					{
-					  "title": "Forex",
-					  "symbols": [
-						{ "s": "FX:EURUSD" },{ "s": "FX:GBPUSD" },{ "s": "FX:USDJPY" },{ "s": "FX:USDCHF" },{ "s": "FX:AUDUSD" },{ "s": "FX:AUDJPY" },{ "s": "FX:EURAUD" },{ "s": "FX:AUDJPY" },{ "s": "FX:AUDCHF" },{ "s": "FX:AUDCAD" },{ "s": "FX:USDCAD" },{ "s": "FX:GBPJPY" },{ "s": "FX:GBPCHF" },{ "s": "FX:GBPCAD" },{ "s": "FX:EURJPY" },{ "s": "FX:EURCHF" },{ "s": "FX:EURCAD" },{ "s": "FX:GBPAUD" }
-					  ]
-					}
-				  ]
-				} </script><!-- TradingView Widget END -->
+			<!-- TradingView Widget BEGIN -->
+			<span id="tradingview-copyright"><a ref="nofollow noopener" target="_blank" href="http://www.tradingview.com/chart" style="color: rgb(255, 255, 255); font-family: &quot;Trebuchet MS&quot;, Tahoma, Arial, sans-serif; font-size: 13px;">Market Quotes by <span style="color: #3BB3E4">TradingView</span></a></span>
+			<script type="text/javascript" src="http://s3.tradingview.com/external-embedding/embed-widget-market-overview.js">
+			{ "showChart": true,
+			  "locale": "en",
+			  "width": "100%",
+			  "height": "100%",
+			  "plotLineColorGrowing": "rgba(60, 188, 152, 1)",
+			  "plotLineColorFalling": "rgba(255, 74, 104, 1)",
+			  "gridLineColor": "rgba(233, 233, 234, 1)",
+			  "scaleFontColor": "rgba(000, 64, 000, 1)",
+			  "belowLineFillColorGrowing": "rgba(60, 188, 152, 0.05)",
+			  "belowLineFillColorFalling": "rgba(255, 74, 104, 0.05)",
+			  "symbolActiveColor": "rgba(64, 64, 64, 1)",
+			  "tabs": [
+				{ "title": "Forex",
+				  "symbols": [ { "s": "INDEX:SPX" },{ "s": "INDEX:DJI" },{ "s": "INDEX:NDX" },{ "s": "INDEX:DAX" },{ "s": "INDEX:IUXX" },{ "s": "NYMEX:CL1!" },{ "s": "BITFINEX:BTCUSD" },{ "s": "BITFINEX:XRPUSD" },{ "s": "BITFINEX:EOSUSD" },{ "s": "BITFINEX:ETHUSD" },{ "s": "BITFINEX:LTCUSD" },{ "s": "FX:XAUUSD" },{ "s": "FX:XAGUSD" },{ "s": "FX:USOIL" },{ "s": "FX:GBPUSD" },{ "s": "FX:EURUSD" },{ "s": "FX:USDJPY" },{ "s": "FX:USDCHF" },{ "s": "FX:EURJPY" },{ "s": "FX:CHFJPY" },{ "s": "FX:USDCHF" },{ "s": "FX:AUDUSD" },{ "s": "FX:AUDJPY" },{ "s": "FX:EURAUD" },{ "s": "FX:AUDJPY" },{ "s": "FX:AUDCHF" },{ "s": "FX:AUDCAD" },{ "s": "FX:USDCAD" },{ "s": "FX:GBPJPY" },{ "s": "FX:GBPCHF" },{ "s": "FX:GBPCAD" },{ "s": "FX:EURJPY" },{ "s": "FX:EURCHF" },{ "s": "FX:EURCAD" },{ "s": "FX:CADCHF" },{ "s": "FX:CADJPY" },{ "s": "FX:GBPAUD" } ]
+				}
+			  ]
+			} </script><!-- TradingView Widget END -->
 			</div>
 			<div class="card" id="segment">
-			  <h3>About Tutusfx</h3>
+			  <h3>About Tutusfx</h3><hr/>
 			  <img class="fakeimg picture" src="assets/images/logo_bar.png" width="100%" height="100%" alt="Tutusfx logo" />
 			  <p>The threshold to create and operate a Marketing Network is quite high! Therefore, a one-stop solution is provided by the Tutusfx Community for anyone to create a unique Network without any thresholds.</p>
-			  <p class="rightAlign"><a href="eu/about-us-eu/index.html">More...</a></p><br/><p>
+			  <p class="rightAlign"><a href="eu/about-us-eu/index.html">More...</a></p><br/><p><hr/>
 			</div>
 		  </div>
 		  <div class="rightcolumn">
 			<div class="card" id="segment">
-			  <h3>Blockchain Post 2</h3>
+			  <h3>Blockchain Post 2</h3><hr/>
 			  <h5><b> &nbsp; Title description</b>, Nov 22, 2018</h5>
-			  <div class="fakeimg largepicture">Image</div>
+			  <div class="fakeimg largepicture">Image</div><hr/>
 			  <p>Some text from Post 2...</p>
-			  <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+			  <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p><hr/>
 			</div>
 			<div class="card" id="segment">
-			  <h3>Blockchain Post 1</h3>
+			  <h3>Blockchain Post 1</h3><hr/>
 			  <h5><b> &nbsp; Title description</b>, Nov 15, 2018</h5>
-			  <div class="fakeimg largepicture">Image</div>
+			  <div class="fakeimg largepicture">Image</div><hr/>
 			  <p>Some text from Post 1...</p>
-			  <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+			  <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p><hr/>
 			</div>
-			<div id="returner" class="card"> <a href="#">Return to top <span class="glyphicon glyphicon-arrow-up"></span></a> </div>
+			<div id="returner"> <a href="#">Return to top <span class="glyphicon glyphicon-arrow-up"></span></a> </div>
 		  </div>
 		</div>
 		
@@ -497,228 +529,7 @@
             </div>
 		  </div>
 		</div>
-
-		<script type="text/javascript">
-			var header = document.getElementById("topnav"); var sticky = header.offsetTop;
-			var rates = document.getElementById("ratebar"); var upperbar = rates.offsetTop;
-			var title = document.getElementById("headertitle"); var headercontent = document.getElementById("headercontent");
-			var footerdiv = document.getElementById("footerDiv"); var footerheader = document.getElementById("footerDivHeader"); 
-			var footertexts = document.getElementById("footerDivTexts"); var footerclosebtn = document.getElementById("close"); var segment = document.getElementById("segment");
-			var ads = document.getElementById("ads"); var progressBar = document.getElementById("progressBar"); var upperclosebtn = document.getElementById("upperclosebtn"); 
-			var footerclosing = true; var upperclosing = false; var toggledrawer = $(".navbar-toggle"); var navheaderlinks = $("nav a"); var navheaderinputs = $("li input");
-			var toggleicons = [document.getElementById("icon-bar1"),document.getElementById("icon-bar2"),document.getElementById("icon-bar3"),document.getElementById("icon-bar4")];
-			var body = $("body"); var marquee = $("marquee"); var select = $("select"); var h3 = $("h3"); var ratebar = $("#ratebar");
-			var positiverate = $(".positiverate"); var negativerate = $(".negativerate"); var fakeimg = $(".fakeimg"); var navbar = $(".container-fluid"); var drawer = $(".collapse");
-			var trendingtrades = $(".trendingtrades"); var trendingtradeusername = $(".trendingtradeusername"); var card = $(".card"); var cardlist = $(".cardlist");
-			var topnava = $("#topnav a"); var topnavin = $("#topnav input"); var back = $("#back"); var next = $("#next"); var warningspan = $(".warning span"); var footertopics = $(".upper-footer a");
-			var footer = $(".footer"); var footerCard = $(".footerCard"); var footerDiv = $("#footerDiv"); var footerDivTexts = $("#footerDivTexts"); 
-			var topheader = $("#header"); var myProgress = $("#myProgress"); var returner = $("#returner"); var THEME = 0; var HIDDEN = false;
-			
-			
-			function setTheme(THEME){
-				if (THEME==0){
-					body.css("background","#baf1ba").css("color","#004300").css("fontFamily","Arial, Helvetica, sans-serif"); 
-					topheader.css("background","#ffffff").css("color","#004300"); 
-					fakeimg.css("background-color","#aaaaaa"); h3.css("color","#fefefe");
-					navbar.css("background-color","#004300"); navheaderlinks.css("background-color","#004300").css("color","#ffffff"); navheaderinputs.css("background-color","#004300").css("color","#ffffff");
-					myProgress.css("background-color","#ffffff"); card.css("background-color","#004300").css("color","#ffffff");
-					returner.css("background-color","#fefefe").css("color","#004300"); footertopics.css("background-color","#004300").css("color","#000000");
-					topnava.css("background-color","#004300"); topnavin.css("background-color","#004300");
-					back.css("background-color","#004300"); next.css("background-color","#004300");
-					ratebar.css("background-color","#004300");
-					footerDiv.css("background-color","#004300"); footerDivTexts.css("color","#000000");
-					warningspan.css("background-color","#004300").css("color","#a1a1a1");
-					footer.css("background-color","#004300");
-					footerCard.css("background-color","#004300"); header.style.backgroundColor = "#004300"; progressBar.style.background="#004300";
-				} else if (THEME==1) {
-					body.css("background","#444444").css("color","#000000").css("fontFamily","Arial, Helvetica, sans-serif"); 
-					topheader.css("background","#ffffff").css("color","#000000"); 
-					fakeimg.css("background-color","#aaaaaa"); h3.css("color","#fefefe");
-					navbar.css("background-color","#000000"); navheaderlinks.css("background-color","#000000").css("color","#ffffff"); navheaderinputs.css("background-color","#000000").css("color","#ffffff");
-					myProgress.css("background-color","#ffffff"); card.css("background-color","#000000").css("color","#ffffff");
-					returner.css("background-color","#fefefe").css("color","#000000"); footertopics.css("background-color","#000000").css("color","#ffffff");
-					topnava.css("background-color","#000000").css("color","#ffffff"); topnavin.css("background-color","#000000").css("color","#ffffff");
-					back.css("background-color","#000000").css("color","#ffffff"); next.css("background-color","#000000").css("color","#ffffff");
-					ratebar.css("background-color","#000000");
-					footerDiv.css("background-color","#000000"); footerDivTexts.css("color","#ffffff");
-					warningspan.css("background-color","#000000").css("color","#ffffff");
-					footer.css("background-color","#000000");
-					footerCard.css("background-color","#000000"); header.style.backgroundColor = "#000000"; progressBar.style.background="#000000"; 
-				} else if (THEME==2) {
-					body.css("background","#fefefe").css("color","#ffffff").css("fontFamily","Arial, Helvetica, sans-serif"); 
-					topheader.css("background","#000000").css("color","#ffffff");
-					fakeimg.css("background-color","#aaaaaa"); h3.css("color","#000000");
-					navbar.css("background-color","#aaaaaa"); navheaderlinks.css("background-color","#aaaaaa").css("color","#000000"); navheaderinputs.css("background-color","#aaaaaa").css("color","#000000");
-					myProgress.css("background-color","#ffffff"); card.css("background-color","#ffffff").css("color","#000000");
-					returner.css("background-color","#fefefe").css("color","#ffffff"); footertopics.css("background-color","#ffffff").css("color","#000000");
-					topnava.css("background-color","#ffffff").css("color","#000000"); topnavin.css("background-color","#ffffff").css("color","#000000");
-					back.css("background-color","#ffffff").css("color","#000000"); next.css("background-color","#ffffff").css("color","#000000");
-					ratebar.css("background-color","#ffffff").css("color","#000000");
-					footerDiv.css("background-color","#aaaaaa"); footerDivTexts.css("color","#000000");
-					warningspan.css("background-color","#fefefe").css("color","#000000");
-					footer.css("background-color","#ffffff").css("color","#000000");
-					footerCard.css("background-color","#ffffff").css("color","#000000"); header.style.backgroundColor = "#ffffff"; progressBar.style.background="#ffffff"; 
-				} else if (THEME==3) {
-					body.css("background","#babaf1").css("color","#1234ab").css("fontFamily","Arial, Helvetica, sans-serif"); cardlist.css("color","#000000"); 
-					topheader.css("background","#ffffff").css("color","#1234ab");
-					fakeimg.css("background-color","#aaaaaa"); h3.css("color","#000000");
-					navbar.css("background-color","#1234ab"); navheaderlinks.css("background-color","#1234ab").css("color","#ffffff"); navheaderinputs.css("background-color","#1234ab").css("color","#ffffff");
-					myProgress.css("background-color","#ffffff"); card.css("background-color","#1234ab").css("color","#ffffff");
-					returner.css("background-color","#fefefe").css("color","#1234ab"); footertopics.css("background-color","#1234ab").css("color","#000000");
-					topnava.css("background-color","#1234ab"); topnavin.css("background-color","#1234ab");
-					back.css("background-color","#1234ab"); next.css("background-color","#1234ab");
-					ratebar.css("background-color","#1234ab");
-					footerDiv.css("background-color","#1234ab"); footerDivTexts.css("color","#000000");
-					warningspan.css("background-color","#1234ab").css("color","#000000");
-					footer.css("background-color","#1234ab");
-					footerCard.css("background-color","#1234ab"); header.style.backgroundColor = "#1234ab"; progressBar.style.background="#1234ab"; 
-				} else if (THEME==4) { body.css("background","#f1baba").css("color","#ff1234").css("fontFamily","Arial, Helvetica, sans-serif"); 
-					topheader.css("background","#ffffff").css("color","#ff1234");
-					fakeimg.css("background-color","#aaaaaa"); h3.css("color","#004300");
-					navbar.css("background-color","#ff1234"); navheaderlinks.css("background-color","#ff1234").css("color","#ffffff"); navheaderinputs.css("background-color","#ff1234").css("color","#ffffff");
-					myProgress.css("background-color","#ffffff"); card.css("background-color","#ff1234").css("color","#000000");
-					returner.css("background-color","#fefefe").css("color","#ff1234"); footertopics.css("background-color","#ff1234").css("color","#000000");
-					topnava.css("background-color","#ff1234"); topnavin.css("background-color","#ff1234");
-					back.css("background-color","#ff1234"); next.css("background-color","#ff1234");
-					ratebar.css("background-color","#ff1234");
-					footerDiv.css("background-color","#ff1234"); footerDivTexts.css("color","#000000");
-					warningspan.css("background-color","#ff1234").css("color","#000000");
-					footer.css("background-color","#ff1234");
-					footerCard.css("background-color","#ff1234"); header.style.backgroundColor = "#ff1234"; progressBar.style.background="#ff1234"; 
-				} else if (THEME==5) { body.css("background","#f1baf1").css("color","#ff12ff").css("fontFamily","Arial, Helvetica, sans-serif"); 
-					topheader.css("background","#ffffff").css("color","#ff12ff");
-					fakeimg.css("background-color","#aaaaaa"); h3.css("color","#004300");
-					navbar.css("background-color","#ff12ff"); navheaderlinks.css("background-color","#ff12ff").css("color","#ffffff"); navheaderinputs.css("background-color","#ff12ff").css("color","#ffffff");
-					myProgress.css("background-color","#ffffff"); card.css("background-color","#ff12ff").css("color","#000000");
-					returner.css("background-color","#fefefe").css("color","#ff12ff"); footertopics.css("background-color","#ff12ff").css("color","#000000");
-					topnava.css("background-color","#ff12ff"); topnavin.css("background-color","#ff12ff");
-					back.css("background-color","#ff12ff"); next.css("background-color","#ff12ff");
-					ratebar.css("background-color","#ff12ff");
-					footerDiv.css("background-color","#ff12ff"); footerDivTexts.css("color","#000000");
-					warningspan.css("background-color","#ff12ff").css("color","#000000");
-					footer.css("background-color","#ff12ff");
-					footerCard.css("background-color","#ff12ff"); header.style.backgroundColor = "#ff12ff"; progressBar.style.background="#ff12ff"; 
-				} else if (THEME==6) { body.css("background","#baf1f1").css("color","#12ffff").css("fontFamily","Arial, Helvetica, sans-serif"); 
-					topheader.css("background","#ffffff").css("color","#12ffff");
-					fakeimg.css("background-color","#aaaaaa"); h3.css("color","#004300");
-					navbar.css("background-color","#12ffff"); navheaderlinks.css("background-color","#12ffff").css("color","#ffffff"); navheaderinputs.css("background-color","#12ffff").css("color","#ffffff");
-					myProgress.css("background-color","#ffffff"); card.css("background-color","#12ffff").css("color","#000000");
-					returner.css("background-color","#fefefe").css("color","#12ffff"); footertopics.css("background-color","#12ffff").css("color","#000000");
-					topnava.css("background-color","#12ffff"); topnavin.css("background-color","#12ffff");
-					back.css("background-color","#12ffff"); next.css("background-color","#12ffff");
-					ratebar.css("background-color","#12ffff");
-					footerDiv.css("background-color","#12ffff"); footerDivTexts.css("color","#000000");
-					warningspan.css("background-color","#12ffff").css("color","#000000");
-					footer.css("background-color","#12ffff");
-					footerCard.css("background-color","#12ffff"); header.style.backgroundColor = "#12ffff"; progressBar.style.background="#12ffff"; 
-				} else if (THEME==7) { body.css("background","#f1f1f1").css("color","#008080").css("fontFamily","Arial, Helvetica, sans-serif"); 
-					topheader.css("background","#ffffff").css("color","#008080");
-					fakeimg.css("background-color","#aaaaaa"); h3.css("color","#004300");
-					navbar.css("background-color","#008080"); navheaderlinks.css("background-color","#008080").css("color","#ffffff"); navheaderinputs.css("background-color","#008080").css("color","#ffffff");
-					myProgress.css("background-color","#ffffff"); card.css("background-color","#008080").css("color","#000000");
-					returner.css("background-color","#fefefe").css("color","#008080"); footertopics.css("background-color","#008080").css("color","#000000");
-					topnava.css("background-color","#008080"); topnavin.css("background-color","#008080");
-					back.css("background-color","#008080"); next.css("background-color","#008080");
-					ratebar.css("background-color","#008080");
-					footerDiv.css("background-color","#008080"); footerDivTexts.css("color","#000000");
-					warningspan.css("background-color","#008080").css("color","#000000");
-					footer.css("background-color","#008080");
-					footerCard.css("background-color","#008080"); header.style.backgroundColor = "#008080"; progressBar.style.background="#008080"; 
-				} else if (THEME==8) { body.css("background","#baf1f1").css("color","#800080").css("fontFamily","Arial, Helvetica, sans-serif"); 
-					topheader.css("background","#ffffff").css("color","#008080");
-					fakeimg.css("background-color","#aaaaaa"); h3.css("color","#004300");
-					navbar.css("background-color","#800080"); navheaderlinks.css("background-color","#800080").css("color","#ffffff"); navheaderinputs.css("background-color","#800080").css("color","#ffffff");
-					myProgress.css("background-color","#ffffff"); card.css("background-color","#800080").css("color","#000000");
-					returner.css("background-color","#fefefe").css("color","#800080"); footertopics.css("background-color","#800080").css("color","#000000");
-					topnava.css("background-color","#800080"); topnavin.css("background-color","#800080");
-					back.css("background-color","#800080"); next.css("background-color","#800080");
-					ratebar.css("background-color","#800080");
-					footerDiv.css("background-color","#800080"); footerDivTexts.css("color","#000000");
-					warningspan.css("background-color","#800080").css("color","#000000");
-					footer.css("background-color","#800080");
-					footerCard.css("background-color","#800080"); header.style.backgroundColor = "#800080"; progressBar.style.background="#800080"; 
-				} else if (THEME==9) { body.css("background","#f1f1f1").css("color","#c0c0c0").css("fontFamily","Arial, Helvetica, sans-serif"); 
-					topheader.css("background","#ffffff").css("color","#c0c0c0");
-					fakeimg.css("background-color","#aaaaaa"); h3.css("color","#004300");
-					navbar.css("background-color","#c0c0c0"); navheaderlinks.css("background-color","#c0c0c0").css("color","#ffffff"); navheaderinputs.css("background-color","#c0c0c0").css("color","#ffffff");
-					myProgress.css("background-color","#ffffff"); card.css("background-color","#c0c0c0").css("color","#000000");
-					returner.css("background-color","#fefefe").css("color","#c0c0c0"); footertopics.css("background-color","#c0c0c0").css("color","#000000");
-					topnava.css("background-color","#c0c0c0"); topnavin.css("background-color","#c0c0c0");
-					back.css("background-color","#c0c0c0"); next.css("background-color","#c0c0c0");
-					ratebar.css("background-color","#c0c0c0");
-					footerDiv.css("background-color","#c0c0c0"); footerDivTexts.css("color","#000000");
-					warningspan.css("background-color","#c0c0c0").css("color","#000000");
-					footer.css("background-color","#c0c0c0");
-					footerCard.css("background-color","#c0c0c0"); header.style.backgroundColor = "#c0c0c0"; progressBar.style.background="#c0c0c0"; 
-				} marquee.css("color","#ff0e"); negativerate.css("color","#ff0000");
-				positiverate.css("font-family","Courier New, Times New Roman, Arial").css("color","#ffffff");
-				select.css("background-color","#eeeeee");
-				trendingtradeusername.css("background","none").css("color","#B2D4B2");
-				trendingtrades.css("background-color","none").css("color","#ffffff");
-			}
-			
-			$("#nature:first").on("mouseover", function() { THEME = 0; setTheme(THEME); }).on("mousedown", function() { drawer.hide(); HIDDEN = true; setTheme(THEME); });
-			$("#night:first").on("mouseover", function() { THEME = 1; setTheme(THEME); }).on("mousedown", function() { drawer.hide(); HIDDEN = true; setTheme(THEME); });
-			$("#sunny:first").on("mouseover", function() { THEME = 2; setTheme(THEME); }).on("mousedown", function() { drawer.hide(); HIDDEN = true; setTheme(THEME); });
-			$("#cloudy:first").on("mouseover", function() { THEME = 3; setTheme(THEME); }).on("mousedown", function() { drawer.hide(); HIDDEN = true; setTheme(THEME); });
-			$("#romance:first").on("mouseover", function() { THEME = 4; setTheme(THEME); }).on("mousedown", function() { drawer.hide(); HIDDEN = true; setTheme(THEME); });
-			$("#royal:first").on("mouseover", function() { THEME = 5; setTheme(THEME); }).on("mousedown", function() { drawer.hide(); HIDDEN = true; setTheme(THEME); });
-			$("#aqua:first").on("mouseover", function() { THEME = 6; setTheme(THEME); }).on("mousedown", function() { drawer.hide(); HIDDEN = true; setTheme(THEME); });
-			$("#teal:first").on("mouseover", function() { THEME = 7; setTheme(THEME); }).on("mousedown", function() { drawer.hide(); HIDDEN = true; setTheme(THEME); });
-			$("#deeproyal:first").on("mouseover", function() { THEME = 8; setTheme(THEME); }).on("mousedown", function() { drawer.hide(); HIDDEN = true; setTheme(THEME); });
-			$("#silver:first").on("mouseover", function() { THEME = 9; setTheme(THEME); }).on("mousedown", function() { drawer.hide(); HIDDEN = true; setTheme(THEME); });
-			
-			function doclose() { 
-				if (footerclosing==true) {
-					if (THEME==0) { footerclosebtn.style.background="#004300"; footerclosebtn.style.color="white"; } else if (THEME==1) { footerclosebtn.style.background="#000000"; footerclosebtn.style.color="white"; } else if (THEME==2) { footerclosebtn.style.background="#ffffff"; footerclosebtn.style.color="#004300"; } else if (THEME==3) { footerclosebtn.style.background="#1234ab"; footerclosebtn.style.color="#000000"; } else if (THEME==4) { footerclosebtn.style.background="#ff1234"; footerclosebtn.style.color="#000000"; } else if (THEME==5) { footerclosebtn.style.background="#ff12ff"; footerclosebtn.style.color="#ffffff"; } footerclosebtn.classList.remove("glyphicon-arrow-up"); footerclosebtn.classList.add("glyphicon-arrow-down");
-					footerdiv.style.height = "0px"; footerdiv.style.float = "bottom"; footerheader.style.fontSize = "0%"; footertexts.style.fontSize = "0%"; footerclosebtn.style.visibility = "none"; footerclosing = false;
-				} else {
-					 if (THEME==0) { footerclosebtn.style.background="white"; upperclosebtn.style.color="#004300"; } else if (THEME==1) { footerclosebtn.style.background="white"; footerclosebtn.style.color="#000000"; } else if (THEME==2) { footerclosebtn.style.background="#004300"; footerclosebtn.style.color="#ffffff"; } else if (THEME==3) { footerclosebtn.style.background="#000000"; footerclosebtn.style.color="#1234ab"; } else if (THEME==4) { footerclosebtn.style.background="#000000"; footerclosebtn.style.color="#ff1234"; } else if (THEME==5) { footerclosebtn.style.background="#ffffff"; footerclosebtn.style.color="#ff12ff"; }  footerclosebtn.classList.remove("glyphicon-arrow-down"); footerclosebtn.classList.add("glyphicon-arrow-up");
-					footerdiv.style.height = "30%"; footerdiv.style.top = "70%"; footerheader.style.fontSize = "100%"; footertexts.style.fontSize = "100%"; footerclosing = true;
-				}
-			}
-			
-			function doupperclosing() { 
-				if (upperclosing==true) { upperclosebtn.classList.remove("close-upper"); upperclosebtn.classList.add("open-upper"); upperclosing = false; } 
-				else { upperclosebtn.classList.remove("open-upper"); upperclosebtn.classList.add("close-upper"); upperclosing = true; } myFunction();
-			} myFunction();
-			
-			$("#upperclosebtn:first").on("mouseover", function() { if (THEME==0) { upperclosebtn.style.background="#004300"; upperclosebtn.style.color="white"; } else if (THEME==1) { upperclosebtn.style.background="#000000"; upperclosebtn.style.color="white"; } else if (THEME==2) { upperclosebtn.style.background="#ffffff"; upperclosebtn.style.color="#004300"; } else if (THEME==3) { upperclosebtn.style.background="#1234ab"; upperclosebtn.style.color="#000000"; } else if (THEME==4) { upperclosebtn.style.background="#ff1234"; upperclosebtn.style.color="#000000"; } else if (THEME==5) { upperclosebtn.style.background="#ff12ff"; upperclosebtn.style.color="#ffffff"; } })
-			.on("mouseout", function() { if (THEME==0) { upperclosebtn.style.background="white"; upperclosebtn.style.color="#004300"; } else if (THEME==1) { upperclosebtn.style.background="white"; upperclosebtn.style.color="#000000"; } else if (THEME==2) { upperclosebtn.style.background="#004300"; upperclosebtn.style.color="#ffffff"; } else if (THEME==3) { upperclosebtn.style.background="#000000"; upperclosebtn.style.color="#1234ab"; } else if (THEME==4) { upperclosebtn.style.background="#000000"; upperclosebtn.style.color="#ff1234"; } else if (THEME==5) { upperclosebtn.style.background="#ffffff"; upperclosebtn.style.color="#ff12ff"; } });
-			
-			$("#close:first").on("mouseover", function() { if (THEME==0) { footerclosebtn.style.background="#004300"; footerclosebtn.style.color="white"; } else if (THEME==1) { footerclosebtn.style.background="#000000"; footerclosebtn.style.color="white"; } else if (THEME==2) { footerclosebtn.style.background="#ffffff"; footerclosebtn.style.color="#004300"; } else if (THEME==3) { footerclosebtn.style.background="#1234ab"; footerclosebtn.style.color="#000000"; } else if (THEME==4) { footerclosebtn.style.background="#ff1234"; footerclosebtn.style.color="#000000"; } else if (THEME==5) { footerclosebtn.style.background="#ff12ff"; footerclosebtn.style.color="#ffffff"; } })
-			.on("mouseout", function() { if (THEME==0) { footerclosebtn.style.background="white"; footerclosebtn.style.color="#004300"; } else if (THEME==1) { footerclosebtn.style.background="white"; footerclosebtn.style.color="#000000"; } else if (THEME==2) { footerclosebtn.style.background="#004300"; footerclosebtn.style.color="#ffffff"; } else if (THEME==3) { footerclosebtn.style.background="#000000"; footerclosebtn.style.color="#1234ab"; } else if (THEME==4) { footerclosebtn.style.background="#000000"; footerclosebtn.style.color="#ff1234"; } else if (THEME==5) { footerclosebtn.style.background="#ffffff"; footerclosebtn.style.color="#ff12ff"; } })
-			.on("mousedown", function() { if (footerclosing==true) { footerdiv.style.background="none"; } else { if (THEME==0) { footerdiv.style.background="#004300"; } else if (THEME==1) { footerdiv.style.background="#000000"; } else if (THEME==2) { footerdiv.style.background="#aaaaaa"; } else if (THEME==3) { footerdiv.style.background="#1234ab"; } else if (THEME==4) { footerdiv.style.background="#ff1234"; } else if (THEME==5) { footerdiv.style.background="#ff12ff"; } } });
-			
-			$(".navbar-toggle:first").on("mouseover", function() { toggledrawer.css("background","white").css("transition","0.3s ease-out"); for (i=0; i<4; i++) { if (THEME==0) { toggleicons[i].style.background="#004300"; } else if (THEME==1) { toggleicons[i].style.background="#000000"; } else if (THEME==2) { toggleicons[i].style.background="#ffffff"; } else if (THEME==3) { toggleicons[i].style.background="#1234ab"; } else if (THEME==4) { toggleicons[i].style.background="#ff1234"; } else if (THEME==5) { toggleicons[i].style.background="#ff12ff"; } } })
-			.on("mouseout", function() { if (THEME==0) { toggledrawer.css("background","#004300").css("transition","0.3s ease-in"); } else if (THEME==1) { toggledrawer.css("background","#000000").css("transition","0.3s ease-in"); } else if (THEME==2) { toggledrawer.css("background","#aaaaaa").css("transition","0.3s ease-in"); } else if (THEME==3) { toggledrawer.css("background","#1234ab").css("transition","0.3s ease-in"); } else if (THEME==4) { toggledrawer.css("background","#ff1234").css("transition","0.3s ease-in"); } else if (THEME==5) { toggledrawer.css("background","#ff12ff").css("transition","0.3s ease-in"); } for (i=0; i<4; i++) { toggleicons[i].style.background="white"; } })
-			.on("mousedown", function() { if (HIDDEN==true) drawer.show(); drawer.css("data-toggle","collapse"); if (THEME==0) { drawer.css("background","#004300"); } else if (THEME==1) { drawer.css("background","#000000"); } else if (THEME==2) { drawer.css("background","#aaaaaa"); } else if (THEME==3) { drawer.css("background","#1234ab"); } else if (THEME==4) { drawer.css("background","#ff1234"); } else if (THEME==5) { drawer.css("background","#ff12ff"); } });
-			
-			window.onscroll = function() { myFunction() };
-
-			function myFunction() { 
-				if (window.pageYOffset > (sticky-(sticky/10)-50)) { 
-					if (upperclosing==true) { if (window.pageYOffset > (sticky-(sticky/10))) { header.classList.remove("sticky"); header.classList.add("sticky2"); } } else { header.classList.remove("sticky2"); header.classList.add("sticky"); } 
-				} else {
-					title.style.paddingTop = (window.pageYOffset+10)+"px"; title.style.fontSize = (90-(3*window.pageYOffset/25))+"px"; headercontent.style.fontSize = (40-(window.pageYOffset/25))+"px";
-					if (window.pageYOffset > 250) { (window.pageYOffset/2)+"px"; headercontent.style.fontSize = "0px"; } 
-					if (upperclosing==true) { header.classList.remove("sticky2"); } else { header.classList.remove("sticky"); } 
-				}
-				if (upperclosing==true) { rates.classList.remove("upperbar"); rates.style.height = "0px"; rates.style.float = "top";  
-					upperclosebtn.style.background = "none"; upperclosebtn.style.color = "none"; upperclosebtn.classList.remove("glyphicon-arrow-right"); upperclosebtn.classList.add("glyphicon-arrow-left");
-					ads.style.fontSize = "0%"; upperclosebtn.style.visibility = "none";
-				} else { rates.classList.add("upperbar"); rates.style.height = "50px"; rates.style.top = "0px"; rates.style.zIndex = "1000"; 
-					if (THEME==0) { rates.style.backgroundColor = "#004300"; } else if (THEME==1){ rates.style.backgroundColor = "#000000"; } else if (THEME==2){ rates.style.backgroundColor = "#aaaaaa"; } else if (THEME==3){ rates.style.backgroundColor = "#1234ab"; } else if (THEME==4){ rates.style.backgroundColor = "#ff1234"; } else if (THEME==5){ rates.style.backgroundColor = "#ff12ff"; }
-					if (THEME==0) { upperclosebtn.style.background = "white"; upperclosebtn.style.color = "#004300"; } else if (THEME==1){ upperclosebtn.style.background = "white"; upperclosebtn.style.color = "#000000"; } else if (THEME==2){ upperclosebtn.style.background = "black"; upperclosebtn.style.color = "#ffffff"; } else if (THEME==3){ upperclosebtn.style.background = "white"; upperclosebtn.style.color = "#1234ab"; } else if (THEME==4){ upperclosebtn.style.background = "black"; upperclosebtn.style.color = "#ff1234"; } else if (THEME==5){ upperclosebtn.style.background = "white"; upperclosebtn.style.color = "#ff12ff"; }
-					if (THEME==0) { segment.style.backgroundColor = "#004300"; } else if (THEME==1){ segment.style.backgroundColor = "#000000"; } else if (THEME==2){ segment.style.backgroundColor = "#aaaaaa"; } else if (THEME==3){ segment.style.backgroundColor = "#1234ab"; } else if (THEME==4){ segment.style.backgroundColor = "#ff1234"; } else if (THEME==5){ segment.style.backgroundColor = "#ff12ff"; }
-					upperclosebtn.classList.remove("glyphicon-arrow-left"); upperclosebtn.classList.add("glyphicon-arrow-right");
-					ads.style.fontSize = "100%"; 
-				}
-			}
-			
-			function prevPage(){ window.history.go(-1); }
-			
-			function nextPage(){ window.history.go(+1); }
-		</script>
+		
+		<script src="assets/js/tut.js" type="text/javascript"></script>
 	</body>
 </html>

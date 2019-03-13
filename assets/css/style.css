@@ -1,56 +1,30 @@
 /* THIS STYLESHEET IS FOR 3-COLUMN LAYOUTS */
-
 * { box-sizing: border-box; top: 0; left: 0; }
 
-.rightAlign { float: right; }
-
-img { position: relative; top: 0; left: 0; width: 60px; height: 20px; float: left top; border-radius: 1.5px; }
-
-body { font-family: Arial, Helvetica, sans-serif; padding: 0.1%; background: #baf1ba; color: #004300; }
-
-input[type="search"] { text-align: justify; height: 38px; margin: 8px 0; border-radius: 3px; }
-
-/* Header/Blog Title */
-#header { padding-top: 2%; height: 450px; text-align: center; background: none; color: #004300; text-shadow: -8px 8px 16px #B2D4B2; }
-
-#headertitle { z-index: -1000; font-size: 90px; font-family: Garamond; font-weight: bolder; font-stretch: expanded; }
-
-#headercontent { font-size: 40px; font-style: italic; font-family: Garamond; font-stretch: condensed; }
-
-a { transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out; }
-
-p { padding: 2%; }
-
-marquee { color: #ff0e; width: 95%; }
-
-.tradeview { height: 650px; }
-
-.positiverate { color: white; font-size: 100%; font-family: Courier New, Times New Roman, Arial; font-stretch: condensed; font-weight: lighter; text-decoration: blink; }
-
-.negativerate { color: red; }
-
-.navbar { z-index: 100; background-color: #004300; border-radius: 0px 0px 5px 5px; box-shadow: -1px 1px 1px #010; }
-
-.dropdown-menu { background: #004300; }
-
-/* Style the sticky top navigation bar */
-#topnav { z-index: 1000; display: block; color:#004300; }
+input[type="search"] { height: 38px; margin: 8px 0; border-radius: 19px; }
 
 /* Style the sticky top dropdown navigation links */
-nav li input[type="button"]{ margin:0; padding: 0.5% 1%; height: 50px; border-radius: 0.1%; }
 
-nav li input[type="button"], #topnav a { background-color:#004300; color: #f2f2f2; padding: 14px 8px; text-decoration: none; display: block; transition: all 0.3s ease-in; -webkit-transition: all 0.3s ease-in; -moz-transition: all 0.3s ease-in; -o-transition: all 0.3s ease-in; }
+nav li input[type="button"] { background-color: #004300; color: #f2f2f2; padding: 8px 0; margin: 0; height: 50px; border-radius: 0.1%; text-decoration: none; display: block; transition: all 0.3s ease-in; -webkit-transition: all 0.3s ease-in; -moz-transition: all 0.3s ease-in; -o-transition: all 0.3s ease-in; }
 
-nav li input[type="button"]:hover, #topnav a:hover { background-color: #f2f2f2; color: #004300; transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out; } #topnav a:hover { border-radius: 2.5px; }
+nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out; }
+
+/* Header/Blog Title */
+#header { height: 450px; }
+
+#headertitle { font-size: 90px; }
+
+#headercontent { font-size: 40px; }
 
 /* Change properties of page navigation buttons */
-#topnav a { text-align: center; }
 
 #next, #back { text-align: center; width: 70px; border: none; }
 
 #back { border-radius: 2.5px 0px 0px 2.5px; } #next { border-radius: 0px 2.5px 2.5px 0px; }
 
-/* Create two unequal columns that floats next to each other */
+#footerDiv { display: none; }
+
+/* Create three unequal columns that floats next to each other */
 /* Left column */
 .leftcolumn { float: left; width: 30%; padding: 1%; }
 
@@ -60,83 +34,53 @@ nav li input[type="button"]:hover, #topnav a:hover { background-color: #f2f2f2; 
 /* Right column */
 .rightcolumn { float: left; width: 30%; padding: 1%; }
 
-/* Fake image */
-.fakeimg { background-color: #aaa; width: 100%; padding: 2%; border-radius: 2px; box-shadow: -1px 1px 1px #aba; }
-
 .picture { height: 100px; }
 
 .largepicture { height: 200px; }
 
-/* Add a card effect for trending trades */
-.trendingtrades { color: white; padding: 1%; margin-top: 0.5%; }
-
-/* Add a card effect for trending trades usernames */
-.trendingtradeusername { color: #B2D4B2; }
-
-/* Add a card effect for articles */
-.card { background-color: #004300; color: #ffffff; padding: 0.5%; margin-top: 1%; border-radius: 3px; box-shadow: -1px 1px 1px #aba; }
-
-.card a { text-decoration: none; }
-
-.card p { text-align: justify; }
-
-.cardlist { text-decoration: none; }
-
-.card a:hover { color: #B2D4B2; }
-
-.card > h3 { padding: 2.5% 0.5%; text-shadow: -1px -1px 1px #010; text-align: center; }
-
-/* Add a card effect for returner section at bottom of page */
-#returner { background: inherit; color: #004300; float: right; font-weight: bolder; font-stretch: condensed; }
-
 /* Set container properties */
-.row { padding: 0.5%; width: 100%; }
+.row { padding: 1%; width: 100%; height: 100%; }
 
 /* Set sticky trade rate bar properties */
-.upperbar { display: inline-flex; position: fixed; float: center; z-index: 1000; top: 0; left: 0; width: 100%; height: 50px; margin: 0; padding: 16px 0px; font-size: 16px; font-family: Garamond; background-color: #004300; border-radius: 0.5px; box-shadow: -1px 1px 1px #010; }
+.upperbar { display: inline-flex; position: fixed; float: center; z-index: 1000; top: 0; left: 0; width: 100%; height: 50px; margin: 0; padding: 16px 0px; font-size: 16px; font-family: Garamond; background-color: #004300; border-radius: 0.5px; box-shadow: -1px 5px 3px #232; }
 
 .close-upper { border-radius: 40%; background: #fefefe; color: #004300; padding: 2px; width: auto; margin-right: 1%; }
 
 .open-upper { border-radius: 40%; background: #004300; color: #fefefe; padding: 0px 2px 18px 4px; width: auto; margin-right: 1%; }
 
-.sticky { position: fixed; top: 50px; left: 0; width: 99%; height: 50px; margin: 0% 0.5%; padding: 0; }
+.sticky { position: fixed; top: 50px; left: 2.5%; width: 96.5%; height: 50px; margin: 0% 0.5%; padding: 0; }
 
 .sticky2 + .row, .sticky + .row { padding-top: 100px; }
 
-.sticky2 { position: fixed; top: 0; left: 0; width: 99%; height: 50px; margin: 0% 0.5%; padding: 0; }
+.sticky2 { position: fixed; top: 0; left: 2.5%; width: 96.5%; height: 50px; margin: 0% 0.5%; padding: 0; }
+
+.collapse a, .collapse input[type="button"] { height: auto; max-height: 30px; width: 100%; font-size: 12px; }
+
+.dropdown-submenu { position: relative; }
+
+.dropdown-submenu .dropdown-menu { top: 0; left: 100%; margin-top: -1px; }
 
 /* Clear floats after the columns */
-.row:after { content: ""; display: table; clear: both; }
+.row:after, .footer:after { content: ""; display: table; clear: both; }
 
 /* Footer */
-.footer { z-index: 500; border-radius: 5px 5px 0px 0px; height: 600px; margin: 100px 0 -1px 0; padding: 0; text-align: center; background-color: #004300; font-stretch: condensed; font-weight: lighter; }
+.footer a { padding: 0; margin: 0% 1%; color: #a1a1a1; text-align: justify;  }
 
-.upper-footer { padding: 1%; text-align: center; }
-
-.footer a { padding: 0; margin: 0.5% 1%; color: #a1a1a1; text-align: justify;  }
-
-.footer a:hover { margin: 0% 1.2%; color: #B2D4B2; text-decoration: none; }
-
-.footerCard { float: left; text-align: justify; padding: 0 2%; font-size: 90%; width: 25%; height: 547px; background-color: #004300; color: #a1a1a1;  }
+.footer a:hover { margin: 0% 1.1%; color: #B2D4B2; text-decoration: none; }
+	
+/* Width set at 25% ensures the footer has 4 sections on default */
+.footerCard { float: left; text-align: justify; padding: 0% 2%; font-size: 90%; width: 25%; height: 547px;  }
 
 .footerCard blockquote { font-size: 70%; }
 
-.warning span { background-color: #004300; color: #a1a1a1; }
+.footer h6 { text-align: center; }
 
-.footer h6 { text-align: center; } #footerDiv { display: none; width: 100%; height: 0px; z-index: 0; } #footerDivHeader { color: white; font-weight: bold; font-size: 0%; }
-
-#footerDivTexts { color: #B2D4B2; text-align: justify; float: justify;  font-size: 99%; } 
-
-.collapse { height: 100%; width: auto; text-align: justify; }
-
-.collapse a, .collapse input[type="button"] { height: auto; max-height: 50px; width: 100%; font-size: 12px; }
-
-.clearnav { box-shadow: none; text-shadow: none; margin: 0; padding: 0; left: 0; top: 0; } #close { display: none; background-color: white; }
+.clearnav { box-shadow: none; text-shadow: none; margin: 0; padding: 0; left: 0; top: 0; content: ""; display: table; clear: both; }
 
 /* Responsive layout - when the screen is less than 1200px wide, make the two leftmost columns stack side by side and on top of the third */
 @media screen and (max-width: 1200px) {
 	/* Set container properties */
-	.row { padding-left: 1%; width: 100%; }
+	.row { padding: 2%; width: 100%; }
 	
 	/* Left column */
 	.leftcolumn { float: left; width: 35%; padding: 0.5%; }
@@ -158,7 +102,7 @@ nav li input[type="button"]:hover, #topnav a:hover { background-color: #f2f2f2; 
 	
 	#back, #next{ float: none; height: 50px; padding: 0%; width: 100%; }
 	
-	.row { padding-left: 2%; } .leftcolumn, .maincolumn, .rightcolumn {  width: 100%; padding-left: 1%; } .footer a{ margin: 0.5% 1.2%; } #footerDivTexts { color: #B2D4B2; text-align: justify; float: justify;  font-size: 99%; } 
+	.row { padding: 2%; } .leftcolumn, .maincolumn, .rightcolumn {  width: 100%; padding-left: 1%; } .footer a{ margin: 0.5% 1.2%; } #footerDivTexts { color: white; text-align: justify; float: justify;  font-size: 99%; } 
 	
 	#footerDiv { display: block; position: fixed; top: 70%; left: 0; width: 100%; height: 30%; margin: 0; padding: 5%; background-color: #004300; color: white; font-size: 60%; }
 	
@@ -175,7 +119,7 @@ nav li input[type="button"]:hover, #topnav a:hover { background-color: #f2f2f2; 
 	
 	#topnav { width: 99%; margin: 0% 0.5%; } 
 	
-	.row { padding-left: 4%; } .warning { display: none; } 
+	.row { padding: 2%; } .warning { display: none; } 
 	
 	.footer a{ font-size: 80%; margin: 0.5% 0.8%; } .footerCard { width: 33%; font-size: 80%; height: 547px; } .footerCard blockquote { font-size: 68%; }
 	
