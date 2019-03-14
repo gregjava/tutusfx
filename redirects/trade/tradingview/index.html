@@ -325,41 +325,74 @@
 					<li><input type="button" id="next" value="Next" onclick="nextPage()" ></input></li>
 				  </ul>
 				  <ul class="nav navbar-nav navbar-right">
-					<li><a href="../../open-account/"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-					<li><a href="../../login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-					<li class="dropdown">
-					  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <span class="caret"></span></a><br/>
+					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Tools <span class="caret"></span></a>
 					  <ul class="dropdown-menu">
-						<li><a href="../../../../eu/faqs/index.html">Frequently Asked Questions</a></li>
-						<li><a href="../../login.html">App Store</a></li>
-						<li><a href="../../login.html">Third-Party Exchanges</a></li>
-						<li><a href="../../login.html">Currency Markets</a></li>
-						<li><a href="../../login.html">Chat</a></li>
-						<li><a href="../../login.html">Sitemap</a></li>
-						<li><a href="../../login.html">Vote for Witness</a></li>
-						<li><a href="../../my-account/change-password/">Reset Password</a></li>
+						<li class="dropdown-submenu"><a class="droplevel2" tabindex="-1" href="#">Visibility <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><input tabindex="-1" type="button" id="tradebar" value="Trade Bar" onclick=""></input></li>
+								<li><input tabindex="-1" type="button" id="sitefooter" value="Footer" onclick=""></input></li>
+								<li><input tabindex="-1" type="button" id="guide" value="Header Texts" onclick=""></input></li>
+								<li><input tabindex="-1" type="button" id="sitefooter" value="Attendant" onclick=""></input></li>
+							</ul>
+						</li>
+						<li class="dropdown-submenu"><a class="droplevel2" tabindex="-1" href="#">Theme <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><input tabindex="-1" type="button" id="nature" value="Nature" onclick="setTheme(0)"></input></li>
+								<li><input tabindex="-1" type="button" id="night" value="Night" onclick="setTheme(1)"></input></li>
+								<li><input tabindex="-1" type="button" id="sunny" value="Sunny" onclick="setTheme(2)"></input></li>
+								<li><input tabindex="-1" type="button" id="cloudy" value="Cloudy" onclick="setTheme(3)"></input></li>
+								<li><input tabindex="-1" type="button" id="romance" value="Romance" onclick="setTheme(4)"></input></li>
+								<li><input tabindex="-1" type="button" id="royal" value="Royal" onclick="setTheme(5)"></input></li>
+								<li><input tabindex="-1" type="button" id="aqua" value="Aqua" onclick="setTheme(6)"></input></li>
+								<li><input tabindex="-1" type="button" id="teal" value="Teal" onclick="setTheme(7)"></input></li>
+								<li><input tabindex="-1" type="button" id="deeproyal" value="DeepRoyal" onclick="setTheme(8)"></input></li>
+								<li><input tabindex="-1" type="button" id="silver" value="Silver" onclick="setTheme(9)"></input></li>
+							</ul>
+						</li>
+					  </ul>
+					</li>
+					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Legal <span class="caret"></span></a>
+					  <ul class="dropdown-menu">
+						<li><a href="../../about-us-eu/index.html">About Tutusfx</a></li>
+						<li><a href="../../../assets/docs/whitepaper.pdf">Tutusfx Whitepaper</a></li>
+						<li class="dropdown-submenu"><a class="droplevel2" tabindex="-1" href="#">Terms of Service <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><input tabindex="-1" type="button" id="catpolicy" value="Client Categorisation Policy"></input></li>
+								<li><input tabindex="-1" type="button" id="bonuspolicy" value="Bonuses"></input></li>
+								<li><input tabindex="-1" type="button" id="compinfo" value="Company Information"></input></li>
+								<li><input tabindex="-1" type="button" id="complainproc" value="Complaints Procedure for Clients"></input></li>
+								<li><input tabindex="-1" type="button" id="confintpolicy" value="Conflicts of Interest Policy"></input></li>
+								<li><input tabindex="-1" type="button" id="genfeespolicy" value="General Fees"></input></li>
+								<li><input tabindex="-1" type="button" id="compenspolicy" value="Investor Compensation Fund"></input></li>
+								<li><input tabindex="-1" type="button" id="pil3discs" value="Pillar III Disclosures"></input></li>
+								<li><input tabindex="-1" type="button" id="riskdiscs" value="Risk Disclosure"></input></li>
+								<li><input tabindex="-1" type="button" id="usagepolicy" value="Terms of Use"></input></li>
+								<li><input tabindex="-1" type="button" id="bestintpolicy" value="Best Interest and Order Execution Policy"></input></li>
+							</ul>
+						</li>
+						<li><a href="../../../redirects/login.html">Privacy Policy</a></li>
 					  </ul>
 					</li>
 					<li class="dropdown">
-					  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Legal <span class="caret"></span></a><br/>
+					  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Guide <span class="caret"></span></a>
 					  <ul class="dropdown-menu">
-						<li class="active"><a href="">About Tutusfx</a></li>
-						<li><a href="../../../whitepaper.pdf">Tutusfx Whitepaper</a></li>
-						<li><a href="../../login.html">Terms of Service</a></li>
-						<li><a href="../../login.html">Privacy Policy</a></li>
+						<li><a href="../../../redirects/login.html">Sitemap</a></li>
+						<li><a href="../../faqs/index.html">Frequently Asked Questions</a></li>
 					  </ul>
 					</li>
 					<li class="dropdown">
-					  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Theme <span class="caret"></span></a><br/>
+					  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <span class="caret"></span></a>
 					  <ul class="dropdown-menu">
-						<li><input type="button" id="nature" value="Nature" onclick="<?php $_SESSION['theme']='0'; ?>"></input></li>
-						<li><input type="button" id="night" value="Night" onclick="<?php $_SESSION['theme']='1'; ?>"></input></li>
-						<li><input type="button" id="sunny" value="Sunny" onclick="<?php $_SESSION['theme']='2'; ?>"></input></li>
-						<li><input type="button" id="cloudy" value="Cloudy" onclick="<?php $_SESSION['theme']='3'; ?>"></input></li>
-						<li><input type="button" id="romance" value="Romance" onclick="<?php $_SESSION['theme']='4'; ?>"></input></li>
-						<li><input type="button" id="royal" value="Royal" onclick="<?php $_SESSION['theme']='5'; ?>"></input></li> <li><input type="button" id="aqua" value="Aqua" onclick="<?php $_SESSION['theme']='6'; ?>"></input></li> <li><input type="button" id="teal" value="Teal" onclick="<?php $_SESSION['theme']='7'; ?>"></input></li> <li><input type="button" id="deeproyal" value="DeepRoyal" onclick="<?php $_SESSION['theme']='8'; ?>"></input></li> <li><input type="button" id="silver" value="Silver" onclick="<?php $_SESSION['theme']='9'; ?>"></input></li>
+						<li><a href="../../../redirects/login.html">App Store</a></li>
+						<li><a href="../../../redirects/login.html">Third-Party Exchanges</a></li>
+						<li><a href="../../../redirects/login.html">Currency Markets</a></li>
+						<li><a href="../../../redirects/login.html">Chat</a></li>
+						<li><a href="../../../redirects/login.html">Vote for Witness</a></li>
+						<li><a href="../../../redirects/my-account/change-password/">Reset Password</a></li>
 					  </ul>
 					</li>
+					<li><a href="../../../redirects/open-account/"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+					<li><a href="../../../redirects/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 				  </ul>
 				</div>
 			  </div>
