@@ -305,24 +305,24 @@
 					  <ul class="dropdown-menu">
 						<li class="dropdown-submenu"><a class="droplevel2" tabindex="-1" href="#">Visibility <span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><input tabindex="-1" type="button" id="tradebar" value="Trade Bar" onclick=""></input></li>
-								<li><input tabindex="-1" type="button" id="sitefooter" value="Footer" onclick=""></input></li>
-								<li><input tabindex="-1" type="button" id="guide" value="Header Texts" onclick=""></input></li>
-								<li><input tabindex="-1" type="button" id="sitefooter" value="Attendant" onclick=""></input></li>
+								<li><input tabindex="-1" type="button" id="tradebar" value="Trade Bar"></input></li>
+								<li><input tabindex="-1" type="button" id="sitefooter" value="Footer"></input></li>
+								<li><input tabindex="-1" type="button" id="headertexts" value="Header Texts"></input></li>
+								<li><input tabindex="-1" type="button" id="sitefooter" value="Attendant"></input></li>
 							</ul>
 						</li>
 						<li class="dropdown-submenu"><a class="droplevel2" tabindex="-1" href="#">Theme <span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><input tabindex="-1" type="button" id="nature" value="Nature" onclick="setTheme(0)"></input></li>
-								<li><input tabindex="-1" type="button" id="night" value="Night" onclick="setTheme(1)"></input></li>
-								<li><input tabindex="-1" type="button" id="sunny" value="Sunny" onclick="setTheme(2)"></input></li>
-								<li><input tabindex="-1" type="button" id="cloudy" value="Cloudy" onclick="setTheme(3)"></input></li>
-								<li><input tabindex="-1" type="button" id="romance" value="Romance" onclick="setTheme(4)"></input></li>
-								<li><input tabindex="-1" type="button" id="royal" value="Royal" onclick="setTheme(5)"></input></li>
-								<li><input tabindex="-1" type="button" id="aqua" value="Aqua" onclick="setTheme(6)"></input></li>
-								<li><input tabindex="-1" type="button" id="teal" value="Teal" onclick="setTheme(7)"></input></li>
-								<li><input tabindex="-1" type="button" id="deeproyal" value="DeepRoyal" onclick="setTheme(8)"></input></li>
-								<li><input tabindex="-1" type="button" id="silver" value="Silver" onclick="setTheme(9)"></input></li>
+								<li><input tabindex="-1" type="button" id="nature" value="Nature" ></input></li>
+								<li><input tabindex="-1" type="button" id="night" value="Night" ></input></li>
+								<li><input tabindex="-1" type="button" id="sunny" value="Sunny" ></input></li>
+								<li><input tabindex="-1" type="button" id="cloudy" value="Cloudy" ></input></li>
+								<li><input tabindex="-1" type="button" id="romance" value="Romance" ></input></li>
+								<li><input tabindex="-1" type="button" id="royal" value="Royal" ></input></li>
+								<li><input tabindex="-1" type="button" id="aqua" value="Aqua" ></input></li>
+								<li><input tabindex="-1" type="button" id="teal" value="Teal" ></input></li>
+								<li><input tabindex="-1" type="button" id="deeproyal" value="DeepRoyal" ></input></li>
+								<li><input tabindex="-1" type="button" id="silver" value="Silver" ></input></li>
 							</ul>
 						</li>
 					  </ul>
@@ -340,7 +340,7 @@
 								<li><input tabindex="-1" type="button" id="confintpolicy" value="Conflicts of Interest Policy"></input></li>
 								<li><input tabindex="-1" type="button" id="genfeespolicy" value="General Fees"></input></li>
 								<li><input tabindex="-1" type="button" id="compenspolicy" value="Investor Compensation Fund"></input></li>
-								<li><input tabindex="-1" type="button" id="pil3discs" value="Pillar III Disclosures"></input></li>
+								<li><input tabindex="-1" type="button" id="cussupdiscs" value="Customer Support Disclosures"></input></li>
 								<li><input tabindex="-1" type="button" id="riskdiscs" value="Risk Disclosure"></input></li>
 								<li><input tabindex="-1" type="button" id="usagepolicy" value="Terms of Use"></input></li>
 								<li><input tabindex="-1" type="button" id="bestintpolicy" value="Best Interest and Order Execution Policy"></input></li>
@@ -376,7 +376,7 @@
 		</div>
 
 		<div class="container row">
-		  <div class="leftcolumn">
+		  <div class="leftColumn">
 			<div class="card" id="segment">
 			  <h3>Top Trades</h3><hr/>
 			  <div class="fakeimg trendingtrades">
@@ -414,7 +414,7 @@
 			  <p class="rightAlign"><a href="">More...</a></p><br/><p><hr/>
 			</div>
 		  </div>
-		  <div class="maincolumn">
+		  <div class="mainColumn">
 			<div class="card" id="segment">
 			  <h3>Trending Posts</h3><hr/>
 			  <div class="fakeimg"><p>Image</p></div><hr/>
@@ -450,7 +450,7 @@
 			  <p class="rightAlign"><a href="eu/about-us-eu/index.html">More...</a></p><br/><p><hr/>
 			</div>
 		  </div>
-		  <div class="rightcolumn">
+		  <div class="rightColumn">
 			<div class="card" id="segment">
 			  <h3>Blockchain Post 2</h3><hr/>
 			  <h5><b> &nbsp; Title description</b>, Nov 22, 2018</h5>

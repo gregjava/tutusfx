@@ -2,8 +2,8 @@
 	var body = $("body"); var img = $("img"); var topnavimg = $("#topnav img"); var marquee = $("marquee"); var thisselect = $("select"); var navheaderlinks = $("nav a");
 	var navheaderinputs = $("li input"); var allinputs = $("input"); var h3 = $("h3"); var paragraph = $("p"); var textinputarea = $("textarea"); var links = $("a");
 	 
-	var pagefootertopicr = $(".upper-footer"); var pagefooter = $(".footer"); var pagefootercard = $(".footerCard"); 
-	var trendingtrades = $(".trendingtrades"); var trendingtradeusername = $(".trendingtradeusername"); var card = $(".card"); var cardlist = $(".cardlist"); 
+	var pagefootertopicr = $(".upper-footer"); var pagefooter = $(".footer"); var pagefootercard = $(".footerCard"); var closethis = $(".floatingColumn .close"); var closethat = $(".mainColumn .close");
+	var trendingtrades = $(".trendingtrades"); var trendingtradeusername = $(".trendingtradeusername"); var card = $(".card"); var cardlist = $(".cardlist"); var maincolumn = $(".mainColumn"); 
 	var cardahov = $(".card a:hover"); var carda = $(".card a"); var cardp = $(".card p"); var warningspan = $(".warning span"); var pagefootertopics = $(".upper-footer a"); 
 	var navcontainer = $(".navbar"); var drawer = $(".collapse"); var dropdown = $(".contactUs-regardingSelect"); var toggledrawer = $(".navbar-toggle"); var rightalign = $(".rightAlign");
 	var atradeview = $(".tradeview"); var positiverate = $(".positiverate"); var negativerate = $(".negativerate"); var fakeimg = $(".fakeimg"); var navbarcontainer = $(".container-fluid");
@@ -13,7 +13,7 @@
 	var topheader = $("#header"); var toolbar = $("#topnav"); var topheadertitle = $("#headertitle"); var topheadercontent = $("#headercontent"); var myprogress = $("#myProgress"); 
 	var segments = $("#segment"); var topnava = $("#topnav a"); var progressBar = $("#progressBar"); var toggleicons = [$("#icon-bar1"),$("#icon-bar2"),$("#icon-bar3"),$("#icon-bar4")];
 	
-	var THEME; var HIDDEN = true; var i = 0; var footerclosing = true; var upperclosing = false;
+	var THEME; var HIDDEN = true; var i = 0; var footerclosing = true; var textclosed = false; var upperclosing = false;
 	
 	if (THEME==null) setTheme(THEME = 0); else setTheme(THEME);
 	
@@ -49,7 +49,9 @@
 		cardahov.css("color","#B2D4B2");
 		carda.css("text-decoration","none");
 		cardp.css("text-align","justify");
-		cardlist.css("dropdown","100%");
+		cardlist.css("dropdown","100%"); maincolumn.css("margin","0"); maincolumn.css("padding","0"); maincolumn.css("left","0"); maincolumn.css("top","0");
+		closethis.css("border-radius","50%").css("width","50px").css("height","50px").css("margin","10px"); 
+		closethat.css("border-radius","50%").css("width","50px").css("height","50px").css("margin","10px"); 
 		links.css("text-decoration","none").css("transition","all 0.3s ease-out").css("-webkit-transition","all 0.3s ease-out").css("-moz-transition","all 0.3s ease-out").css("-o-transition","all 0.3s ease-out");
 		pagefooter.css("height","600px").css("z-index","500").css("border-radius","5px 5px 0px 0px").css("margin-top","100px").css("margin-left","-2.5%").css("padding","0").css("text-align","center").css("font-stretch","condensed").css("font-weight","lighter");
 		pagefooterdivheader.css("color","white").css("font-weight","bold").css("font-size","100%");
@@ -73,6 +75,8 @@
 			body.css("background",bodycolor).css("color",color1); 
 			returnerhov.css("background",color2).css("color",color1); 
 			topheader.css("background",color2).css("color",color1); 
+			closethis.css("background",color2).css("color",color1); 
+			closethat.css("background",color2).css("color",color1); 
 			fakeimg.css("background-color",fakeimgcolor); 
 			h3.css("color",headercolor); 
 			topnavahov.css("background-color",headercolor); 
@@ -139,6 +143,10 @@
 		else if (THEME==3) { upperclosebtn.style.background="#1234ab"; upperclosebtn.style.color="#000000"; } 
 		else if (THEME==4) { upperclosebtn.style.background="#ff1234"; upperclosebtn.style.color="#000000"; } 
 		else if (THEME==5) { upperclosebtn.style.background="#ff12ff"; upperclosebtn.style.color="#ffffff"; } 
+		else if (THEME==6) { upperclosebtn.style.background="#12ffff"; upperclosebtn.style.color="#ffffff"; } 
+		else if (THEME==7) { upperclosebtn.style.background="#008080"; upperclosebtn.style.color="#ffffff"; } 
+		else if (THEME==8) { upperclosebtn.style.background="#800080"; upperclosebtn.style.color="#ffffff"; } 
+		else if (THEME==9) { upperclosebtn.style.background="#c0c0c0"; upperclosebtn.style.color="#ffffff"; } 
 	}).on("mouseout", function() { 
 		if (THEME==0) { upperclosebtn.style.background="white"; upperclosebtn.style.color="#004300"; } 
 		else if (THEME==1) { upperclosebtn.style.background="white"; upperclosebtn.style.color="#000000"; } 
@@ -146,6 +154,10 @@
 		else if (THEME==3) { upperclosebtn.style.background="#000000"; upperclosebtn.style.color="#1234ab"; } 
 		else if (THEME==4) { upperclosebtn.style.background="#000000"; upperclosebtn.style.color="#ff1234"; } 
 		else if (THEME==5) { upperclosebtn.style.background="#ffffff"; upperclosebtn.style.color="#ff12ff"; } 
+		else if (THEME==6) { upperclosebtn.style.background="#ffffff"; upperclosebtn.style.color="#12ffff"; } 
+		else if (THEME==7) { upperclosebtn.style.background="#ffffff"; upperclosebtn.style.color="#008080"; } 
+		else if (THEME==8) { upperclosebtn.style.background="#ffffff"; upperclosebtn.style.color="#800080"; } 
+		else if (THEME==9) { upperclosebtn.style.background="#ffffff"; upperclosebtn.style.color="#c0c0c0"; } 
 	});
 	
 	$("#close:first").on("mouseover", function() { 
@@ -155,6 +167,10 @@
 		else if (THEME==3) { pagefooterclosebtn.style.background="#1234ab"; pagefooterclosebtn.style.color="#000000"; } 
 		else if (THEME==4) { pagefooterclosebtn.style.background="#ff1234"; pagefooterclosebtn.style.color="#000000"; } 
 		else if (THEME==5) { pagefooterclosebtn.style.background="#ff12ff"; pagefooterclosebtn.style.color="#ffffff"; } 
+		else if (THEME==6) { pagefooterclosebtn.style.background="#12ffff"; pagefooterclosebtn.style.color="#ffffff"; } 
+		else if (THEME==7) { pagefooterclosebtn.style.background="#008080"; pagefooterclosebtn.style.color="#ffffff"; } 
+		else if (THEME==8) { pagefooterclosebtn.style.background="#800080"; pagefooterclosebtn.style.color="#ffffff"; } 
+		else if (THEME==9) { pagefooterclosebtn.style.background="#c0c0c0"; pagefooterclosebtn.style.color="#ffffff"; } 
 	}).on("mouseout", function() { 
 		if (THEME==0) { pagefooterclosebtn.style.background="white"; pagefooterclosebtn.style.color="#004300"; } 
 		else if (THEME==1) { pagefooterclosebtn.style.background="white"; pagefooterclosebtn.style.color="#000000"; } 
@@ -162,6 +178,10 @@
 		else if (THEME==3) { pagefooterclosebtn.style.background="#000000"; pagefooterclosebtn.style.color="#1234ab"; } 
 		else if (THEME==4) { pagefooterclosebtn.style.background="#000000"; pagefooterclosebtn.style.color="#ff1234"; } 
 		else if (THEME==5) { pagefooterclosebtn.style.background="#ffffff"; pagefooterclosebtn.style.color="#ff12ff"; } 
+		else if (THEME==6) { pagefooterclosebtn.style.background="#ffffff"; pagefooterclosebtn.style.color="#12ffff"; } 
+		else if (THEME==7) { pagefooterclosebtn.style.background="#ffffff"; pagefooterclosebtn.style.color="#008080"; } 
+		else if (THEME==8) { pagefooterclosebtn.style.background="#ffffff"; pagefooterclosebtn.style.color="#800080"; } 
+		else if (THEME==9) { pagefooterclosebtn.style.background="#ffffff"; pagefooterclosebtn.style.color="#c0c0c0"; } 
 	});
 	
 	$(".navbar-toggle:first").on("mouseover", function() { 
@@ -172,6 +192,10 @@
 			else if (THEME==3) { toggleicons[i].css("background","#1234ab"); } 
 			else if (THEME==4) { toggleicons[i].css("background","#ff1234"); } 
 			else if (THEME==5) { toggleicons[i].css("background","#ff12ff"); }  
+			else if (THEME==6) { toggleicons[i].css("background","#12ffff"); }  
+			else if (THEME==7) { toggleicons[i].css("background","#008080"); }  
+			else if (THEME==8) { toggleicons[i].css("background","#800080"); }  
+			else if (THEME==9) { toggleicons[i].css("background","#c0c0c0"); }  
 		} if (THEME==2) { toggledrawer.css("background","#aaaaaa"); } else toggledrawer.css("background","white");
 	}).on("mouseout", function() { 
 		for (i=0; i<toggleicons.length; i++) { if (THEME==2) { toggleicons[i].css("background","#aaaaaa"); } else toggleicons[i].css("background","white"); }
@@ -181,13 +205,29 @@
 		else if (THEME==3) { toggledrawer.css("background","#1234ab"); } 
 		else if (THEME==4) { toggledrawer.css("background","#ff1234"); } 
 		else if (THEME==5) { toggledrawer.css("background","#ff12ff"); }   
+		else if (THEME==6) { toggledrawer.css("background","#12ffff"); }   
+		else if (THEME==7) { toggledrawer.css("background","#008080"); }   
+		else if (THEME==8) { toggledrawer.css("background","#800080"); }   
+		else if (THEME==9) { toggledrawer.css("background","#c0c0c0"); }   
 	}).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
+	
+	$("#tradebar:first").on("mousedown", function() { doupperclosing(); } );
+	
+	$("#sitefooter:first").on("mousedown", function() { dofooterclose(); } );
+	
+	$("#headertexts:first").on("mousedown", function() { dotextclosing(); } );
+	
+	$("#attendant:first").on("mousedown", function() {  } );
+	
+	$(".mainColumn:first").on("mousedown", function() { floatingcolumn.show(); maincolumn.css("width","65%"); } );
+	
+	$(".floatingColumn:first").on("mousedown", function() { floatingcolumn.hide(); maincolumn.css("width","100%"); } );
 	
 	var header = document.getElementById("topnav"); var headeroffset = header.offsetTop; var rates = document.getElementById("ratebar"); var upperbar = rates.offsetTop;
 	var title = document.getElementById("headertitle"); var headercontent = document.getElementById("headercontent");
 	var footerdiv = document.getElementById("footerDiv"); var footerheader = document.getElementById("footerDivHeader"); 
 	var footertexts = document.getElementById("footerDivTexts"); var footerclosebtn = document.getElementById("close");
-	var ads = document.getElementById("ads"); var upperclosebtn = document.getElementById("upperclosebtn");
+	var ads = document.getElementById("ads"); var upperclosebtn = document.getElementById("upperclosebtn"); var floatingcolumn = $(".floatingColumn"); var maincolumn = $(".mainColumn");
 	
 	$(document).ready(function(){
 	  $('.dropdown-submenu a.droplevel2').on("click", function(e){
@@ -207,8 +247,8 @@
 
 	function myFunction() { 
 		if (window.pageYOffset > (headeroffset-(headeroffset/10)-50)) { 
-			if (upperclosing==true) { if (window.pageYOffset > (headeroffset-(headeroffset/10))) { header.classList.remove("sticky"); header.classList.add("sticky2"); } } else { header.classList.remove("sticky2"); header.classList.add("sticky"); } 
-		} else {
+			if (upperclosing==true) { if (window.pageYOffset > (headeroffset-(headeroffset/10))) { floatingcolumn.css("top","110px"); header.classList.remove("sticky"); header.classList.add("sticky2"); } } else { floatingcolumn.css("top","160px"); header.classList.remove("sticky2"); header.classList.add("sticky"); } 
+		} else { if (upperclosing==true) { floatingcolumn.css("top","55px"); } else { floatingcolumn.css("top","105px"); }
 			title.style.paddingTop = (window.pageYOffset+30)+"px"; title.style.fontSize = (90-(3*window.pageYOffset/25))+"px"; 
 			headercontent.style.paddingTop = (window.pageYOffset-220)+"px"; headercontent.style.fontSize = (40-(window.pageYOffset/25))+"px";
 			if (window.pageYOffset > 250) { (window.pageYOffset/2)+"px"; headercontent.style.fontSize = "0px"; } 
@@ -220,10 +260,10 @@
 		} else { rates.classList.add("upperbar"); rates.style.height = "50px"; rates.style.top = "0px"; rates.style.zIndex = "1000";
 			upperclosebtn.classList.remove("glyphicon-arrow-left"); upperclosebtn.classList.add("glyphicon-arrow-right");
 			ads.style.fontSize = "100%"; setRateBarTheme(); 
-		}
+		} if (textclosed==true) { topheadertitle.hide(); topheadercontent.hide(); } else { topheadertitle.show(); topheadercontent.show(); } 
 	}
 	
-	function doclose() { 
+	function dofooterclose() { 
 		if (footerclosing==true) {
 			footerclosebtn.classList.remove("glyphicon-arrow-up"); footerclosebtn.classList.add("glyphicon-arrow-down");
 			footerdiv.style.background = "none"; footerheader.style.fontSize = "0%"; footertexts.style.fontSize = "0%"; footerclosing = false;
@@ -236,4 +276,9 @@
 	function doupperclosing() { 
 		if (upperclosing==true) { upperclosebtn.classList.remove("close-upper"); upperclosebtn.classList.add("open-upper"); upperclosing = false; } 
 		else { upperclosebtn.classList.remove("open-upper"); upperclosebtn.classList.add("close-upper"); upperclosing = true; } myFunction();
+	}
+	
+	function dotextclosing() { 
+		if (textclosed==true) { topheadertitle.show(); topheadercontent.show(); textclosed = false; } 
+		else { topheadertitle.hide(); topheadercontent.hide(); textclosed = true; }
 	}

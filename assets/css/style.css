@@ -10,33 +10,16 @@ nav li input[type="button"] { background-color: #004300; color: #f2f2f2; padding
 nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out; }
 
 /* Header/Blog Title */
-#header { height: 450px; }
-
-#headertitle { font-size: 90px; }
-
-#headercontent { font-size: 40px; }
+#header { height: 450px; } #headertitle { font-size: 90px; } #headercontent { font-size: 40px; }
 
 /* Change properties of page navigation buttons */
 
-#next, #back { text-align: center; width: 70px; border: none; }
-
-#back { border-radius: 2.5px 0px 0px 2.5px; } #next { border-radius: 0px 2.5px 2.5px 0px; }
-
-#footerDiv { display: none; }
+#next, #back { text-align: center; width: 70px; border: none; } #back { border-radius: 2.5px 0px 0px 2.5px; } #next { border-radius: 0px 2.5px 2.5px 0px; } #footerDiv { display: none; }
 
 /* Create three unequal columns that floats next to each other */
-/* Left column */
-.leftcolumn { float: left; width: 30%; padding: 1%; }
+.leftColumn { float: left; width: 30%; padding: 1%; } .mainColumn { float: left; width: 40%; padding: 1%; } .rightColumn { float: left; width: 30%; padding: 1%; }
 
-/* Main column */
-.maincolumn { float: left; width: 40%; padding: 1%; }
-
-/* Right column */
-.rightcolumn { float: left; width: 30%; padding: 1%; }
-
-.picture { height: 100px; }
-
-.largepicture { height: 200px; }
+.picture { height: 100px; } .largepicture { height: 200px; }
 
 /* Set container properties */
 .row { padding: 1%; width: 100%; height: 100%; }
@@ -83,13 +66,13 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 	.row { padding: 2%; width: 100%; }
 	
 	/* Left column */
-	.leftcolumn { float: left; width: 35%; padding: 0.5%; }
+	.leftColumn { float: left; width: 35%; padding: 0.5%; }
 	
 	/* Main column */
-	.maincolumn { float: left; width: 65%; padding: 0.5%; }
+	.mainColumn { float: left; width: 65%; padding: 0.5%; }
 
 	/* Right column */
-	.rightcolumn { float: left; width: 100%; padding: 0.5%; }
+	.rightColumn { float: left; width: 100%; padding: 0.5%; }
 
 	.footerCard blockquote { font-size: 90%; }
 	
@@ -100,13 +83,13 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 @media screen and (max-width: 800px) { 
 	#backbar, #nextbar, #topnav a { z-index: 1000; } 
 	
-	#back, #next{ float: none; height: 50px; padding: 0%; width: 100%; }
-	
-	.row { padding: 2%; } .leftcolumn, .maincolumn, .rightcolumn {  width: 100%; padding-left: 1%; } .footer a{ margin: 0.5% 1.2%; } #footerDivTexts { color: white; text-align: justify; float: justify;  font-size: 99%; } 
+	#back, #next{ float: none; height: 50px; padding: 0%; width: 100%; } #footerDivTexts { color: white; text-align: justify; float: justify;  font-size: 99%; } 
 	
 	#footerDiv { display: block; position: fixed; top: 70%; left: 0; width: 100%; height: 30%; margin: 0; padding: 5%; background-color: #004300; color: white; font-size: 60%; }
 	
 	#footerDivHeader { font-size: 100%; } #close { display: block; color: #004300; border-radius: 10px; float: right; }
+	
+	.row { padding: 2%; } .leftColumn, .mainColumn, .rightColumn {  width: 100%; padding-left: 1%; } .footer a{ margin: 0.5% 1.2%; }
 }
 
 /* Responsive layout - when the screen is less than 480px wide, make the navigation links stack on top of each other instead of next to each other */
@@ -119,11 +102,9 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 	
 	#topnav { width: 99%; margin: 0% 0.5%; } 
 	
-	.row { padding: 2%; } .warning { display: none; } 
-	
-	.footer a{ font-size: 80%; margin: 0.5% 0.8%; } .footerCard { width: 33%; font-size: 80%; height: 547px; } .footerCard blockquote { font-size: 68%; }
-	
 	#footerDivTexts { text-align: center; float: center; font-size: 98%; }
+	
+	.row { padding: 2%; } .warning { display: none; } .footer a{ font-size: 80%; margin: 0.5% 0.8%; } .footerCard { width: 33%; font-size: 80%; height: 547px; } .footerCard blockquote { font-size: 68%; }
 }
 
 /* Responsive layout - when the screen is less than 345px wide, make the footer cards smaller so as to fit into container frame */
