@@ -160,29 +160,29 @@
 		else if (THEME==9) { upperclosebtn.style.background="#ffffff"; upperclosebtn.style.color="#c0c0c0"; } 
 	});
 	
-	$("#close:first").on("mouseover", function() { 
-		if (THEME==0) { pagefooterclosebtn.style.background="#004300"; pagefooterclosebtn.style.color="white"; } 
-		else if (THEME==1) { pagefooterclosebtn.style.background="#000000"; pagefooterclosebtn.style.color="white"; } 
-		else if (THEME==2) { pagefooterclosebtn.style.background="#ffffff"; pagefooterclosebtn.style.color="#004300"; } 
-		else if (THEME==3) { pagefooterclosebtn.style.background="#1234ab"; pagefooterclosebtn.style.color="#000000"; } 
-		else if (THEME==4) { pagefooterclosebtn.style.background="#ff1234"; pagefooterclosebtn.style.color="#000000"; } 
-		else if (THEME==5) { pagefooterclosebtn.style.background="#ff12ff"; pagefooterclosebtn.style.color="#ffffff"; } 
-		else if (THEME==6) { pagefooterclosebtn.style.background="#12ffff"; pagefooterclosebtn.style.color="#ffffff"; } 
-		else if (THEME==7) { pagefooterclosebtn.style.background="#008080"; pagefooterclosebtn.style.color="#ffffff"; } 
-		else if (THEME==8) { pagefooterclosebtn.style.background="#800080"; pagefooterclosebtn.style.color="#ffffff"; } 
-		else if (THEME==9) { pagefooterclosebtn.style.background="#c0c0c0"; pagefooterclosebtn.style.color="#ffffff"; } 
+	$("#close:first").on("mouseover", function() {
+		if (THEME==0) { footerclosebtn.style.background="#004300"; footerclosebtn.style.color="white"; } 
+		else if (THEME==1) { footerclosebtn.style.background="#000000"; footerclosebtn.style.color="white"; } 
+		else if (THEME==2) { footerclosebtn.style.background="#ffffff"; footerclosebtn.style.color="#004300"; } 
+		else if (THEME==3) { footerclosebtn.style.background="#1234ab"; footerclosebtn.style.color="#000000"; } 
+		else if (THEME==4) { footerclosebtn.style.background="#ff1234"; footerclosebtn.style.color="#000000"; } 
+		else if (THEME==5) { footerclosebtn.style.background="#ff12ff"; footerclosebtn.style.color="#ffffff"; } 
+		else if (THEME==6) { footerclosebtn.style.background="#12ffff"; footerclosebtn.style.color="#ffffff"; } 
+		else if (THEME==7) { footerclosebtn.style.background="#008080"; footerclosebtn.style.color="#ffffff"; } 
+		else if (THEME==8) { footerclosebtn.style.background="#800080"; footerclosebtn.style.color="#ffffff"; } 
+		else if (THEME==9) { footerclosebtn.style.background="#c0c0c0"; footerclosebtn.style.color="#ffffff"; } 
 	}).on("mouseout", function() { 
-		if (THEME==0) { pagefooterclosebtn.style.background="white"; pagefooterclosebtn.style.color="#004300"; } 
-		else if (THEME==1) { pagefooterclosebtn.style.background="white"; pagefooterclosebtn.style.color="#000000"; } 
-		else if (THEME==2) { pagefooterclosebtn.style.background="#004300"; pagefooterclosebtn.style.color="#ffffff"; } 
-		else if (THEME==3) { pagefooterclosebtn.style.background="#000000"; pagefooterclosebtn.style.color="#1234ab"; } 
-		else if (THEME==4) { pagefooterclosebtn.style.background="#000000"; pagefooterclosebtn.style.color="#ff1234"; } 
-		else if (THEME==5) { pagefooterclosebtn.style.background="#ffffff"; pagefooterclosebtn.style.color="#ff12ff"; } 
-		else if (THEME==6) { pagefooterclosebtn.style.background="#ffffff"; pagefooterclosebtn.style.color="#12ffff"; } 
-		else if (THEME==7) { pagefooterclosebtn.style.background="#ffffff"; pagefooterclosebtn.style.color="#008080"; } 
-		else if (THEME==8) { pagefooterclosebtn.style.background="#ffffff"; pagefooterclosebtn.style.color="#800080"; } 
-		else if (THEME==9) { pagefooterclosebtn.style.background="#ffffff"; pagefooterclosebtn.style.color="#c0c0c0"; } 
-	});
+		if (THEME==0) { footerclosebtn.style.background="white"; footerclosebtn.style.color="#004300"; } 
+		else if (THEME==1) { footerclosebtn.style.background="white"; footerclosebtn.style.color="#000000"; } 
+		else if (THEME==2) { footerclosebtn.style.background="#004300"; footerclosebtn.style.color="#ffffff"; } 
+		else if (THEME==3) { footerclosebtn.style.background="#000000"; footerclosebtn.style.color="#1234ab"; } 
+		else if (THEME==4) { footerclosebtn.style.background="#000000"; footerclosebtn.style.color="#ff1234"; } 
+		else if (THEME==5) { footerclosebtn.style.background="#ffffff"; footerclosebtn.style.color="#ff12ff"; } 
+		else if (THEME==6) { footerclosebtn.style.background="#ffffff"; footerclosebtn.style.color="#12ffff"; } 
+		else if (THEME==7) { footerclosebtn.style.background="#ffffff"; footerclosebtn.style.color="#008080"; } 
+		else if (THEME==8) { footerclosebtn.style.background="#ffffff"; footerclosebtn.style.color="#800080"; } 
+		else if (THEME==9) { footerclosebtn.style.background="#ffffff"; footerclosebtn.style.color="#c0c0c0"; } 
+	}).on("mousedown", function() {  dofooterclose(); });
 	
 	$(".navbar-toggle:first").on("mouseover", function() { 
 		for (i=0; i<toggleicons.length; i++) { 

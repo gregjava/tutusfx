@@ -1,6 +1,6 @@
 # tutusfx
 
-> A Vue.js project
+> An incentivized forex brokerage with Smart Contracts
 
 ## Build Setup
 

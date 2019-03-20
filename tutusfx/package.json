@@ -1,7 +1,7 @@
 {
   "name": "tutusfx",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "An incentivized forex brokerage with Smart Contracts",
   "author": "GregJava <stealthsolarenergy@gmail.com>",
   "private": true,
   "scripts": {
