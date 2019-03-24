@@ -4,9 +4,46 @@
 		<meta charset="utf-8"><title>Tutusfx.com | Incentivized Forex Brokerage with Smart Contracts</title>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes"/>
 		<meta name="HandheldFriendly" content="True" />
 		<meta name="MobileOptimized" content="320" />
+		<meta name="keywords" content="Binary Options, Forex Trade, Binary Trade, CFD, Forex, Binary"/>
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content="Sitemap | tutusfx.com" />
+		<meta name="twitter:description" content="Tutusfx is an incentivized Forex/CFDs/Cryptocurrency trading platform built on blockchain technology. Trade Forex/CFDs/Cryptocurrency on our advanced, web-based trading platform designed with you, the user, in mind."/>
+		<meta name="twitter:domain" content="tutusfx.com" />
+		<meta name="generator" content="WPML ver:3.6.1 stt:5,39,1,4,3,27,40,42,44,47,2,52;" />
+		<meta name="description" content="Tutusfx is an incentivized Forex/CFDs/Cryptocurrency trading platform built on blockchain technology. Trade Forex/CFDs/Cryptocurrency on our advanced, web-based trading platform designed with you, the user, in mind." />
+		
+		<meta property="og:locale" content="en_GB" />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content="https://www.tutusfx.com/assets/images/new_logo.png" />
+		<meta property="og:title" content="Tutusfx.com | Incentivized Forex Brokerage with Smart Contracts" />
+		<meta property="og:description" content="Tutusfx is an incentivized Forex/CFDs/Cryptocurrency trading platform built on blockchain technology. Trade Forex/CFDs/Cryptocurrency on our advanced, web-based trading platform designed with you, the user, in mind."/>
+		<meta property="og:url" content="https://www.tutusfx.com/eu/index.html" />
+		<meta property="og:site_name" content="tutusfx.com" />
+		<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","url":"https:\/\/www.tutusfx.com\/eu\/","name":"tutusfx.com","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.tutusfx.com\/eu\/?s={search_term}","query-input":"required name=search_term"}}</script>
+		<link rel="icon" href="../assets/images/new_logo.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="../assets/images/new_logo.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../assets/css/style.css" type="text/css" media="all">
+		<link rel="manifest" href="../manifest.json" /> <!--server:header--> 
+		<link rel="canonical" href="eu/index.html" />
+		<link rel="alternate" hreflang="en-GB" href="index.html"/>
+		<link rel="alternate" hreflang="fr-FR" href="fr/index.html"/>
+		<link rel="alternate" hreflang="de-DE" href="de/index.html"/>
+		<link rel="alternate" hreflang="it-IT" href="it/index.html"/>
+		<link rel="alternate" hreflang="es-ES" href="es/index.html"/>
+		<link rel="alternate" hreflang="ru-RU" href="ru/index.html"/>
+		<link rel="alternate" hreflang="ar-AR" href="ar/index.html"/>
+		<link rel="alternate" hreflang="sv-SE" href="sv/index.html"/>
+		<link rel="alternate" hreflang="nl-NL" href="nl/index.html"/>
+		<link rel="alternate" hreflang="nb-NO" href="nb/index.html"/>
+		<link rel="alternate" hreflang="pl-PL" href="pl/index.html"/>
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/bootstrap.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		
 		<script>
 			date = new Date();
 			date.setTime(date.getTime()+(30*24*60*60*1000));
@@ -240,7 +277,19 @@
 			
 			function IsLoggedIn(){ return <?php if ( isset($_SESSION['user']) && $_SESSION['user']!=="") echo true; else echo false; ?>; }
         </script>
-		<div id="ratebar"><marquee id="ads" scrolldelay="1s" scrollamount="3">
+		<div id="ratebar">
+		<div id="app">
+			{{ message }}
+		</div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello User!'
+            }
+        })
+        
+    </script><marquee id="ads" scrolldelay="1s" scrollamount="3">
 			<span class="usdcad">USD/CAD: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="usdjpy">USD/JPY: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="usdchf">USD/CHF: <span class="positiverate">000:0000</span></span> &nbsp;
@@ -264,7 +313,7 @@
 			<span class="chfjpy">CHF/JPY: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="usdsgd">USD/SGD: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="usdcad">USD/NGN: <span class="positiverate">000:0000</span></span></marquee>
-			<button id="upperclosebtn" onclick="doupperclosing()" class="glyphicon glyphicon-arrow-right rightAlign close-upper"></button>
+			<button id="upperclosebtn" class="glyphicon glyphicon-arrow-right rightAlign close-upper"></button>
 		</div>
 		<div id="header" class="animatePix">
 		  <h1 id="headertitle">Tutusfx</h1>

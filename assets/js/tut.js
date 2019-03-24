@@ -20,13 +20,13 @@
 	function setTheme(THEME){
 		img.css("position","relative").css("top","0").css("left","0").css("width","100%").css("height","100%").css("float","left top").css("border-radius","1.5px");
 		textinputarea.css("min-height","300px").css("min-width","100%").css("height","80%").css("width","100%").css("top","0").css("left","0").css("text-align","justify").css("float","center").css("border-radius","5px").css("padding","16px 4px");
-		topheader.css("margin-left","-1.2%").css("text-align","center").css("text-shadow","-8px 8px 16px #B2D4B2").css("box-shadow","-3px 5px 3px #343");
+		topheader.css("text-align","center").css("text-shadow","-8px 8px 16px #B2D4B2").css("box-shadow","-3px 5px 3px #343");
 		topheadertitle.css("z-index","-1000").css("font-family","Garamond").css("font-weight","bolder").css("font-stretch","expanded");
 		topheadercontent.css("font-style","italic").css("font-family","Garamond").css("font-stretch","condensed");
 		drawer.css("height","100%").css("width","auto").css("text-align","justify");
 		segments.css("padding","0.5% 5%").css("text-shadow","-1px 1px 1px #010").css("box-shadow","-5px 5px 3px #aba");
 		fakeimg.css("width","100%").css("padding","2%").css("margin","20px 0").css("border-radius","2px").css("box-shadow","-3px 3px 2px #aba");
-		body.css("fontFamily","Arial, Helvetica, sans-serif").css("padding","0.1% 0.1% 0.1% 2.5%");
+		body.css("font-family","Arial, Helvetica, sans-serif").css("padding","0.1% 0.1% 0.1% 0.1%");
 		h3.css("font-weight","bolder").css("text-align","center"); rightalign.css("float","right"); marquee.css("color","#ff0e").css("width","98%"); 
 		pagefootercard.css("float","left").css("text-align","justify").css("padding","0% 2%").css("font-size","90%").css("height","547px");
 		negativerate.css("color","#ff0000").css("font-family","Courier New, Times New Roman, Arial").css("font-size","100%").css("font-weight","lighter").css("font-stretch","condensed").css("text-decoration","blink");
@@ -53,10 +53,10 @@
 		closethis.css("border-radius","50%").css("width","50px").css("height","50px").css("margin","10px"); 
 		closethat.css("border-radius","50%").css("width","50px").css("height","50px").css("margin","10px"); 
 		links.css("text-decoration","none").css("transition","all 0.3s ease-out").css("-webkit-transition","all 0.3s ease-out").css("-moz-transition","all 0.3s ease-out").css("-o-transition","all 0.3s ease-out");
-		pagefooter.css("height","600px").css("z-index","500").css("border-radius","5px 5px 0px 0px").css("margin-top","100px").css("margin-left","-2.5%").css("padding","0").css("text-align","center").css("font-stretch","condensed").css("font-weight","lighter");
+		pagefooter.css("height","600px").css("z-index","500").css("border-radius","5px 5px 0px 0px").css("margin-top","100px").css("padding","0").css("text-align","center").css("font-stretch","condensed").css("font-weight","lighter");
 		pagefooterdivheader.css("color","white").css("font-weight","bold").css("font-size","100%");
 		pagefooterdivtexts.css("color","white").css("text-align","justify").css("float","justify").css("font-size","99%");
-		navcontainer.css("margin-left","-2.4%").css("border-radius","0px 0px 5px 5px").css("box-shadow","-3px 5px 3px #454");
+		navcontainer.css("border-radius","0px 0px 5px 5px").css("box-shadow","-3px 5px 3px #454");
 		
 		if (THEME==0){ applyTheme("#004300","#ffffff","#baf1ba","#fefefe","#bbfebb"); } /* theme, revtheme, bodybkgd, header, fakeimg */ 
 		else if (THEME==1) { applyTheme("#000000","#ffffff","#444444","#fefefe","#aaaaaa"); } 
@@ -158,7 +158,7 @@
 		else if (THEME==7) { upperclosebtn.style.background="#ffffff"; upperclosebtn.style.color="#008080"; } 
 		else if (THEME==8) { upperclosebtn.style.background="#ffffff"; upperclosebtn.style.color="#800080"; } 
 		else if (THEME==9) { upperclosebtn.style.background="#ffffff"; upperclosebtn.style.color="#c0c0c0"; } 
-	});
+	}).on("mousedown", function() {  doupperclosing(); });
 	
 	$("#close:first").on("mouseover", function() {
 		if (THEME==0) { footerclosebtn.style.background="#004300"; footerclosebtn.style.color="white"; } 
@@ -214,6 +214,8 @@
 	$("#tradebar:first").on("mousedown", function() { doupperclosing(); } );
 	
 	$("#sitefooter:first").on("mousedown", function() { dofooterclose(); } );
+	
+	$("#header:first").on("mousedown", function() { dotextclosing(); } );
 	
 	$("#headertexts:first").on("mousedown", function() { dotextclosing(); } );
 	

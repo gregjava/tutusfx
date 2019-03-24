@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8"><title>Contact Tutusfx</title>
+		<meta charset="utf-8"><title>Contact Us | Tutusfx</title>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes"/>
 		<meta name="HandheldFriendly" content="True" />
 		<meta name="MobileOptimized" content="320" />
+		<meta name="keywords" content="Binary Options, Forex Trade, Binary Trade, CFD, Forex, Binary"/>
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content="Contact Us | tutusfx.com" />
+		<meta name="twitter:description" content="Say what's on your mind. Leave a complaint, suggest an idea or make an inquiry from our 24 hours online support team and/or witnesses."/>
+		<meta name="twitter:domain" content="tutusfx.com" />
+		<meta name="generator" content="WPML ver:3.6.1 stt:5,39,1,4,3,27,40,42,44,47,2,52;" />
+		<meta name="description" content="Say what's on your mind. Leave a complaint, suggest an idea or make an inquiry from our 24 hours online support team and/or witnesses." />
+		
+		<meta property="og:locale" content="en_GB" />
+		<meta property="og:type" content="article" />
+		<meta property="og:image" content="https://www.tutusfx.com/assets/images/new_logo.png" />
+		<meta property="og:title" content="Contact Us | tutusfx.com" />
+		<meta property="og:description" content="Say what's on your mind. Leave a complaint, suggest an idea or make an inquiry from our 24 hours online support team and/or witnesses."/>
+		<meta property="og:url" content="https://www.tutusfx.com/eu/contact-us-eu/" />
+		<meta property="og:site_name" content="tutusfx.com" />
+		<link rel="icon" href="../../assets/images/new_logo.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="../../assets/images/new_logo.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../assets/css/style1.css" type="text/css" media="all">
+		<link rel="manifest" href="../../manifest.json" /> <!--server:header--> 
+		<link rel="canonical" href="eu/contact-us-eu/" />
+		<link rel="alternate" hreflang="en-GB" href="index.html"/>
+		<link rel="alternate" hreflang="fr-FR" href="../../fr/contact-us-fr/"/>
+		<link rel="alternate" hreflang="de-DE" href="../../de/contact-us-de/"/>
+		<link rel="alternate" hreflang="it-IT" href="../../it/contact-us-it/"/>
+		<link rel="alternate" hreflang="es-ES" href="../../es/contact-us-es/"/>
+		<link rel="alternate" hreflang="ru-RU" href="../../ru/contact-us-ru/"/>
+		<link rel="alternate" hreflang="ar-AR" href="../../ar/contact-us-ar/"/>
+		<link rel="alternate" hreflang="sv-SE" href="../../sv/contact-us-sv/"/>
+		<link rel="alternate" hreflang="nl-NL" href="../../nl/contact-us-nl/"/>
+		<link rel="alternate" hreflang="nb-NO" href="../../nb/contact-us-nb/"/>
+		<link rel="alternate" hreflang="pl-PL" href="../../pl/contact-us-pl/"/>
+		
+		<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","url":"https:\/\/www.tutusfx.com\/eu\/","name":"tutusfx.com","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.tutusfx.com\/eu\/?s={search_term}","query-input":"required name=search_term"}}</script>
+		<script src="../../assets/js/jquery.min.js"></script>
+		<script src="../../assets/js/bootstrap.min.js"></script> 
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		
 		<script>
 			date = new Date();
 			date.setTime(date.getTime()+(30*24*60*60*1000));
@@ -72,25 +110,7 @@
 		var admin_ajax = {"ajaxurl":"\/\/wp-admin\/admin-ajax.php"};
 		/* ]]> */
 		</script>
-		<link rel="canonical" href="../contact-us-eu/" />
-		<meta property="og:locale" content="en_GB" />
-		<meta property="og:type" content="website" />
-		<meta property="og:title" content="tutusfx.com" />
-		<meta property="og:url" content="https://www.tutusfx.com/eu/contact-us-eu/" />
-		<meta property="og:site_name" content="tutusfx.com" />
-		<meta name="twitter:card" content="summary" />
-		<meta name="twitter:title" content="tutusfx.com" />
-		<meta name="twitter:domain" content="tutusfx.com" />
-		<meta name="generator" content="WPML ver:3.6.1 stt:5,39,1,4,3,27,40,42,44,47,2,52;" />
-		<meta name="description" content="Say what's on your mind. Leave a complaint, suggest an idea or make an inquiry from our 24 hours online support team and/or witnesses." />
-		<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","url":"https:\/\/www.tutusfx.com\/eu\/","name":"tutusfx.com","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.tutusfx.com\/eu\/?s={search_term}","query-input":"required name=search_term"}}</script>
-		<link rel="icon" href="../../../assets/images/new_logo.ico" type="image/x-icon" />
-		<link rel="shortcut icon" href="../../../assets/images/new_logo.ico" type="image/x-icon" />
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link rel="stylesheet" href="../../../assets/css/style1.css" type="text/css">
-		<link rel="manifest" href="../../../manifest.json" /> <!--server:header--> 
-		<script src="../../../assets/js/jquery.min.js"></script>
-		<script src="../../../assets/js/bootstrap.min.js"></script>
+		
 		<style>
 			/* For Safari, Mozilla, Chrome and Opera browsers */
 			@-webkit-keyframes pixAnimation {
@@ -259,7 +279,7 @@
 			<span class="chfjpy">CHF/JPY: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="usdsgd">USD/SGD: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="usdcad">USD/NGN: <span class="positiverate">000:0000</span></span></marquee>
-			<button id="upperclosebtn" onclick="doupperclosing()" class="glyphicon glyphicon-arrow-right rightAlign close-upper"></button>
+			<button id="upperclosebtn" class="glyphicon glyphicon-arrow-right rightAlign close-upper"></button>
 		</div>
 		<div id="header" class="animatePix">
 		  <h1 id="headertitle">Tutusfx</h1>

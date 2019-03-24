@@ -30,16 +30,20 @@
 		<link rel="manifest" href="../../manifest.json" /> <!--server:header--> 
 		<link rel="canonical" href="eu/binary-options-guide-eu/index.html" />
 		<link rel="alternate" hreflang="en-GB" href="index.html"/>
-		<link rel="alternate" hreflang="fr-FR" href="../../fr/binary-options-guide-fr/"/>
-		<link rel="alternate" hreflang="de-DE" href="../../de/binary-options-guide-de/"/>
-		<link rel="alternate" hreflang="it-IT" href="../../it/binary-options-guide-it/"/>
-		<link rel="alternate" hreflang="es-ES" href="../../es/binary-options-guide-es/"/>
-		<link rel="alternate" hreflang="ru-RU" href="../../ru/binary-options-guide-ru/"/>
-		<link rel="alternate" hreflang="ar-AR" href="../../ar/binary-options-guide-ar/"/>
-		<link rel="alternate" hreflang="sv-SE" href="../../sv/binary-options-guide-sv/"/>
-		<link rel="alternate" hreflang="nl-NL" href="../../nl/binary-options-guide-nl/"/>
-		<link rel="alternate" hreflang="nb-NO" href="../../nb/binary-options-guide-nb/"/>
-		<link rel="alternate" hreflang="pl-PL" href="../../pl/binary-options-guide-pl/"/>
+		<link rel="alternate" hreflang="fr-FR" href="../../fr/binary-options-guide-fr/index.html"/>
+		<link rel="alternate" hreflang="de-DE" href="../../de/binary-options-guide-de/index.html"/>
+		<link rel="alternate" hreflang="it-IT" href="../../it/binary-options-guide-it/index.html"/>
+		<link rel="alternate" hreflang="es-ES" href="../../es/binary-options-guide-es/index.html"/>
+		<link rel="alternate" hreflang="ru-RU" href="../../ru/binary-options-guide-ru/index.html"/>
+		<link rel="alternate" hreflang="ar-AR" href="../../ar/binary-options-guide-ar/index.html"/>
+		<link rel="alternate" hreflang="sv-SE" href="../../sv/binary-options-guide-sv/index.html"/>
+		<link rel="alternate" hreflang="nl-NL" href="../../nl/binary-options-guide-nl/index.html"/>
+		<link rel="alternate" hreflang="nb-NO" href="../../nb/binary-options-guide-nb/index.html"/>
+		<link rel="alternate" hreflang="pl-PL" href="../../pl/binary-options-guide-pl/index.html"/>
+		<script src="../../assets/js/jquery.min.js"></script>
+		<script src="../../assets/js/bootstrap.min.js"></script> 
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		
 		<script>
 			date = new Date();
 			date.setTime(date.getTime()+(30*24*60*60*1000));
@@ -105,9 +109,6 @@
 		var admin_ajax = {"ajaxurl":"\/\/wp-admin\/admin-ajax.php"};
 		/* ]]> */
 		</script>
-		<script src="../../assets/js/jquery.min.js"></script>
-		<script src="../../assets/js/bootstrap.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-		
 		<style>
 			/* For Safari, Mozilla, Chrome and Opera browsers */
 			@-webkit-keyframes pixAnimation {
@@ -296,7 +297,19 @@
 			
 			function IsLoggedIn(){ return <?php if ( isset($_SESSION['user']) && $_SESSION['user']!=="") echo true; else echo false; ?>; }
         </script>
-		<div id="ratebar"><marquee id="ads" scrolldelay="1s" scrollamount="3">
+		<div id="ratebar">
+		<div id="app">
+			{{ message }}
+		</div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello User!'
+            }
+        })
+        
+    </script><marquee id="ads" scrolldelay="1s" scrollamount="3">
 			<span class="usdcad">USD/CAD: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="usdjpy">USD/JPY: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="usdchf">USD/CHF: <span class="positiverate">000:0000</span></span> &nbsp;
@@ -320,7 +333,7 @@
 			<span class="chfjpy">CHF/JPY: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="usdsgd">USD/SGD: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="usdcad">USD/NGN: <span class="positiverate">000:0000</span></span></marquee>
-			<button id="upperclosebtn" onclick="doupperclosing()" class="glyphicon glyphicon-arrow-right rightAlign close-upper"></button>
+			<button id="upperclosebtn" class="glyphicon glyphicon-arrow-right rightAlign close-upper"></button>
 		</div>
 		<div id="header" class="animatePix">
 		  <h1 id="headertitle">Tutusfx</h1>
@@ -580,7 +593,7 @@
 			<div class="footerCard warning"><h6><strong>GENERAL RISK WARNING</strong></h6>
 				<span>TRADING IN CRYPTOCURRENCIES, FOREX & CFDS CARRY A HIGH LEVEL OF RISK AND MAY NOT BE APPROPRIATE FOR ALL INVESTORS.  IT IS POSSIBLE TO LOSE OF ALL OF YOUR INVESTED CAPITAL SO, YOU SHOULD NOT INVEST MONEY THAT YOU CANNOT AFFORD TO LOSE. FOR MORE INFORMATION ABOUT THE RISKS INVOLVED, PLEASE<a href="../terms-and-conditions-eu/risk-disclosure-eu/index.html"> CLICK HERE</a> .</span>
 			</div>
-			<div id="footerDiv"><h6 id="footerDivHeader">GENERAL RISK WARNING</h6><button id="close" onclick="doclose()" class="glyphicon glyphicon-arrow-up btn badge"></button><br/><br/>
+			<div id="footerDiv"><h6 id="footerDivHeader">GENERAL RISK WARNING</h6><button id="close" class="glyphicon glyphicon-arrow-up btn badge"></button><br/><br/>
 				<span id="footerDivTexts">TRADING IN CRYPTOCURRENCIES, FOREX & CFDS CARRY A HIGH LEVEL OF RISK AND MAY NOT BE APPROPRIATE FOR ALL INVESTORS.  IT IS POSSIBLE TO LOSE OF ALL OF YOUR INVESTED CAPITAL SO, YOU SHOULD NOT INVEST MONEY THAT YOU CANNOT AFFORD TO LOSE. FOR MORE INFORMATION ABOUT THE RISKS INVOLVED, PLEASE<a href="../terms-and-conditions-eu/risk-disclosure-eu/index.html"> CLICK HERE</a> .</span>
             </div>
 		  </div>
