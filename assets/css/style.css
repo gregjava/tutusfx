@@ -9,12 +9,7 @@ nav li input[type="button"] { background-color: #004300; color: #f2f2f2; padding
 
 nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out; }
 
-/* Header/Blog Title */
-#header { height: 450px; } #headertitle { font-size: 90px; } #headercontent { font-size: 40px; }
-
-/* Change properties of page navigation buttons */
-
-#next, #back { text-align: center; width: 70px; border: none; } #back { border-radius: 2.5px 0px 0px 2.5px; } #next { border-radius: 0px 2.5px 2.5px 0px; } #footerDiv { display: none; }
+/* Change properties of page navigation buttons */ #footerDiv { display: none; }
 
 /* Create three unequal columns that floats next to each other */
 .leftColumn { float: left; width: 30%; padding: 1%; } .mainColumn { float: left; width: 40%; padding: 1%; } .rightColumn { float: left; width: 30%; padding: 1%; }
@@ -62,9 +57,6 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 
 /* Responsive layout - when the screen is less than 1200px wide, make the two leftmost columns stack side by side and on top of the third */
 @media screen and (max-width: 1200px) {
-	/* Set container properties */
-	.row { margin: 0.5%; width: 99%; }
-	
 	/* Left column */
 	.leftColumn { float: left; width: 65%; padding: 0.5%; }
 	
@@ -73,23 +65,17 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 
 	/* Right column */
 	.rightColumn { float: left; width: 100%; padding: 0.5%; }
-
-	.footerCard blockquote { font-size: 90%; }
-	
-	.footer a{ margin: 0.5% 1.6%; }
 }
 
 /* Responsive layout - when the screen is less than 800px wide, make the three columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) { 
-	#backbar, #nextbar, #topnav a { z-index: 1000; } 
-	
-	#back, #next{ float: none; height: 50px; padding: 0%; width: 100%; } #footerDivTexts { color: white; text-align: justify; float: justify;  font-size: 99%; } 
+	#footerDivTexts { color: white; text-align: justify; float: justify;  font-size: 99%; } 
 	
 	#footerDiv { display: block; position: fixed; top: 70%; left: 0; width: 100%; height: 30%; margin: 0; padding: 5%; background-color: #004300; color: white; font-size: 60%; }
 	
 	#footerDivHeader { font-size: 100%; } #close { display: block; color: #004300; border-radius: 10px; float: right; }
 	
-	.row { margin: 0.5%; width: 99%; } .leftColumn, .mainColumn, .rightColumn {  width: 100%; padding: 0.5%; } .footer a{ margin: 0.5% 1.2%; }
+	.leftColumn, .mainColumn, .rightColumn {  width: 100%; padding: 0.5%; }
 }
 
 /* Responsive layout - when the screen is less than 480px wide, make the navigation links stack on top of each other instead of next to each other */
@@ -103,9 +89,4 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 	#topnav { width: 99%; margin: 0% 0.5%; } 
 	
 	#footerDivTexts { text-align: center; float: center; font-size: 98%; }
-	
-	.row { margin: 0.5%; width: 99%; } .warning { display: none; } .footer a{ font-size: 80%; margin: 0.5% 0.8%; } .footerCard { width: 33%; font-size: 80%; height: 547px; }
 }
-
-/* Responsive layout - when the screen is less than 345px wide, make the footer cards smaller so as to fit into container frame */
-@media screen and (max-width: 345px) { .row { margin: 0.5%; width: 99%; } .warning { display: none; } .footer a{ margin: 0.5% 1.2%; } .footerCard { width: 33%; height: 527px;} }

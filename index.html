@@ -433,12 +433,6 @@
 			</div>
 		  </div>
 		  <div class="mainColumn">
-			<div class="card" id="segment">
-			  <h3>Trending Posts</h3><hr/>
-			  <div class="fakeimg"><p>Image</p></div><hr/>
-			  <div class="fakeimg"><p>Image</p></div><hr/>
-			  <div class="fakeimg"><p>Image</p></div><hr/>
-			</div>
 			<div class="card tradeview" id="segment">
 			<!-- TradingView Widget BEGIN -->
 			<span id="tradingview-copyright"><a ref="nofollow noopener" target="_blank" href="http://www.tradingview.com/chart" style="color: rgb(255, 255, 255); font-family: &quot;Trebuchet MS&quot;, Tahoma, Arial, sans-serif; font-size: 13px;">Market Quotes by <span style="color: #3BB3E4">TradingView</span></a></span>
@@ -466,6 +460,12 @@
 			  <img class="fakeimg picture" src="assets/images/logo_bar.png" width="100%" height="100%" alt="Tutusfx logo" />
 			  <p>The threshold to create and operate a Marketing Network is quite high! Therefore, a one-stop solution is provided by the Tutusfx Community for anyone to create a unique Network without any thresholds.</p>
 			  <p class="rightAlign"><a href="eu/about-us-eu/index.html">More...</a></p><br/><p><hr/>
+			</div>
+			<div class="card" id="segment">
+			  <h3>Trending Posts</h3><hr/>
+			  <div class="fakeimg"><p>Image</p></div><hr/>
+			  <div class="fakeimg"><p>Image</p></div><hr/>
+			  <div class="fakeimg"><p>Image</p></div><hr/>
 			</div>
 		  </div>
 		  <div class="rightColumn">
