@@ -25,13 +25,16 @@ nav li input[type="button"] { background-color:#004300; color: #f2f2f2; padding:
 
 nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out; }
 
-/* Change properties of page navigation buttons */
-
+/* Change properties of page ids */
 #myProgress { width: 100%; background-color: white; }
 
 #progressBar { width: 1%; height: 30px; padding: 10px; background-color: #004300; }
 
 #footerDiv { display: none; }
+
+#ratebar { position: fixed; margin: 0% 0% 0% -15%; padding: auto; top: 0; left: 0; width: 116%; height: auto; }
+
+#ratebar > #ads { margin: 0; padding: auto; top: 0; left: 0; width: auto; height: 100%; }
 
 /* Create two unequal columns that floats next to each other */
 /* Main column */
@@ -83,8 +86,14 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 .footerCard blockquote { font-size: 70%; }
 
 .footer h6 { text-align: center; }
+	
+.warning { display: block; }
 
 .clearnav { box-shadow: none; text-shadow: none; margin: 0; padding: 0; left: 0; top: 0; content: ""; display: table; clear: both; }
+
+.expandableColumn { width: 65%; } 
+
+.floatingColumn { position: fixed; width: 34%; margin: 0.5%; background; none; left: 65%; padding:1%; height: auto; }
 
 /* Responsive layout - when the screen is less than 1200px wide, make the two leftmost columns stack side by side and on top of the third */
 @media screen and (max-width: 1200px) {
@@ -96,10 +105,20 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 	select, input[type="text"], input[type="password"], input[type="phone"], input[type="email"]{ width: 81%; margin: 1%; }
 
 	input[type="submit"]{ background-color: #004300; color: #a1a1a1; box-shadow: -3px 3px 2px #aa7; border-radius: 3px; padding: 4px; }
+	
+	.row { width: 99%; margin: 0.5%; }
+	
+	.footer a { margin: 0.5% 1.6%; }
+	
+	.warning { display: block; }
+
+	.expandableColumn { width: 65%; } 
+
+	.floatingColumn { position: fixed; width: 34%; margin: 0.5%; background; none; left: 65%; padding:1%; height: auto; }
 }
 
 /* Responsive layout - when the screen is less than 800px wide, make the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 880px) { 
+@media screen and (max-width: 800px) { 
 	#backbar, #nextbar, #topnav a { z-index: 1000; } 
 	
 	#back, #next{ float: none; height: 50px; padding: 0%; width: 100%; }
@@ -109,6 +128,18 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 	#footerDiv { display: block; position: fixed; top: 70%; left: 0; width: 100%; height: 30%; margin: 0; padding: 5%; background-color: #004300; color: white; font-size: 60%; }
 	
 	#footerDivHeader { font-size: 100%; } #close { display: block; color: #004300; border-radius: 10px; float: right; }
+	
+	.mainColumn, .rightColumn { position: relative; float: none; left: 0; padding: 0; width: 100%; height: auto; }
+	
+	.row { width: 99%; margin: 0.5%; }
+	
+	.footer a { margin: 0.5% 1.2%; }
+	
+	.warning { display: block; }
+
+	.expandableColumn { width: 99%; margin: 0.5%; } 
+
+	.floatingColumn { position: relative; width: 99%; margin: -30% 0% 60% auto; float; none; left: 0; padding:0; height: auto; }
 }
 
 /* Responsive layout - when the screen is less than 480px wide, make the navigation links stack on top of each other instead of next to each other */
@@ -125,11 +156,22 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 	select, input[type="text"], input[type="password"], input[type="phone"], input[type="email"]{ width: 100%; }
 
 	input[type="submit"]{ background-color: #004300; color: #a1a1a1; box-shadow: -5px 5px 3px #aa7; border-radius: 3px; }
+	
+	.pagefootercard { width: 34.7%; font-size: 80%; height: 547px; }
+	
+	.row { width: 99%; margin: 0.5%; }
+	
+	.footer a { margin: 0.5% 0.8%; font-size: 80%; }
+	
+	.warning { display: none; }
+
+	.expandableColumn { width: 99%; margin: 0.5%; } 
+
+	.floatingColumn { position: relative; width: 99%; margin: -30% 0% 60% auto; float; none; left: 0; padding:0; height: auto; }
 }
 
 /* Responsive layout - when the screen is less than 345px wide, make the footer cards smaller so as to fit into container frame */
 @media screen and (max-width: 345px) {
-
 	/* Set labels and inputs */
 	form label{ width: 18%; font-size: 70%; margin: 1%; }
 	
@@ -138,4 +180,18 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 	select, input[type="text"], input[type="password"], input[type="phone"], input[type="email"]{ width: 78%; margin: 1%; }
 
 	input[type="submit"]{ background-color: #004300; color: #a1a1a1; box-shadow: -3px 3px 2px #aa7; border-radius: 3px; padding: 3px; }
+	
+	.pagefootercard { width: 34.7%; font-size: 80%; height: 547px; }
+	
+	.row { width: 99%; margin: 0.5%; }
+	
+	.footer a { margin: 0.5% 1.2%; font-size: 70%; }
+	
+	.warning { display: none; }
+
+	.expandableColumn { width: 99%; margin: 0.5%; }
+	
+	.expandableColumn { margin-bottom: 100px; } 
+
+	.floatingColumn { position: relative; width: 99%; margin: -30% 0% 60% auto; float; none; left: 0; padding:0; height: auto; }
 }
