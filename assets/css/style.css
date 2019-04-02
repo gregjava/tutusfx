@@ -8,12 +8,16 @@ nav li input[type="button"] { background-color: #004300; color: #f2f2f2; padding
 
 nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out; }
 
+<<<<<<< HEAD
 /* Change properties of page ids */ 
 #footerDiv { display: none; }
 
 #ratebar { position: fixed; margin: 0% 0% 0% -15%; padding: auto; top: 0; left: 0; width: 116%; height: auto; }
 
 #ratebar > #ads { margin: 0; padding: auto; top: 0; left: 0; width: auto; height: 100%; }
+=======
+/* Change properties of page navigation buttons */ #footerDiv { display: none; }
+>>>>>>> 09b418ba4184eb5fd7573392f6e102e1804dfb92
 
 /* Create three unequal columns that floats next to each other */
 .leftColumn { float: left; width: 30%; padding: 1%; } .mainColumn { float: left; width: 40%; padding: 1%; } .rightColumn { float: left; width: 30%; padding: 1%; }
@@ -71,12 +75,15 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 
 	/* Right column */
 	.rightColumn { float: left; width: 100%; padding: 0.5%; }
+<<<<<<< HEAD
 	
 	.row { width: 99%; margin: 0.5%; }
 	
 	.footer a { margin: 0.5% 1.6%; }
 	
 	.warning { display: block; }
+=======
+>>>>>>> 09b418ba4184eb5fd7573392f6e102e1804dfb92
 }
 
 /* Responsive layout - when the screen is less than 800px wide, make the three columns stack on top of each other instead of next to each other */
@@ -88,12 +95,15 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 	#footerDivHeader { font-size: 100%; } #close { display: block; color: #004300; border-radius: 10px; float: right; }
 	
 	.leftColumn, .mainColumn, .rightColumn {  width: 100%; padding: 0.5%; }
+<<<<<<< HEAD
 	
 	.row { width: 99%; margin: 0.5%; }
 	
 	.footer a { margin: 0.5% 1.2%; }
 	
 	.warning { display: block; }
+=======
+>>>>>>> 09b418ba4184eb5fd7573392f6e102e1804dfb92
 }
 
 /* Responsive layout - when the screen is less than 480px wide, make the navigation links stack on top of each other instead of next to each other */
@@ -107,6 +117,7 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 	#topnav { width: 99%; margin: 0% 0.5%; } 
 	
 	#footerDivTexts { text-align: center; float: center; font-size: 98%; }
+<<<<<<< HEAD
 	
 	.pagefootercard { width: 33%; font-size: 80%; height: 547px; }
 	
@@ -136,4 +147,6 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 	.footer a { margin: 0.5% 1.2%; font-size: 70%; }
 	
 	.warning { display: none; }
+=======
+>>>>>>> 09b418ba4184eb5fd7573392f6e102e1804dfb92
 }

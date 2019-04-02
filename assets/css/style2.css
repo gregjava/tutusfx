@@ -25,7 +25,12 @@ nav li input[type="button"] { background-color:#004300; color: #f2f2f2; padding:
 
 nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out; }
 
+<<<<<<< HEAD
 /* Change properties of page ids */
+=======
+/* Change properties of page navigation buttons */
+
+>>>>>>> 09b418ba4184eb5fd7573392f6e102e1804dfb92
 #myProgress { width: 100%; background-color: white; }
 
 #progressBar { width: 1%; height: 30px; padding: 10px; background-color: #004300; }
@@ -105,6 +110,7 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 	select, input[type="text"], input[type="password"], input[type="phone"], input[type="email"]{ width: 81%; margin: 1%; }
 
 	input[type="submit"]{ background-color: #004300; color: #a1a1a1; box-shadow: -3px 3px 2px #aa7; border-radius: 3px; padding: 4px; }
+<<<<<<< HEAD
 	
 	.row { width: 99%; margin: 0.5%; }
 	
@@ -115,6 +121,8 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 	.expandableColumn { width: 65%; } 
 
 	.floatingColumn { position: fixed; width: 34%; margin: 0.5%; background; none; left: 65%; padding:1%; height: auto; }
+=======
+>>>>>>> 09b418ba4184eb5fd7573392f6e102e1804dfb92
 }
 
 /* Responsive layout - when the screen is less than 800px wide, make the three columns stack on top of each other instead of next to each other */
@@ -156,6 +164,7 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 	select, input[type="text"], input[type="password"], input[type="phone"], input[type="email"]{ width: 100%; }
 
 	input[type="submit"]{ background-color: #004300; color: #a1a1a1; box-shadow: -5px 5px 3px #aa7; border-radius: 3px; }
+<<<<<<< HEAD
 	
 	.pagefootercard { width: 34.7%; font-size: 80%; height: 547px; }
 	
@@ -168,6 +177,8 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 	.expandableColumn { width: 99%; margin: 0.5%; } 
 
 	.floatingColumn { position: relative; width: 99%; margin: -30% 0% 60% auto; float; none; left: 0; padding:0; height: auto; }
+=======
+>>>>>>> 09b418ba4184eb5fd7573392f6e102e1804dfb92
 }
 
 /* Responsive layout - when the screen is less than 345px wide, make the footer cards smaller so as to fit into container frame */
@@ -180,6 +191,7 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 	select, input[type="text"], input[type="password"], input[type="phone"], input[type="email"]{ width: 78%; margin: 1%; }
 
 	input[type="submit"]{ background-color: #004300; color: #a1a1a1; box-shadow: -3px 3px 2px #aa7; border-radius: 3px; padding: 3px; }
+<<<<<<< HEAD
 	
 	.pagefootercard { width: 34.7%; font-size: 80%; height: 547px; }
 	
@@ -194,4 +206,6 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 	.expandableColumn { margin-bottom: 100px; } 
 
 	.floatingColumn { position: relative; width: 99%; margin: -30% 0% 60% auto; float; none; left: 0; padding:0; height: auto; }
+=======
+>>>>>>> 09b418ba4184eb5fd7573392f6e102e1804dfb92
 }

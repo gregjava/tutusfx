@@ -70,10 +70,16 @@
 		pagefooterdivtexts.css("color","white").css("text-align","justify").css("float","justify").css("font-size","99%");
 		navcontainer.css("border-radius","0px 0px 5px 5px").css("box-shadow","-3px 5px 3px #454");
 		
+<<<<<<< HEAD
 		closethat.hide(); // hide Close button for main layout of 1 column pages on default
 		
 		 /* Apply colors for theme, revtheme, bodybkgd, header & UI cards (fakeimg) */ 
 		if (THEME==0){ applyTheme("#004300","#ffffff","#baf1ba","#fefefe","#bbfebb"); }
+=======
+		closethat.hide();
+		
+		if (THEME==0){ applyTheme("#004300","#ffffff","#baf1ba","#fefefe","#bbfebb"); } /* theme, revtheme, bodybkgd, header, fakeimg */ 
+>>>>>>> 09b418ba4184eb5fd7573392f6e102e1804dfb92
 		else if (THEME==1) { applyTheme("#000000","#ffffff","#444444","#fefefe","#aaaaaa"); } 
 		else if (THEME==2) { applyTheme("#ffffff","#000000","#fefefe","#000000","#eeeeee"); } 
 		else if (THEME==3) { applyTheme("#1234ab","#ffffff","#babaf1","#ffffff","#5678ef"); } 
@@ -115,8 +121,11 @@
 			progressBar.css("background-color",color1);				
 	}
 	
+<<<<<<< HEAD
 	function hideDrawer(){ if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } }
 	
+=======
+>>>>>>> 09b418ba4184eb5fd7573392f6e102e1804dfb92
 	/* Apply theme-specific colors to footer elements */
 	function setFooterTheme(){
 		if (THEME==0) { footerdiv.style.backgroundColor = "#004300"; footerclosebtn.style.background = "white"; footerclosebtn.style.color = "#004300"; } 
@@ -145,6 +154,20 @@
 		else if (THEME==9){ rates.style.backgroundColor = "#c0c0c0"; upperclosebtn.style.background = "white"; upperclosebtn.style.color = "#c0c0c0"; }
 	}
 	
+<<<<<<< HEAD
+=======
+	$("#nature:first").on("mouseover", function() { THEME = 0; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
+	$("#night:first").on("mouseover", function() { THEME = 1; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
+	$("#sunny:first").on("mouseover", function() { THEME = 2; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
+	$("#cloudy:first").on("mouseover", function() { THEME = 3; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
+	$("#romance:first").on("mouseover", function() { THEME = 4; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
+	$("#royal:first").on("mouseover", function() { THEME = 5; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
+	$("#aqua:first").on("mouseover", function() { THEME = 6; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
+	$("#teal:first").on("mouseover", function() { THEME = 7; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
+	$("#deeproyal:first").on("mouseover", function() { THEME = 8; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
+	$("#silver:first").on("mouseover", function() { THEME = 9; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
+	
+>>>>>>> 09b418ba4184eb5fd7573392f6e102e1804dfb92
 	/* Apply theme-specific colors and functionality to the upper close button */
 	$("#upperclosebtn:first").on("mouseover", function() {
 		if (THEME==0) { upperclosebtn.style.background="#004300"; upperclosebtn.style.color="white"; } 
@@ -224,6 +247,7 @@
 	}).on("mousedown", function() { hideDrawer(); });
 	
 	/* Apply functionality to elements using JQuery */	
+<<<<<<< HEAD
 	$("#nature:first").on("mouseover", function() { THEME = 0; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
 	$("#night:first").on("mouseover", function() { THEME = 1; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
 	$("#sunny:first").on("mouseover", function() { THEME = 2; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
@@ -234,6 +258,8 @@
 	$("#teal:first").on("mouseover", function() { THEME = 7; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
 	$("#deeproyal:first").on("mouseover", function() { THEME = 8; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
 	$("#silver:first").on("mouseover", function() { THEME = 9; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
+=======
+>>>>>>> 09b418ba4184eb5fd7573392f6e102e1804dfb92
 	$("#tradebar:first").on("mousedown", function() { doupperclosing(); } );
 	$("#sitefooter:first").on("mousedown", function() { dofooterclose(); } );
 	$("#header:first").on("mousedown", function() { dotextclosing(); } );
@@ -255,6 +281,7 @@
 	var browserwidth = window.matchMedia("(max-width: 1200px)"); var browserwidth1 = window.matchMedia("(max-width: 800px)");
 	var browserwidth2 = window.matchMedia("(max-width: 480px)"); var browserwidth3 = window.matchMedia("(max-width: 345px)");
 	
+<<<<<<< HEAD
 	// Set column behaviours depending on referenced screen size
 	function windowsize(browserwidth,browserwidth1,browserwidth2,browserwidth3) {
 	  if (browserwidth3.matches) {  // do something as browserwidth <= 345px
@@ -274,6 +301,26 @@
 		floatingcolumn.css("width","34%").css("margin","0.5%").css("background","none").css("position","fixed").css("left","65%").css("padding","1%").css("height","auto");
 	  }
 	} browserwidth.addListener(windowsize); // Attach listener function
+=======
+	$(".attendant:first").on("mousedown", function() { if (siteassistant.hide()) siteassistant.show(); else siteassistant.hide(); } );
+	
+	$("#attendant:first").on("mousedown", function() { if (siteassistant.hide()) siteassistant.show(); else siteassistant.hide(); } );
+	
+	$(".expandableColumn:first").on("mousedown", function() { floatingcolumn.show(); expandablecolumn.css("width","65%"); closethat.hide(); } );
+	
+	$(".floatingColumn .card:first").on("mousedown", function() { floatingcolumn.hide(); expandablecolumn.css("width","100%"); closethat.show(); } );
+	
+	$(".assistant:first").on("mouseover", function() { siteassistant.css("background","URL('https://www.tutusfx.com/assets/images/working.gif')").css("background-size","cover"); } )
+		.on("mouseout", function() { siteassistant.css("background","URL('https://www.tutusfx.com/assets/images/open.gif')").css("background-size","cover"); } )
+		.on("mousedown", function() { 
+			if (!QUERYING) { siteassistant.css("background","URL('https://www.tutusfx.com/assets/images/busy.gif')").css("background-size","cover"); siteassistant.before("<input id='userquery' type='text' placeholder='Make your enquiries on Tutusfx or anything related' />"); QUERYING = true; } 
+			else { $("#userquery").click(function(){ if ($("#userquery").val()!="") alert("Text: " + $("#userquery").val()); $("#userquery").remove(); QUERYING = false; }); } 
+		});
+
+	// These are Javascript media query variables
+	var browserwidth = window.matchMedia("(max-width: 1200px)"); var browserwidth1 = window.matchMedia("(max-width: 800px)");
+	var browserwidth2 = window.matchMedia("(max-width: 480px)"); var browserwidth3 = window.matchMedia("(max-width: 345px)");
+>>>>>>> 09b418ba4184eb5fd7573392f6e102e1804dfb92
 	
 	// These are Javascript id selector and utility variables
 	var header = document.getElementById("topnav"); var rates = document.getElementById("ratebar");
@@ -283,6 +330,7 @@
 	var ads = document.getElementById("ads"); var upperclosebtn = document.getElementById("upperclosebtn"); var headeroffset = header.offsetTop;
 	
 	
+<<<<<<< HEAD
 	/* Set behaviour of 2-level dropdown using JQuery */	
 	$(document).ready(function(){ $('.dropdown-submenu a.droplevel2').on("click", function(e){ $(this).next('ul').toggle(); e.stopPropagation(); e.preventDefault(); }); });
 	
@@ -291,6 +339,50 @@
 	function prevPage(){ window.history.go(-1); }
 	/* Set the next-button functionality */
 	function nextPage(){ window.history.go(+1); }
+=======
+	/* Apply functionality to elements using JQuery */	
+	$(document).ready(function(){ $('.dropdown-submenu a.droplevel2').on("click", function(e){ $(this).next('ul').toggle(); e.stopPropagation(); e.preventDefault(); }); });
+	
+	
+	/* Apply functionality to elements using Javascript */	
+	function prevPage(){ window.history.go(-1); }
+	
+	function nextPage(){ window.history.go(+1); }
+	
+	windowsize(browserwidth,browserwidth1,browserwidth2,browserwidth3); // Call screen resize listener function at run time
+	browserwidth.addListener(windowsize); // Attach listener function
+	
+	function windowsize(browserwidth,browserwidth1,browserwidth2,browserwidth3) {
+	  if (browserwidth3.matches) {  // do something as browserwidth <= 345px
+	    expandablecolumn.css("width","99%").css("margin","-30% 0% 60% auto").css("margin-bottom","-100px").css("position","relative").css("float","none").css("left","0").css("padding","0").css("height","auto");
+		floatingcolumn.css("width","99%").css("margin","0.5%").css("position","relative").css("float","none").css("left","0").css("padding","0").css("height","auto");
+		pagefootercard.css("width","33%").css("height","527px");
+		contentrow.css("width","99%").css("margin","0.5%");
+		footerlinks.css("margin","0.5% 1.2%");
+		warningdiv.css("display","none");
+	  } else if (browserwidth2.matches) {  // do something as browserwidth <= 480px
+		expandablecolumn.css("width","99%").css("margin","0.5%");
+		floatingcolumn.css("width","99%").css("margin","-30% 0% 60% auto").css("position","relative").css("float","none").css("left","0").css("padding","0").css("height","auto");
+		pagefootercard.css("width","33%").css("font-size","80%").css("height","547px");
+		contentrow.css("width","99%").css("margin","0.5%");
+		footerlinks.css("margin","0.5% 0.8%").css("font-size","80%");
+		warningdiv.css("display","none");
+	  } else if (browserwidth1.matches) { // do something as browserwidth <= 800px
+		expandablecolumn.css("width","99%").css("margin","0.5%");
+		floatingcolumn.css("width","99%").css("margin","-30% 0% 60% auto").css("position","relative").css("float","none").css("left","0").css("padding","0").css("height","auto");
+		contentrow.css("width","99%").css("margin","0.5%");
+		footerlinks.css("margin","0.5% 1.2%");
+	  } else if (browserwidth.matches) {// do something as browserwidth <= 1200px
+		expandablecolumn.css("width","65%");
+		floatingcolumn.css("width","34.7%").css("margin","0.5%").css("background","none").css("position","fixed").css("left","65%").css("padding","1%").css("height","96%");
+		contentrow.css("width","99%").css("margin","0.5%");
+		footerlinks.css("margin","0.5% 1.6%");
+	  } else { 
+		expandablecolumn.css("width","65%"); 
+		floatingcolumn.css("width","34.7%").css("margin","0.5%").css("background","none").css("position","fixed").css("left","65%").css("padding","1%").css("height","96%");
+	  }
+	}
+>>>>>>> 09b418ba4184eb5fd7573392f6e102e1804dfb92
 
 	/* Set header, ratebar and footer behaviour */
 	function myFunction() { 
@@ -302,12 +394,26 @@
 			if (window.pageYOffset > 250) { (window.pageYOffset/2)+"px"; headercontent.style.fontSize = "0px"; } 
 			if (upperclosing) { header.classList.remove("sticky2"); } else { header.classList.remove("sticky"); } 
 		}
+<<<<<<< HEAD
 		if (upperclosing) { rates.classList.remove("upperbar"); rates.style.height = "0px"; rates.style.Float = "top";  
 			upperclosebtn.classList.remove("glyphicon-arrow-right"); upperclosebtn.classList.add("glyphicon-arrow-left"); ads.style.fontSize = "0%";
 		} else { rates.classList.add("upperbar"); rates.style.height = "50px"; rates.style.top = "0px"; rates.style.zIndex = "1000";
 			upperclosebtn.classList.remove("glyphicon-arrow-left"); upperclosebtn.classList.add("glyphicon-arrow-right"); ads.style.fontSize = "100%"; setRateBarTheme(); 
 		} if (textclosed) { topheadertitle.hide(); topheadercontent.hide(); } else { topheadertitle.show(); topheadercontent.show(); } 
 	} myFunction(); // apply header/ratebar/footer settings at runtime
+=======
+		if (upperclosing==true) { rates.classList.remove("upperbar"); rates.style.height = "0px"; rates.style.float = "top";  
+			upperclosebtn.classList.remove("glyphicon-arrow-right"); upperclosebtn.classList.add("glyphicon-arrow-left"); ads.style.fontSize = "0%";
+		} else { rates.classList.add("upperbar"); rates.style.height = "50px"; rates.style.top = "0px"; rates.style.zIndex = "1000";
+			upperclosebtn.classList.remove("glyphicon-arrow-left"); upperclosebtn.classList.add("glyphicon-arrow-right"); ads.style.fontSize = "100%"; setRateBarTheme(); 
+		} if (textclosed==true) { topheadertitle.hide(); topheadercontent.hide(); } else { topheadertitle.show(); topheadercontent.show(); } 
+		windowsize(browserwidth,browserwidth1,browserwidth2,browserwidth3); // Call screen resize listener function on scroll
+	}
+				
+	myFunction(); // call default page setter function at runtime
+	
+	window.onscroll = function() { myFunction(); }
+>>>>>>> 09b418ba4184eb5fd7573392f6e102e1804dfb92
 	
 	/* Apply header, ratebar and footer behaviour on scrolling the UI */
 	window.onscroll = function() { myFunction(); windowsize(browserwidth,browserwidth1,browserwidth2,browserwidth3); /* Call screen resize function to reset any bloated (1-col) layout accordingly.*/ }
@@ -316,14 +422,23 @@
 	function dofooterclose() { 
 		if (footerclosing) { footerclosebtn.classList.remove("glyphicon-arrow-up"); footerclosebtn.classList.add("glyphicon-arrow-down");
 			footerdiv.style.background = "none"; footerheader.style.fontSize = "0%"; footertexts.style.fontSize = "0%"; footerclosing = false;
+<<<<<<< HEAD
 		} else { setFooterTheme(); footerclosebtn.classList.remove("glyphicon-arrow-down"); footerclosebtn.classList.add("glyphicon-arrow-up");
+=======
+		} else { 
+			setFooterTheme(); footerclosebtn.classList.remove("glyphicon-arrow-down"); footerclosebtn.classList.add("glyphicon-arrow-up");
+>>>>>>> 09b418ba4184eb5fd7573392f6e102e1804dfb92
 			footerdiv.style.height = "30%"; footerdiv.style.top = "70%"; footerheader.style.fontSize = "100%"; footertexts.style.fontSize = "100%"; footerclosing = true;
 		}
 	}
 	
 	/* Set behaviour on closing the ratebar */
 	function doupperclosing() { 
+<<<<<<< HEAD
 		if (upperclosing) { upperclosebtn.classList.remove("close-upper"); upperclosebtn.classList.add("open-upper"); upperclosing = false; } 
+=======
+		if (upperclosing==true) { upperclosebtn.classList.remove("close-upper"); upperclosebtn.classList.add("open-upper"); upperclosing = false; } 
+>>>>>>> 09b418ba4184eb5fd7573392f6e102e1804dfb92
 		else { upperclosebtn.classList.remove("open-upper"); upperclosebtn.classList.add("close-upper"); upperclosing = true; } myFunction(); // call default page setter function at state changes
 	}
 	
