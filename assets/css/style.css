@@ -11,7 +11,7 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 
 /* Change properties of page navigation buttons */
 
-#footerDiv { display: none; }
+#footerDiv { display: none; z-index: 1000; }
 
 #back, #next { display: inline-block; }
 
@@ -83,7 +83,7 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 @media screen and (max-width: 800px) { 
 	#footerDivTexts { color: white; text-align: justify; float: justify;  font-size: 99%; } 
 	
-	#footerDiv { display: block; position: fixed; top: 70%; left: 0; width: 100%; height: 30%; margin: 0; padding: 5%; background-color: #004300; color: white; font-size: 60%; }
+	#footerDiv { display: block; position: fixed; top: 70%; left: 0; width: 100%; height: 30%; margin: 0; padding: 5%; background-color: #004300; color: white; font-size: 60%; z-index: 1000; }
 	
 	#footerDivHeader { font-size: 100%; } #close { display: block; color: #004300; border-radius: 10px; float: right; }
 	

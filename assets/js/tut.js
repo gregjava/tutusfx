@@ -83,10 +83,10 @@
 		else if (THEME==7) { applyTheme("#008080","#ffffff","#f1f1f1","#ffffff","#aaaaaa"); } 
 		else if (THEME==8) { applyTheme("#800080","#ffffff","#baf1f1","#ffffff","#aaaaaa"); } 
 		else if (THEME==9) { applyTheme("#c0c0c0","#ffffff","#f1f1f1","#004300","#aaaaaa"); } 
-		for (i=0; i<toggleicons.length; i++) { toggleicons[i].css("background","white"); } // Set menu button background color to white
+		for (i=0; i<toggleicons.length; i++) { if (THEME==2) { toggleicons[i].css("background","#aaaaaa"); } else toggleicons[i].css("background","white"); } // Set menu button background color to white
 	}
 	
-	/* Apply theme-specific colors to related elements */
+	/* Apply theme-specific colors to related elements using JQuery */
 	function applyTheme(color1,color2,bodycolor,headercolor,fakeimgcolor){
 			body.css("background",bodycolor).css("color",color1); 
 			returnerhov.css("background",color2).css("color",color1); 
@@ -115,7 +115,7 @@
 			progressBar.css("background-color",color1);				
 	}
 	
-	/* Apply theme-specific colors to bar (footer/ratebar) elements */
+	/* Apply theme-specific colors to bar (footer/ratebar) elements using Javascript */
 	function setBarTheme(elementdiv,elementclosebtn){
 		if (THEME==0) { elementdiv.style.backgroundColor = "#004300"; elementclosebtn.style.background = "white"; elementclosebtn.style.color = "#004300"; } 
 		else if (THEME==1){ elementdiv.style.backgroundColor = "#000000"; elementclosebtn.style.background = "white"; elementclosebtn.style.color = "#000000"; } 
@@ -129,82 +129,56 @@
 		else if (THEME==9){ elementdiv.style.backgroundColor = "#c0c0c0"; elementclosebtn.style.background = "white"; elementclosebtn.style.color = "#c0c0c0"; }
 	}
 	
-	/* Apply theme-specific colors and functionality to the upper close button */
-	$("#upperclosebtn:first").on("mouseover", function() {
-		if (THEME==0) { upperclosebtn.style.background="#004300"; upperclosebtn.style.color="white"; } 
-		else if (THEME==1) { upperclosebtn.style.background="#000000"; upperclosebtn.style.color="white"; } 
-		else if (THEME==2) { upperclosebtn.style.background="#ffffff"; upperclosebtn.style.color="#004300"; } 
-		else if (THEME==3) { upperclosebtn.style.background="#1234ab"; upperclosebtn.style.color="#000000"; } 
-		else if (THEME==4) { upperclosebtn.style.background="#ff1234"; upperclosebtn.style.color="#000000"; } 
-		else if (THEME==5) { upperclosebtn.style.background="#ff12ff"; upperclosebtn.style.color="#ffffff"; } 
-		else if (THEME==6) { upperclosebtn.style.background="#12ffff"; upperclosebtn.style.color="#ffffff"; } 
-		else if (THEME==7) { upperclosebtn.style.background="#008080"; upperclosebtn.style.color="#ffffff"; } 
-		else if (THEME==8) { upperclosebtn.style.background="#800080"; upperclosebtn.style.color="#ffffff"; } 
-		else if (THEME==9) { upperclosebtn.style.background="#c0c0c0"; upperclosebtn.style.color="#ffffff"; } 
-	}).on("mouseout", function() { 
-		if (THEME==0) { upperclosebtn.style.background="white"; upperclosebtn.style.color="#004300"; } 
-		else if (THEME==1) { upperclosebtn.style.background="white"; upperclosebtn.style.color="#000000"; } 
-		else if (THEME==2) { upperclosebtn.style.background="#004300"; upperclosebtn.style.color="#ffffff"; } 
-		else if (THEME==3) { upperclosebtn.style.background="#000000"; upperclosebtn.style.color="#1234ab"; } 
-		else if (THEME==4) { upperclosebtn.style.background="#000000"; upperclosebtn.style.color="#ff1234"; } 
-		else if (THEME==5) { upperclosebtn.style.background="#ffffff"; upperclosebtn.style.color="#ff12ff"; } 
-		else if (THEME==6) { upperclosebtn.style.background="#ffffff"; upperclosebtn.style.color="#12ffff"; } 
-		else if (THEME==7) { upperclosebtn.style.background="#ffffff"; upperclosebtn.style.color="#008080"; } 
-		else if (THEME==8) { upperclosebtn.style.background="#ffffff"; upperclosebtn.style.color="#800080"; } 
-		else if (THEME==9) { upperclosebtn.style.background="#ffffff"; upperclosebtn.style.color="#c0c0c0"; } 
-	}).on("mousedown", function() {  doupperclosing(); });
+	/* Apply theme-specific colors to (upper/footer) Close buttons using Javascript */
+	function setBtnTheme(closebtn,toggled){
+		if (toggled){
+			if (THEME==0) { closebtn.style.background="#004300"; closebtn.style.color="white"; } 
+			else if (THEME==1) { closebtn.style.background="#000000"; closebtn.style.color="white"; } 
+			else if (THEME==2) { closebtn.style.background="#ffffff"; closebtn.style.color="#004300"; } 
+			else if (THEME==3) { closebtn.style.background="#1234ab"; closebtn.style.color="#000000"; } 
+			else if (THEME==4) { closebtn.style.background="#ff1234"; closebtn.style.color="#000000"; } 
+			else if (THEME==5) { closebtn.style.background="#ff12ff"; closebtn.style.color="#ffffff"; } 
+			else if (THEME==6) { closebtn.style.background="#12ffff"; closebtn.style.color="#ffffff"; } 
+			else if (THEME==7) { closebtn.style.background="#008080"; closebtn.style.color="#ffffff"; } 
+			else if (THEME==8) { closebtn.style.background="#800080"; closebtn.style.color="#ffffff"; } 
+			else if (THEME==9) { closebtn.style.background="#c0c0c0"; closebtn.style.color="#ffffff"; } 
+		} else {
+			if (THEME==0) { closebtn.style.background="white"; closebtn.style.color="#004300"; } 
+			else if (THEME==1) { closebtn.style.background="white"; closebtn.style.color="#000000"; } 
+			else if (THEME==2) { closebtn.style.background="#004300"; closebtn.style.color="#ffffff"; } 
+			else if (THEME==3) { closebtn.style.background="#000000"; closebtn.style.color="#1234ab"; } 
+			else if (THEME==4) { closebtn.style.background="#000000"; closebtn.style.color="#ff1234"; } 
+			else if (THEME==5) { closebtn.style.background="#ffffff"; closebtn.style.color="#ff12ff"; } 
+			else if (THEME==6) { closebtn.style.background="#ffffff"; closebtn.style.color="#12ffff"; } 
+			else if (THEME==7) { closebtn.style.background="#ffffff"; closebtn.style.color="#008080"; } 
+			else if (THEME==8) { closebtn.style.background="#ffffff"; closebtn.style.color="#800080"; } 
+			else if (THEME==9) { closebtn.style.background="#ffffff"; closebtn.style.color="#c0c0c0"; } 
+		}
+	}
 	
-	/* Apply theme-specific colors and functionality to the lower close button */
-	$("#close:first").on("mouseover", function() {
-		if (THEME==0) { footerclosebtn.style.background="#004300"; footerclosebtn.style.color="white"; } 
-		else if (THEME==1) { footerclosebtn.style.background="#000000"; footerclosebtn.style.color="white"; } 
-		else if (THEME==2) { footerclosebtn.style.background="#ffffff"; footerclosebtn.style.color="#004300"; } 
-		else if (THEME==3) { footerclosebtn.style.background="#1234ab"; footerclosebtn.style.color="#000000"; } 
-		else if (THEME==4) { footerclosebtn.style.background="#ff1234"; footerclosebtn.style.color="#000000"; } 
-		else if (THEME==5) { footerclosebtn.style.background="#ff12ff"; footerclosebtn.style.color="#ffffff"; } 
-		else if (THEME==6) { footerclosebtn.style.background="#12ffff"; footerclosebtn.style.color="#ffffff"; } 
-		else if (THEME==7) { footerclosebtn.style.background="#008080"; footerclosebtn.style.color="#ffffff"; } 
-		else if (THEME==8) { footerclosebtn.style.background="#800080"; footerclosebtn.style.color="#ffffff"; } 
-		else if (THEME==9) { footerclosebtn.style.background="#c0c0c0"; footerclosebtn.style.color="#ffffff"; } 
-	}).on("mouseout", function() { 
-		if (THEME==0) { footerclosebtn.style.background="white"; footerclosebtn.style.color="#004300"; } 
-		else if (THEME==1) { footerclosebtn.style.background="white"; footerclosebtn.style.color="#000000"; } 
-		else if (THEME==2) { footerclosebtn.style.background="#004300"; footerclosebtn.style.color="#ffffff"; } 
-		else if (THEME==3) { footerclosebtn.style.background="#000000"; footerclosebtn.style.color="#1234ab"; } 
-		else if (THEME==4) { footerclosebtn.style.background="#000000"; footerclosebtn.style.color="#ff1234"; } 
-		else if (THEME==5) { footerclosebtn.style.background="#ffffff"; footerclosebtn.style.color="#ff12ff"; } 
-		else if (THEME==6) { footerclosebtn.style.background="#ffffff"; footerclosebtn.style.color="#12ffff"; } 
-		else if (THEME==7) { footerclosebtn.style.background="#ffffff"; footerclosebtn.style.color="#008080"; } 
-		else if (THEME==8) { footerclosebtn.style.background="#ffffff"; footerclosebtn.style.color="#800080"; } 
-		else if (THEME==9) { footerclosebtn.style.background="#ffffff"; footerclosebtn.style.color="#c0c0c0"; } 
-	}).on("mousedown", function() {  dofooterclose(); });
+	/* Apply theme-specific colors to drawer elements using JQuery */
+	function setDrawerTheme(thiselement){
+		if (THEME==0) { thiselement.css("background","#004300"); } 
+		else if (THEME==1) { thiselement.css("background","black"); } 
+		else if (THEME==2) { thiselement.css("background","white"); } 
+		else if (THEME==3) { thiselement.css("background","#1234ab"); } 
+		else if (THEME==4) { thiselement.css("background","#ff1234"); } 
+		else if (THEME==5) { thiselement.css("background","#ff12ff"); }  
+		else if (THEME==6) { thiselement.css("background","#12ffff"); }  
+		else if (THEME==7) { thiselement.css("background","#008080"); }  
+		else if (THEME==8) { thiselement.css("background","#800080"); }  
+		else if (THEME==9) { thiselement.css("background","#c0c0c0"); }  
+	}
+	
+	/* Apply theme-specific colors and functionality to the upper close button using Javascript */
+	$("#upperclosebtn:first").on("mouseover", function() { setBtnTheme(upperclosebtn,true); }).on("mouseout", function() { setBtnTheme(upperclosebtn,false); }).on("mousedown", function() {  doupperclosing(); });
+	
+	/* Apply theme-specific colors and functionality to the lower close button using Javascript */
+	$("#close:first").on("mouseover", function() { setBtnTheme(footerclosebtn,true); }).on("mouseout", function() {  setBtnTheme(footerclosebtn,false); }).on("mousedown", function() {  dofooterclose(); });
 	
 	/* Apply theme-specific colors and functionality to the menu toggle button */
-	$(".navbar-toggle:first").on("mouseover", function() { 
-		for (i=0; i<toggleicons.length; i++) { 
-			if (THEME==0) { toggleicons[i].css("background","#004300"); } 
-			else if (THEME==1) { toggleicons[i].css("background","black"); } 
-			else if (THEME==2) { toggleicons[i].css("background","white"); } 
-			else if (THEME==3) { toggleicons[i].css("background","#1234ab"); } 
-			else if (THEME==4) { toggleicons[i].css("background","#ff1234"); } 
-			else if (THEME==5) { toggleicons[i].css("background","#ff12ff"); }  
-			else if (THEME==6) { toggleicons[i].css("background","#12ffff"); }  
-			else if (THEME==7) { toggleicons[i].css("background","#008080"); }  
-			else if (THEME==8) { toggleicons[i].css("background","#800080"); }  
-			else if (THEME==9) { toggleicons[i].css("background","#c0c0c0"); }  
-		} if (THEME==2) { toggledrawer.css("background","#aaaaaa"); } else toggledrawer.css("background","white");
-	}).on("mouseout", function() { 
-		for (i=0; i<toggleicons.length; i++) { if (THEME==2) { toggleicons[i].css("background","#aaaaaa"); } else toggleicons[i].css("background","white"); }
-		if (THEME==0) { toggledrawer.css("background","#004300"); } 
-		else if (THEME==1) { toggledrawer.css("background","black"); } 
-		else if (THEME==2) { toggledrawer.css("background","white"); } 
-		else if (THEME==3) { toggledrawer.css("background","#1234ab"); } 
-		else if (THEME==4) { toggledrawer.css("background","#ff1234"); } 
-		else if (THEME==5) { toggledrawer.css("background","#ff12ff"); }   
-		else if (THEME==6) { toggledrawer.css("background","#12ffff"); }   
-		else if (THEME==7) { toggledrawer.css("background","#008080"); }   
-		else if (THEME==8) { toggledrawer.css("background","#800080"); }   
-		else if (THEME==9) { toggledrawer.css("background","#c0c0c0"); }   
+	$(".navbar-toggle:first").on("mouseover", function() { for (i=0; i<toggleicons.length; i++) { setDrawerTheme(toggleicons[i]); } if (THEME==2) { toggledrawer.css("background","#aaaaaa"); } else toggledrawer.css("background","white");
+	}).on("mouseout", function() { for (i=0; i<toggleicons.length; i++) { if (THEME==2) { toggleicons[i].css("background","#aaaaaa"); } else toggleicons[i].css("background","white"); } setDrawerTheme(toggledrawer); 
 	}).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
 
 	// These are Javascript media query variables
