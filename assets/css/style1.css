@@ -20,25 +20,18 @@ input[type="submit"]:hover{ background-color: #222; color: #B2D4B2; box-shadow: 
 a:active, input[type="submit"]:active{ background-color: #008700ee; color: white; box-shadow: -2px 1px 3px #B2D4B2; border-radius: 8px; padding: 2%; }
 
 /* Style the sticky top dropdown navigation links */
+
 nav li input[type="button"] { background-color:#004300; color: #f2f2f2; padding: 8px 0; margin:0; height: 50px; border-radius: 2.5px; text-decoration: none; display: block; transition: all 0.3s ease-in; -webkit-transition: all 0.3s ease-in; -moz-transition: all 0.3s ease-in; -o-transition: all 0.3s ease-in; }
 
 nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out; }
 
-<<<<<<< HEAD
-/* Change properties of page ids */
-=======
 /* Change properties of page navigation buttons */
 
->>>>>>> 09b418ba4184eb5fd7573392f6e102e1804dfb92
 #myProgress { width: 100%; background-color: white; }
 
 #progressBar { width: 1%; height: 30px; padding: 10px; background-color: #004300; }
 
 #footerDiv { display: none; }
-
-#ratebar { position: fixed; margin: 0% 0% 0% -15%; padding: auto; top: 0; left: 0; width: 116%; height: auto; }
-
-#ratebar > #ads { margin: 0; padding: auto; top: 0; left: 0; width: auto; height: 100%; }
 
 /* Create two unequal columns that floats next to each other */
 /* Main column */
@@ -93,8 +86,6 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 .footerCard blockquote { font-size: 70%; }
 
 .footer h6 { text-align: center; }
-	
-.warning { display: block; }
 
 .clearnav { box-shadow: none; text-shadow: none; margin: 0; padding: 0; left: 0; top: 0; content: ""; display: table; clear: both; }
 
@@ -110,15 +101,12 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 	input[type="submit"]{ background-color: #004300; color: #a1a1a1; box-shadow: -3px 3px 2px #aa7; border-radius: 3px; padding: 4px; }
 	
 	.mainColumn { float: left; width: 65%; padding: 0.5%; } .rightColumn { float: left; width: 35%; padding: 0.5%; }
-<<<<<<< HEAD
+	
+	.footerCard { font-size: 90%; width: 25%; height: 547px; font-size: 90%; }
 	
 	.row { width: 99%; margin: 0.5%; }
 	
 	.footer a { margin: 0.5% 1.6%; }
-	
-	.warning { display: block; }
-=======
->>>>>>> 09b418ba4184eb5fd7573392f6e102e1804dfb92
 }
 
 /* Responsive layout - when the screen is less than 800px wide, make the three columns stack on top of each other instead of next to each other */
@@ -132,15 +120,12 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 	#footerDivHeader { font-size: 100%; } #close { display: block; color: #004300; border-radius: 10px; float: right; }
 	
 	.mainColumn, .rightColumn { position: relative; float: none; left: 0; padding: 0; width: 100%; height: auto; }
-<<<<<<< HEAD
+	
+	.footerCard { font-size: 80%; width: 25%; height: 547px; font-size: 80%; }
 	
 	.row { width: 99%; margin: 0.5%; }
 	
 	.footer a { margin: 0.5% 1.2%; }
-	
-	.warning { display: block; }
-=======
->>>>>>> 09b418ba4184eb5fd7573392f6e102e1804dfb92
 }
 
 /* Responsive layout - when the screen is less than 480px wide, make the navigation links stack on top of each other instead of next to each other */
@@ -161,17 +146,14 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 	select, input[type="text"], input[type="password"], input[type="phone"], input[type="email"], label{ width: auto; z-index: 0; }
 
 	input[type="submit"]{ background-color: #004300; color: #a1a1a1; box-shadow: -5px 5px 3px #aa7; border-radius: 3px; }
-<<<<<<< HEAD
 	
-	.pagefootercard { width: 33%; font-size: 80%; height: 547px; }
+	.footerCard { width: 33%; height: 547px;  }
 	
 	.row { width: 99%; margin: 0.5%; }
 	
 	.footer a { margin: 0.5% 0.8%; font-size: 80%; }
 	
 	.warning { display: none; }
-=======
->>>>>>> 09b418ba4184eb5fd7573392f6e102e1804dfb92
 }
 
 /* Responsive layout - when the screen is less than 345px wide, make the footer cards smaller so as to fit into container frame */
@@ -184,15 +166,12 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 	select, input[type="text"], input[type="password"], input[type="phone"], input[type="email"]{ width: 78%; margin: 1%; }
 
 	input[type="submit"]{ background-color: #004300; color: #a1a1a1; box-shadow: -3px 3px 2px #aa7; border-radius: 3px; padding: 3px; }
-<<<<<<< HEAD
 	
-	.pagefootercard { width: 33%; font-size: 80%; height: 547px; }
+	.footerCard { width: 33%; height: 527px; }
 	
 	.row { width: 99%; margin: 0.5%; }
 	
 	.footer a { margin: 0.5% 1.2%; font-size: 70%; }
 	
 	.warning { display: none; }
-=======
->>>>>>> 09b418ba4184eb5fd7573392f6e102e1804dfb92
 }

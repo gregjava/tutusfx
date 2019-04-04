@@ -17,12 +17,12 @@
 	var segments = $("#segment"); var topnava = $("#topnav a"); var progressBar = $("#progressBar"); var toggleicons = [$("#icon-bar1"),$("#icon-bar2"),$("#icon-bar3"),$("#icon-bar4")];
 	
 	// These are utility variables and flags
-	var THEME; var i = 0; var HIDDEN = true; var footerclosing = true; var textclosed = false; var upperclosing = false; var QUERYING = false;
+	var THEME; var i = 0; var HIDDEN = true; var footerclosing = true; var textclosed = false; var upperclosing = false; var floatingcolumnclosed = false; var QUERYING = false;
 	
-	// Apply theme
+	// Set current theme or default to THEME[0]
 	if (THEME==null) setTheme(THEME = 0); else setTheme(THEME);
 	
-	/* Apply standard properties to related elements */
+	/* Set element properties according to the defined theme */
 	function setTheme(THEME){
 		img.css("position","relative").css("top","0").css("left","0").css("width","100%").css("height","100%").css("float","left top").css("border-radius","1.5px");
 		textinputarea.css("min-height","300px").css("min-width","100%").css("height","80%").css("width","100%").css("top","0").css("left","0").css("text-align","justify").css("float","center").css("border-radius","5px").css("padding","16px 4px");
@@ -70,16 +70,10 @@
 		pagefooterdivtexts.css("color","white").css("text-align","justify").css("float","justify").css("font-size","99%");
 		navcontainer.css("border-radius","0px 0px 5px 5px").css("box-shadow","-3px 5px 3px #454");
 		
-<<<<<<< HEAD
-		closethat.hide(); // hide Close button for main layout of 1 column pages on default
+		closethat.hide(); // Hide the close button on expandableColumns on default. The button will only be needed if floatingColumn is closed
 		
-		 /* Apply colors for theme, revtheme, bodybkgd, header & UI cards (fakeimg) */ 
-		if (THEME==0){ applyTheme("#004300","#ffffff","#baf1ba","#fefefe","#bbfebb"); }
-=======
-		closethat.hide();
-		
+		/* Apply theme, revtheme, bodybkgd, header & fakeimg colors, according to the current theme */
 		if (THEME==0){ applyTheme("#004300","#ffffff","#baf1ba","#fefefe","#bbfebb"); } /* theme, revtheme, bodybkgd, header, fakeimg */ 
->>>>>>> 09b418ba4184eb5fd7573392f6e102e1804dfb92
 		else if (THEME==1) { applyTheme("#000000","#ffffff","#444444","#fefefe","#aaaaaa"); } 
 		else if (THEME==2) { applyTheme("#ffffff","#000000","#fefefe","#000000","#eeeeee"); } 
 		else if (THEME==3) { applyTheme("#1234ab","#ffffff","#babaf1","#ffffff","#5678ef"); } 
@@ -89,7 +83,7 @@
 		else if (THEME==7) { applyTheme("#008080","#ffffff","#f1f1f1","#ffffff","#aaaaaa"); } 
 		else if (THEME==8) { applyTheme("#800080","#ffffff","#baf1f1","#ffffff","#aaaaaa"); } 
 		else if (THEME==9) { applyTheme("#c0c0c0","#ffffff","#f1f1f1","#004300","#aaaaaa"); } 
-		for (i=0; i<toggleicons.length; i++) { toggleicons[i].css("background","white"); } // Set background of drawer toggler to white on default
+		for (i=0; i<toggleicons.length; i++) { toggleicons[i].css("background","white"); } // Set menu button background color to white
 	}
 	
 	/* Apply theme-specific colors to related elements */
@@ -121,11 +115,6 @@
 			progressBar.css("background-color",color1);				
 	}
 	
-<<<<<<< HEAD
-	function hideDrawer(){ if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } }
-	
-=======
->>>>>>> 09b418ba4184eb5fd7573392f6e102e1804dfb92
 	/* Apply theme-specific colors to footer elements */
 	function setFooterTheme(){
 		if (THEME==0) { footerdiv.style.backgroundColor = "#004300"; footerclosebtn.style.background = "white"; footerclosebtn.style.color = "#004300"; } 
@@ -154,20 +143,6 @@
 		else if (THEME==9){ rates.style.backgroundColor = "#c0c0c0"; upperclosebtn.style.background = "white"; upperclosebtn.style.color = "#c0c0c0"; }
 	}
 	
-<<<<<<< HEAD
-=======
-	$("#nature:first").on("mouseover", function() { THEME = 0; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
-	$("#night:first").on("mouseover", function() { THEME = 1; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
-	$("#sunny:first").on("mouseover", function() { THEME = 2; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
-	$("#cloudy:first").on("mouseover", function() { THEME = 3; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
-	$("#romance:first").on("mouseover", function() { THEME = 4; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
-	$("#royal:first").on("mouseover", function() { THEME = 5; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
-	$("#aqua:first").on("mouseover", function() { THEME = 6; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
-	$("#teal:first").on("mouseover", function() { THEME = 7; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
-	$("#deeproyal:first").on("mouseover", function() { THEME = 8; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
-	$("#silver:first").on("mouseover", function() { THEME = 9; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
-	
->>>>>>> 09b418ba4184eb5fd7573392f6e102e1804dfb92
 	/* Apply theme-specific colors and functionality to the upper close button */
 	$("#upperclosebtn:first").on("mouseover", function() {
 		if (THEME==0) { upperclosebtn.style.background="#004300"; upperclosebtn.style.color="white"; } 
@@ -244,10 +219,27 @@
 		else if (THEME==7) { toggledrawer.css("background","#008080"); }   
 		else if (THEME==8) { toggledrawer.css("background","#800080"); }   
 		else if (THEME==9) { toggledrawer.css("background","#c0c0c0"); }   
-	}).on("mousedown", function() { hideDrawer(); });
+	}).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
+
+	// These are Javascript media query variables
+	var browserwidth = window.matchMedia("(max-width: 1200px)"); var browserwidth1 = window.matchMedia("(max-width: 800px)");
+	var browserwidth2 = window.matchMedia("(max-width: 480px)"); var browserwidth3 = window.matchMedia("(max-width: 345px)");
+	
+	// These are Javascript id selector and utility variables
+	var header = document.getElementById("topnav"); var rates = document.getElementById("ratebar"); var title = document.getElementById("headertitle"); var headercontent = document.getElementById("headercontent");
+	var footerdiv = document.getElementById("footerDiv"); var footerheader = document.getElementById("footerDivHeader"); var footertexts = document.getElementById("footerDivTexts"); var footerclosebtn = document.getElementById("close");
+	var ads = document.getElementById("ads"); var upperclosebtn = document.getElementById("upperclosebtn"); var headeroffset = header.offsetTop;
 	
 	/* Apply functionality to elements using JQuery */	
-<<<<<<< HEAD
+	$(document).ready(function(){ $('.dropdown-submenu a.droplevel2').on("click", function(e){ $(this).next('ul').toggle(); e.stopPropagation(); e.preventDefault(); }); });
+	
+	/* Set Back button functionality using Javascript */	
+	function prevPage(){ window.history.go(-1); }
+	
+	/* Set Next button functionality using Javascript */	
+	function nextPage(){ window.history.go(+1); }
+	
+	/* Apply functionality to elements using JQuery */	
 	$("#nature:first").on("mouseover", function() { THEME = 0; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
 	$("#night:first").on("mouseover", function() { THEME = 1; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
 	$("#sunny:first").on("mouseover", function() { THEME = 2; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
@@ -258,57 +250,24 @@
 	$("#teal:first").on("mouseover", function() { THEME = 7; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
 	$("#deeproyal:first").on("mouseover", function() { THEME = 8; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
 	$("#silver:first").on("mouseover", function() { THEME = 9; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
-=======
->>>>>>> 09b418ba4184eb5fd7573392f6e102e1804dfb92
+	
 	$("#tradebar:first").on("mousedown", function() { doupperclosing(); } );
+	
 	$("#sitefooter:first").on("mousedown", function() { dofooterclose(); } );
+	
 	$("#header:first").on("mousedown", function() { dotextclosing(); } );
+	
 	$("#headertexts:first").on("mousedown", function() { dotextclosing(); } );
-	$(".attendant:first").on("mousedown", function() { if (siteassistant.hide()) siteassistant.show(); else siteassistant.hide(); } );
-	$("#attendant:first").on("mousedown", function() { if (siteassistant.hide()) siteassistant.show(); else siteassistant.hide(); } );
-	$(".expandableColumn:first").on("mousedown", function() { floatingcolumn.show(); windowsize(browserwidth,browserwidth1,browserwidth2,browserwidth3); /* Call screen resize listener function to set columns accordingly.
-		An alternative will be to call 'expandablecolumn.css("width","65%");' directly. However, this will be incorrect for screens of sizes less than 800px. */ closethat.hide(); } );
-	$(".floatingColumn .card:first").on("mousedown", function() { floatingcolumn.hide(); expandablecolumn.css("width","100%"); closethat.show(); } );
-	$(".floatingColumn .close:first").on("mousedown", function() { floatingcolumn.hide(); expandablecolumn.css("width","100%"); closethat.show(); } );
-	$(".assistant:first").on("mouseover", function() { siteassistant.css("background","URL('https://www.tutusfx.com/assets/images/working.gif')").css("background-size","cover"); } )
-		.on("mouseout", function() { siteassistant.css("background","URL('https://www.tutusfx.com/assets/images/open.gif')").css("background-size","cover"); } )
-		.on("mousedown", function() { 
-			if (!QUERYING) { siteassistant.css("background","URL('https://www.tutusfx.com/assets/images/busy.gif')").css("background-size","cover"); siteassistant.before("<input id='userquery' type='text' placeholder='Make your enquiries on Tutusfx or anything related' />"); QUERYING = true; } 
-			else { $("#userquery").click(function(){ if ($("#userquery").val()!="") alert("Text: " + $("#userquery").val()); $("#userquery").remove(); QUERYING = false; }); } 
-		});
-
-	// These are Javascript media query variables for referencing various screen sizes
-	var browserwidth = window.matchMedia("(max-width: 1200px)"); var browserwidth1 = window.matchMedia("(max-width: 800px)");
-	var browserwidth2 = window.matchMedia("(max-width: 480px)"); var browserwidth3 = window.matchMedia("(max-width: 345px)");
 	
-<<<<<<< HEAD
-	// Set column behaviours depending on referenced screen size
-	function windowsize(browserwidth,browserwidth1,browserwidth2,browserwidth3) {
-	  if (browserwidth3.matches) {  // do something as browserwidth <= 345px
-	    expandablecolumn.css("width","99%").css("margin","-30% 0% 60% auto").css("margin-bottom","-100px").css("position","relative").css("float","none").css("left","0").css("padding","0").css("height","auto");
-		floatingcolumn.css("width","99%").css("margin","0.5%").css("position","relative").css("float","none").css("left","0").css("padding","0").css("height","auto");
-	  } else if (browserwidth2.matches) {  // do something as browserwidth <= 480px
-		expandablecolumn.css("width","99%").css("margin","0.5%");
-		floatingcolumn.css("width","99%").css("margin","-30% 0% 60% auto").css("position","relative").css("float","none").css("left","0").css("padding","0").css("height","auto");
-	  } else if (browserwidth1.matches) { // do something as browserwidth <= 800px
-		expandablecolumn.css("width","99%").css("margin","0.5%");
-		floatingcolumn.css("width","99%").css("margin","-30% 0% 60% auto").css("position","relative").css("float","none").css("left","0").css("padding","0").css("height","auto");
-	  } else if (browserwidth.matches) { // do something as browserwidth <= 1200px
-		expandablecolumn.css("width","65%");
-		floatingcolumn.css("width","34%").css("margin","0.5%").css("background","none").css("position","fixed").css("left","65%").css("padding","1%").css("height","auto");
-	  } else { // do something as browserwidth >= 1200px
-		expandablecolumn.css("width","65%"); 
-		floatingcolumn.css("width","34%").css("margin","0.5%").css("background","none").css("position","fixed").css("left","65%").css("padding","1%").css("height","auto");
-	  }
-	} browserwidth.addListener(windowsize); // Attach listener function
-=======
 	$(".attendant:first").on("mousedown", function() { if (siteassistant.hide()) siteassistant.show(); else siteassistant.hide(); } );
 	
 	$("#attendant:first").on("mousedown", function() { if (siteassistant.hide()) siteassistant.show(); else siteassistant.hide(); } );
 	
-	$(".expandableColumn:first").on("mousedown", function() { floatingcolumn.show(); expandablecolumn.css("width","65%"); closethat.hide(); } );
+	$(".expandableColumn:first").on("mousedown", function() { floatingcolumn.show(); floatingcolumnclosed = false; windowsize(browserwidth,browserwidth1,browserwidth2,browserwidth3); closethat.hide(); } );
 	
-	$(".floatingColumn .card:first").on("mousedown", function() { floatingcolumn.hide(); expandablecolumn.css("width","100%"); closethat.show(); } );
+	$(".floatingColumn .close").on("mousedown", function() { floatingcolumn.hide(); floatingcolumnclosed = true; windowsize(browserwidth,browserwidth1,browserwidth2,browserwidth3); closethat.show(); } );
+	
+	$(".floatingColumn .card:first").on("mousedown", function() { floatingcolumn.hide(); floatingcolumnclosed = true; windowsize(browserwidth,browserwidth1,browserwidth2,browserwidth3); closethat.show(); } );
 	
 	$(".assistant:first").on("mouseover", function() { siteassistant.css("background","URL('https://www.tutusfx.com/assets/images/working.gif')").css("background-size","cover"); } )
 		.on("mouseout", function() { siteassistant.css("background","URL('https://www.tutusfx.com/assets/images/open.gif')").css("background-size","cover"); } )
@@ -316,134 +275,56 @@
 			if (!QUERYING) { siteassistant.css("background","URL('https://www.tutusfx.com/assets/images/busy.gif')").css("background-size","cover"); siteassistant.before("<input id='userquery' type='text' placeholder='Make your enquiries on Tutusfx or anything related' />"); QUERYING = true; } 
 			else { $("#userquery").click(function(){ if ($("#userquery").val()!="") alert("Text: " + $("#userquery").val()); $("#userquery").remove(); QUERYING = false; }); } 
 		});
-
-	// These are Javascript media query variables
-	var browserwidth = window.matchMedia("(max-width: 1200px)"); var browserwidth1 = window.matchMedia("(max-width: 800px)");
-	var browserwidth2 = window.matchMedia("(max-width: 480px)"); var browserwidth3 = window.matchMedia("(max-width: 345px)");
->>>>>>> 09b418ba4184eb5fd7573392f6e102e1804dfb92
 	
-	// These are Javascript id selector and utility variables
-	var header = document.getElementById("topnav"); var rates = document.getElementById("ratebar");
-	var title = document.getElementById("headertitle"); var headercontent = document.getElementById("headercontent");
-	var footerdiv = document.getElementById("footerDiv"); var footerheader = document.getElementById("footerDivHeader"); 
-	var footertexts = document.getElementById("footerDivTexts"); var footerclosebtn = document.getElementById("close");
-	var ads = document.getElementById("ads"); var upperclosebtn = document.getElementById("upperclosebtn"); var headeroffset = header.offsetTop;
+	/* Call screen resize listener function & attach listener function at run time */	
+	windowsize(browserwidth,browserwidth1,browserwidth2,browserwidth3);
+	browserwidth.addListener(windowsize);
 	
-	
-<<<<<<< HEAD
-	/* Set behaviour of 2-level dropdown using JQuery */	
-	$(document).ready(function(){ $('.dropdown-submenu a.droplevel2').on("click", function(e){ $(this).next('ul').toggle(); e.stopPropagation(); e.preventDefault(); }); });
-	
-	
-	/* Set the back-button functionality */	
-	function prevPage(){ window.history.go(-1); }
-	/* Set the next-button functionality */
-	function nextPage(){ window.history.go(+1); }
-=======
-	/* Apply functionality to elements using JQuery */	
-	$(document).ready(function(){ $('.dropdown-submenu a.droplevel2').on("click", function(e){ $(this).next('ul').toggle(); e.stopPropagation(); e.preventDefault(); }); });
-	
-	
-	/* Apply functionality to elements using Javascript */	
-	function prevPage(){ window.history.go(-1); }
-	
-	function nextPage(){ window.history.go(+1); }
-	
-	windowsize(browserwidth,browserwidth1,browserwidth2,browserwidth3); // Call screen resize listener function at run time
-	browserwidth.addListener(windowsize); // Attach listener function
-	
-	function windowsize(browserwidth,browserwidth1,browserwidth2,browserwidth3) {
-	  if (browserwidth3.matches) {  // do something as browserwidth <= 345px
-	    expandablecolumn.css("width","99%").css("margin","-30% 0% 60% auto").css("margin-bottom","-100px").css("position","relative").css("float","none").css("left","0").css("padding","0").css("height","auto");
-		floatingcolumn.css("width","99%").css("margin","0.5%").css("position","relative").css("float","none").css("left","0").css("padding","0").css("height","auto");
-		pagefootercard.css("width","33%").css("height","527px");
-		contentrow.css("width","99%").css("margin","0.5%");
-		footerlinks.css("margin","0.5% 1.2%");
-		warningdiv.css("display","none");
-	  } else if (browserwidth2.matches) {  // do something as browserwidth <= 480px
-		expandablecolumn.css("width","99%").css("margin","0.5%");
-		floatingcolumn.css("width","99%").css("margin","-30% 0% 60% auto").css("position","relative").css("float","none").css("left","0").css("padding","0").css("height","auto");
-		pagefootercard.css("width","33%").css("font-size","80%").css("height","547px");
-		contentrow.css("width","99%").css("margin","0.5%");
-		footerlinks.css("margin","0.5% 0.8%").css("font-size","80%");
-		warningdiv.css("display","none");
-	  } else if (browserwidth1.matches) { // do something as browserwidth <= 800px
-		expandablecolumn.css("width","99%").css("margin","0.5%");
-		floatingcolumn.css("width","99%").css("margin","-30% 0% 60% auto").css("position","relative").css("float","none").css("left","0").css("padding","0").css("height","auto");
-		contentrow.css("width","99%").css("margin","0.5%");
-		footerlinks.css("margin","0.5% 1.2%");
-	  } else if (browserwidth.matches) {// do something as browserwidth <= 1200px
-		expandablecolumn.css("width","65%");
-		floatingcolumn.css("width","34.7%").css("margin","0.5%").css("background","none").css("position","fixed").css("left","65%").css("padding","1%").css("height","96%");
-		contentrow.css("width","99%").css("margin","0.5%");
-		footerlinks.css("margin","0.5% 1.6%");
-	  } else { 
-		expandablecolumn.css("width","65%"); 
-		floatingcolumn.css("width","34.7%").css("margin","0.5%").css("background","none").css("position","fixed").css("left","65%").css("padding","1%").css("height","96%");
+	/* Set element properties according to browser's current width; used mainly for 1-col layouts */	
+	function windowsize(browserwidth,browserwidth1,browserwidth2,browserwidth3) { 
+		if (browserwidth3.matches) { // set element properties, as browserwidth <= 345px
+	  } else if (browserwidth2.matches) { // set element properties, as browserwidth <= 480px
+	  } else if (browserwidth1.matches) { // set element properties, as browserwidth <= 800px
+	  } else if (browserwidth.matches) { // set element properties, as browserwidth <= 1200px
+		if (floatingcolumnclosed==true) expandablecolumn.css("width","99%").css("margin","0.5%"); else expandablecolumn.css("width","65%");
+	  } else { // set element properties, as browserwidth >= 1200px
+		if (floatingcolumnclosed==true) expandablecolumn.css("width","99%").css("margin","0.5%"); else expandablecolumn.css("width","65%");
 	  }
 	}
->>>>>>> 09b418ba4184eb5fd7573392f6e102e1804dfb92
-
-	/* Set header, ratebar and footer behaviour */
-	function myFunction() { 
+	/* Default Page-Setter Function */
+	function myFunction() {
 		if (window.pageYOffset > (headeroffset-(headeroffset/10)-50)) { 
-			if (upperclosing) { if (window.pageYOffset > (headeroffset-(headeroffset/10))) { floatingcolumn.css("top","110px"); header.classList.remove("sticky"); header.classList.add("sticky2"); } } else { floatingcolumn.css("top","160px"); header.classList.remove("sticky2"); header.classList.add("sticky"); } 
-		} else { if (upperclosing) { floatingcolumn.css("top","55px"); } else { floatingcolumn.css("top","105px"); }
+			if (upperclosing==true) { if (window.pageYOffset > (headeroffset-(headeroffset/10))) { floatingcolumn.css("top","110px"); header.classList.remove("sticky"); header.classList.add("sticky2"); } } else { floatingcolumn.css("top","160px"); header.classList.remove("sticky2"); header.classList.add("sticky"); } 
+		} else { if (upperclosing==true) { floatingcolumn.css("top","55px"); } else { floatingcolumn.css("top","105px"); }
 			title.style.paddingTop = (window.pageYOffset+30)+"px"; title.style.fontSize = (90-(3*window.pageYOffset/25))+"px"; 
 			headercontent.style.paddingTop = (window.pageYOffset-220)+"px"; headercontent.style.fontSize = (40-(window.pageYOffset/25))+"px";
 			if (window.pageYOffset > 250) { (window.pageYOffset/2)+"px"; headercontent.style.fontSize = "0px"; } 
-			if (upperclosing) { header.classList.remove("sticky2"); } else { header.classList.remove("sticky"); } 
+			if (upperclosing==true) { header.classList.remove("sticky2"); } else { header.classList.remove("sticky"); } 
 		}
-<<<<<<< HEAD
-		if (upperclosing) { rates.classList.remove("upperbar"); rates.style.height = "0px"; rates.style.Float = "top";  
-			upperclosebtn.classList.remove("glyphicon-arrow-right"); upperclosebtn.classList.add("glyphicon-arrow-left"); ads.style.fontSize = "0%";
-		} else { rates.classList.add("upperbar"); rates.style.height = "50px"; rates.style.top = "0px"; rates.style.zIndex = "1000";
-			upperclosebtn.classList.remove("glyphicon-arrow-left"); upperclosebtn.classList.add("glyphicon-arrow-right"); ads.style.fontSize = "100%"; setRateBarTheme(); 
-		} if (textclosed) { topheadertitle.hide(); topheadercontent.hide(); } else { topheadertitle.show(); topheadercontent.show(); } 
-	} myFunction(); // apply header/ratebar/footer settings at runtime
-=======
 		if (upperclosing==true) { rates.classList.remove("upperbar"); rates.style.height = "0px"; rates.style.float = "top";  
 			upperclosebtn.classList.remove("glyphicon-arrow-right"); upperclosebtn.classList.add("glyphicon-arrow-left"); ads.style.fontSize = "0%";
 		} else { rates.classList.add("upperbar"); rates.style.height = "50px"; rates.style.top = "0px"; rates.style.zIndex = "1000";
 			upperclosebtn.classList.remove("glyphicon-arrow-left"); upperclosebtn.classList.add("glyphicon-arrow-right"); ads.style.fontSize = "100%"; setRateBarTheme(); 
 		} if (textclosed==true) { topheadertitle.hide(); topheadercontent.hide(); } else { topheadertitle.show(); topheadercontent.show(); } 
-		windowsize(browserwidth,browserwidth1,browserwidth2,browserwidth3); // Call screen resize listener function on scroll
-	}
-				
-	myFunction(); // call default page setter function at runtime
+		windowsize(browserwidth,browserwidth1,browserwidth2,browserwidth3); // Call screen resize listener function to ensure consistency in browser properties
+	} myFunction(); // call default page setter function at runtime
 	
-	window.onscroll = function() { myFunction(); }
->>>>>>> 09b418ba4184eb5fd7573392f6e102e1804dfb92
+	window.onscroll = function() { myFunction(); } // call default page setter function on scroll
 	
-	/* Apply header, ratebar and footer behaviour on scrolling the UI */
-	window.onscroll = function() { myFunction(); windowsize(browserwidth,browserwidth1,browserwidth2,browserwidth3); /* Call screen resize function to reset any bloated (1-col) layout accordingly.*/ }
-
-	/* Set behaviour on closing the footer */
-	function dofooterclose() { 
-		if (footerclosing) { footerclosebtn.classList.remove("glyphicon-arrow-up"); footerclosebtn.classList.add("glyphicon-arrow-down");
+	function dofooterclose() { // open/close footer warning panel
+		if (footerclosing==true) { footerclosebtn.classList.remove("glyphicon-arrow-up"); footerclosebtn.classList.add("glyphicon-arrow-down");
 			footerdiv.style.background = "none"; footerheader.style.fontSize = "0%"; footertexts.style.fontSize = "0%"; footerclosing = false;
-<<<<<<< HEAD
 		} else { setFooterTheme(); footerclosebtn.classList.remove("glyphicon-arrow-down"); footerclosebtn.classList.add("glyphicon-arrow-up");
-=======
-		} else { 
-			setFooterTheme(); footerclosebtn.classList.remove("glyphicon-arrow-down"); footerclosebtn.classList.add("glyphicon-arrow-up");
->>>>>>> 09b418ba4184eb5fd7573392f6e102e1804dfb92
 			footerdiv.style.height = "30%"; footerdiv.style.top = "70%"; footerheader.style.fontSize = "100%"; footertexts.style.fontSize = "100%"; footerclosing = true;
 		}
 	}
 	
-	/* Set behaviour on closing the ratebar */
-	function doupperclosing() { 
-<<<<<<< HEAD
-		if (upperclosing) { upperclosebtn.classList.remove("close-upper"); upperclosebtn.classList.add("open-upper"); upperclosing = false; } 
-=======
+	function doupperclosing() { // open/close ratebar
 		if (upperclosing==true) { upperclosebtn.classList.remove("close-upper"); upperclosebtn.classList.add("open-upper"); upperclosing = false; } 
->>>>>>> 09b418ba4184eb5fd7573392f6e102e1804dfb92
 		else { upperclosebtn.classList.remove("open-upper"); upperclosebtn.classList.add("close-upper"); upperclosing = true; } myFunction(); // call default page setter function at state changes
 	}
 	
-	/* Set behaviour on closing the header texts */
-	function dotextclosing() { 
-		if (textclosed) { topheadertitle.show(); topheadercontent.show(); textclosed = false; } 
+	function dotextclosing() { // open/close header texts 
+		if (textclosed==true) { topheadertitle.show(); topheadercontent.show(); textclosed = false; } 
 		else { topheadertitle.hide(); topheadercontent.hide(); textclosed = true; }
 	}
