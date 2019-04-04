@@ -305,16 +305,13 @@
 			<nav class="navbar navbar-inverse"><!-- right hidden menu -->
 			  <div class="container-fluid">
 				<div class="navbar-header">
-				  <button type="button" id="navbar-toggle" drawer.show(); drawer.css("data-toggle","collapse"); data-toggle="collapse" data-target="#navi">
-					<span id="icon-bar1" class="icon-bar"></span>
-					<span id="icon-bar2" class="icon-bar"></span>
-					<span id="icon-bar3" class="icon-bar"></span> 
-					<span id="icon-bar4" class="icon-bar"></span>                        
-				  </button><input type="search" value="" placeholder="Search item"></input><a class="navbar-brand" href="#"><img src="../../../assets/images/logo_bar.png" alt="Tutusfx" /></a>
+				  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navi">
+					<span id="icon-bar1" class="icon-bar"></span><span id="icon-bar2" class="icon-bar"></span><span id="icon-bar3" class="icon-bar"></span><span id="icon-bar4" class="icon-bar"></span>                        
+				  </button><input type="search" value="" placeholder="Search item"></input><a class="navbar-brand" href="#"><img src="../../assets/images/logo_bar.png" alt="Tutusfx" /></a>
 				</div>
 				<div class="collapse navbar-collapse" id="navi">
 				  <ul class="nav navbar-nav">
-					<li><a href="../../../eu/index.html">Home</a></li>
+					<li><a href="../index.html">Home</a></li>
 					<li><input type="button" id="back" value="Back" onclick="prevPage()" ></input></li>
 					<li><input type="button" id="next" value="Next" onclick="nextPage()" ></input></li>
 				  </ul>
@@ -326,7 +323,7 @@
 								<li><input tabindex="-1" type="button" id="tradebar" value="Trade Bar"></input></li>
 								<li><input tabindex="-1" type="button" id="sitefooter" value="Footer"></input></li>
 								<li><input tabindex="-1" type="button" id="headertexts" value="Header Texts"></input></li>
-								<li><input tabindex="-1" type="button" id="sitefooter" value="Attendant"></input></li>
+								<li><input tabindex="-1" type="button" id="attendant" value="Attendant"></input></li>
 							</ul>
 						</li>
 						<li class="dropdown-submenu"><a class="droplevel2" tabindex="-1" href="#">Theme <span class="caret"></span></a>
@@ -348,7 +345,7 @@
 					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Legal <span class="caret"></span></a>
 					  <ul class="dropdown-menu">
 						<li><a href="../about-us-eu/index.html">About Tutusfx</a></li>
-						<li><a href="../../../assets/docs/whitepaper.pdf">Tutusfx Whitepaper</a></li>
+						<li><a href="../../assets/docs/whitepaper.pdf">Tutusfx Whitepaper</a></li>
 						<li class="dropdown-submenu"><a class="droplevel2" tabindex="-1" href="#">Terms of Service <span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li><input tabindex="-1" type="button" id="catpolicy" value="Client Categorisation Policy"></input></li>
@@ -364,29 +361,29 @@
 								<li><input tabindex="-1" type="button" id="bestintpolicy" value="Best Interest and Order Execution Policy"></input></li>
 							</ul>
 						</li>
-						<li><a href="../../../redirects/login.html">Privacy Policy</a></li>
+						<li><a href="../../redirects/login.html">Privacy Policy</a></li>
 					  </ul>
 					</li>
 					<li class="dropdown">
 					  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Guide <span class="caret"></span></a>
 					  <ul class="dropdown-menu">
-						<li><a href="../../../redirects/login.html">Sitemap</a></li>
+						<li><a href="../../redirects/login.html">Sitemap</a></li>
 						<li><a href="../faqs/index.html">Frequently Asked Questions</a></li>
 					  </ul>
 					</li>
 					<li class="dropdown">
 					  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <span class="caret"></span></a>
 					  <ul class="dropdown-menu">
-						<li><a href="../../../redirects/login.html">App Store</a></li>
-						<li><a href="../../../redirects/login.html">Third-Party Exchanges</a></li>
-						<li><a href="../../../redirects/login.html">Currency Markets</a></li>
-						<li><a href="../../../redirects/login.html">Chat</a></li>
-						<li><a href="../../../redirects/login.html">Vote for Witness</a></li>
-						<li><a href="../../../redirects/my-account/change-password/">Reset Password</a></li>
+						<li><a href="../../redirects/login.html">App Store</a></li>
+						<li><a href="../../redirects/login.html">Third-Party Exchanges</a></li>
+						<li><a href="../../redirects/login.html">Currency Markets</a></li>
+						<li><a href="../../redirects/login.html">Chat</a></li>
+						<li><a href="../../redirects/login.html">Vote for Witness</a></li>
+						<li><a href="../../redirects/my-account/change-password/">Reset Password</a></li>
 					  </ul>
 					</li>
-					<li><a href="../../../redirects/open-account/"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-					<li><a href="../../../redirects/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					<li><a href="../../redirects/open-account/"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+					<li><a href="../../redirects/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 				  </ul>
 				</div>
 			  </div>
