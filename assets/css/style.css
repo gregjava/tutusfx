@@ -9,7 +9,13 @@ nav li input[type="button"] { background-color: #004300; color: #f2f2f2; padding
 
 nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out; }
 
-/* Change properties of page navigation buttons */ #footerDiv { display: none; }
+/* Change properties of page navigation buttons */
+
+#footerDiv { display: none; }
+
+#back, #next { display: inline-block; }
+
+.nav { text-align: center; }
 
 /* Create three unequal columns that floats next to each other */
 .leftColumn { float: left; width: 30%; padding: 1%; } .mainColumn { float: left; width: 40%; padding: 1%; } .rightColumn { float: left; width: 30%; padding: 1%; }

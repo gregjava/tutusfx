@@ -33,6 +33,10 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 
 #footerDiv { display: none; }
 
+#back, #next { display: inline-block; }
+
+.nav { text-align: center; }
+
 /* Create two unequal columns that floats next to each other */
 /* Main column */
 .mainColumn { float: left; width: 65%; padding: 1%; }

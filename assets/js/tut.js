@@ -1,7 +1,7 @@
 	/* Script is written in Javascript/JQuery */
 	// These are element selector variables
-	var body = $("body"); var img = $("img"); var marquee = $("marquee"); var thisselect = $("select"); var navheaderlinks = $("nav a");
-	var navheaderinputs = $("li input"); var allinputs = $("input"); var h3 = $("h3"); var paragraph = $("p"); var textinputarea = $("textarea"); var links = $("a");
+	var body = $("body"); var img = $("img"); var marquee = $("marquee"); var thisselect = $("select"); var h3 = $("h3"); var paragraph = $("p"); var textinputarea = $("textarea"); var links = $("a"); var allinputs = $("input");
+	var navheaderinputs = $("li input"); var navheaderlinks = $("nav a");
 	 
 	// These are class selector variables
 	var pagefootertopicr = $(".upper-footer"); var pagefooter = $(".footer"); var footerlinks = $(".footer a"); var pagefootercard = $(".footerCard"); var closethis = $(".floatingColumn .close"); var closethat = $(".expandableColumn .close");
@@ -37,8 +37,8 @@
 		pagefootercard.css("float","left").css("text-align","justify").css("padding","0% 2%").css("font-size","90%").css("height","547px");
 		negativerate.css("color","#ff0000").css("font-family","Courier New, Times New Roman, Arial").css("font-size","100%").css("font-weight","lighter").css("font-stretch","condensed").css("text-decoration","blink");
 		positiverate.css("color","#ffffff").css("font-family","Courier New, Times New Roman, Arial").css("font-size","100%").css("font-weight","lighter").css("font-stretch","condensed").css("text-decoration","blink");
-		backbtn.css("border-radius","2.5px 0px 0px 2.5px").css("text-align","center").css("width","70px").css("height","50px").css("padding","0").css("float","center").css("border","none").css("z-index","1000");
-		nextbtn.css("border-radius","0px 2.5px 2.5px 0px").css("text-align","center").css("width","70px").css("height","50px").css("padding","0").css("float","center").css("border","none").css("z-index","1000");
+		backbtn.css("border-radius","2.5px 0px 0px 2.5px").css("display","inline-block").css("width","70px").css("height","50px").css("padding","0").css("border","none").css("z-index","1000");
+		nextbtn.css("border-radius","0px 2.5px 2.5px 0px").css("display","inline-block").css("width","70px").css("height","50px").css("padding","0").css("border","none").css("z-index","1000");
 		thisselect.css("background-color","#eeeeee");
 		trendingtradeusername.css("background","none").css("color","#B2D4B2");
 		pagefootertopicr.css("padding","1%").css("text-align","center");
@@ -115,32 +115,18 @@
 			progressBar.css("background-color",color1);				
 	}
 	
-	/* Apply theme-specific colors to footer elements */
-	function setFooterTheme(){
-		if (THEME==0) { footerdiv.style.backgroundColor = "#004300"; footerclosebtn.style.background = "white"; footerclosebtn.style.color = "#004300"; } 
-		else if (THEME==1){ footerdiv.style.backgroundColor = "#000000"; footerclosebtn.style.background = "white"; footerclosebtn.style.color = "#000000"; } 
-		else if (THEME==2){ footerdiv.style.backgroundColor = "#aaaaaa"; footerclosebtn.style.background = "black"; footerclosebtn.style.color = "#ffffff"; } 
-		else if (THEME==3){ footerdiv.style.backgroundColor = "#1234ab"; footerclosebtn.style.background = "white"; footerclosebtn.style.color = "#1234ab"; } 
-		else if (THEME==4){ footerdiv.style.backgroundColor = "#ff1234"; footerclosebtn.style.background = "black"; footerclosebtn.style.color = "#ff1234"; } 
-		else if (THEME==5){ footerdiv.style.backgroundColor = "#ff12ff"; footerclosebtn.style.background = "white"; footerclosebtn.style.color = "#ff12ff"; }
-		else if (THEME==6){ footerdiv.style.backgroundColor = "#12ffff"; footerclosebtn.style.background = "white"; footerclosebtn.style.color = "#12ffff"; }
-		else if (THEME==7){ footerdiv.style.backgroundColor = "#008080"; footerclosebtn.style.background = "white"; footerclosebtn.style.color = "#008080"; }
-		else if (THEME==8){ footerdiv.style.backgroundColor = "#800080"; footerclosebtn.style.background = "white"; footerclosebtn.style.color = "#800080"; }
-		else if (THEME==9){ footerdiv.style.backgroundColor = "#c0c0c0"; footerclosebtn.style.background = "white"; footerclosebtn.style.color = "#c0c0c0"; }
-	}
-	
-	/* Apply theme-specific colors to ratebar elements */
-	function setRateBarTheme(){
-		if (THEME==0) { rates.style.backgroundColor = "#004300"; upperclosebtn.style.background = "white"; upperclosebtn.style.color = "#004300"; } 
-		else if (THEME==1){ rates.style.backgroundColor = "#000000"; upperclosebtn.style.background = "white"; upperclosebtn.style.color = "#000000"; } 
-		else if (THEME==2){ rates.style.backgroundColor = "#aaaaaa"; upperclosebtn.style.background = "black"; upperclosebtn.style.color = "#ffffff"; } 
-		else if (THEME==3){ rates.style.backgroundColor = "#1234ab"; upperclosebtn.style.background = "white"; upperclosebtn.style.color = "#1234ab"; } 
-		else if (THEME==4){ rates.style.backgroundColor = "#ff1234"; upperclosebtn.style.background = "black"; upperclosebtn.style.color = "#ff1234"; } 
-		else if (THEME==5){ rates.style.backgroundColor = "#ff12ff"; upperclosebtn.style.background = "white"; upperclosebtn.style.color = "#ff12ff"; }
-		else if (THEME==6){ rates.style.backgroundColor = "#12ffff"; upperclosebtn.style.background = "white"; upperclosebtn.style.color = "#12ffff"; }
-		else if (THEME==7){ rates.style.backgroundColor = "#008080"; upperclosebtn.style.background = "white"; upperclosebtn.style.color = "#008080"; }
-		else if (THEME==8){ rates.style.backgroundColor = "#800080"; upperclosebtn.style.background = "white"; upperclosebtn.style.color = "#800080"; }
-		else if (THEME==9){ rates.style.backgroundColor = "#c0c0c0"; upperclosebtn.style.background = "white"; upperclosebtn.style.color = "#c0c0c0"; }
+	/* Apply theme-specific colors to bar (footer/ratebar) elements */
+	function setBarTheme(elementdiv,elementclosebtn){
+		if (THEME==0) { elementdiv.style.backgroundColor = "#004300"; elementclosebtn.style.background = "white"; elementclosebtn.style.color = "#004300"; } 
+		else if (THEME==1){ elementdiv.style.backgroundColor = "#000000"; elementclosebtn.style.background = "white"; elementclosebtn.style.color = "#000000"; } 
+		else if (THEME==2){ elementdiv.style.backgroundColor = "#aaaaaa"; elementclosebtn.style.background = "black"; elementclosebtn.style.color = "#ffffff"; } 
+		else if (THEME==3){ elementdiv.style.backgroundColor = "#1234ab"; elementclosebtn.style.background = "white"; elementclosebtn.style.color = "#1234ab"; } 
+		else if (THEME==4){ elementdiv.style.backgroundColor = "#ff1234"; elementclosebtn.style.background = "black"; elementclosebtn.style.color = "#ff1234"; } 
+		else if (THEME==5){ elementdiv.style.backgroundColor = "#ff12ff"; elementclosebtn.style.background = "white"; elementclosebtn.style.color = "#ff12ff"; }
+		else if (THEME==6){ elementdiv.style.backgroundColor = "#12ffff"; elementclosebtn.style.background = "white"; elementclosebtn.style.color = "#12ffff"; }
+		else if (THEME==7){ elementdiv.style.backgroundColor = "#008080"; elementclosebtn.style.background = "white"; elementclosebtn.style.color = "#008080"; }
+		else if (THEME==8){ elementdiv.style.backgroundColor = "#800080"; elementclosebtn.style.background = "white"; elementclosebtn.style.color = "#800080"; }
+		else if (THEME==9){ elementdiv.style.backgroundColor = "#c0c0c0"; elementclosebtn.style.background = "white"; elementclosebtn.style.color = "#c0c0c0"; }
 	}
 	
 	/* Apply theme-specific colors and functionality to the upper close button */
@@ -223,7 +209,6 @@
 
 	// These are Javascript media query variables
 	var browserwidth = window.matchMedia("(max-width: 1200px)"); var browserwidth1 = window.matchMedia("(max-width: 800px)");
-	var browserwidth2 = window.matchMedia("(max-width: 480px)"); var browserwidth3 = window.matchMedia("(max-width: 345px)");
 	
 	// These are Javascript id selector and utility variables
 	var header = document.getElementById("topnav"); var rates = document.getElementById("ratebar"); var title = document.getElementById("headertitle"); var headercontent = document.getElementById("headercontent");
@@ -240,34 +225,32 @@
 	function nextPage(){ window.history.go(+1); }
 	
 	/* Apply functionality to elements using JQuery */	
-	$("#nature:first").on("mouseover", function() { THEME = 0; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
-	$("#night:first").on("mouseover", function() { THEME = 1; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
-	$("#sunny:first").on("mouseover", function() { THEME = 2; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
-	$("#cloudy:first").on("mouseover", function() { THEME = 3; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
-	$("#romance:first").on("mouseover", function() { THEME = 4; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
-	$("#royal:first").on("mouseover", function() { THEME = 5; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
-	$("#aqua:first").on("mouseover", function() { THEME = 6; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
-	$("#teal:first").on("mouseover", function() { THEME = 7; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
-	$("#deeproyal:first").on("mouseover", function() { THEME = 8; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
-	$("#silver:first").on("mouseover", function() { THEME = 9; setTheme(THEME); setFooterTheme(); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
+	$("#nature:first").on("mouseover", function() { THEME = 0; setTheme(THEME); setBarTheme(footerdiv,footerclosebtn); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
+	$("#night:first").on("mouseover", function() { THEME = 1; setTheme(THEME); setBarTheme(footerdiv,footerclosebtn); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
+	$("#sunny:first").on("mouseover", function() { THEME = 2; setTheme(THEME); setBarTheme(footerdiv,footerclosebtn); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
+	$("#cloudy:first").on("mouseover", function() { THEME = 3; setTheme(THEME); setBarTheme(footerdiv,footerclosebtn); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
+	$("#romance:first").on("mouseover", function() { THEME = 4; setTheme(THEME); setBarTheme(footerdiv,footerclosebtn); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
+	$("#royal:first").on("mouseover", function() { THEME = 5; setTheme(THEME); setBarTheme(footerdiv,footerclosebtn); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
+	$("#aqua:first").on("mouseover", function() { THEME = 6; setTheme(THEME); setBarTheme(footerdiv,footerclosebtn); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
+	$("#teal:first").on("mouseover", function() { THEME = 7; setTheme(THEME); setBarTheme(footerdiv,footerclosebtn); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
+	$("#deeproyal:first").on("mouseover", function() { THEME = 8; setTheme(THEME); setBarTheme(footerdiv,footerclosebtn); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
+	$("#silver:first").on("mouseover", function() { THEME = 9; setTheme(THEME); setBarTheme(footerdiv,footerclosebtn); }).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
 	
 	$("#tradebar:first").on("mousedown", function() { doupperclosing(); } );
-	
-	$("#sitefooter:first").on("mousedown", function() { dofooterclose(); } );
 	
 	$("#header:first").on("mousedown", function() { dotextclosing(); } );
 	
 	$("#headertexts:first").on("mousedown", function() { dotextclosing(); } );
 	
+	$(".expandableColumn:first").on("mousedown", function() { floatingcolumn.show(); floatingcolumnclosed = false; windowsize(browserwidth,browserwidth1); closethat.hide(); } );
+	
+	$(".floatingColumn .close").on("mousedown", function() { floatingcolumn.hide(); floatingcolumnclosed = true; windowsize(browserwidth,browserwidth1); closethat.show(); } );
+	
+	$(".floatingColumn .card:first").on("mousedown", function() { floatingcolumn.hide(); floatingcolumnclosed = true; windowsize(browserwidth,browserwidth1); closethat.show(); } );
+	
 	$(".attendant:first").on("mousedown", function() { if (siteassistant.hide()) siteassistant.show(); else siteassistant.hide(); } );
 	
 	$("#attendant:first").on("mousedown", function() { if (siteassistant.hide()) siteassistant.show(); else siteassistant.hide(); } );
-	
-	$(".expandableColumn:first").on("mousedown", function() { floatingcolumn.show(); floatingcolumnclosed = false; windowsize(browserwidth,browserwidth1,browserwidth2,browserwidth3); closethat.hide(); } );
-	
-	$(".floatingColumn .close").on("mousedown", function() { floatingcolumn.hide(); floatingcolumnclosed = true; windowsize(browserwidth,browserwidth1,browserwidth2,browserwidth3); closethat.show(); } );
-	
-	$(".floatingColumn .card:first").on("mousedown", function() { floatingcolumn.hide(); floatingcolumnclosed = true; windowsize(browserwidth,browserwidth1,browserwidth2,browserwidth3); closethat.show(); } );
 	
 	$(".assistant:first").on("mouseover", function() { siteassistant.css("background","URL('https://www.tutusfx.com/assets/images/working.gif')").css("background-size","cover"); } )
 		.on("mouseout", function() { siteassistant.css("background","URL('https://www.tutusfx.com/assets/images/open.gif')").css("background-size","cover"); } )
@@ -276,21 +259,18 @@
 			else { $("#userquery").click(function(){ if ($("#userquery").val()!="") alert("Text: " + $("#userquery").val()); $("#userquery").remove(); QUERYING = false; }); } 
 		});
 	
-	/* Call screen resize listener function & attach listener function at run time */	
-	windowsize(browserwidth,browserwidth1,browserwidth2,browserwidth3);
-	browserwidth.addListener(windowsize);
+	$("#sitefooter:first").on("mousedown", function() { dofooterclose(); } );
 	
-	/* Set element properties according to browser's current width; used mainly for 1-col layouts */	
-	function windowsize(browserwidth,browserwidth1,browserwidth2,browserwidth3) { 
-		if (browserwidth3.matches) { // set element properties, as browserwidth <= 345px
-	  } else if (browserwidth2.matches) { // set element properties, as browserwidth <= 480px
-	  } else if (browserwidth1.matches) { // set element properties, as browserwidth <= 800px
-	  } else if (browserwidth.matches) { // set element properties, as browserwidth <= 1200px
-		if (floatingcolumnclosed==true) expandablecolumn.css("width","99%").css("margin","0.5%"); else expandablecolumn.css("width","65%");
-	  } else { // set element properties, as browserwidth >= 1200px
-		if (floatingcolumnclosed==true) expandablecolumn.css("width","99%").css("margin","0.5%"); else expandablecolumn.css("width","65%");
-	  }
+	/* Call screen resize listener function & attach listener function at run time to ensure consistency of 1-col layouts */	
+	windowsize(browserwidth,browserwidth1); browserwidth.addListener(windowsize);
+	
+	/* Set element properties according to browser's current width; used for 1-col layouts */	
+	function windowsize(browserwidth,browserwidth1) { // ensure mainColumn remains spread across the page once user closes the floatingColumn
+		if (browserwidth1.matches) { /* Ensures mainColumn is spread across the page at browserwidth <=800px */ expandablecolumn.css("width","99%").css("margin","0.5%"); } 
+		else if (browserwidth.matches) { /* Maintain element properties using JQuery, at 800px < browserwidth <= 1200px */ if (floatingcolumnclosed==true) expandablecolumn.css("width","99%").css("margin","0.5%"); else expandablecolumn.css("width","65%"); } 
+		else { /* Maintain element properties using JQuery, at browserwidth > 1200px */ if (floatingcolumnclosed==true) expandablecolumn.css("width","99%").css("margin","0.5%"); else expandablecolumn.css("width","65%"); }
 	}
+	
 	/* Default Page-Setter Function */
 	function myFunction() {
 		if (window.pageYOffset > (headeroffset-(headeroffset/10)-50)) { 
@@ -304,20 +284,12 @@
 		if (upperclosing==true) { rates.classList.remove("upperbar"); rates.style.height = "0px"; rates.style.float = "top";  
 			upperclosebtn.classList.remove("glyphicon-arrow-right"); upperclosebtn.classList.add("glyphicon-arrow-left"); ads.style.fontSize = "0%";
 		} else { rates.classList.add("upperbar"); rates.style.height = "50px"; rates.style.top = "0px"; rates.style.zIndex = "1000";
-			upperclosebtn.classList.remove("glyphicon-arrow-left"); upperclosebtn.classList.add("glyphicon-arrow-right"); ads.style.fontSize = "100%"; setRateBarTheme(); 
+			upperclosebtn.classList.remove("glyphicon-arrow-left"); upperclosebtn.classList.add("glyphicon-arrow-right"); ads.style.fontSize = "100%"; setBarTheme(rates,upperclosebtn); 
 		} if (textclosed==true) { topheadertitle.hide(); topheadercontent.hide(); } else { topheadertitle.show(); topheadercontent.show(); } 
-		windowsize(browserwidth,browserwidth1,browserwidth2,browserwidth3); // Call screen resize listener function to ensure consistency in browser properties
+		windowsize(browserwidth,browserwidth1); // Call screen resize listener function to ensure consistency in browser properties for 1-col layouts
 	} myFunction(); // call default page setter function at runtime
 	
 	window.onscroll = function() { myFunction(); } // call default page setter function on scroll
-	
-	function dofooterclose() { // open/close footer warning panel
-		if (footerclosing==true) { footerclosebtn.classList.remove("glyphicon-arrow-up"); footerclosebtn.classList.add("glyphicon-arrow-down");
-			footerdiv.style.background = "none"; footerheader.style.fontSize = "0%"; footertexts.style.fontSize = "0%"; footerclosing = false;
-		} else { setFooterTheme(); footerclosebtn.classList.remove("glyphicon-arrow-down"); footerclosebtn.classList.add("glyphicon-arrow-up");
-			footerdiv.style.height = "30%"; footerdiv.style.top = "70%"; footerheader.style.fontSize = "100%"; footertexts.style.fontSize = "100%"; footerclosing = true;
-		}
-	}
 	
 	function doupperclosing() { // open/close ratebar
 		if (upperclosing==true) { upperclosebtn.classList.remove("close-upper"); upperclosebtn.classList.add("open-upper"); upperclosing = false; } 
@@ -327,4 +299,12 @@
 	function dotextclosing() { // open/close header texts 
 		if (textclosed==true) { topheadertitle.show(); topheadercontent.show(); textclosed = false; } 
 		else { topheadertitle.hide(); topheadercontent.hide(); textclosed = true; }
+	}
+	
+	function dofooterclose() { // open/close footer warning panel
+		if (footerclosing==true) { footerclosebtn.classList.remove("glyphicon-arrow-up"); footerclosebtn.classList.add("glyphicon-arrow-down");
+			footerdiv.style.background = "none"; footerheader.style.fontSize = "0%"; footertexts.style.fontSize = "0%"; footerclosing = false;
+		} else { setBarTheme(footerdiv,footerclosebtn); footerclosebtn.classList.remove("glyphicon-arrow-down"); footerclosebtn.classList.add("glyphicon-arrow-up");
+			footerdiv.style.height = "30%"; footerdiv.style.top = "70%"; footerheader.style.fontSize = "100%"; footertexts.style.fontSize = "100%"; footerclosing = true;
+		}
 	}
