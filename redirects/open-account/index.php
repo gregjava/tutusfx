@@ -118,76 +118,76 @@
 		<style>
 			/* For Safari, Mozilla, Chrome and Opera browsers */
 			@-webkit-keyframes pixAnimation {
-				0%   {left:0px; top:0px; background:url("../../../assets/images/forex_trading_10.png") no-repeat center; -webkit-background-size: cover; background-size: cover;}
-				7%  {left:0px; top:0px; background:url("../../../assets/images/blockchain_technology_8.png") no-repeat center; -webkit-background-size: cover; background-size: cover;}
-				14%  {left:0px; top:0px; background:url("../../../assets/images/forex_trading_9.png") no-repeat center; -webkit-background-size: cover; background-size: cover;}
-				21%  {left:0px; top:0px; background:url("../../../assets/images/blockchain_technology_10.png") no-repeat center; -webkit-background-size: cover; background-size: cover;}
-				28% {left:0px; top:0px; background:url("../../../assets/images/forex_trading_11.png") no-repeat center; color: #ff0e; -webkit-background-size: cover; background-size: cover;}
-				35%   {left:0px; top:0px; background:url("../../../assets/images/blockchain_technology_9.png") no-repeat center; -webkit-background-size: cover; background-size: cover;}
-				42%  {left:0px; top:0px; background:url("../../../assets/images/forex_trading_13.png") no-repeat center; -webkit-background-size: cover; background-size: cover;}
-				50%  {left:0px; top:0px; background:url("../../../assets/images/blockchain_technology_11.png") no-repeat center; -webkit-background-size: cover; background-size: cover;}
-				57%  {left:0px; top:0px; background:url("../../../assets/images/forex_trading_12.png") no-repeat center; -webkit-background-size: cover; background-size: cover;}
-				64% {left:0px; top:0px; background:url("../../../assets/images/blockchain_technology_13.png") no-repeat center; -webkit-background-size: cover; background-size: cover;}
-				71%   {left:0px; top:0px; background:url("../../../assets/images/forex_trading_16.png") no-repeat center; -webkit-background-size: cover; background-size: cover;}
-				78%  {left:0px; top:0px; background:url("../../../assets/images/blockchain_technology_12.png") no-repeat center; -webkit-background-size: cover; background-size: cover;}
-				85%  {left:0px; top:0px; background:url("../../../assets/images/forex_trading_14.png") no-repeat center; -webkit-background-size: cover; background-size: cover;}
-				92%  {left:0px; top:0px; background:url("../../../assets/images/blockchain_technology_14.png") no-repeat center; -webkit-background-size: cover; background-size: cover;}
-				100% {left:0px; top:0px; background:url("../../../assets/images/forex_trading_15.png") no-repeat center; color: #ff0e; -webkit-background-size: cover; background-size: cover;}
+				0%   {left:0px; top:0px; background:url("../../assets/images/forex_trading_10.png") no-repeat center; -webkit-background-size: cover; background-size: cover;}
+				7%  {left:0px; top:0px; background:url("../../assets/images/blockchain_technology_8.png") no-repeat center; -webkit-background-size: cover; background-size: cover;}
+				14%  {left:0px; top:0px; background:url("../../assets/images/forex_trading_9.png") no-repeat center; -webkit-background-size: cover; background-size: cover;}
+				21%  {left:0px; top:0px; background:url("../../assets/images/blockchain_technology_10.png") no-repeat center; -webkit-background-size: cover; background-size: cover;}
+				28% {left:0px; top:0px; background:url("../../assets/images/forex_trading_11.png") no-repeat center; color: #ff0e; -webkit-background-size: cover; background-size: cover;}
+				35%   {left:0px; top:0px; background:url("../../assets/images/blockchain_technology_9.png") no-repeat center; -webkit-background-size: cover; background-size: cover;}
+				42%  {left:0px; top:0px; background:url("../../assets/images/forex_trading_13.png") no-repeat center; -webkit-background-size: cover; background-size: cover;}
+				50%  {left:0px; top:0px; background:url("../../assets/images/blockchain_technology_11.png") no-repeat center; -webkit-background-size: cover; background-size: cover;}
+				57%  {left:0px; top:0px; background:url("../../assets/images/forex_trading_12.png") no-repeat center; -webkit-background-size: cover; background-size: cover;}
+				64% {left:0px; top:0px; background:url("../../assets/images/blockchain_technology_13.png") no-repeat center; -webkit-background-size: cover; background-size: cover;}
+				71%   {left:0px; top:0px; background:url("../../assets/images/forex_trading_16.png") no-repeat center; -webkit-background-size: cover; background-size: cover;}
+				78%  {left:0px; top:0px; background:url("../../assets/images/blockchain_technology_12.png") no-repeat center; -webkit-background-size: cover; background-size: cover;}
+				85%  {left:0px; top:0px; background:url("../../assets/images/forex_trading_14.png") no-repeat center; -webkit-background-size: cover; background-size: cover;}
+				92%  {left:0px; top:0px; background:url("../../assets/images/blockchain_technology_14.png") no-repeat center; -webkit-background-size: cover; background-size: cover;}
+				100% {left:0px; top:0px; background:url("../../assets/images/forex_trading_15.png") no-repeat center; color: #ff0e; -webkit-background-size: cover; background-size: cover;}
 			}
 			
 			@-moz-keyframes pixAnimation {
-				0%   {left:0px; top:0px; background:url("../../../assets/images/forex_trading_10.png") no-repeat center; -moz-background-size: cover; background-size: cover;}
-				7%  {left:0px; top:0px; background:url("../../../assets/images/blockchain_technology_8.png") no-repeat center; -moz-background-size: cover; background-size: cover;}
-				14%  {left:0px; top:0px; background:url("../../../assets/images/forex_trading_9.png") no-repeat center; -moz-background-size: cover; background-size: cover;}
-				21%  {left:0px; top:0px; background:url("../../../assets/images/blockchain_technology_10.png") no-repeat center; -moz-background-size: cover; background-size: cover;}
-				28% {left:0px; top:0px; background:url("../../../assets/images/forex_trading_11.png") no-repeat center; color: #ff0e; -moz-background-size: cover; background-size: cover;}
-				35%   {left:0px; top:0px; background:url("../../../assets/images/blockchain_technology_9.png") no-repeat center; -moz-background-size: cover; background-size: cover;}
-				42%  {left:0px; top:0px; background:url("../../../assets/images/forex_trading_13.png") no-repeat center; -moz-background-size: cover; background-size: cover;}
-				50%  {left:0px; top:0px; background:url("../../../assets/images/blockchain_technology_11.png") no-repeat center; -moz-background-size: cover; background-size: cover;}
-				57%  {left:0px; top:0px; background:url("../../../assets/images/forex_trading_12.png") no-repeat center; -moz-background-size: cover; background-size: cover;}
-				64% {left:0px; top:0px; background:url("../../../assets/images/blockchain_technology_13.png") no-repeat center; -moz-background-size: cover; background-size: cover;}
-				71%   {left:0px; top:0px; background:url("../../../assets/images/forex_trading_16.png") no-repeat center; -moz-background-size: cover;background-size: cover;}
-				78%  {left:0px; top:0px; background:url("../../../assets/images/blockchain_technology_12.png") no-repeat center; -moz-background-size: cover; background-size: cover;}
-				85%  {left:0px; top:0px; background:url("../../../assets/images/forex_trading_14.png") no-repeat center; -moz-background-size: cover; background-size: cover;}
-				92%  {left:0px; top:0px; background:url("../../../assets/images/blockchain_technology_14.png") no-repeat center; -moz-background-size: cover; background-size: cover;}
-				100% {left:0px; top:0px; background:url("../../../assets/images/forex_trading_15.png") no-repeat center; color: #ff0e; -moz-background-size: cover; background-size: cover;}
+				0%   {left:0px; top:0px; background:url("../../assets/images/forex_trading_10.png") no-repeat center; -moz-background-size: cover; background-size: cover;}
+				7%  {left:0px; top:0px; background:url("../../assets/images/blockchain_technology_8.png") no-repeat center; -moz-background-size: cover; background-size: cover;}
+				14%  {left:0px; top:0px; background:url("../../assets/images/forex_trading_9.png") no-repeat center; -moz-background-size: cover; background-size: cover;}
+				21%  {left:0px; top:0px; background:url("../../assets/images/blockchain_technology_10.png") no-repeat center; -moz-background-size: cover; background-size: cover;}
+				28% {left:0px; top:0px; background:url("../../assets/images/forex_trading_11.png") no-repeat center; color: #ff0e; -moz-background-size: cover; background-size: cover;}
+				35%   {left:0px; top:0px; background:url("../../assets/images/blockchain_technology_9.png") no-repeat center; -moz-background-size: cover; background-size: cover;}
+				42%  {left:0px; top:0px; background:url("../../assets/images/forex_trading_13.png") no-repeat center; -moz-background-size: cover; background-size: cover;}
+				50%  {left:0px; top:0px; background:url("../../assets/images/blockchain_technology_11.png") no-repeat center; -moz-background-size: cover; background-size: cover;}
+				57%  {left:0px; top:0px; background:url("../../assets/images/forex_trading_12.png") no-repeat center; -moz-background-size: cover; background-size: cover;}
+				64% {left:0px; top:0px; background:url("../../assets/images/blockchain_technology_13.png") no-repeat center; -moz-background-size: cover; background-size: cover;}
+				71%   {left:0px; top:0px; background:url("../../assets/images/forex_trading_16.png") no-repeat center; -moz-background-size: cover;background-size: cover;}
+				78%  {left:0px; top:0px; background:url("../../assets/images/blockchain_technology_12.png") no-repeat center; -moz-background-size: cover; background-size: cover;}
+				85%  {left:0px; top:0px; background:url("../../assets/images/forex_trading_14.png") no-repeat center; -moz-background-size: cover; background-size: cover;}
+				92%  {left:0px; top:0px; background:url("../../assets/images/blockchain_technology_14.png") no-repeat center; -moz-background-size: cover; background-size: cover;}
+				100% {left:0px; top:0px; background:url("../../assets/images/forex_trading_15.png") no-repeat center; color: #ff0e; -moz-background-size: cover; background-size: cover;}
 			}
 			
 			@-o-keyframes pixAnimation {
-				0%   {left:0px; top:0px; background:url("../../../assets/images/forex_trading_10.png") no-repeat center; -o-background-size: cover; background-size: cover;}
-				7%  {left:0px; top:0px; background:url("../../../assets/images/blockchain_technology_8.png") no-repeat center; -o-background-size: cover; background-size: cover;}
-				14%  {left:0px; top:0px; background:url("../../../assets/images/forex_trading_9.png") no-repeat center; -o-background-size: cover; background-size: cover;}
-				21%  {left:0px; top:0px; background:url("../../../assets/images/blockchain_technology_10.png") no-repeat center; -o-background-size: cover; background-size: cover;}
-				28% {left:0px; top:0px; background:url("../../../assets/images/forex_trading_11.png") no-repeat center; color: #ff0e; -o-background-size: cover; background-size: cover;}
-				35%   {left:0px; top:0px; background:url("../../../assets/images/blockchain_technology_9.png") no-repeat center; -o-background-size: cover; background-size: cover;}
-				42%  {left:0px; top:0px; background:url("../../../assets/images/forex_trading_13.png") no-repeat center; -o-background-size: cover; background-size: cover;}
-				50%  {left:0px; top:0px; background:url("../../../assets/images/blockchain_technology_11.png") no-repeat center; -o-background-size: cover; background-size: cover;}
-				57%  {left:0px; top:0px; background:url("../../../assets/images/forex_trading_12.png") no-repeat center; -o-background-size: cover; background-size: cover;}
-				64% {left:0px; top:0px; background:url("../../../assets/images/blockchain_technology_13.png") no-repeat center; -o-background-size: cover; background-size: cover;}
-				71%   {left:0px; top:0px; background:url("../../../assets/images/forex_trading_16.png") no-repeat center; -o-background-size: cover; background-size: cover;}
-				78%  {left:0px; top:0px; background:url("../../../assets/images/blockchain_technology_12.png") no-repeat center; -o-background-size: cover; background-size: cover;}
-				85%  {left:0px; top:0px; background:url("../../../assets/images/forex_trading_14.png") no-repeat center; -o-background-size: cover; background-size: cover;}
-				92%  {left:0px; top:0px; background:url("../../../assets/images/blockchain_technology_14.png") no-repeat center; -o-background-size: cover; background-size: cover;}
-				100% {left:0px; top:0px; background:url("../../../assets/images/forex_trading_15.png") no-repeat center; color: #ff0e; -o-background-size: cover; background-size: cover;}
+				0%   {left:0px; top:0px; background:url("../../assets/images/forex_trading_10.png") no-repeat center; -o-background-size: cover; background-size: cover;}
+				7%  {left:0px; top:0px; background:url("../../assets/images/blockchain_technology_8.png") no-repeat center; -o-background-size: cover; background-size: cover;}
+				14%  {left:0px; top:0px; background:url("../../assets/images/forex_trading_9.png") no-repeat center; -o-background-size: cover; background-size: cover;}
+				21%  {left:0px; top:0px; background:url("../../assets/images/blockchain_technology_10.png") no-repeat center; -o-background-size: cover; background-size: cover;}
+				28% {left:0px; top:0px; background:url("../../assets/images/forex_trading_11.png") no-repeat center; color: #ff0e; -o-background-size: cover; background-size: cover;}
+				35%   {left:0px; top:0px; background:url("../../assets/images/blockchain_technology_9.png") no-repeat center; -o-background-size: cover; background-size: cover;}
+				42%  {left:0px; top:0px; background:url("../../assets/images/forex_trading_13.png") no-repeat center; -o-background-size: cover; background-size: cover;}
+				50%  {left:0px; top:0px; background:url("../../assets/images/blockchain_technology_11.png") no-repeat center; -o-background-size: cover; background-size: cover;}
+				57%  {left:0px; top:0px; background:url("../../assets/images/forex_trading_12.png") no-repeat center; -o-background-size: cover; background-size: cover;}
+				64% {left:0px; top:0px; background:url("../../assets/images/blockchain_technology_13.png") no-repeat center; -o-background-size: cover; background-size: cover;}
+				71%   {left:0px; top:0px; background:url("../../assets/images/forex_trading_16.png") no-repeat center; -o-background-size: cover; background-size: cover;}
+				78%  {left:0px; top:0px; background:url("../../assets/images/blockchain_technology_12.png") no-repeat center; -o-background-size: cover; background-size: cover;}
+				85%  {left:0px; top:0px; background:url("../../assets/images/forex_trading_14.png") no-repeat center; -o-background-size: cover; background-size: cover;}
+				92%  {left:0px; top:0px; background:url("../../assets/images/blockchain_technology_14.png") no-repeat center; -o-background-size: cover; background-size: cover;}
+				100% {left:0px; top:0px; background:url("../../assets/images/forex_trading_15.png") no-repeat center; color: #ff0e; -o-background-size: cover; background-size: cover;}
 			}
 			
 			/* For IE, does not work on <IE9 */
 			@keyframes pixAnimation {
-				0%   {left:0px; top:0px; background:url("../../../assets/images/forex_trading_10.png") no-repeat center; background-size: cover;}
-				7%  {left:0px; top:0px; background:url("../../../assets/images/blockchain_technology_8.png") no-repeat center; background-size: cover;}
-				14%  {left:0px; top:0px; background:url("../../../assets/images/forex_trading_9.png") no-repeat center; background-size: cover;}
-				21%  {left:0px; top:0px; background:url("../../../assets/images/blockchain_technology_10.png") no-repeat center; background-size: cover;}
-				28% {left:0px; top:0px; background:url("../../../assets/images/forex_trading_11.png") no-repeat center; color: #ff0e; background-size: cover;}
-				35%   {left:0px; top:0px; background:url("../../../assets/images/blockchain_technology_9.png") no-repeat center; background-size: cover;}
-				42%  {left:0px; top:0px; background:url("../../../assets/images/forex_trading_13.png") no-repeat center; background-size: cover;}
-				50%  {left:0px; top:0px; background:url("../../../assets/images/blockchain_technology_11.png") no-repeat center; background-size: cover;}
-				57%  {left:0px; top:0px; background:url("../../../assets/images/forex_trading_12.png") no-repeat center; background-size: cover;}
-				64% {left:0px; top:0px; background:url("../../../assets/images/blockchain_technology_13.png") no-repeat center; background-size: cover;}
-				71%   {left:0px; top:0px; background:url("../../../assets/images/forex_trading_16.png") no-repeat center; background-size: cover;}
-				78%  {left:0px; top:0px; background:url("../../../assets/images/blockchain_technology_12.png") no-repeat center; background-size: cover;}
-				85%  {left:0px; top:0px; background:url("../../../assets/images/forex_trading_14.png") no-repeat center; background-size: cover;}
-				92%  {left:0px; top:0px; background:url("../../../assets/images/blockchain_technology_14.png") no-repeat center; background-size: cover;}
-				100% {left:0px; top:0px; background:url("../../../assets/images/forex_trading_15.png") no-repeat center; color: #ff0e; background-size: cover;}
+				0%   {left:0px; top:0px; background:url("../../assets/images/forex_trading_10.png") no-repeat center; background-size: cover;}
+				7%  {left:0px; top:0px; background:url("../../assets/images/blockchain_technology_8.png") no-repeat center; background-size: cover;}
+				14%  {left:0px; top:0px; background:url("../../assets/images/forex_trading_9.png") no-repeat center; background-size: cover;}
+				21%  {left:0px; top:0px; background:url("../../assets/images/blockchain_technology_10.png") no-repeat center; background-size: cover;}
+				28% {left:0px; top:0px; background:url("../../assets/images/forex_trading_11.png") no-repeat center; color: #ff0e; background-size: cover;}
+				35%   {left:0px; top:0px; background:url("../../assets/images/blockchain_technology_9.png") no-repeat center; background-size: cover;}
+				42%  {left:0px; top:0px; background:url("../../assets/images/forex_trading_13.png") no-repeat center; background-size: cover;}
+				50%  {left:0px; top:0px; background:url("../../assets/images/blockchain_technology_11.png") no-repeat center; background-size: cover;}
+				57%  {left:0px; top:0px; background:url("../../assets/images/forex_trading_12.png") no-repeat center; background-size: cover;}
+				64% {left:0px; top:0px; background:url("../../assets/images/blockchain_technology_13.png") no-repeat center; background-size: cover;}
+				71%   {left:0px; top:0px; background:url("../../assets/images/forex_trading_16.png") no-repeat center; background-size: cover;}
+				78%  {left:0px; top:0px; background:url("../../assets/images/blockchain_technology_12.png") no-repeat center; background-size: cover;}
+				85%  {left:0px; top:0px; background:url("../../assets/images/forex_trading_14.png") no-repeat center; background-size: cover;}
+				92%  {left:0px; top:0px; background:url("../../assets/images/blockchain_technology_14.png") no-repeat center; background-size: cover;}
+				100% {left:0px; top:0px; background:url("../../assets/images/forex_trading_15.png") no-repeat center; color: #ff0e; background-size: cover;}
 			}
 			
 			.animatePix{ 
@@ -482,7 +482,6 @@
 						<div class="form-group contactUs-regardingSelect required-group">
 							<div class="input-group"><span class="input-group-addon">Network Reward: </span><div id="myProgressBar" class="form-control"><div id="progressBar">1%</div></div></div>
 						</div><div style="width: 100%;"><button onclick="move(-1)" style="float: left;">-</button><button onclick="move(+1)" style="float: right;">+</button></div><br/><br/><br/><br/>
-						<script> var width = 1; function move(interval) { if (width >= 100) { width = 1; } else { width+=interval; } progressbar.style.width = width + '%'; progressbar.innerHTML = width + '%'; } </script>
 					</form>
 					<div class="form-group">
 						<div class="input-group"> <span class="input-group-addon">Notify user on reward: </span><input type="radio" class="form-control" ></input></div><br/>
@@ -553,7 +552,7 @@
 						</textarea></div><span class="text-danger"><?php echo $pmError; ?></span>
 					</div><br/>
 					
-					<!-- echo stream_get_contents(fopen('http://www.tutusfx.com/redirects/trade/traderates.html', "rb")); // use this to open html content on development page -->
+					<!-- echo stream_get_contents(fopen('http://www.tutusfx.com/redirects/trade/tradingview/index.html', "rb")); // use this to open html content on development page -->
 					
 					<div class="form-group contactUs-regardingSelect required-group">
 						<div class="input-group"><span class="input-group-addon">Country: </span>
@@ -682,7 +681,7 @@
 		</div>
 		
 		<div class="footer">
-		  <div class="upper-footer"><a href="">Sponsorship</a><a href="">Fund Safety &amp; Security</a><a href="../../../eu/sitemap-eu/index.html">Sitemap</a><a href="">Networks</a><a href="../../../eu/contact-us-eu/">Contact Us</a></div>
+		  <div class="upper-footer"><a href="">Sponsorship</a><a href="">Fund Safety &amp; Security</a><a href="../../eu/sitemap-eu/index.html">Sitemap</a><a href="">Networks</a><a href="../../eu/contact-us-eu/">Contact Us</a></div>
 		  <div class="card clearnav">
 			<div class="footerCard"><h6>QUICK LINKS</h6>
 				<a href="">DEVELOPERS</a><br/>
@@ -695,32 +694,32 @@
 				<a href="">APPSTORE</a><br/>
 				<a href="">GETTING STARTED</a><br/>
 				<a href="">PROMOTIONAL MATERIAL</a><br/>
-				<a href="../../../eu/contact-us-eu/">CONTACT US</a><br/>
+				<a href="../../eu/contact-us-eu/">CONTACT US</a><br/>
 				<a href="">WALLETS</a><br/>
 				<a href="">GUIDE</a><br/>
-				<a href="../../../eu/faqs/index.html">FAQ</a><br/>
+				<a href="../../eu/faqs/index.html">FAQ</a><br/>
 				<a href="../trade/tradingview/index.html">CHARTS</a><br/>
 				<a href="">DEVELOPER DISCORD</a><br/>
 				<a href="">ADVERTISE</a><br/>
 				<a href="">LEGAL</a><br/>
 				<a href="">PRIVACY</a><br/>
-				<a href="../../../eu/about-us-eu/index.html">ABOUT US</a><br/>
+				<a href="../../eu/about-us-eu/index.html">ABOUT US</a><br/>
 				<a href="">PARTNERS</a><br/>
 				<a href="">WIDGETS</a><br/>
 			</div>
 			<div class="footerCard"><h6>CHOOSE LANGUAGE</h6>
 				<a href="">TUTUSFX.COM INTERNATIONAL</a><br/>
-				<a href="../../../de/redirects/open-account/">TUTUSFX.COM DEUTSCHE</a><br/>
-				<a href="../../../it/redirects/open-account/">TUTUSFX.COM ITALIANO</a><br/>
-				<a href="../../../fr/redirects/open-account/">TUTUSFX.COM FRANCAISE</a><br/>
-				<a href="../../../es/redirects/open-account/">TUTUSFX.COM ESPAÑOL</a><br/>
-				<a href="../../../zh-tw/redirects/open-account/">TUTUSFX.COM 中文</a><br/>
-				<a href="../../../hi-in/redirects/open-account/">TUTUSFX.COM HINDI</a><br/>
-				<a href="../../../ar-ar/redirects/open-account/">TUTUSFX.COM ARABIC</a><br/>
-				<a href="../../../us/redirects/open-account/">TUTUSFX.COM AMERICAN</a><br/>
-				<a href="../../../ru-ru/redirects/open-account/">TUTUSFX.COM RUSSIAN</a><br/>
-				<a href="../../../ms/redirects/open-account/">TUTUSFX.COM MALAY</a><br/>
-				<a href="../../../pt-pt/redirects/open-account/">TUTUSFX.COM PORTUGUESE (EU)</a><br/>
+				<a href="../../de/redirects/open-account/">TUTUSFX.COM DEUTSCHE</a><br/>
+				<a href="../../it/redirects/open-account/">TUTUSFX.COM ITALIANO</a><br/>
+				<a href="../../fr/redirects/open-account/">TUTUSFX.COM FRANCAISE</a><br/>
+				<a href="../../es/redirects/open-account/">TUTUSFX.COM ESPAÑOL</a><br/>
+				<a href="../../zh-tw/redirects/open-account/">TUTUSFX.COM 中文</a><br/>
+				<a href="../../hi-in/redirects/open-account/">TUTUSFX.COM HINDI</a><br/>
+				<a href="../../ar-ar/redirects/open-account/">TUTUSFX.COM ARABIC</a><br/>
+				<a href="../../us/redirects/open-account/">TUTUSFX.COM AMERICAN</a><br/>
+				<a href="../../ru-ru/redirects/open-account/">TUTUSFX.COM RUSSIAN</a><br/>
+				<a href="../../ms/redirects/open-account/">TUTUSFX.COM MALAY</a><br/>
+				<a href="../../pt-pt/redirects/open-account/">TUTUSFX.COM PORTUGUESE (EU)</a><br/>
 			</div>
 			<div class="footerCard"><h6>RELATED SITES</h6>
 				<a href="https://www.bitcoin.com">BITCOIN</a><br/>
@@ -739,15 +738,15 @@
 				<a href="https://www.dukascopy.com/land/trading/eu/forex">DUKASCOPY</a><br/>
 			</div>
 			<div class="footerCard warning"><h6><strong>GENERAL RISK WARNING</strong></h6>
-				<span>TRADING IN BINARY OPTIONS AND CFDS CARRIES A HIGH LEVEL OF RISK AND MAY NOT BE APPROPRIATE FOR ALL INVESTORS.  IT IS POSSIBLE TO LOSE OF ALL OF YOUR INVESTED CAPITAL SO YOU SHOULD NOT INVEST MONEY THAT YOU CANNOT AFFORD TO LOSE. FOR MORE INFORMATION ABOUT THE RISKS INVOLVED, PLEASE<a href="../../../eu/terms-and-conditions-eu/risk-disclosure-eu/index.html"> CLICK HERE</a> .</span>
+				<span>TRADING IN BINARY OPTIONS AND CFDS CARRIES A HIGH LEVEL OF RISK AND MAY NOT BE APPROPRIATE FOR ALL INVESTORS.  IT IS POSSIBLE TO LOSE OF ALL OF YOUR INVESTED CAPITAL SO YOU SHOULD NOT INVEST MONEY THAT YOU CANNOT AFFORD TO LOSE. FOR MORE INFORMATION ABOUT THE RISKS INVOLVED, PLEASE<a href="../../eu/terms-and-conditions-eu/risk-disclosure-eu/index.html"> CLICK HERE</a> .</span>
 			</div>
 			<div id="footerDiv"><h6 id="footerDivHeader"><strong>GENERAL RISK WARNING</strong></h6><button id="close" class="glyphicon glyphicon-arrow-up btn badge"></button><br/><br/>
-				<span id="footerDivTexts">TRADING IN CRYPTOCURRENCIES, FOREX & CFDS CARRY A HIGH LEVEL OF RISK AND MAY NOT BE APPROPRIATE FOR ALL INVESTORS.  IT IS POSSIBLE TO LOSE OF ALL OF YOUR INVESTED CAPITAL SO, YOU SHOULD NOT INVEST MONEY THAT YOU CANNOT AFFORD TO LOSE. FOR MORE INFORMATION ABOUT THE RISKS INVOLVED, PLEASE<a href="../../../eu/terms-and-conditions-eu/risk-disclosure-eu/index.html"> CLICK HERE</a> .</span>
+				<span id="footerDivTexts">TRADING IN CRYPTOCURRENCIES, FOREX & CFDS CARRY A HIGH LEVEL OF RISK AND MAY NOT BE APPROPRIATE FOR ALL INVESTORS.  IT IS POSSIBLE TO LOSE OF ALL OF YOUR INVESTED CAPITAL SO, YOU SHOULD NOT INVEST MONEY THAT YOU CANNOT AFFORD TO LOSE. FOR MORE INFORMATION ABOUT THE RISKS INVOLVED, PLEASE<a href="../../eu/terms-and-conditions-eu/risk-disclosure-eu/index.html"> CLICK HERE</a> .</span>
             </div>
 		  </div>
 		</div>
 		
-		<script src="../../../assets/js/tut.js" type="text/javascript"></script>
+		<script src="../../assets/js/tut.js" type="text/javascript"></script>
 
 		<script type="text/javascript">
 

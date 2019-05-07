@@ -471,14 +471,14 @@
 		  <div class="rightColumn">
 			<div class="card" id="segment">
 			  <h3>Blockchain Post 2</h3><hr/>
-			  <h5><b> &nbsp; Title description</b>, Nov 22, 2018</h5>
+			  <h5><b> &nbsp; Title description</b>, Nov 22, 2019</h5>
 			  <div class="fakeimg largepicture">Image</div><hr/>
 			  <p>Some text from Post 2...</p>
 			  <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p><hr/>
 			</div>
 			<div class="card" id="segment">
 			  <h3>Blockchain Post 1</h3><hr/>
-			  <h5><b> &nbsp; Title description</b>, Nov 15, 2018</h5>
+			  <h5><b> &nbsp; Title description</b>, Nov 15, 2019</h5>
 			  <div class="fakeimg largepicture">Image</div><hr/>
 			  <p>Some text from Post 1...</p>
 			  <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p><hr/>

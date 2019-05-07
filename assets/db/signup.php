@@ -4,19 +4,17 @@
 	/* set the cache expire to 30 minutes */
 	session_cache_expire(30);
 
-	// it will never let you open this page if acct_name is set
+	// Redirect Admin and Info to their proper pages and other logged in users to account homepage
 	if ( (isset($_SESSION['user']) && $_SESSION['user']==="Admin") ) {
-		header("Location: https://www.tutusfx.com/admin/index.html");
-		exit();
+		header("Location: https://www.tutusfx.com/admin/index.html"); exit();
 	} else if ( (isset($_SESSION['user']) && $_SESSION['user']==="Info") ) {
-		header("Location: https://www.tutusfx.com/admin/info.html");
-		exit();
+		header("Location: https://www.tutusfx.com/admin/info.html"); exit();
 	} else if ( (isset($_SESSION['user']) && $_SESSION['user']!=="") ) {
-		header("Location: https://www.tutusfx.com/redirects/my-account/account-details/index.html");
-		exit();
+		header("Location: https://www.tutusfx.com/redirects/my-account/account-details/index.html"); exit();
 	} else { /* Register user */
-		$error = false; $acct_nameError = $fnameError = $lnameError = $emailError = $phone_numError = $currencyError = $genderError = $acct_typeError = $pmError = $countryError = $stateError = $cityError = $witnessError = "";
-		$acct_name = $commentThresh = $likeThresh = $dislikeThresh = $commentAction = $likeAction = $dislikeAction = $fname = $lname = $company = $jobpos = $posdate = $jobdate = $compadd = $email = $zcode = $btcId = $steemId = $phone_num = $currency = $gender = $acct_type = $pm = $country = $state = $city = $witness = "";
+		$acct_nameError = $fnameError = $lnameError = $emailError = $phone_numError = $commentThreshError = $likeThreshError = $dislikeThreshError = $commentActionError = $likeActionError = $dislikeActionError = $currencyError = $genderError = $acct_typeError = $pmError = $countryError = $stateError = $cityError = $witnessError 
+		= $acct_name = $commentThresh = $likeThresh = $dislikeThresh = $commentAction = $likeAction = $dislikeAction = $fname = $lname = $company = $jobpos = $posdate = $jobdate = $compadd = $email = $zcode 
+		= $btcId = $steemId = $phone_num = $currency = $gender = $acct_type = $pm = $country = $state = $city = $witness = ""; $error = false;
 
 		if ( isset($_POST['signup']) ) { // clean user inputs to prevent sqli injections
 			$acct_name = trim($_POST['acct_name']);

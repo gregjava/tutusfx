@@ -8,13 +8,13 @@
 	var trendingtrades = $(".trendingtrades"); var trendingtradeusername = $(".trendingtradeusername"); var card = $(".card"); var cardlist = $(".cardlist"); var expandablecolumn = $(".expandableColumn"); var siteassistant = $(".assistant");
 	var cardahov = $(".card a:hover"); var carda = $(".card a"); var cardp = $(".card p"); var warningdiv = $(".warning"); var warningspan = $(".warning span"); var pagefootertopics = $(".upper-footer a"); var maincolumn = $(".mainColumn");
 	var navcontainer = $(".navbar"); var drawer = $(".collapse"); var dropdown = $(".contactUs-regardingSelect"); var toggledrawer = $(".navbar-toggle"); var rightalign = $(".rightAlign"); var floatingcolumn = $(".floatingColumn");
-	var atradeview = $(".tradeview"); var positiverate = $(".positiverate"); var negativerate = $(".negativerate"); var fakeimg = $(".fakeimg"); var navbarcontainer = $(".container-fluid"); var contentrow = $(".row");
+	var atradeview = $(".tradeview"); var positiverate = $(".positiverate"); var negativerate = $(".negativerate"); var fakeimg = $(".fakeimg"); var navbarcontainer = $(".container-fluid");
 	
 	// These are id selector variables
 	var returner = $("#returner");  var returnerhov = $("#returner :hover"); var closebtn = $("#close"); var ratebar = $("#ratebar"); var backbtn = $("#back"); var nextbtn = $("#next"); 
 	var topnavahov = $("#topnav a:hover"); var topnavin = $("#topnav input"); var pagefooterdivheader = $("#footerDivHeader"); var pagefooterdivtexts = $("#footerDivTexts"); var topnavimg = $("#topnav img");
 	var topheader = $("#header"); var toolbar = $("#topnav"); var topheadertitle = $("#headertitle"); var topheadercontent = $("#headercontent"); var myprogress = $("#myProgress"); 
-	var segments = $("#segment"); var topnava = $("#topnav a"); var progressBar = $("#progressBar"); var toggleicons = [$("#icon-bar1"),$("#icon-bar2"),$("#icon-bar3"),$("#icon-bar4")];
+	var segments = $("#segment"); var vueapp = $("#app"); var topnava = $("#topnav a"); var progressBar = $("#progressBar"); var toggleicons = [$("#icon-bar1"),$("#icon-bar2"),$("#icon-bar3"),$("#icon-bar4")];
 	
 	// These are utility variables and flags
 	var THEME; var i = 0; var HIDDEN = true; var footerclosing = true; var textclosed = false; var upperclosing = false; var floatingcolumnclosed = false; var QUERYING = false;
@@ -31,6 +31,7 @@
 		topheadercontent.css("font-style","italic").css("font-family","Garamond").css("font-stretch","condensed").css("font-size","40px");
 		drawer.css("height","100%").css("width","auto").css("text-align","justify");
 		segments.css("padding","0.5% 5%").css("text-shadow","-1px 1px 1px #010").css("box-shadow","-5px 5px 3px #aba");
+		vueapp.css("padding","0.5% 5%").css("text-shadow","-1px 1px 1px #010").css("box-shadow","-5px 5px 3px #aba");
 		fakeimg.css("width","100%").css("padding","2%").css("margin","20px 0").css("border-radius","2px").css("box-shadow","-3px 3px 2px #aba");
 		body.css("font-family","Arial, Helvetica, sans-serif").css("padding","0.1% 0.1% 0.1% 0.1%");
 		h3.css("font-weight","bolder").css("text-align","center"); rightalign.css("float","right"); marquee.css("color","#ff0e").css("width","98%"); 
@@ -281,4 +282,11 @@
 		} else { setBarTheme(footerdiv,footerclosebtn); footerclosebtn.classList.remove("glyphicon-arrow-down"); footerclosebtn.classList.add("glyphicon-arrow-up");
 			footerdiv.style.height = "30%"; footerdiv.style.top = "70%"; footerheader.style.fontSize = "100%"; footertexts.style.fontSize = "100%"; footerclosing = true;
 		}
+	}
+	
+	var width = 1; 
+	function move(interval) { 
+		if (width >= 100) { width = 1; } else { width+=interval; } 
+		progressbar.style.width = width + '%'; 
+		progressbar.innerHTML = width + '%'; 
 	}
