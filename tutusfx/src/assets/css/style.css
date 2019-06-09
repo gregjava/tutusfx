@@ -1,0 +1,139 @@
+/* THIS STYLESHEET IS FOR 3-COLUMN LAYOUTS */
+* { box-sizing: border-box; top: 0; left: 0; }
+
+input[type="search"] { height: 38px; margin: 6px 0; border-radius: 19px; }
+
+/* Style the sticky top dropdown navigation links */
+
+nav li input[type="button"] { background-color: #004300; color: #f2f2f2; padding: 8px 0; margin: 0; height: 50px; border-radius: 2.5px; text-decoration: none; display: block; transition: all 0.3s ease-in; -webkit-transition: all 0.3s ease-in; -moz-transition: all 0.3s ease-in; -o-transition: all 0.3s ease-in; }
+
+nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out; }
+
+/* Change properties of page navigation buttons */
+
+#footerDiv { display: none; z-index: 1000; }
+
+#back, #next { display: inline-block; }
+
+.nav { text-align: center; }
+
+/* Create three unequal columns that floats next to each other */
+.leftColumn { float: left; width: 30%; padding: 1%; } .mainColumn { float: left; width: 40%; padding: 1%; } .rightColumn { float: left; width: 30%; padding: 1%; }
+
+.pix { height: 100px; } .largepicture { height: 200px; }
+
+/* Set sticky trade rate bar properties */
+.upperbar { display: inline-flex; position: fixed; float: center; z-index: 1000; top: 0; left: 0; width: 100%; height: 50px; margin: 0; padding: 16px 0px; font-size: 16px; font-family: Garamond; background-color: #004300; border-radius: 0.5px; box-shadow: -1px 5px 3px #232; }
+
+.close-upper { border-radius: 40%; background: #fefefe; color: #004300; padding: 2px; width: auto; margin-right: 1%; }
+
+.open-upper { border-radius: 40%; background: #004300; color: #fefefe; padding: 0px 2px 18px 4px; width: auto; margin-right: 1%; }
+
+.sticky { position: fixed; top: 50px; left: 0; width: 99%; height: 50px; margin: 0% 0.5%; padding: 0; }
+
+.sticky2 + .row, .sticky + .row, .sticky2 + .container, .sticky + .container { padding-top: 100px; }
+
+.sticky2 { position: fixed; top: 0; left: 0; width: 99%; height: 50px; margin: 0% 0.5%; padding: 0; }
+
+.collapse a, .collapse input[type="button"] { height: auto; max-height: 30px; width: 100%; font-size: 12px; }
+
+.dropdown-submenu { position: relative; }
+
+.dropdown-submenu .dropdown-menu { top: 0; left: 100%; margin-top: -1px; }
+
+/* Set container properties */
+.row, .container { margin: 0.5%; width: 99%; height: auto; }
+
+/* Clear floats after the columns */
+.row:after, .footer:after { content: ""; display: table; clear: both; }
+
+/* Footer */
+.footer a { padding: 0; margin: 0% 1%; color: #a1a1a1; text-align: justify;  }
+
+.footer a:hover { margin: 0% 1.1%; color: #B2D4B2; text-decoration: none; }
+	
+/* Width set at 25% ensures the footer has 4 sections on default */
+.footerCard { float: left; text-align: justify; padding: 0% 2%; font-size: 90%; width: 25%; height: 547px;  }
+
+.footerCard blockquote { font-size: 70%; }
+
+.footer h6 { text-align: center; }
+
+.clearnav { box-shadow: none; text-shadow: none; margin: 0; padding: 0; left: 0; top: 0; content: ""; display: table; clear: both; }
+
+/* Responsive layout - when the screen is less than 1200px wide, make the two leftmost columns stack side by side and on top of the third */
+@media screen and (max-width: 1200px) {
+	/* Left column */
+	.leftColumn { float: left; width: 65%; padding: 0.5%; }
+	
+	/* Main column */
+	.mainColumn { float: left; width: 35%; padding: 0.5%; }
+
+	/* Right column */
+	.rightColumn { float: left; width: 100%; padding: 0.5%; }
+	
+	.footerCard { font-size: 90%; width: 25%; height: 547px; font-size: 90%; }
+	
+	.row, .container { width: 99%; margin: 0.5%; }
+	
+	.footer a { margin: 0.5% 1.6%; }
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) { 
+	#footerDivTexts { color: white; text-align: justify; float: justify;  font-size: 99%; } 
+	
+	#footerDiv { display: block; position: fixed; top: 70%; left: 0; width: 100%; height: 30%; margin: 0; padding: 5%; background-color: #004300; color: white; font-size: 60%; z-index: 1000; }
+	
+	#footerDivHeader { font-size: 100%; } #close { display: block; color: #004300; border-radius: 10px; float: right; }
+	
+	.leftColumn, .mainColumn, .rightColumn {  width: 100%; padding: 0.5%; }
+	
+	.footerCard { font-size: 80%; width: 25%; height: 547px; font-size: 80%; }
+	
+	.row, .container { width: 99%; margin: 0.5%; }
+	
+	.footer a { margin: 0.5% 1.2%; }
+}
+
+/* Responsive layout - when the screen is less than 480px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 480px) { 
+	#backbar, #nextbar, #topnav a { z-index: 1000; } 
+	
+	#back, #next, #topnav { float: none; height: 50px; padding: 0; margin: 0; }
+	
+	#back, #next { width: 100%; }
+	
+	#topnav { width: 99%; margin: 0% 0.5%; } 
+	
+	#footerDivTexts { text-align: center; float: center; font-size: 98%; }
+	
+	.footerCard { width: 33%; height: 547px;  }
+	
+	.row, .container { width: 99%; margin: 0.5%; }
+	
+	.footer a { margin: 0.5% 0.8%; font-size: 80%; }
+	
+	.warning { display: none; }
+}
+
+/* Responsive layout - when the screen is less than 480px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 345px) { 
+	#backbar, #nextbar, #topnav a { z-index: 1000; } 
+	
+	#back, #next, #topnav { float: none; height: 50px; padding: 0; margin: 0; }
+	
+	#back, #next { width: 100%; }
+	
+	#topnav { width: 99%; margin: 0% 0.5%; } 
+	
+	#footerDivTexts { text-align: center; float: center; font-size: 98%; }
+	
+	.footerCard { width: 33%; height: 527px; }
+	
+	.row, .container { width: 99%; margin: 0.5%; }
+	
+	.footer a { margin: 0.5% 1.2%; font-size: 80%; }
+	
+	.warning { display: none; }
+}
