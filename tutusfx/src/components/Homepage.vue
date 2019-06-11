@@ -59,15 +59,14 @@
             <v-list-tile
               v-for="subItem in item.subitems"
               :key="subItem.name"
+              @click=""
             >
               <v-list-tile-content>
-                <v-list-tile-title>{{ subItem.name }}</v-list-tile-title>
+                <v-list-tile-title> {{ subItem.name }} </v-list-tile-title>
               </v-list-tile-content>
 
               <v-list-tile-action>
-                <v-icon medium>
-                  {{ subItem.icon }}
-                </v-icon>
+                <v-icon medium> {{ subItem.icon }} </v-icon>
               </v-list-tile-action>
             </v-list-tile>
           </v-list-group>
@@ -81,7 +80,10 @@
         app
       >
         <v-spacer></v-spacer>
-        <v-toolbar-items class="hidden-sm-and-down" style="z-index: 1000; background: #004300; color: #ffffff;"
+        <v-toolbar-items 
+          v-for="(item, index) in subitems"
+          :key="index"
+          class="hidden-sm-and-down"
         >
           <v-menu offset-y>
             <v-btn
@@ -90,91 +92,21 @@
               flat
               style="font-weight: bolder;"
             >
-              Visibility
+              {{ item.name }}
             </v-btn>
             <v-list style="background: #004300; color: #ffffff;">
               <v-list-tile
-                v-for="(item, index) in visibilityItems"
+                v-for="(subItem, index) in item.subitems"
                 :key="index"
                 @click=""
               >
-                <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-              </v-list-tile>
-            </v-list>
-          </v-menu>
-          <v-menu offset-y>
-            <v-btn
-              slot="activator"
-              dark
-              flat
-              style="font-weight: bolder;"
-            >
-              Themes
-            </v-btn>
-            <v-list style="background: #004300; color: #ffffff;">
-              <v-list-tile
-                v-for="(item, index) in themeItems"
-                :key="index"
-                @click=""
-              >
-                <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-              </v-list-tile>
-            </v-list>
-          </v-menu>
-          <v-menu offset-y>
-            <v-btn
-              slot="activator"
-              dark
-              flat
-              style="font-weight: bolder;"
-            >
-              Legal
-            </v-btn>
-            <v-list style="background: #004300; color: #ffffff;">
-              <v-list-tile
-                v-for="(item, index) in legalItems"
-                :key="index"
-                @click=""
-              >
-                <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-              </v-list-tile>
-            </v-list>
-          </v-menu>
-          <v-menu offset-y>
-            <v-btn
-              slot="activator"
-              dark
-              flat
-              style="font-weight: bolder;"
-            >
-              Guide
-            </v-btn>
-            <v-list style="background: #004300; color: #ffffff;">
-              <v-list-tile
-                v-for="(item, index) in guideItems"
-                :key="index"
-                @click=""
-              >
-                <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-              </v-list-tile>
-            </v-list>
-          </v-menu>
-          <v-menu offset-y>
-            <v-btn
-              slot="activator"
-              dark
-              flat
-              style="font-weight: bolder;"
-            >
-              Menu
-            </v-btn>
-            <v-list style="background: #004300; color: #ffffff;">
-              <v-list-tile
-                v-for="(item, index) in menuItems"
-                :key="index"
-                @click=""
-              >
-                <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+                <v-list-tile-content>
+                  <v-list-tile-title>{{ subItem.name }}</v-list-tile-title>
+                </v-list-tile-content>
+
+                <v-list-tile-action>
+                  <v-icon medium> {{ subItem.icon }} </v-icon>
+                </v-list-tile-action>
               </v-list-tile>
             </v-list>
           </v-menu>
@@ -445,52 +377,6 @@
           namehash: 'guest#48557310~u2'
         }
       ], drawer: false,
-      visibilityItems: [
-        { title: 'Trade Bar' },
-        { title: 'Footer' },
-        { title: 'Header Texts' },
-        { title: 'Attendant' }
-      ],
-      themeItems: [
-        { title: 'Nature' },
-        { title: 'Night' },
-        { title: 'Sunny' },
-        { title: 'Cloudy' },
-        { title: 'Romance' },
-        { title: 'Royal' },
-        { title: 'Aqua' },
-        { title: 'Teal' },
-        { title: 'Deep Royal' },
-        { title: 'Silver' }
-      ],
-      legalItems: [
-            { title: 'About Tutusfx' },
-            { title: 'Tutusfx Whitepaper' },
-            { title: 'Privacy Policy' },
-            { title: 'Client Categorisation Policy' },
-            { title: 'Bonuses' },
-            { title: 'Company Information' },
-            { title: 'Complaints Procedure for Clients' },
-            { title: 'Conflicts of Interest Policy' },
-            { title: 'General Fees' },
-            { title: 'Investor Compensation Fund' },
-            { title: 'Customer Support Disclosures' },
-            { title: 'Risk Disclosure' },
-            { title: 'Terms of Use' },
-            { title: 'Best Interest and Order Execution Policy' }
-      ],
-      guideItems: [
-        { title: 'Sitemap' },
-        { title: 'Frequently Asked Questions' }
-      ],
-      menuItems: [
-            { title: 'App Store' },
-            { title: 'Third-Party Exchanges' },
-            { title: 'Currency Markets' },
-            { title: 'Chat' },
-            { title: 'Vote for Witness' },
-            { title: 'Reset Password' }
-      ],
       tradeData: [
         { id: '1', name: '@kutygee' },
         { id: '2', name: '@thegenius' },
@@ -530,7 +416,7 @@
       ],
       subitems: [
         {
-          icon: 'fas fa-eye-slash',
+          icon: 'mdi-eye-off',
           name: 'Visibility',
           subitems: [
             { name: 'Trade Bar', icon: 'home' },
@@ -557,7 +443,7 @@
           ]
         },
         {
-          icon: 'fas fa-balance-scale',
+          icon: 'mdi-script-text',
           name: 'Legal',
           subitems: [
             { name: 'About Tutusfx', icon: 'contact_mail' },
@@ -597,6 +483,11 @@
           ]
         }
       ]
+    }),
+    computed: () => ({
+      trending1() {
+        return '${this.TrendingPosts.views}'
+      }
     })
   }
 </script>
@@ -613,7 +504,7 @@
   h3{ font-weight: bolder; color: #fefefe; } 
   .rightAlign{ float: right; } marquee{color: inherit; width: 98%; }
   .justify{ text-align: justify; }
-  .ratebar{ background-color: #004300; position: relative; top: -2px; left: 0; z-index: 0; margin-bottom: 100px; }
+  .ratebar{ background-color: #004300; position: relative; top: -2px; left: 0; z-index: 0; margin-bottom: 40px; }
 	.negativerate{ color: #ff0000; font-family: Courier New, Times New Roman, Arial; font-size: 100%; font-weight: lighter; font-stretch: condensed; text-decoration: blink; }
 	.positiverate{ color: #00ff00; font-family: Courier New, Times New Roman, Arial; font-size: 100%; font-weight: lighter; font-stretch: condensed; text-decoration: blink; }
 	.neutralrate{ color: #ffffff; font-family: Courier New, Times New Roman, Arial; font-size: 100%; font-weight: lighter; font-stretch: condensed; text-decoration: blink; }
@@ -631,6 +522,7 @@
 	.card p{ text-align: justify; }
 	.assistant{ margin: 50px 0px; padding: 0; display: inline-block; background: URL('https://www.tutusfx.com/assets/images/open.gif'); background-size: cover; height: 250px; width: 250px; border-radius: 40%; }
 	.close{ display: block; background-color: white; }
+  .hidden-sm-and-down{ z-index: 1000; background: #004300; color: #ffffff; }
   a{ text-decoration: none; transition: all 0.5s ease-in; -webkit-transition: all 0.5s ease-in; -moz-transition: all 0.5s ease-in; -o-transition: all 0.5s ease-in; }
   a:hover{ transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out; }
   * { box-sizing: border-box; top: 0; left: 0; text-align: center; }

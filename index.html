@@ -43,9 +43,6 @@
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>
 	<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","url":"https:\/\/www.tutusfx.com\/eu\/","name":"tutusfx.com","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.tutusfx.com\/eu\/?s={search_term}","query-input":"required name=search_term"}}</script>
-	
-	
-		
 	<script>
 		date = new Date();
 		date.setTime(date.getTime()+(30*24*60*60*1000));
@@ -196,6 +193,8 @@
 			width: 100%; -webkit-animation: pixAnimation 30s infinite; -moz-animation: pixAnimation 30s infinite;
 			-o-animation: pixAnimation 30s infinite; animation: pixAnimation 30s infinite; font-weight: bolder;
 		}
+		.transit-enter-active{ pixAnimation 30s infinite; }
+		.transit-leave-active{ pixAnimation 30s reverse; }
 	</style>
 </head>
 <body>
@@ -226,9 +225,49 @@
 		<button id="upperclosebtn" class="glyphicon glyphicon-arrow-right rightAlign close-upper"></button>
 	</div>
 	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+	
 	<div id="header" class="animatePix">
-	  <h1 id="headertitle">Tutusfx</h1>
-	  <p id="headercontent">An incentivized trade network built on blockchain technology</p>
+	  <transition name="transit" css="false" @before-enter="beforeEnter" @enter="enter" @leave="leave">
+		  <h1 id="headertitle">Tutusfx</h1>
+		  <p id="headercontent">An incentivized trade network built on blockchain technology</p> 
+	  </transition>
+	  <script>
+		new Vue({
+		  el: '#header',
+		  data() {
+			return {
+				show: true
+			}
+		  },
+		  mounted: function (){ this.show = false },
+		  methods: {
+			beforeEnter: function (el){ el.style.transition = "all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0)" },
+			enter: function (el, done){ var vm = this
+			  Velocity(el,
+			  { opacity: 1 },
+			  { 
+				duration: this.fadeInDuration,
+				complete: function (){
+				  done()
+				  if (vm.show) vm.show = false
+				}
+			  }
+			},
+			leave: function (el, done){ var vm = this
+			  Velocity(el,
+			  { opacity: 0 el.style.transition = "all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0)" },
+			  {
+				duration: this.fadeOutDuration,
+				complete: function (){
+				  done()
+				  vm.show = true
+				}
+			  }
+			}
+		  }
+		})
+	  </script>
 	</div>
 	
 	<div id="topnav"><!-- sticky header -->
