@@ -1,17 +1,17 @@
 <template>
   <v-app>
     <v-content>
-      <About />
+      <Faqs />
     </v-content>
   </v-app>
 </template>
 
 <script>
-  import About from './components/About'
+  import Faqs from './components/Faqs'
 
   export default {
     components: {
-      About
+      Faqs
     }
   }
 </script>

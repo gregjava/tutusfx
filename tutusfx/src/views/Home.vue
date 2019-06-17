@@ -7,7 +7,7 @@
 </template>
 
 <script>
-  import Homepage from '../components/Homepage'
+  import Homepage from './components/Homepage'
 
   export default {
     components: {

@@ -1,17 +1,17 @@
 <template>
   <v-app>
     <v-content>
-      <About />
+      <Contact />
     </v-content>
   </v-app>
 </template>
 
 <script>
-  import About from './components/About'
+  import Contact from './components/Contact'
 
   export default {
     components: {
-      About
+      Contact
     }
   }
 </script>
