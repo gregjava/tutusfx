@@ -1,33 +1,32 @@
 <template>
-  <v-app style="background: #004300; color: #ffffff; background: -webkit-linear-gradient(to right, #004300, #7B43FF, #004300); background: -moz-linear-gradient(to right, #004300, #7B43FF, #004300); background: -o-linear-gradient(to right, #004300, #7B43FF, #004300); background: linear-gradient(to right, #004300, #7B43FF, #004300); display: inline-block; color: #ffffff; font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 0.1%; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -o-font-smoothing: grayscale;">
-    <v-subheader class="ratebar">
-      <marquee
-        scrolldelay="1s"
-        scrollamount="3"
-      >
+  <v-app id="app">
+    <v-container fluid class="row">
+      <v-subheader class="ratebar">
         <v-flex>
-          <span 
-            v-for="item in currencyRateData" 
-            :key="item.id"
-          > {{ item.name }}:
-            <span
-              v-if="item.trend==='positiverate'"
-              class="positiverate"
-            > {{ item.rate }} </span>
+          <marquee
+            scrolldelay="1s"
+            scrollamount="3"
+          >
             <span 
-              v-else-if="item.trend==='negativerate'" 
-              class="negativerate"
-            > {{ item.rate }} </span>
-            <span 
-              v-else 
-              class="neutralrate"
-            > {{ item.rate }} </span> &nbsp; &nbsp;
-          </span>
+              v-for="item in currencyRateData" 
+              :key="item.id"
+            > {{ item.name }}:
+              <span
+                v-if="item.trend==='positiverate'"
+                class="positiverate"
+              > {{ item.rate }} </span>
+              <span 
+                v-else-if="item.trend==='negativerate'" 
+                class="negativerate"
+              > {{ item.rate }} </span>
+              <span 
+                v-else 
+                class="neutralrate"
+              > {{ item.rate }} </span> &nbsp; &nbsp;
+            </span>
+          </marquee>
         </v-flex>
-      </marquee>
-    </v-subheader>
-
-    <div class="row">
+      </v-subheader>
       <v-navigation-drawer
         style="z-index: 1000; background:#004300" 
         fixed 
@@ -87,7 +86,7 @@
         <v-toolbar-items 
           v-for="(item, index) in subitems"
           :key="index"
-          class="hidden-sm-and-down"
+          class="navDrawer"
         >
           <v-menu offset-y>
             <v-btn
@@ -120,10 +119,56 @@
         <v-toolbar-title>Tutusfx</v-toolbar-title>
         <v-toolbar-side-icon @click.stop="drawer = !drawer" />
       </v-toolbar>
-    </div>
+      <v-layout mainColumn>
+        <v-flex class="card">
+          <v-card class="segment">
+            <h3>About Tutusfx</h3><hr>
+            <span
+              v-for="item in articleBody" 
+              :key="item.id" 
+            ><br>
+              <hr><p>{{ item.txt }}</p><hr><br>
+            </span>
+          </v-card>
+        </v-flex>
+      </v-layout>
+      <v-layout rightColumn>
+        <v-flex class="card">
+          <v-card 
+            v-for="item in AllPosts" 
+            :key="item.id" 
+            class="segment"
+          ><br>
+            <h3>{{ item.title }}</h3><hr>
+            <h5><b> {{ item.desc }}</b></h5><br/><h6 class="rightAlign">{{ item.date }}</h6>
+            <div class="fakeimg largepicture">
+              {{ item.img }}
+            </div><hr>
+            <p>{{ item.txt1 }}</p>
+            <p>{{ item.txt2 }}</p><hr><br>
+          </v-card>
+          <v-card class="segment">
+            <h3>Vote a Witness</h3><hr>
+            <h4 class="leftAlign"><em>List of top witnesses</em></h4><br/>
+            <p 
+              v-for="item in witnessData" 
+              :key="item.id"
+            >
+              {{ item.id }} {{ item.name }}
+            </p>
+            <p class="rightAlign">
+              <a href="">More...</a>
+            </p><br><br><hr><br>
+          </v-card>
+          <span class="returner">
+            <a href="#"> Return to top </a>
+          </span>
+        </v-flex>
+      </v-layout>
+    </v-container>
 		
     <div class="footer">
-      <div class="upper-footer">
+      <div class="upperFooter">
         <a href="">Sponsorship</a><a href="">Fund Safety &amp; Security</a><a href="sitemap-eu/index.html">Sitemap</a><a href="">Networks</a><a href="contact-us-eu/">Contact Us</a>
       </div>
       <div class="card clearnav">
@@ -185,12 +230,12 @@
           <a href="https://www.forevalue.com">FOREX.COM</a><br>
           <a href="https://www.dukascopy.com/land/trading/eu/forex">DUKASCOPY</a><br>
         </div>
-        <div class="footerCard warning">
+        <div class="footerCard responsiveFooter">
           <h6><strong>GENERAL RISK WARNING</strong></h6>
           <span>TRADING IN CRYPTOCURRENCIES, FOREX &amp; CFDS CARRY A HIGH LEVEL OF RISK AND MAY NOT BE APPROPRIATE FOR ALL INVESTORS. IT IS POSSIBLE TO LOSE OF ALL OF YOUR INVESTED CAPITAL SO, YOU SHOULD NOT INVEST MONEY THAT YOU CANNOT AFFORD TO LOSE. FOR MORE INFORMATION ABOUT THE RISKS INVOLVED, PLEASE<a href="terms-and-conditions-eu/risk-disclosure-eu/index.html"> CLICK HERE</a> .</span>
         </div>
-        <div class="footerDiv">
-          <h6 class="footerDivHeader">
+        <div class="warningTextDiv">
+          <h6 class="warningTextHeader">
             GENERAL RISK WARNING
           </h6>
           <button class="close glyphicon glyphicon-arrow-up btn badge"> 
@@ -198,7 +243,7 @@
           </button>
           <br>
           <br>
-          <span class="footerDivTexts">TRADING IN CRYPTOCURRENCIES, FOREX &amp; CFDS CARRY A HIGH LEVEL OF RISK AND MAY NOT BE APPROPRIATE FOR ALL INVESTORS. IT IS POSSIBLE TO LOSE OF ALL OF YOUR INVESTED CAPITAL SO, YOU SHOULD NOT INVEST MONEY THAT YOU CANNOT AFFORD TO LOSE. FOR MORE INFORMATION ABOUT THE RISKS INVOLVED, PLEASE<a href="terms-and-conditions-eu/risk-disclosure-eu/index.html"> CLICK HERE</a>.</span>
+          <span class="warningTexts">TRADING IN CRYPTOCURRENCIES, FOREX &amp; CFDS CARRY A HIGH LEVEL OF RISK AND MAY NOT BE APPROPRIATE FOR ALL INVESTORS.IT IS POSSIBLE TO LOSE OF ALL OF YOUR INVESTED CAPITAL SO, YOU SHOULD NOT INVEST MONEY THAT YOU CANNOT AFFORD TO LOSE. FOR MORE INFORMATION ABOUT THE RISKS INVOLVED, PLEASE<a href="terms-and-conditions-eu/risk-disclosure-eu/index.html"> CLICK HERE</a>.</span>
         </div>
       </div>
     </div>
@@ -207,28 +252,9 @@
 <script>
   export default {
     data: () => ({
-      TrendingPosts: [
+      articleBody: [
         {
-          title: 'Blockchain Post 3',
-          desc: 'Title description',
-          date: 'Dec 10, 2018',
-          img: 'Image',
-          txt1: 'Some text from Post 3...',
-          txt2: 'Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-          views: '258',
-          interactions: '14',
-          comments: '5'
-        },
-        {
-          title: 'Blockchain Post 2',
-          desc: 'Title description',
-          date: 'Nov 22, 2018',
-          img: 'Image',
-          txt1: 'Some text from Post 2...',
-          txt2: 'Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-          views: '629',
-          interactions: '73',
-          comments: '18'
+          txt: 'The threshold to create and operate a Marketing Network is quite high! Therefore, a one-stop solution is provided by the Tutusfx Community for anyone to create a unique Network without any thresholds. \nMeanwhile, with the help of TT Token Reward Mode, the operation threshold can be reduced effectively, with a short startup period. Cryptocurrency, currency and commodity instrument traders have traded for years without incentives or adequate motivation to match their passion for the trends. \nTutusfx presents a system that seeks to improve the analysis and trading of its instrument traders with relevant tools and incentives aimed at motivating traders and network operators, alike. \nIn view of the application experience in blockchain, Tutusfx Community comprises a bottom layer using a decentralized blockchain accounting-book to record the ownership information of trade products, and deal with the transaction of trade products by virtue of smart contracts so that the ecosystem economy of Network will be transparent and clear; while the application layer shall make use of efficient centric development architecture so as to fully guarantee the good performance of all read and write operations as well as to effectively avoid the problems of long confirmation duration, high cost and congestion-inducing, thus the smooth and interactive experience of Network products can be guaranteed at the extreme.'
         }
       ],
       AllPosts: [
@@ -265,34 +291,8 @@
           interactions: '9',
           comments: '4'
         }
-      ],
-      Trades: [
-        {
-          currency: 'USD/AUD',
-          profit: '+$309.82',
-          margin: '+31.01',
-          volume: '$10.00',
-          charge: '$2.8',
-          namehash: 'guest#609325cwq98'
-        },
-        {
-          currency: 'USD/GBP',
-          profit: '+$287.10',
-          margin: '+42.35',
-          volume: '$7.00',
-          charge: '$9.35',
-          namehash: 'guest#302q25%eo4j'
-        },
-        {
-          currency: 'USD/CAD',
-          profit: '+$684.37',
-          margin: '+13.70',
-          volume: '$50.00',
-          charge: '$0.63',
-          namehash: 'guest#48557310~u2'
-        }
       ], drawer: false,
-      tradeData: [
+      witnessData: [
         { id: '1', name: '@kutygee' },
         { id: '2', name: '@thegenius' },
         { id: '3', name: '@kutygee' },
@@ -403,128 +403,104 @@
 </script>
 
 <style>
+  * { box-sizing: border-box; top: 0; left: 0; text-align: center; }
   img{ position: relative; top: 0; left: 0; width: 100%; height: 100%; float: left top; border-radius: 1.5px; }
-	textarea{ min-height: 300px; min-width: 100%; height: 80%; width: 100%; top: 0; left: 0; text-align: justify; float: center; border-radius: 5px; padding: 16px 4px; }
-	.header{ text-shadow: -8px 8px 16px #B2D4B2; height: 450px; background: none; color: #ffffff; }
-	.headertitle{ z-index: -1000; font-family: Garamond; font-weight: bolder; font-stretch: expanded; font-size: 90px; }
-	.headercontent{ font-style: italic; font-family: Garamond; font-stretch: condensed; font-size: 40px; }
-	.collapse{ height: 100%; width: auto; text-align: justify; }
-	.segment{ padding: 0.5% 5%; text-shadow: -1px 1px 1px #010; box-shadow: -5px 5px 3px #aba; }
-	.fakeimg{ width: 100%; padding: 2%; margin: 20px 0; border-radius: 2px; box-shadow: -3px 3px 2px #aba; background-color: #bbfebb; }
-  h3{ font-weight: bolder; color: #fefefe; } 
-  .rightAlign{ float: right; } marquee{color: inherit; width: 98%; }
-  .justify{ text-align: justify; }
-  .ratebar{ background-color: #004300; position: relative; top: -2px; left: 0; z-index: 0; margin-bottom: 40px; }
-	.negativerate{ color: #ff0000; font-family: Courier New, Times New Roman, Arial; font-size: 100%; font-weight: lighter; font-stretch: condensed; text-decoration: blink; }
-	.positiverate{ color: #00ff00; font-family: Courier New, Times New Roman, Arial; font-size: 100%; font-weight: lighter; font-stretch: condensed; text-decoration: blink; }
-	.neutralrate{ color: #ffffff; font-family: Courier New, Times New Roman, Arial; font-size: 100%; font-weight: lighter; font-stretch: condensed; text-decoration: blink; }
-	select{ background-color: #eeeeee; }
-	.trendingtradeusername{ background: none; color: #B2D4B2; }
-	.upper-footer{ padding: 1%; }
-  .upper-footer a{ background: none; color: #ffffff; }
-	.trendingtrades{ padding: 1%; margin-top: 0.5%; color: #ffffff; }
-	.returner{ float: right; font-weight: bolder; font-stretch: condensed; padding: 2.5%; margin-top: 1%; border-radius: 25px; box-shadow: -5px 5px 3px #aba; }
+  marquee{color: inherit; width: 98.5%; }
+  h3{ font-size: 30px; font-weight: bolder; color: #003200; } h4{ font-size: 24px; font-weight: bold; color: #004300; } h5{ font-size: 18px; color: #005400; } h6{ font-size: 12px; color: #006500; }
 	input{ z-index: 300; }
+  input[type="search"] { height: 38px; margin: 6px 0; border-radius: 19px; }
+  a{ text-decoration: none; transition: all 0.5s ease-in; -webkit-transition: all 0.5s ease-in; -moz-transition: all 0.5s ease-in; -o-transition: all 0.5s ease-in; }
+  a:hover{ transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out; }
+	.header{ text-shadow: -8px 8px 16px #B2D4B2; height: 450px; background: none; color: #ffffff; }
+	.headertitle{ font-family: Garamond; font-stretch: expanded; font-size: 90px; }
+	.headercontent{ font-style: italic; font-family: Garamond; font-stretch: condensed; font-size: 40px; }
+	.segment{ margin-top: 50px; padding: 0.5% 5%; text-shadow: -1px 1px 1px #010; box-shadow: -5px 5px 3px #aba; }
+	.fakeimg{ width: 100%; padding: 2%; margin: 20px 0; border-radius: 2px; box-shadow: -3px 3px 2px #aba; background-color: #bbfebb; }
+  .fakeimg:hover{ border-radius: 3px; box-shadow: -2px 2px 1px #aba; background-color: #ccfecc; }
+  .leftAlign{ text-align: left; } .rightAlign{ float: right; }
+  .ratebar{ position: relative; top: 37px; left: 0; z-index: 0; font-family: Courier New, Times New Roman, Arial; font-size: 100%; font-weight: lighter; font-stretch: condensed; text-decoration: blink; background-color: #004300; }
+	.negativerate{ color: #ff0000; }
+	.positiverate{ color: #00ff00; }
+	.neutralrate{ color: #ffffff; }
+	.trendingtradeusername{ background: none; color: #B2D4B2; }
+	.upperFooter{ padding: 1%; }
+  .upperFooter a{ background: none; color: #ffffff; }
+	.trendingtrades{ padding: 1%; margin-top: 0.5%; color: #ffffff; }
 	.tradeview{ height: 650px; }
 	.card{ width: 95%; margin: 2.5%; border-radius: 3px; background-color: none; color:#ffffff; }
 	.card a{ display: inline-flex; }
 	.card a:hover{ color: #B2D4B2; }
 	.card p{ text-align: justify; }
-	.assistant{ margin: 50px 0px; padding: 0; display: inline-block; background: URL('https://www.tutusfx.com/assets/images/open.gif'); background-size: cover; height: 250px; width: 250px; border-radius: 40%; }
-	.close{ display: block; background-color: white; }
-  .hidden-sm-and-down{ z-index: 1000; background: #004300; color: #ffffff; }
-  a{ text-decoration: none; transition: all 0.5s ease-in; -webkit-transition: all 0.5s ease-in; -moz-transition: all 0.5s ease-in; -o-transition: all 0.5s ease-in; }
-  a:hover{ transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out; }
-  * { box-sizing: border-box; top: 0; left: 0; text-align: center; }
-  input[type="search"] { height: 38px; margin: 6px 0; border-radius: 19px; }
-
-  /* Create three unequal columns that floats next to each other */
-  .leftColumn { float: left; width: 30%; padding: 1%; } 
-  .mainColumn { float: left; width: 40%; padding: 1%; } 
-  .rightColumn { float: left; width: 30%; padding: 1%; }
+	.close{ display: block; background-color: white; width: 20px; height: 20px; }
+  .navDrawer{ z-index: 1000; background: #004300; color: #ffffff; }
   .pix { height: 100px; } .largepicture { height: 200px; }
 
-  /* Set sticky properties */
-  .sticky { position: fixed; top: 50px; left: 0; width: 99%; height: 50px; margin: 0% 0.5%; padding: 0; }
-  .sticky + .row { padding-top: 100px; }
+  /* Create two unequal columns that floats next to each other */
+  .mainColumn { float: left; width: 65%; padding: 1%; } 
+  .rightColumn { float: left; width: 35%; padding: 1%; }
 
   /* Set returner and row properties */
-  .returner:hover { background: #004300; color: #ffffff; color: #ffffff; }
+	.returner{ float: right; font-weight: bolder; font-stretch: condensed; padding: 2.5%; margin-top: 1%; border-radius: 25px; box-shadow: -5px 5px 3px #aba; background: #fefefe; }
+  .returner a{ background: none; color: #004300; }
+  .returner:hover { box-shadow: -3px 3px 2px #aba; background: #004300; color: #ffffff; }
   .row { margin: 0.5%; width: 99%; }
 
   /* Set footer properties */
   .footer a { padding: 0; margin: 0% 1%; color: #a1a1a1; text-align: justify;  }
   .footer a:hover { margin: 0% 1.1%; color: #B2D4B2; }
 	.footer{ height: 600px; z-index: 500; border-radius: 5px 5px 0px 0px; margin-top: 100px; padding: 0; font-stretch: condensed; font-weight: lighter; background: #004300; color: #ffffff; }
-  .footerDiv { display: none; z-index: 1000; }
-	.footerDivHeader{ color: white; font-weight: bold; font-size: 100%; }
-	.footerDivTexts{ color: white; text-align: justify; float: center; font-size: 99%; }
-  .footerCard { float: left; text-align: justify; padding: 0% 2%; font-size: 90%; width: 25%; height: 547px; }
-  /* Clear floats after the columns */
   .footer:after { content: ""; display: table; clear: both; }
-  .clearnav { box-shadow: none; text-shadow: none; margin: 0; padding: 0; left: 0; top: 0; content: ""; display: table; clear: both; } /* reset frequently used settings */
+  .warningTextDiv { display: none; z-index: 1000; }
+	.warningTextHeader{ color: white; font-weight: bold; font-size: 100%; }
+	.warningTexts{ color: white; text-align: justify; float: center; font-size: 99%; }
+  .footerCard { float: left; text-align: justify; padding: 0% 2%; font-size: 90%; width: 25%; height: 547px; }
+
+  /* Clear float after columns */
+  .clearnav { box-shadow: none; text-shadow: none; margin: 0; padding: 0; left: 0; top: 0; content: ""; display: table; clear: both; }
 
   /* Responsive layout - when the screen is less than 1200px wide, make the two leftmost columns stack side by side and on top of the third */
   @media screen and (max-width: 1200px) {
-    /* Left column */
-    .leftColumn { float: left; width: 65%; padding: 0.5%; }
-    
-    /* Main column */
-    .mainColumn { float: left; width: 35%; padding: 0.5%; }
-
-    /* Right column */
-    .rightColumn { float: left; width: 100%; padding: 0.5%; }
-    
-    .footerCard { font-size: 90%; width: 25%; height: 547px; font-size: 90%; }
-    
+    /* Resize columns to fill page */
+    .mainColumn, .rightColumn { width: 100%; padding: 0.5%; }
+    .ratebar{ top: 38px; }
+    .footerCard { font-size: 90%; width: 25%; height: 547px; }
+    .headertitle { font-size: 65px; }
+    .headercontent { font-size: 35px; }
     .row, .container { width: 99%; margin: 0.5%; }
-    
     .footer a { margin: 0.5% 1.6%; }
   }
 
   /* Responsive layout - when the screen is less than 800px wide, make the three columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 800px) { 
-    .footerDivTexts { color: white; text-align: justify; float: justify;  font-size: 99%; } 
-    
-    .footerDiv { display: block; position: fixed; top: 70%; left: 0; width: 100%; height: 30%; margin: 0; padding: 5%; background-color: #004300; color: white; font-size: 60%; z-index: 1000; }
-    
-    .footerDivHeader { font-size: 100%; } .close { display: block; color: #004300; border-radius: 10px; float: right; }
-    
-    .leftColumn, .mainColumn, .rightColumn {  width: 100%; padding: 0.5%; }
-    
-    .footerCard { font-size: 80%; width: 25%; height: 547px; font-size: 80%; }
-    
+  @media screen and (max-width: 880px) { 
+    .warningTexts { color: white; text-align: justify; float: justify;  font-size: 99%; }
+    .warningTextDiv { display: block; position: fixed; top: 70%; left: 0; width: 100%; height: 30%; margin: 0; padding: 5%; background-color: #004300; color: white; font-size: 60%; z-index: 1000; }
+    .warningTextHeader { font-size: 100%; }
+    .ratebar{ top: 38px; }
+    .footerCard { font-size: 80%; width: 25%; height: 547px; }
+    .headertitle { font-size: 40px; }
+    .headercontent { font-size: 30px; }
     .row, .container { width: 99%; margin: 0.5%; }
-    
     .footer a { margin: 0.5% 1.2%; }
   }
 
   /* Responsive layout - when the screen is less than 480px wide, make the navigation links stack on top of each other instead of next to each other */
   @media screen and (max-width: 480px) { 
-    
-    .footerDivTexts { float: center; font-size: 98%; }
-    
+    .warningTexts { float: center; font-size: 98%; }
     .footerCard { width: 33%; height: 547px;  }
-    
+    .headertitle { font-size: 27.5px; }
+    .headercontent { font-size: 25px; }
     .row, .container { width: 99%; margin: 0.5%; }
-    
     .footer a { margin: 0.5% 0.8%; font-size: 80%; }
-    
-    .warning { display: none; }
+    .responsiveFooter { display: none; }
   }
 
   /* Responsive layout - when the screen is less than 480px wide, make the navigation links stack on top of each other instead of next to each other */
   @media screen and (max-width: 345px) { 
-    
-    .footerDivTexts { float: center; font-size: 98%; }
-    
+    .warningTexts { float: center; font-size: 98%; }
     .footerCard { width: 33%; height: 527px; }
-    
     .row, .container { width: 99%; margin: 0.5%; }
-    
     .footer a { margin: 0.5% 1.2%; font-size: 80%; }
-    
-    .warning { display: none; }
+    .responsiveFooter { display: none; }
   }
 
   @-webkit-keyframes pixAnimation {

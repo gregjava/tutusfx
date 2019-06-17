@@ -1,27 +1,22 @@
 <template>
-  <v-app>
-    <v-content>
-      <router-view />
-    </v-content>
-  </v-app>
+  <div id="app">
+    <Home msg="Welcome to Tutusfx Vue.js Version"/>
+  </div>
 </template>
 
 <script>
-import About from './components/About'
-import Contact from './components/Contact'
-import Faqs from './components/Faqs'
-import Homepage from './components/Homepage'
-import Sitemap from './components/Sitemap'
+import Home from './components/Home.vue'
 
 export default {
-  name: 'App',
+  name: 'app',
   components: {
-    About, Contact, Faqs, Homepage, Sitemap
-  },
-  data () {
-    return {
-      //
-    }
+    Home
   }
 }
 </script>
+
+<style>
+  #app {
+    background: #004300; color: #ffffff; background: -webkit-linear-gradient(to right, #004300, #7B43FF, #004300); background: -moz-linear-gradient(to right, #004300, #7B43FF, #004300); background: -o-linear-gradient(to right, #004300, #7B43FF, #004300); background: linear-gradient(to right, #004300, #7B43FF, #004300); display: inline-block; color: #ffffff; font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 0.1%; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -o-font-smoothing: grayscale;
+  }
+</style>
