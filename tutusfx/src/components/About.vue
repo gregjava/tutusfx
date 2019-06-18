@@ -141,7 +141,7 @@
           ><br>
             <h3>{{ item.title }}</h3><hr>
             <h5><b> {{ item.desc }}</b></h5><br/><h6 class="rightAlign">{{ item.date }}</h6>
-            <div class="fakeimg largepicture">
+            <div class="imgholder largepicture">
               {{ item.img }}
             </div><hr>
             <p>{{ item.txt1 }}</p>
@@ -407,24 +407,17 @@
   img{ position: relative; top: 0; left: 0; width: 100%; height: 100%; float: left top; border-radius: 1.5px; }
   marquee{color: inherit; width: 98.5%; }
   h3{ font-size: 30px; font-weight: bolder; color: #003200; } h4{ font-size: 24px; font-weight: bold; color: #004300; } h5{ font-size: 18px; color: #005400; } h6{ font-size: 12px; color: #006500; }
-	input{ z-index: 300; }
-  input[type="search"] { height: 38px; margin: 6px 0; border-radius: 19px; }
   a{ text-decoration: none; transition: all 0.5s ease-in; -webkit-transition: all 0.5s ease-in; -moz-transition: all 0.5s ease-in; -o-transition: all 0.5s ease-in; }
   a:hover{ transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out; }
-	.header{ text-shadow: -8px 8px 16px #B2D4B2; height: 450px; background: none; color: #ffffff; }
-	.headertitle{ font-family: Garamond; font-stretch: expanded; font-size: 90px; }
-	.headercontent{ font-style: italic; font-family: Garamond; font-stretch: condensed; font-size: 40px; }
 	.segment{ margin-top: 50px; padding: 0.5% 5%; text-shadow: -1px 1px 1px #010; box-shadow: -5px 5px 3px #aba; }
-	.fakeimg{ width: 100%; padding: 2%; margin: 20px 0; border-radius: 2px; box-shadow: -3px 3px 2px #aba; background-color: #bbfebb; }
-  .fakeimg:hover{ border-radius: 3px; box-shadow: -2px 2px 1px #aba; background-color: #ccfecc; }
+	.imgholder{ width: 100%; padding: 2%; margin: 20px 0; border-radius: 2px; box-shadow: -3px 3px 2px #aba; background-color: #bbfebb; }
+  .imgholder:hover{ border-radius: 3px; box-shadow: -2px 2px 1px #aba; background-color: #ccfecc; }
   .leftAlign{ text-align: left; } .rightAlign{ float: right; }
-  .ratebar{ position: relative; top: 37px; left: 0; z-index: 0; font-family: Courier New, Times New Roman, Arial; font-size: 100%; font-weight: lighter; font-stretch: condensed; text-decoration: blink; background-color: #004300; }
+  .ratebar{ position: relative; top: 37px; left: 0; z-index: 0; font-family: Courier New, Times New Roman, Arial; font-weight: lighter; font-stretch: condensed; text-decoration: blink; background-color: #004300; }
 	.negativerate{ color: #ff0000; }
 	.positiverate{ color: #00ff00; }
 	.neutralrate{ color: #ffffff; }
 	.trendingtradeusername{ background: none; color: #B2D4B2; }
-	.upperFooter{ padding: 1%; }
-  .upperFooter a{ background: none; color: #ffffff; }
 	.trendingtrades{ padding: 1%; margin-top: 0.5%; color: #ffffff; }
 	.tradeview{ height: 650px; }
 	.card{ width: 95%; margin: 2.5%; border-radius: 3px; background-color: none; color:#ffffff; }
@@ -442,14 +435,16 @@
   /* Set returner and row properties */
 	.returner{ float: right; font-weight: bolder; font-stretch: condensed; padding: 2.5%; margin-top: 1%; border-radius: 25px; box-shadow: -5px 5px 3px #aba; background: #fefefe; }
   .returner a{ background: none; color: #004300; }
-  .returner:hover { box-shadow: -3px 3px 2px #aba; background: #004300; color: #ffffff; }
+  .returner:hover { box-shadow: -3px 3px 2px #aba; background: #004300; color: #fefefe; }
   .row { margin: 0.5%; width: 99%; }
 
   /* Set footer properties */
-  .footer a { padding: 0; margin: 0% 1%; color: #a1a1a1; text-align: justify;  }
-  .footer a:hover { margin: 0% 1.1%; color: #B2D4B2; }
+	.upperFooter{ padding: 1%; }
+  .upperFooter a{ background: none; color: #ffffff; }
 	.footer{ height: 600px; z-index: 500; border-radius: 5px 5px 0px 0px; margin-top: 100px; padding: 0; font-stretch: condensed; font-weight: lighter; background: #004300; color: #ffffff; }
   .footer:after { content: ""; display: table; clear: both; }
+  .footer a { padding: 0; margin: 0% 1%; color: #a1a1a1; text-align: justify;  }
+  .footer a:hover { margin: 0% 1.1%; color: #B2D4B2; }
   .warningTextDiv { display: none; z-index: 1000; }
 	.warningTextHeader{ color: white; font-weight: bold; font-size: 100%; }
 	.warningTexts{ color: white; text-align: justify; float: center; font-size: 99%; }
@@ -463,48 +458,42 @@
     /* Resize columns to fill page */
     .mainColumn, .rightColumn { width: 100%; padding: 0.5%; }
     .ratebar{ top: 38px; }
-    .footerCard { font-size: 90%; width: 25%; height: 547px; }
-    .headertitle { font-size: 65px; }
-    .headercontent { font-size: 35px; }
-    .row, .container { width: 99%; margin: 0.5%; }
+    .row { width: 99%; margin: 0.5%; }
     .footer a { margin: 0.5% 1.6%; }
+    .footerCard { font-size: 90%; width: 25%; height: 547px; }
   }
 
   /* Responsive layout - when the screen is less than 800px wide, make the three columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 880px) { 
-    .warningTexts { color: white; text-align: justify; float: justify;  font-size: 99%; }
-    .warningTextDiv { display: block; position: fixed; top: 70%; left: 0; width: 100%; height: 30%; margin: 0; padding: 5%; background-color: #004300; color: white; font-size: 60%; z-index: 1000; }
-    .warningTextHeader { font-size: 100%; }
+  @media screen and (max-width: 880px) {
     .ratebar{ top: 38px; }
-    .footerCard { font-size: 80%; width: 25%; height: 547px; }
-    .headertitle { font-size: 40px; }
-    .headercontent { font-size: 30px; }
-    .row, .container { width: 99%; margin: 0.5%; }
+    .row { width: 99%; margin: 0.5%; }
     .footer a { margin: 0.5% 1.2%; }
+    .warningTextDiv { display: block; position: fixed; top: 70%; left: 0; width: 100%; height: 30%; margin: 0; padding: 5%; background-color: #004300; color: white; font-size: 60%; z-index: 1000; }
+    .warningTextHeader { font-size: 100%; } 
+    .warningTexts { color: white; text-align: justify; float: justify;  font-size: 99%; }
+    .footerCard { font-size: 80%; width: 25%; height: 547px; }
   }
 
   /* Responsive layout - when the screen is less than 480px wide, make the navigation links stack on top of each other instead of next to each other */
-  @media screen and (max-width: 480px) { 
+  @media screen and (max-width: 480px) {
+    .row { width: 99%; margin: 0.5%; }
+    .footer a { margin: 0.5% 0.8%; font-size: 80%; }
+    .responsiveFooter { display: none; } 
     .warningTexts { float: center; font-size: 98%; }
     .footerCard { width: 33%; height: 547px;  }
-    .headertitle { font-size: 27.5px; }
-    .headercontent { font-size: 25px; }
-    .row, .container { width: 99%; margin: 0.5%; }
-    .footer a { margin: 0.5% 0.8%; font-size: 80%; }
-    .responsiveFooter { display: none; }
   }
 
   /* Responsive layout - when the screen is less than 480px wide, make the navigation links stack on top of each other instead of next to each other */
   @media screen and (max-width: 345px) { 
-    .warningTexts { float: center; font-size: 98%; }
-    .footerCard { width: 33%; height: 527px; }
-    .row, .container { width: 99%; margin: 0.5%; }
+    .row { width: 99%; margin: 0.5%; }
     .footer a { margin: 0.5% 1.2%; font-size: 80%; }
     .responsiveFooter { display: none; }
+    .warningTexts { float: center; font-size: 98%; }
+    .footerCard { width: 33%; height: 527px; }
   }
 
   @-webkit-keyframes pixAnimation {
-    0%   {left:0px; top:0px; background:url("../assets/images/forex_trading_10.png") no-repeat center; -webkit-background-size: cover; background-size: cover;}
+    0%   {left:0px; top:0px; background:url("../assets/images/forex_trading_10.png") no-repeat center; -webkit-background-size: cover; background-size: cover; transition: cubic-bezier(0.075, 0.82, 0.165, 1); -webkit-transition: cubic-bezier(0.075, 0.82, 0.165, 1); -moz-transition: cubic-bezier(0.075, 0.82, 0.165, 1); -o-transition: cubic-bezier(0.075, 0.82, 0.165, 1); }
     7%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_8.png") no-repeat center; -webkit-background-size: cover; background-size: cover;}
     14%  {left:0px; top:0px; background:url("../assets/images/forex_trading_9.png") no-repeat center; -webkit-background-size: cover; background-size: cover;}
     21%  {left:0px; top:0px; background:url("../assets/images/blockchain_technology_10.png") no-repeat center; -webkit-background-size: cover; background-size: cover;}
@@ -576,7 +565,7 @@
   }
   
   .animatePix{ 
-    width: 100%; -webkit-animation: pixAnimation 30s infinite; -moz-animation: pixAnimation 30s infinite;
-    -o-animation: pixAnimation 30s infinite; animation: pixAnimation 30s infinite; font-weight: bolder;
+    width: 100%; -webkit-animation: pixAnimation 120s infinite; -moz-animation: pixAnimation 120s infinite;
+    -o-animation: pixAnimation 120s infinite; animation: pixAnimation 120s infinite; font-weight: bolder;
   }
 </style>
