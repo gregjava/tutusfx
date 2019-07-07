@@ -7,7 +7,7 @@
 	<meta name="MobileOptimized" content="320" />
 	<meta name="keywords" content="Binary Options, Forex Trade, Binary Trade, CFD, Forex, Binary"/>
 	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:title" content="Home | tutusfx.com" />
+	<meta name="twitter:title" content="Home | Tutusfx" />
 	<meta name="twitter:description" content="Tutusfx is an incentivized Forex/CFDs/Cryptocurrency trading platform built on blockchain technology. Trade Forex/CFDs/Cryptocurrency on our advanced, web-based trading platform designed with you, the user, in mind."/>
 	<meta name="twitter:domain" content="tutusfx.com" />
 	<meta name="generator" content="WPML ver:3.6.1 stt:5,39,1,4,3,27,40,42,44,47,2,52;" />
@@ -23,7 +23,7 @@
 	
 	<link rel="icon" href="assets/images/new_logo.ico" type="image/x-icon" />
 	<link rel="shortcut icon" href="assets/images/new_logo.ico" type="image/x-icon" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/style.css" type="text/css" media="all">
 	<link rel="manifest" href="manifest.json" /> <!--server:header--> 
 	<link rel="canonical" href="index.html" />
@@ -287,10 +287,7 @@
 							<li><input tabindex="-1" type="button" id="complainproc" value="Complaints Procedure for Clients"></input></li>
 							<li><input tabindex="-1" type="button" id="confintpolicy" value="Conflicts of Interest Policy"></input></li>
 							<li><input tabindex="-1" type="button" id="genfeespolicy" value="General Fees"></input></li>
-							<li><input tabindex="-1" type="button" id="compenspolicy" value="Investor Compensation Fund"></input></li>
-							<li><input tabindex="-1" type="button" id="cussupdiscs" value="Customer Support Disclosures"></input></li>
 							<li><input tabindex="-1" type="button" id="riskdiscs" value="Risk Disclosure"></input></li>
-							<li><input tabindex="-1" type="button" id="usagepolicy" value="Terms of Use"></input></li>
 							<li><input tabindex="-1" type="button" id="bestintpolicy" value="Best Interest and Order Execution Policy"></input></li>
 						</ul>
 					</li>
