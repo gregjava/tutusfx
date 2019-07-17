@@ -14,7 +14,6 @@
 		<meta name="twitter:domain" content="tutusfx.com" />
 		<meta name="generator" content="WPML ver:3.6.1 stt:5,39,1,4,3,27,40,42,44,47,2,52;" />
 		<meta name="description" content="Say what's on your mind. Leave a complaint, suggest an idea or make an inquiry from our 24 hours online support team and/or witnesses." />
-		
 		<meta property="og:locale" content="en_GB" />
 		<meta property="og:type" content="article" />
 		<meta property="og:image" content="https://www.tutusfx.com/assets/images/new_logo.png" />
@@ -22,6 +21,7 @@
 		<meta property="og:description" content="Say what's on your mind. Leave a complaint, suggest an idea or make an inquiry from our 24 hours online support team and/or witnesses."/>
 		<meta property="og:url" content="https://www.tutusfx.com/eu/contact-us-eu/" />
 		<meta property="og:site_name" content="tutusfx.com" />
+		
 		<link rel="icon" href="../../assets/images/new_logo.ico" type="image/x-icon" />
 		<link rel="shortcut icon" href="../../assets/images/new_logo.ico" type="image/x-icon" />
 		<link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
@@ -44,7 +44,6 @@
 		<script src="../../assets/js/jquery.min.js"></script>
 		<script src="../../assets/js/bootstrap.min.js"></script> 
 		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-		
 		<script>
 			date = new Date();
 			date.setTime(date.getTime()+(30*24*60*60*1000));
@@ -400,21 +399,22 @@
 									<option value="complaint">Complaints</option>
 									<option value="recommendation">Recommendations</option>
 									<option value="suggestion">Suggestions</option>
-									<option value="inquiry">Inquiry</option>
+									<option value="inquiry">Inquiries</option>
 								</select><br />
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="input-group"> 
-								<span class="input-group-addon">Post Title: </span><input type="text" name="subject" class="form-control" placeholder="Provide a post title or subject" maxlength="70" required="required"><br />
+								<span class="input-group-addon">Post Title: </span><input type="text" name="subject" class="form-control" placeholder="Add title or subject" maxlength="70" required="required"><br />
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="input-group"> <span class="input-group-addon">Destination Department: </span>
 								<select name="dept" class="form-control" required="required">
 									<option value="">Select a department to contact</option>
-									<option value="witness">Witness</option>
+									<option value="info">Info</option>
 									<option value="support">Support</option>
+									<option value="group">Group</option>
 								</select><br />
 							</div>
 						</div>
@@ -482,7 +482,7 @@
 				<a href="">DEVELOPER DISCORD</a><br/>
 				<a href="">ADVERTISE</a><br/>
 				<a href="">LEGAL</a><br/>
-				<a href="">PRIVACY</a><br/>
+				<a href="">PRIVACY POLICY</a><br/>
 				<a href="../about-us-eu/index.html">ABOUT US</a><br/>
 				<a href="">PARTNERS</a><br/>
 				<a href="">WIDGETS</a><br/>
