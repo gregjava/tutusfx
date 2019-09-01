@@ -42,7 +42,6 @@
 		<link rel="alternate" hreflang="pl-PL" href="../../pl/binary-options-guide-pl/index.html"/>
 		<script src="../../assets/js/jquery.min.js"></script>
 		<script src="../../assets/js/bootstrap.min.js"></script> 
-		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 		
 		<script>
 			date = new Date();
@@ -119,7 +118,7 @@
 		/* <![CDATA[ */
 		var legal_link = "#\/eu\/terms-and-conditions-eu\/";
 		var pending_balance_trans = "Pending Balance";
-		var trade_link = "#\/\/redirects\/trade\/";
+		var trade_link = "#\/redirects\/trade\/";
 		var admin_ajax = {"ajaxurl":"\/\/wp-admin\/admin-ajax.php"};
 		/* ]]> */
 		</script>
@@ -311,19 +310,8 @@
 			
 			function IsLoggedIn(){ return <?php if ( isset($_SESSION['user']) && $_SESSION['user']!=="") echo true; else echo false; ?>; }
         </script>
-		<div id="ratebar">
-		<div id="app">
-			{{ message }}
-		</div>
-    <script>
-        var app = new Vue({
-            el: '#app',
-            data: {
-                message: 'Hello User!'
-            }
-        })
-        
-    </script><marquee id="ads" scrolldelay="1s" scrollamount="3">
+		
+		<div id="ratebar"><marquee id="ads" scrolldelay="1s" scrollamount="3">
 			<span class="usdcad">USD/CAD: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="usdjpy">USD/JPY: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="usdchf">USD/CHF: <span class="positiverate">000:0000</span></span> &nbsp;
@@ -349,95 +337,104 @@
 			<span class="usdcad">USD/NGN: <span class="positiverate">000:0000</span></span></marquee>
 			<button id="upperclosebtn" class="glyphicon glyphicon-arrow-right rightAlign close-upper"></button>
 		</div>
+		
 		<div id="header" class="animatePix">
 		  <h1 id="headertitle">Tutusfx</h1>
 		  <p id="headercontent">An incentivized trade network built on blockchain technology</p>
 		</div>
 		
 		<div id="topnav"><!-- sticky header -->
-			<nav class="navbar navbar-inverse"><!-- right hidden menu -->
-			  <div class="container-fluid">
-				<div class="navbar-header">
-				  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navi">
-					<span id="icon-bar1" class="icon-bar"></span><span id="icon-bar2" class="icon-bar"></span><span id="icon-bar3" class="icon-bar"></span><span id="icon-bar4" class="icon-bar"></span>                        
-				  </button><input type="search" value="" placeholder="Search item"></input><a class="navbar-brand" href="#"><img src="../../assets/images/logo_bar.png" alt="Tutusfx" /></a>
-				</div>
-				<div class="collapse navbar-collapse" id="navi">
-				  <ul class="nav navbar-nav">
-					<li><a href="../index.html">Home</a></li>
-					<li><input type="button" id="back" value="Back" onclick="prevPage()" ></input></li>
-					<li><input type="button" id="next" value="Next" onclick="nextPage()" ></input></li>
-				  </ul>
-				  <ul class="nav navbar-nav navbar-right">
-					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Tools <span class="caret"></span></a>
-					  <ul class="dropdown-menu">
-						<li class="dropdown-submenu"><a class="droplevel2" tabindex="-1" href="#">Visibility <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><input tabindex="-1" type="button" id="tradebar" value="Trade Bar"></input></li>
-								<li><input tabindex="-1" type="button" id="sitefooter" value="Footer"></input></li>
-								<li><input tabindex="-1" type="button" id="headertexts" value="Header Texts"></input></li>
-								<li><input tabindex="-1" type="button" id="attendant" value="Attendant"></input></li>
-							</ul>
-						</li>
-						<li class="dropdown-submenu"><a class="droplevel2" tabindex="-1" href="#">Theme <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><input tabindex="-1" type="button" id="nature" value="Nature" ></input></li>
-								<li><input tabindex="-1" type="button" id="night" value="Night" ></input></li>
-								<li><input tabindex="-1" type="button" id="sunny" value="Sunny" ></input></li>
-								<li><input tabindex="-1" type="button" id="cloudy" value="Cloudy" ></input></li>
-								<li><input tabindex="-1" type="button" id="romance" value="Romance" ></input></li>
-								<li><input tabindex="-1" type="button" id="royal" value="Royal" ></input></li>
-								<li><input tabindex="-1" type="button" id="aqua" value="Aqua" ></input></li>
-								<li><input tabindex="-1" type="button" id="teal" value="Teal" ></input></li>
-								<li><input tabindex="-1" type="button" id="deeproyal" value="DeepRoyal" ></input></li>
-								<li><input tabindex="-1" type="button" id="silver" value="Silver" ></input></li>
-							</ul>
-						</li>
-					  </ul>
-					</li>
-					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Legal <span class="caret"></span></a>
-					  <ul class="dropdown-menu">
-						<li><a href="../about-us-eu/index.html">About Tutusfx</a></li>
-						<li><a href="../../assets/docs/whitepaper.pdf">Tutusfx Whitepaper</a></li>
-						<li class="dropdown-submenu"><a class="droplevel2" tabindex="-1" href="#">Terms of Service <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><input tabindex="-1" type="button" id="catpolicy" value="Client Categorisation Policy"></input></li>
-								<li><input tabindex="-1" type="button" id="bonuspolicy" value="Bonuses"></input></li>
-								<li><input tabindex="-1" type="button" id="compinfo" value="Company Information"></input></li>
-								<li><input tabindex="-1" type="button" id="complainproc" value="Complaints Procedure for Clients"></input></li>
-								<li><input tabindex="-1" type="button" id="confintpolicy" value="Conflicts of Interest Policy"></input></li>
-								<li><input tabindex="-1" type="button" id="genfeespolicy" value="General Fees"></input></li>
-								<li><input tabindex="-1" type="button" id="riskdiscs" value="Risk Disclosure"></input></li>
-								<li><input tabindex="-1" type="button" id="bestintpolicy" value="Best Interest and Order Execution Policy"></input></li>
-							</ul>
-						</li>
-						<li><a href="../../redirects/login.html">Privacy Policy</a></li>
-					  </ul>
-					</li>
-					<li class="dropdown">
-					  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Guide <span class="caret"></span></a>
-					  <ul class="dropdown-menu">
-						<li><a href="../../redirects/login.html">Sitemap</a></li>
-						<li><a href="../faqs/index.html">Frequently Asked Questions</a></li>
-					  </ul>
-					</li>
-					<li class="dropdown">
-					  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <span class="caret"></span></a>
-					  <ul class="dropdown-menu">
-						<li><a href="../../redirects/login.html">App Store</a></li>
-						<li><a href="../../redirects/login.html">Third-Party Exchanges</a></li>
-						<li><a href="../../redirects/login.html">Currency Markets</a></li>
-						<li><a href="../../redirects/login.html">Chat</a></li>
-						<li><a href="../../redirects/login.html">Vote for Witness</a></li>
-						<li><a href="../../redirects/my-account/change-password/">Reset Password</a></li>
-					  </ul>
-					</li>
-					<li><a href="../../redirects/open-account/"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-					<li><a href="../../redirects/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-				  </ul>
-				</div>
+		  <nav class="navbar navbar-inverse"><!-- right hidden menu -->
+			<div class="container-fluid">
+			  <div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navi">
+				  <span id="icon-bar1" class="icon-bar"></span>
+				  <span id="icon-bar2" class="icon-bar"></span>
+				  <span id="icon-bar3" class="icon-bar"></span>
+				  <span id="icon-bar4" class="icon-bar"></span>                        
+				</button><a class="navbar-brand" href="../index.html"><img src="../../assets/images/logo_bar.png" alt="Tutusfx" /></a>
 			  </div>
-			</nav>
+			  <div class="collapse navbar-collapse" id="navi">
+				<ul class="nav navbar-nav navbar-left">
+				  <li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">More... <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+					  <li><input type="search" placeholder="Search item" class="glyphicon glyphicon-search"></input></li>
+					  <li class="themeObj"><button id="back" onclick="prevPage()" >Back<span class="glyphicon glyphicon-step-forward"></span> </button> </li>
+					  <li class="themeObj"><button id="next" onclick="nextPage()" >Next<span class="glyphicon glyphicon-step-backward"></span> </button> </li>
+					</ul>
+				  </li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+				  <li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Visibility <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+					  <li><button id="tradebar">Trade Bar<span class="glyphicon close"></span> </button></li>
+					  <li><button id="sitefooter">Footer<span class="glyphicon close"></span> </button></li>
+					  <li><button id="headertexts">Header Texts<span class="glyphicon close"></span> </button></li>
+					  <li><button id="attendant">Attendant<span class="glyphicon close"></span> </button></li>
+					</ul>
+				  </li>
+				  <li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Theme <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+					  <li><button id="nature" >Nature</button></li>
+					  <li><button id="night" >Night</button></li>
+					  <li><button id="sunny" >Sunny</button></li>
+					  <li><button id="cloudy" >Cloudy</button></li>
+					  <li><button id="romance" >Romance</button></li>
+					  <li><button id="royal" >Royal</button></li>
+					  <li><button id="aqua" >Aqua</button></li>
+					  <li><button id="teal" >Teal</button></li>
+					  <li><button id="deeproyal" >DeepRoyal</button></li>
+					  <li><button id="silver" >Silver</button></li>
+					</ul>
+				  </li>
+				  <li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+					  <li><a href="../../redirects/login.html">App Store</a></li>
+					  <li><a href="../../redirects/login.html">Third-Party Exchanges</a></li>
+					  <li><a href="../../redirects/login.html">Currency Markets</a></li>
+					  <li><a href="../../redirects/login.html">Chat</a></li>
+					  <li><a href="../../redirects/login.html">Vote for Witness</a></li>
+					  <li><a href="../contact-us-eu/"><span class="glyphicon glyphicon-envelope"></span> Contact Us</a></li>
+					  <li><a href="../../redirects/open-account/"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+					  <li><a href="../../redirects/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					  <li><a href="../../redirects/login.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+					  <li><a href="../../redirects/my-account/change-password/">Reset Password</a></li>
+					</ul>
+				  </li>
+				  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Legal <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+					  <li class="dropdown-submenu"><a class="droplevel2" tabindex="-1" href="#">Terms of Service <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+						  <li><button tabindex="-1" id="catpolicy">Client Categorisation Policy</button></li>
+						  <li><button tabindex="-1" id="bonuspolicy">Bonuses</button></li>
+						  <li><button tabindex="-1" id="compinfo">Company Information</button></li>
+						  <li><button tabindex="-1" id="complainproc">Complaints Procedure for Clients</button></li>
+						  <li><button tabindex="-1" id="confintpolicy">Conflicts of Interest Policy</button></li>
+						  <li><button tabindex="-1" id="genfeespolicy">General Fees</button></li>
+						  <li><button tabindex="-1" id="riskdiscs">Risk Disclosure</button></li>
+						  <li><button tabindex="-1" id="bestintpolicy" value="">Best Interest and Order Execution Policy</button></li>
+						</ul>
+					  </li>
+					  <li><a href="../about-us-eu/index.html">About Tutusfx</a></li>
+					  <li><a href="../../assets/docs/whitepaper.pdf">Tutusfx Whitepaper</a></li>
+					  <li><a href="../../redirects/login.html">Privacy Policy</a></li>
+					</ul>
+				  </li>
+				  <li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Guide <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+					  <li><a href="../../redirects/login.html">Sitemap</a></li>
+					  <li><a href="../faqs/index.html">Frequently Asked Questions</a></li>
+					</ul>
+				  </li>
+				</ul>
+			  </div>
+			</div>
+		  </nav>
 		</div>
 
 		<div class="container row">
@@ -501,7 +498,7 @@
 			<p>Tutusfx' award-winning platform is your gateway to the markets. Once you fund your account you should visit the trading platform and familiarize yourself with the tools and instruments needed to help you trade binary options.</p>
 			<p><a href="../../assets/images/forex_trading_11.png"><img class="alignnone size-full wp-image-56394" src="../../assets/images/forex_trading_11.png".png" alt="Full_Trading_Platform" width="656" height="286"/></a></p>
 			<p>At any time, you can visit the <a href="trading-guide-eu/index.html">binary options trading guide</a> to learn all about your trading platform – from tradable assets, tools, functionality and more!</p>
-			<p>To explore a list of tradable assets, <a href="../assets-index-eu/index.html">Click Here</a>!</p>
+			<p>To explore a list of tradable assets, <a href="../../assets-index-eu/index.html">Click Here</a>!</p>
 			<p><strong>Risk Warning: Trading Binary Options may lead to loss of your invested capital</strong></p>
 			<p>Binary options are so popular with traders because of the confidence gained by knowing, from the moment the option is opened, the exact amount earned in a successful option or lost in an unsuccessful option. Essentially when opening a trade you decide whether the price of an asset will rise or fall in a specific time, e.g., will the value of oil rise or fall in the next 60 seconds?</p>
 			<p><a href="../../assets/images/forex_trading_7.png"><img class="alignnone size-full wp-image-56395" src="../../assets/images/forex_trading_7.png" alt="Full_Trading_Platform" width="656" height="286"/></a></p>
@@ -533,20 +530,37 @@
 			</div>
 		  </div>
 		  <div class="floatingColumn"><button class="glyphicon close">&times;</button>
-			<div class="card" id="segment">
-			  <h3>Trending Posts</h3>
-			  <div class="fakeimg picture"><p>Image</p></div>
-			  <div class="fakeimg picture"><p>Image</p></div>
-			  <div class="fakeimg picture"><p>Image</p></div>
+			<div class="card">
+			  <div id="segment"><br>
+				<h3>Blockchain Posts</h3><hr>
+				<span>
+				<h5><b>Title description</b></h5><br/><h6 class="rightAlign">Nov 15, 2018</h6><br/>
+				<div class="fakeimg largepicture">Image</div><hr>
+				<p>Some text from Post 1...</p>
+				<p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p><hr><br>
+				</span>
+				<span>
+				<h5><b>Title description</b></h5><br/><h6 class="rightAlign">Nov 22, 2018</h6><br/>
+				<div class="fakeimg largepicture">Image</div><hr>
+				<p>Some text from Post 2...</p>
+				<p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p><hr><br>
+				</span>
+				<span>
+				<h5><b>Title description</b></h5><br/><h6 class="rightAlign">Dec 10, 2018</h6><br/>
+				<div class="fakeimg largepicture">Image</div><hr>
+				<p>Some text from Post 3...</p>
+				<p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p><hr>
+				</span>
+			  </div>
 			</div>
-			<div id="returner"> <a href="#">Return to top <span class="glyphicon glyphicon-arrow-up"></span></a><br/> </div>
+			<span class="returner"> <a href="#">Return to top <span class="glyphicon glyphicon-arrow-up"></span></a> </span>
 			<div class="assistant"><button id="closeassistant" class="glyphicon glyphicon-arrow-up btn badge"></button></div>
 		  </div>
 		</div>
 		
-		<div class="footer">
+		<div class="footer clearnav">
 		  <div class="upper-footer"><a href="">Sponsorship</a><a href="">Fund Safety &amp; Security</a><a href="../sitemap-eu/index.html">Sitemap</a><a href="">Networks</a><a href="../contact-us-eu/">Contact Us</a></div>
-		  <div class="card clearnav">
+		  <div id="card">
 			<div class="footerCard"><h6>QUICK LINKS</h6>
 				<a href="">DEVELOPERS</a><br/>
 				<a href="">MARKETPLACE</a><br/>
@@ -567,23 +581,23 @@
 				<a href="">ADVERTISE</a><br/>
 				<a href="">LEGAL</a><br/>
 				<a href="">PRIVACY POLICY</a><br/>
-				<a href="../about-us-eu/index.html">ABOUT US</a><br/>
+				<a href="../about-us-eu/">ABOUT US</a><br/>
 				<a href="">PARTNERS</a><br/>
 				<a href="">WIDGETS</a><br/>
 			</div>
 			<div class="footerCard"><h6>CHOOSE LANGUAGE</h6>
 				<a href="">TUTUSFX.COM INTERNATIONAL</a><br/>
-				<a href="../../de/about-us-de/index.html">TUTUSFX.COM DEUTSCHE</a><br/>
-				<a href="../../it/about-us-it/index.html">TUTUSFX.COM ITALIANO</a><br/>
-				<a href="../../fr/about-us-fr/index.html">TUTUSFX.COM FRANCAISE</a><br/>
-				<a href="../../es/about-us-es/index.html">TUTUSFX.COM ESPAÑOL</a><br/>
-				<a href="../../zh-tw/about-us-zh-tw/index.html">TUTUSFX.COM 中文</a><br/>
-				<a href="../../hi-in/about-us-hi-in/index.html">TUTUSFX.COM HINDI</a><br/>
-				<a href="../../ar-ar/about-us-ar/index.html">TUTUSFX.COM ARABIC</a><br/>
-				<a href="../../us/about-us-us/index.html">TUTUSFX.COM AMERICAN</a><br/>
-				<a href="../../ru-ru/about-us-ru/index.html">TUTUSFX.COM RUSSIAN</a><br/>
-				<a href="../../ms/about-us-ms/index.html">TUTUSFX.COM MALAY</a><br/>
-				<a href="../../pt-pt/about-us-pt-pt/index.html">TUTUSFX.COM PORTUGUESE (EU)</a><br/>
+				<a href="../../de/binary-options-guide-de/index.html">TUTUSFX.COM DEUTSCHE</a><br/>
+				<a href="../../it/binary-options-guide-it/index.html">TUTUSFX.COM ITALIANO</a><br/>
+				<a href="../../fr/binary-options-guide-fr/index.html">TUTUSFX.COM FRANCAISE</a><br/>
+				<a href="../../es/binary-options-guide-es/index.html">TUTUSFX.COM ESPAÑOL</a><br/>
+				<a href="../../zh-tw/binary-options-guide-zh-tw/index.html">TUTUSFX.COM 中文</a><br/>
+				<a href="../../hi-in/binary-options-guide-hi-in/index.html">TUTUSFX.COM HINDI</a><br/>
+				<a href="../../ar-ar/binary-options-guide-ar/index.html">TUTUSFX.COM ARABIC</a><br/>
+				<a href="../../us/binary-options-guide-en-us/index.html">TUTUSFX.COM AMERICAN</a><br/>
+				<a href="../../ru-ru/binary-options-guide-ru/index.html">TUTUSFX.COM RUSSIAN</a><br/>
+				<a href="../../ms/binary-options-guide-ms/index.html">TUTUSFX.COM MALAY</a><br/>
+				<a href="../../pt-pt/binary-options-guide-pt-pt/index.html">TUTUSFX.COM PORTUGUESE (EU)</a><br/>
 				<!-- OTHER LANGUAGE VERSIONS -->
 			</div>
 			<div class="footerCard"><h6>RELATED SITES</h6>
@@ -599,7 +613,7 @@
 				<a href="https://en.swissquote.com">SWISSQUOTE</a><br/>
 				<a href="https://www.cmcmarkets.com/en">CMC MARKETS</a><br/>
 				<a href="https://www.fxpro.com">FXPRO</a><br/>
-				<a href="https://www.forex.com">FOREX.COM</a><br/>
+				<a href="https://www.forevalue.com">FOREX.COM</a><br/>
 				<a href="https://www.dukascopy.com/land/trading/eu/forex">DUKASCOPY</a><br/>
 			</div>
 			<div class="footerCard warning"><h6><strong>GENERAL RISK WARNING</strong></h6>
@@ -612,7 +626,5 @@
 		</div>
 		
 		<script src="../../assets/js/tut.js" type="text/javascript"></script>
-
-		
 	</body>
 </html>

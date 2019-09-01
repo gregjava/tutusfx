@@ -1,26 +1,38 @@
 /* THIS STYLESHEET IS FOR 3-COLUMN LAYOUTS */
-* { box-sizing: border-box; top: 0; left: 0; }
-
+* { box-sizing: border-box; top: 0; left: 0; text-align: center; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+	
 input[type="search"] { height: 38px; margin: 6px 0; border-radius: 19px; }
 
 /* Style the sticky top dropdown navigation links */
+.dropdown-menu { background: #004300; text-align: center; }
 
-nav li input[type="button"] { background-color: #004300; color: #f2f2f2; padding: 8px 0; margin: 0; height: 50px; border-radius: 2.5px; text-decoration: none; display: block; transition: all 0.3s ease-in; -webkit-transition: all 0.3s ease-in; -moz-transition: all 0.3s ease-in; -o-transition: all 0.3s ease-in; }
+.dropdown-submenu { text-align: center; }
 
-nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out; }
+.dropdown-submenu .dropdown-menu { top: 0; left: 0; text-decoration: none; transition: all 0.5s ease-in; -webkit-transition: all 0.5s ease-in; -moz-transition: all 0.5s ease-in; -o-transition: all 0.5s ease-in; }
+
+.dropdown-menu:hover, .dropdown-submenu:hover { background: #ccfecc22; cursor: pointer; transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out; }
+
+.dropdown-menu li, .dropdown-menu a, .dropdown-menu li button { text-align: center; background: #004300; color: #fefefe; min-width: 100px; width: 100%; max-height: 50px; height: 50px; font-size: 100%; padding: 0; margin: -1.4% 0; border: none; }
+
+.dropdown-menu li:hover, .dropdown-menu a:hover, .dropdown-menu li button:hover { background: #004300; color: #B2D4B2; text-shadow: -1px 1px 1px #010; font-weight: bolder; font-stretch: ultra-condensed; }
+
+#topnav a, #topnav button { text-decoration: none; display: block; transition: all 0.3s ease-in; -webkit-transition: all 0.3s ease-in; -moz-transition: all 0.3s ease-in; -o-transition: all 0.3s ease-in; }
+
+#topnav a:hover, #topnav button:hover { border-radius: 2.5px; transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out; }
+
+.nav li input[type="button"] { background: #004300; color: #fefefe; padding: 8px 0; margin: 0; height: 50px; border-radius: 2.5px; text-decoration: none; display: block; transition: all 0.3s ease-in; -webkit-transition: all 0.3s ease-in; -moz-transition: all 0.3s ease-in; -o-transition: all 0.3s ease-in; }
+
+.nav li input[type="button"]:hover { background: #004300; color: #ccfecc22; transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out; }
 
 /* Change properties of page navigation buttons */
-
-#footerDiv { display: none; z-index: 1000; }
+#footerDiv { display: none; z-index: 500; }
 
 #back, #next { display: inline-block; }
-
-.nav { text-align: center; }
 
 /* Create three unequal columns that floats next to each other */
 .leftColumn { float: left; width: 30%; padding: 1%; } .mainColumn { float: left; width: 40%; padding: 1%; } .rightColumn { float: left; width: 30%; padding: 1%; }
 
-.pix { height: 100px; } .largepicture { height: 200px; }
+.largepicture { height: 200px; } .picture { height: 100px; }
 
 /* Set sticky trade rate bar properties */
 .upperbar { display: inline-flex; position: fixed; float: center; z-index: 1000; top: 0; left: 0; width: 100%; height: 50px; margin: 0; padding: 16px 0px; font-size: 16px; font-family: Garamond; background-color: #004300; border-radius: 0.5px; box-shadow: -1px 5px 3px #232; }
@@ -36,33 +48,50 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 .sticky2 { position: fixed; top: 0; left: 0; width: 99%; height: 50px; margin: 0% 0.5%; padding: 0; }
 
 .collapse a, .collapse input[type="button"] { height: auto; max-height: 30px; width: 100%; font-size: 12px; }
+	
+.row, .container { width: 100%; }
 
-.dropdown-submenu { position: relative; }
+.navbar { width: 100%; margin: 0; padding: 0; }
 
-.dropdown-submenu .dropdown-menu { top: 0; left: 100%; margin-top: -1px; }
+.footerCard { font-size: 100%; width: 25%; height: 547px; }
 
+.fakeimg:hover { cursor: pointer; border-radius: 3px; box-shadow: -2px 2px 1px #aba; transition: all 0.5s ease-out; -webkit-transition: all 0.5s ease-out; -moz-transition: all 0.5s ease-out; -o-transition: all 0.5s ease-out; }
+
+.returner{ float: right; font-weight: bolder; font-stretch: condensed; padding: 2.5%; margin: -9% 2.5% 0 0; border-radius: 25px; box-shadow: -5px 5px 3px #aba; background: #fefefe; }
+
+.returner:hover { box-shadow: -3px 3px 2px #aba; background: #004300; }
+
+a { transition: all 0.5s ease-in; -webkit-transition: all 0.5s ease-in; -moz-transition: all 0.5s ease-in; -o-transition: all 0.5s ease-in; }
+
+a:hover { text-decoration: none; text-shadow: -1px 1px 1px #010; color: #fefefe; transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out; }
+	
+.returner a{ color: #edf1ed; background: none; text-transform: capitalize; }
+
+.returner a:hover{ color: #B2D4B2; font-weight: bolder; text-shadow: -0.1px 0.1px 0.1px rgb(165, 157, 140); }
+
+.footer a { margin: 0% 1%; padding: 0; color: #a1a1a1; text-align: justify; font-size: 90%; }
+
+.footer a:hover { margin: 0% 1.1%; color: #B2D4B2; }
+
+.card a { color: #006500aa; }
+
+.card a:hover { font-weight: lighter; font-stretch: ultra-condensed; text-shadow: none; color: #B2D4B2; }
+  
 /* Set container properties */
-.row, .container { margin: 0.5%; width: 99%; height: auto; }
-
 /* Clear floats after the columns */
 .row:after, .footer:after { content: ""; display: table; clear: both; }
 
 /* Footer */
-.footer a { padding: 0; margin: 0% 1%; color: #a1a1a1; text-align: justify;  }
-
-.footer a:hover { margin: 0% 1.1%; color: #B2D4B2; text-decoration: none; }
-	
 /* Width set at 25% ensures the footer has 4 sections on default */
-.footerCard { float: left; text-align: justify; padding: 0% 2%; font-size: 90%; width: 25%; height: 547px;  }
-
-.footerCard blockquote { font-size: 70%; }
-
-.footer h6 { text-align: center; }
-
 .clearnav { box-shadow: none; text-shadow: none; margin: 0; padding: 0; left: 0; top: 0; content: ""; display: table; clear: both; }
 
 /* Responsive layout - when the screen is less than 1200px wide, make the two leftmost columns stack side by side and on top of the third */
 @media screen and (max-width: 1200px) {
+    /* Reduce the size of superficial font on animated text */
+    #headertitle { font-size: 65px; }
+	
+    #headercontent { font-size: 35px; }
+	
 	/* Left column */
 	.leftColumn { float: left; width: 65%; padding: 0.5%; }
 	
@@ -72,32 +101,46 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 	/* Right column */
 	.rightColumn { float: left; width: 100%; padding: 0.5%; }
 	
-	.footerCard { font-size: 90%; width: 25%; height: 547px; font-size: 90%; }
-	
 	.row, .container { width: 99%; margin: 0.5%; }
 	
-	.footer a { margin: 0.5% 1.6%; }
+	.row{ padding: 1%; }
+	
+	.footer a { margin: 0.5% 1.6%; font-size: 90%; }
+	
+	.footerCard { font-size: 90%; width: 25%; height: 547px; }
 }
 
-/* Responsive layout - when the screen is less than 800px wide, make the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 800px) { 
+/* Responsive layout - when the screen is less than 880px wide, make the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 880px) { 
+    /* Reduce the size of superficial font on animated text */
+    #headertitle { font-size: 40px; }
+	
+    #headercontent { font-size: 30px; }
+	
 	#footerDivTexts { color: white; text-align: justify; float: justify;  font-size: 99%; } 
 	
-	#footerDiv { display: block; position: fixed; top: 70%; left: 0; width: 100%; height: 30%; margin: 0; padding: 5%; background-color: #004300; color: white; font-size: 60%; z-index: 1000; }
+	#footerDiv { display: block; position: fixed; top: 70%; left: 0; width: 100%; height: 30%; margin: 0; padding: 5%; background-color: #004300; color: white; font-size: 60%; z-index: 500; }
 	
 	#footerDivHeader { font-size: 100%; } #close { display: block; color: #004300; border-radius: 10px; float: right; }
 	
 	.leftColumn, .mainColumn, .rightColumn {  width: 100%; padding: 0.5%; }
 	
-	.footerCard { font-size: 80%; width: 25%; height: 547px; font-size: 80%; }
+	.row, .container { width: 100%; margin: 0; }
 	
-	.row, .container { width: 99%; margin: 0.5%; }
+	.row{ padding: 2%; }
 	
-	.footer a { margin: 0.5% 1.2%; }
+	.footer a { margin: 0.5% 1.2%; font-size: 90%; }
+	
+	.footerCard { font-size: 80%; width: 25%; height: 547px; }
 }
 
 /* Responsive layout - when the screen is less than 480px wide, make the navigation links stack on top of each other instead of next to each other */
 @media screen and (max-width: 480px) { 
+    /* Reduce the size of superficial font on animated text */
+    #headertitle { font-size: 27.5px; }
+    
+	#headercontent { font-size: 25px; }
+	
 	#backbar, #nextbar, #topnav a { z-index: 1000; } 
 	
 	#back, #next, #topnav { float: none; height: 50px; padding: 0; margin: 0; }
@@ -108,9 +151,11 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 	
 	#footerDivTexts { text-align: center; float: center; font-size: 98%; }
 	
-	.footerCard { width: 33%; height: 547px;  }
+	.footerCard { font-size: 80%; width: 33%; height: 547px;  }
 	
 	.row, .container { width: 99%; margin: 0.5%; }
+	
+	.row{ padding: 4%; }
 	
 	.footer a { margin: 0.5% 0.8%; font-size: 80%; }
 	
@@ -129,9 +174,11 @@ nav li input[type="button"]:hover { background-color: #f2f2f2; color: #004300; t
 	
 	#footerDivTexts { text-align: center; float: center; font-size: 98%; }
 	
-	.footerCard { width: 33%; height: 527px; }
+	.footerCard { font-size: 80%; width: 33%; height: 527px; }
 	
 	.row, .container { width: 99%; margin: 0.5%; }
+	
+	.row{ padding: 5%; }
 	
 	.footer a { margin: 0.5% 1.2%; font-size: 80%; }
 	

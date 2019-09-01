@@ -1,68 +1,68 @@
-# vue chrome extension example
+## Requirements
+In order to install and setup your local development environment, there are some prerequisites:
 
-develop chrome extension with vue
+* git
+* gcc/clang/llvm (Linux: build tools, Mac OS X: XCode w/ Command Line Tools)
+* ruby w/ bundler
 
-## Installation
+OS X:
+First you'll need to install XCode which you can now get from the AppStore installed on your mac. After you download that and run it, then run this on the command line:
 
-	$ npm install
+````
+xcode-select --install
+````
 
-## Usage
+## Cloning the Projects
 
-Run `$ gulp --watch` and load the `dist`-directory into chrome.
+First, clone the project and then add a line to your `~/.bash_profile` that will let other programs know where the Tutusfx dev files are.
 
-## Entryfiles (bundles)
+````
+git clone git@github.com:gregjava/tutusfx_vue.git
+cd tutusfx_vue
+echo "export TUTUSFX_VUE_PATH=$(pwd)" >> ~/.bash_profile
 
-There are two kinds of entryfiles that create bundles.
+````
 
-1. All js-files in the root of the `./app/scripts` directory
-2. All css-,scss- and less-files in the root of the `./app/styles` directory
+Then, if you run the "bootstrap" script, it should clone all the other required projects.
 
-## Tasks
+````
+./script/bootstrap
+````
 
-### Build
+You should now have a `gregjava/tutusfx_vue` folder within the tutusfx_vue folder. This is a clone of the git projects. If you want to do a pull request, remember to work in those folders. For instance, if you want to add a test (see other documentation for how to do that), make sure to commit it to your *fork* of the gregjava/tutusfx_vue github project. Also, whenever you are running tests, make sure to `pull` from the origin! We want to make sure we are testing against the newest tutusfx_vue!
 
-    $ gulp
+Now, try and see if you can build the project. We do that with the `make` command.
 
+````
+make
+````
 
-| Option         | Description                                                                                                                                           |
-|----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `--watch`      | Starts a livereload server and watches all assets. <br>To reload the extension on change include `livereload.js` in your bundle.                      |
-| `--production` | Minifies all assets                                                                                                                                   |
-| `--verbose`    | Log additional data to the console.                                                                                                                   |
-| `--vendor`     | Compile the extension for different vendors (chrome, firefox, opera)  Default: chrome                                                                 |
-| `--sourcemaps` | Force the creation of sourcemaps. Default: !production                                                                                                |
+At this point, if you get an error, something is most likely wrong with your compiler installation. Yikes. It's hard to cover how to fix this in an article. Feel free to open an issue and we'll try and help! But, remember, before you do that, googling the error message is your friend! Many problems are solved quickly that way.
 
+## Running The Spec Against Tutusfx
 
-### pack
+Then, to run the spec against Tutusfx, just run:
 
-Zips your `dist` directory and saves it in the `packages` directory.
+````
+./script/spec
+````
 
-    $ gulp pack --vendor=firefox
+If you get an error about `TUTUSFX_VUE_PATH`, you may still need to set a variable pointing to the tutusfx_vue folder, like this:
 
-### Version
+````
+export TUTUSFX_VUE_PATH=/Users/you/path/tutusfx_vue
+````
 
-Increments version number of `manifest.json` and `package.json`,
-commits the change to git and adds a git tag.
+...where the latter part is to the `tutusfx_vue` directory you've cloned. You can get this path by typing `pwd` in the Terminal
 
+## Running the Spec Against Ruby Sass
 
-    $ gulp patch      // => 0.0.X
+Go into the gregjava/tutusfx folder that should have been cloned earlier with the "bootstrap" command. Run the following.
 
-or
+````
+bundle install
+./gregjava/tutusfx_vue.rb
+````
 
-    $ gulp feature    // => 0.X.0
+Voila! Now you are testing against Sass too!
 
-or
-
-    $ gulp release    // => X.0.0
-
-
-## Globals
-
-The build tool also defines a variable named `ENV` in your scripts. It will be set to `development` unless you use the `--production` option.
-
-
-**Example:** `./app/background.js`
-
-	if(ENV === 'development'){
-		console.log('We are in development mode!');
-	}

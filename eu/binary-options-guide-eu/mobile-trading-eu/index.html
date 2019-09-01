@@ -53,8 +53,8 @@
 				s.parentNode.insertBefore(wf, s);
 			})(document);
 		</script>
-		<script type='text/javascript'> /* <![CDATA[ */ var ajaxurl = "\/\/wp-admin\/admin-ajax.php"; /* ]]> */ </script>
-		<script type='text/javascript'> /* <![CDATA[ */ var save_like = {"ajaxurl":"\/\/wp-admin\/admin-ajax.php"}; /* ]]> */ </script>
+		<script type='text/javascript'> /* <![CDATA[ */ var ajaxurl = "\/\/\/wp-admin\/admin-ajax.php"; /* ]]> */ </script>
+		<script type='text/javascript'> /* <![CDATA[ */ var save_like = {"ajaxurl":"\/\/\/wp-admin\/admin-ajax.php"}; /* ]]> */ </script>
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 					(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -68,8 +68,8 @@
 		/* <![CDATA[ */
 		var legal_link = "#\/eu\/terms-and-conditions-eu\/";
 		var pending_balance_trans = "Pending Balance";
-		var trade_link = "#\/\/redirects\/trade\/";
-		var admin_ajax = {"ajaxurl":"\/\/wp-admin\/admin-ajax.php"};
+		var trade_link = "#\/redirects\/trade\/";
+		var admin_ajax = {"ajaxurl":"\/\/\/wp-admin\/admin-ajax.php"};
 		/* ]]> */
 		</script>
 		<link rel="canonical" href="eu/binary-options-guide-eu/mobile-trading-eu/index.html" />
@@ -278,6 +278,7 @@
 			
 			function IsLoggedIn(){ return <?php if ( isset($_SESSION['user']) && $_SESSION['user']!=="") echo true; else echo false; ?>; }
         </script>
+		
 		<div id="ratebar"><marquee id="ads" scrolldelay="1s" scrollamount="3">
 			<span class="usdcad">USD/CAD: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="usdjpy">USD/JPY: <span class="positiverate">000:0000</span></span> &nbsp;
@@ -301,7 +302,11 @@
 			<span class="eurjpy">EUR/JPY: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="chfjpy">CHF/JPY: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="usdsgd">USD/SGD: <span class="positiverate">000:0000</span></span> &nbsp;
-			<span class="usdcad">USD/NGN: <span class="positiverate">000:0000</span></span></marquee><button id="upperclosebtn" onclick="doupperclosing()" class="glyphicon glyphicon-arrow-right rightAlign close-upper"></button></div><div id="header" class="animatePix">
+			<span class="usdcad">USD/NGN: <span class="positiverate">000:0000</span></span></marquee>
+			<button id="upperclosebtn" class="glyphicon glyphicon-arrow-right rightAlign close-upper"></button>
+		</div>
+		
+		<div id="header" class="animatePix">
 		  <h1 id="headertitle">Tutusfx</h1>
 		  <p id="headercontent">An incentivized trade network built on blockchain technology</p>
 		</div>
@@ -395,60 +400,61 @@
 		<div class="container row">
 		  <div class="mainColumn">
 			<div class="card" id="segment">
-<section class="wysiwyg col-xs-12 col-sm-8">
-<div class="row">
-<h2>Live Trading</h2>
-<p>Real-time, Anytime</p>
-<p><em>Solutions for a busy life</em></p>
-<p>Live trading means that every order is executed in real-time and that news, analysis and upgrades are instantly available to you. When you trade with relevant market data your investment choices are based on secure and accurate information. Use tutusfx&#8217; award-winning trading platform to easily trade and invest with confidence. Review your trade history, receive alerts and view economic calendars.</p>
-<h3>Need help choosing a plan?</h3>
-<p>We can help you with any questions about our features, pricing plans or anything else. Simply send us an <a href="https://tutusfx.com/cdn-cgi/l/email-protection#620b0c040d2250560d12160b0d0c4c010d0f">email</a> and we’ll respond to you as soon as possible!</p>
-</div>
-</section>
-<div class="col-xs-12 col-sm-5 col-md-4">
-<div class="need-help-container">
-<div class="need-help">
-<h4>Need help choosing a plan?</h4>
-<p>
-Need help choosing a plan? We can help you with any questions about our features, pricing plans, or anything else. We'll get back to you quickly. </p>
-<h5>
-EMAIL US: </h5>
-<a href="https://tutusfx.com/cdn-cgi/l/email-protection#eb82858d84abd9df849b9f828485c5888486">
-<span class="__cf_email__" data-cfemail="157c7b737a5527217a65617c7a7b3b767a78">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script> </a>
-</div>
-</div>
-</div>
+			  <section class="wysiwyg col-xs-12 col-sm-8">
+				  <div class="row">
+					<h2>Live Trading</h2>
+					<p>Real-time, Anytime</p>
+					<p><em>Solutions for a busy life</em></p>
+					<p>Live trading means that every order is executed in real-time and that news, analysis and upgrades are instantly available to you. When you trade with relevant market data your investment choices are based on secure and accurate information. Use tutusfx&#8217; award-winning trading platform to easily trade and invest with confidence. Review your trade history, receive alerts and view economic calendars.</p>
+					<h3>Need help choosing a plan?</h3>
+					<p>We can help you with any questions about our features, pricing plans or anything else. Simply send us an <a href="https://tutusfx.com/cdn-cgi/l/email-protection#620b0c040d2250560d12160b0d0c4c010d0f">email</a> and we’ll respond to you as soon as possible!</p>
+				  </div>
+			  </section>
+			  <div class="col-xs-12 col-sm-5 col-md-4">
+				<div class="need-help-container">
+				  <div class="need-help">
+					<h4>Need help choosing a plan?</h4>
+					<p>Need help choosing a plan? We can help you with any questions about our features, pricing plans, or anything else. We'll get back to you quickly. </p>
+					<h5>EMAIL US: </h5>
+					<a href="https://tutusfx.com/cdn-cgi/l/email-protection#eb82858d84abd9df849b9f828485c5888486">
+					  <span class="__cf_email__" data-cfemail="157c7b737a5527217a65617c7a7b3b767a78">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script> 
+					</a>
+				  </div>
+				</div>
+			  </div>
 			</div>
 		  </div>
 		  <div class="rightColumn">
-			<div class="card" id="segment">
-			  <h3>Trending Posts</h3>
-			  <div class="fakeimg picture"><p>Image</p></div>
-			  <div class="fakeimg picture"><p>Image</p></div>
-			  <div class="fakeimg picture"><p>Image</p></div>
+			<div class="card">
+			  <div id="segment"><br>
+				<h3>Blockchain Posts</h3><hr>
+				<span>
+				<h5><b>Title description</b></h5><br/><h6 class="rightAlign">Nov 15, 2018</h6><br/>
+				<div class="fakeimg largepicture">Image</div><hr>
+				<p>Some text from Post 1...</p>
+				<p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p><hr><br>
+				</span>
+				<span>
+				<h5><b>Title description</b></h5><br/><h6 class="rightAlign">Nov 22, 2018</h6><br/>
+				<div class="fakeimg largepicture">Image</div><hr>
+				<p>Some text from Post 2...</p>
+				<p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p><hr><br>
+				</span>
+				<span>
+				<h5><b>Title description</b></h5><br/><h6 class="rightAlign">Dec 10, 2018</h6><br/>
+				<div class="fakeimg largepicture">Image</div><hr>
+				<p>Some text from Post 3...</p>
+				<p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p><hr>
+				</span>
+			  </div>
 			</div>
-			<div class="card" id="segment">
-			  <h3>Vote a Witness</h3>
-			  <h4> &nbsp; &nbsp; &nbsp; <em>List of top witnesses</em></h4>
-			  <p>1. @darkspot</p>
-			  <p>2. @kutygee</p>
-			  <p>3. @thegenius</p>
-			  <p>4. @yogolod</p>
-			  <p>5. @ynl</p>
-			  <p>6. @javakid</p>
-			  <p>7. @icey</p>
-			  <p>8. @barbie12</p>
-			  <p>9. @ultra1</p>
-			  <p>10. @futile</p>
-			  <p class="rightAlign"><a href="">More...</a></p><br/><p>
-			</div>
-			<div id="returner"> <a href="#">Return to top <span class="glyphicon glyphicon-arrow-up"></span></a><br/> </div>
+			<span class="returner"> <a href="#">Return to top <span class="glyphicon glyphicon-arrow-up"></span></a><br/> </span>
 		  </div>
 		</div>
 		
-		<div class="footer">
+		<div class="footer clearnav">
 		  <div class="upper-footer"><a href="">Sponsorship</a><a href="">Fund Safety &amp; Security</a><a href="../../sitemap-eu/index.html">Sitemap</a><a href="">Networks</a><a href="../../contact-us-eu/">Contact Us</a></div>
-		  <div class="card clearnav">
+		  <div class="card">
 			<div class="footerCard"><h6>QUICK LINKS</h6>
 				<a href="">DEVELOPERS</a><br/>
 				<a href="">MARKETPLACE</a><br/>
@@ -504,10 +510,10 @@ EMAIL US: </h5>
 				<a href="https://www.dukascopy.com/land/trading/eu/forex">DUKASCOPY</a><br/>
 			</div>
 			<div class="footerCard warning"><h6><strong>GENERAL RISK WARNING</strong></h6>
-				<span>TRADING IN CRYPTOCURRENCIES, FOREX & CFDS CARRY A HIGH LEVEL OF RISK AND MAY NOT BE APPROPRIATE FOR ALL INVESTORS.  IT IS POSSIBLE TO LOSE OF ALL OF YOUR INVESTED CAPITAL SO, YOU SHOULD NOT INVEST MONEY THAT YOU CANNOT AFFORD TO LOSE. FOR MORE INFORMATION ABOUT THE RISKS INVOLVED, PLEASE<a href="../terms-and-conditions-eu/risk-disclosure-eu/index.html"> CLICK HERE</a> .</span>
+				<span>TRADING IN CRYPTOCURRENCIES, FOREX & CFDS CARRY A HIGH LEVEL OF RISK AND MAY NOT BE APPROPRIATE FOR ALL INVESTORS.  IT IS POSSIBLE TO LOSE OF ALL OF YOUR INVESTED CAPITAL SO, YOU SHOULD NOT INVEST MONEY THAT YOU CANNOT AFFORD TO LOSE. FOR MORE INFORMATION ABOUT THE RISKS INVOLVED, PLEASE<a href="../../terms-and-conditions-eu/risk-disclosure-eu/index.html"> CLICK HERE</a> .</span>
 			</div>
 			<div id="footerDiv"><h6 id="footerDivHeader">GENERAL RISK WARNING</h6><button id="close" class="glyphicon glyphicon-arrow-up btn badge"></button><br/><br/>
-				<span id="footerDivTexts">TRADING IN CRYPTOCURRENCIES, FOREX & CFDS CARRY A HIGH LEVEL OF RISK AND MAY NOT BE APPROPRIATE FOR ALL INVESTORS.  IT IS POSSIBLE TO LOSE OF ALL OF YOUR INVESTED CAPITAL SO, YOU SHOULD NOT INVEST MONEY THAT YOU CANNOT AFFORD TO LOSE. FOR MORE INFORMATION ABOUT THE RISKS INVOLVED, PLEASE<a href="eu/terms-and-conditions-eu/risk-disclosure-eu/index.html"> CLICK HERE</a> .</span>
+				<span id="footerDivTexts">TRADING IN CRYPTOCURRENCIES, FOREX & CFDS CARRY A HIGH LEVEL OF RISK AND MAY NOT BE APPROPRIATE FOR ALL INVESTORS.  IT IS POSSIBLE TO LOSE OF ALL OF YOUR INVESTED CAPITAL SO, YOU SHOULD NOT INVEST MONEY THAT YOU CANNOT AFFORD TO LOSE. FOR MORE INFORMATION ABOUT THE RISKS INVOLVED, PLEASE<a href="../../terms-and-conditions-eu/risk-disclosure-eu/index.html"> CLICK HERE</a> .</span>
             </div>
 		  </div>
 		</div>

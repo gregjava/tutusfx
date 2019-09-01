@@ -26,23 +26,22 @@
 		<link rel="icon" href="../../../../assets/images/new_logo.ico" type="image/x-icon" />
 		<link rel="shortcut icon" href="../../../../assets/images/new_logo.ico" type="image/x-icon" />
 		<link rel="stylesheet" href="../../../../assets/css/bootstrap.min.css">
-		<link rel="stylesheet" href="../../../../assets/css/style2.css" type="text/css" media="all">
+		<link rel="stylesheet" href="../../../../assets/css/style.css" type="text/css" media="all">
 		<link rel="manifest" href="../../../../manifest.json" /> <!--server:header--> 
 		<link rel="canonical" href="eu/binary-options-guide-eu/trading-guide-eu/what-is-binary-options-trading-eu/index.html" />
 		<link rel="alternate" hreflang="en-GB" href="index.html"/>
-		<link rel="alternate" hreflang="fr-FR" href="../../../fr/binary-options-guide-fr/trading-guide-fr/what-is-binary-options-trading-eu/index.html"/>
-		<link rel="alternate" hreflang="de-DE" href="../../../de/binary-options-guide-de/trading-guide-de/what-is-binary-options-trading-de/index.html"/>
-		<link rel="alternate" hreflang="it-IT" href="../../../it/binary-options-guide-it/trading-guide-it/what-is-binary-options-trading-it/index.html"/>
-		<link rel="alternate" hreflang="es-ES" href="../../../es/binary-options-guide-es/trading-guide-es/what-is-binary-options-trading-es/index.html"/>
-		<link rel="alternate" hreflang="ru-RU" href="../../../ru/binary-options-guide-ru/trading-guide-ru/what-is-binary-options-trading-ru/index.html"/>
-		<link rel="alternate" hreflang="ar-AR" href="../../../ar/binary-options-guide-ar/trading-guide-ar/what-is-binary-options-trading-ar/index.html"/>
-		<link rel="alternate" hreflang="sv-SE" href="../../../sv/binary-options-guide-sv/trading-guide-sv/what-is-binary-options-trading-sv/index.html"/>
-		<link rel="alternate" hreflang="nl-NL" href="../../../nl/binary-options-guide-nl/trading-guide-nl/what-is-binary-options-trading-nl/index.html"/>
-		<link rel="alternate" hreflang="nb-NO" href="../../../nb/binary-options-guide-nb/trading-guide-nb/what-is-binary-options-trading-nb/index.html"/>
-		<link rel="alternate" hreflang="pl-PL" href="../../../pl/binary-options-guide-pl/trading-guide-pl/what-is-binary-options-trading-pl/index.html"/>
+		<link rel="alternate" hreflang="fr-FR" href="../../../../fr/binary-options-guide-fr/trading-guide-fr/what-is-binary-options-trading-eu/index.html"/>
+		<link rel="alternate" hreflang="de-DE" href="../../../../de/binary-options-guide-de/trading-guide-de/what-is-binary-options-trading-de/index.html"/>
+		<link rel="alternate" hreflang="it-IT" href="../../../../it/binary-options-guide-it/trading-guide-it/what-is-binary-options-trading-it/index.html"/>
+		<link rel="alternate" hreflang="es-ES" href="../../../../es/binary-options-guide-es/trading-guide-es/what-is-binary-options-trading-es/index.html"/>
+		<link rel="alternate" hreflang="ru-RU" href="../../../../ru/binary-options-guide-ru/trading-guide-ru/what-is-binary-options-trading-ru/index.html"/>
+		<link rel="alternate" hreflang="ar-AR" href="../../../../ar/binary-options-guide-ar/trading-guide-ar/what-is-binary-options-trading-ar/index.html"/>
+		<link rel="alternate" hreflang="sv-SE" href="../../../../sv/binary-options-guide-sv/trading-guide-sv/what-is-binary-options-trading-sv/index.html"/>
+		<link rel="alternate" hreflang="nl-NL" href="../../../../nl/binary-options-guide-nl/trading-guide-nl/what-is-binary-options-trading-nl/index.html"/>
+		<link rel="alternate" hreflang="nb-NO" href="../../../../nb/binary-options-guide-nb/trading-guide-nb/what-is-binary-options-trading-nb/index.html"/>
+		<link rel="alternate" hreflang="pl-PL" href="../../../../pl/binary-options-guide-pl/trading-guide-pl/what-is-binary-options-trading-pl/index.html"/>
 		<script src="../../../../assets/js/jquery.min.js"></script>
-		<script src="../../../../assets/js/bootstrap.min.js"></script> 
-		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<script src="../../../../assets/js/bootstrap.min.js"></script>
 		
 		<script>
 			date = new Date();
@@ -297,19 +296,8 @@
 			
 			function IsLoggedIn(){ return <?php if ( isset($_SESSION['user']) && $_SESSION['user']!=="") echo true; else echo false; ?>; }
         </script>
-		<div id="ratebar">
-		<div id="app">
-			{{ message }}
-		</div>
-    <script>
-        var app = new Vue({
-            el: '#app',
-            data: {
-                message: 'Hello User!'
-            }
-        })
-        
-    </script><marquee id="ads" scrolldelay="1s" scrollamount="3">
+		
+		<div id="ratebar"><marquee id="ads" scrolldelay="1s" scrollamount="3">
 			<span class="usdcad">USD/CAD: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="usdjpy">USD/JPY: <span class="positiverate">000:0000</span></span> &nbsp;
 			<span class="usdchf">USD/CHF: <span class="positiverate">000:0000</span></span> &nbsp;
@@ -335,137 +323,162 @@
 			<span class="usdcad">USD/NGN: <span class="positiverate">000:0000</span></span></marquee>
 			<button id="upperclosebtn" class="glyphicon glyphicon-arrow-right rightAlign close-upper"></button>
 		</div>
+		
 		<div id="header" class="animatePix">
 		  <h1 id="headertitle">Tutusfx</h1>
 		  <p id="headercontent">An incentivized trade network built on blockchain technology</p>
 		</div>
 		
 		<div id="topnav"><!-- sticky header -->
-			<nav class="navbar navbar-inverse"><!-- right hidden menu -->
-			  <div class="container-fluid">
-				<div class="navbar-header">
-				  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navi">
-					<span id="icon-bar1" class="icon-bar"></span><span id="icon-bar2" class="icon-bar"></span><span id="icon-bar3" class="icon-bar"></span><span id="icon-bar4" class="icon-bar"></span>                        
-				  </button><input type="search" value="" placeholder="Search item"></input><a class="navbar-brand" href="#"><img src="../../../../assets/images/logo_bar.png" alt="Tutusfx" /></a>
-				</div>
-				<div class="collapse navbar-collapse" id="navi">
-				  <ul class="nav navbar-nav">
-					<li><a href="../../index.html">Home</a></li>
-					<li><input type="button" id="back" value="Back" onclick="prevPage()" ></input></li>
-					<li><input type="button" id="next" value="Next" onclick="nextPage()" ></input></li>
-				  </ul>
-				  <ul class="nav navbar-nav navbar-right">
-					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Tools <span class="caret"></span></a>
-					  <ul class="dropdown-menu">
-						<li class="dropdown-submenu"><a class="droplevel2" tabindex="-1" href="#">Visibility <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><input tabindex="-1" type="button" id="tradebar" value="Trade Bar"></input></li>
-								<li><input tabindex="-1" type="button" id="sitefooter" value="Footer"></input></li>
-								<li><input tabindex="-1" type="button" id="headertexts" value="Header Texts"></input></li>
-								<li><input tabindex="-1" type="button" id="attendant" value="Attendant"></input></li>
-							</ul>
-						</li>
-						<li class="dropdown-submenu"><a class="droplevel2" tabindex="-1" href="#">Theme <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><input tabindex="-1" type="button" id="nature" value="Nature" ></input></li>
-								<li><input tabindex="-1" type="button" id="night" value="Night" ></input></li>
-								<li><input tabindex="-1" type="button" id="sunny" value="Sunny" ></input></li>
-								<li><input tabindex="-1" type="button" id="cloudy" value="Cloudy" ></input></li>
-								<li><input tabindex="-1" type="button" id="romance" value="Romance" ></input></li>
-								<li><input tabindex="-1" type="button" id="royal" value="Royal" ></input></li>
-								<li><input tabindex="-1" type="button" id="aqua" value="Aqua" ></input></li>
-								<li><input tabindex="-1" type="button" id="teal" value="Teal" ></input></li>
-								<li><input tabindex="-1" type="button" id="deeproyal" value="DeepRoyal" ></input></li>
-								<li><input tabindex="-1" type="button" id="silver" value="Silver" ></input></li>
-							</ul>
-						</li>
-					  </ul>
-					</li>
-					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Legal <span class="caret"></span></a>
-					  <ul class="dropdown-menu">
-						<li><a href="../../../about-us-eu/index.html">About Tutusfx</a></li>
-						<li><a href="../../../../assets/docs/whitepaper.pdf">Tutusfx Whitepaper</a></li>
-						<li class="dropdown-submenu"><a class="droplevel2" tabindex="-1" href="#">Terms of Service <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><input tabindex="-1" type="button" id="catpolicy" value="Client Categorisation Policy"></input></li>
-								<li><input tabindex="-1" type="button" id="bonuspolicy" value="Bonuses"></input></li>
-								<li><input tabindex="-1" type="button" id="compinfo" value="Company Information"></input></li>
-								<li><input tabindex="-1" type="button" id="complainproc" value="Complaints Procedure for Clients"></input></li>
-								<li><input tabindex="-1" type="button" id="confintpolicy" value="Conflicts of Interest Policy"></input></li>
-								<li><input tabindex="-1" type="button" id="genfeespolicy" value="General Fees"></input></li>
-								<li><input tabindex="-1" type="button" id="riskdiscs" value="Risk Disclosure"></input></li>
-								<li><input tabindex="-1" type="button" id="bestintpolicy" value="Best Interest and Order Execution Policy"></input></li>
-							</ul>
-						</li>
-						<li><a href="../../../../redirects/login.html">Privacy Policy</a></li>
-					  </ul>
-					</li>
-					<li class="dropdown">
-					  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Guide <span class="caret"></span></a>
-					  <ul class="dropdown-menu">
-						<li><a href="../../../../redirects/login.html">Sitemap</a></li>
-						<li><a href="../../../faqs/index.html">Frequently Asked Questions</a></li>
-					  </ul>
-					</li>
-					<li class="dropdown">
-					  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <span class="caret"></span></a>
-					  <ul class="dropdown-menu">
-						<li><a href="../../../../redirects/login.html">App Store</a></li>
-						<li><a href="../../../../redirects/login.html">Third-Party Exchanges</a></li>
-						<li><a href="../../../../redirects/login.html">Currency Markets</a></li>
-						<li><a href="../../../../redirects/login.html">Chat</a></li>
-						<li><a href="../../../../redirects/login.html">Vote for Witness</a></li>
-						<li><a href="../../../../redirects/my-account/change-password/">Reset Password</a></li>
-					  </ul>
-					</li>
-					<li><a href="../../../../redirects/open-account/"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-					<li><a href="../../../../redirects/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-				  </ul>
-				</div>
+		  <nav class="navbar navbar-inverse"><!-- right hidden menu -->
+			<div class="container-fluid">
+			  <div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navi">
+				  <span id="icon-bar1" class="icon-bar"></span>
+				  <span id="icon-bar2" class="icon-bar"></span>
+				  <span id="icon-bar3" class="icon-bar"></span>
+				  <span id="icon-bar4" class="icon-bar"></span>                        
+				</button><a class="navbar-brand" href="../../../index.html"><img src="../../../../assets/images/logo_bar.png" alt="Tutusfx" /></a>
 			  </div>
-			</nav>
+			  <div class="collapse navbar-collapse" id="navi">
+				<ul class="nav navbar-nav navbar-left">
+				  <li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">More... <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+					  <li><input type="search" placeholder="Search item" class="glyphicon glyphicon-search"></input></li>
+					  <li class="themeObj"><button id="back" onclick="prevPage()" >Back<span class="glyphicon glyphicon-step-forward"></span> </button> </li>
+					  <li class="themeObj"><button id="next" onclick="nextPage()" >Next<span class="glyphicon glyphicon-step-backward"></span> </button> </li>
+					</ul>
+				  </li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+				  <li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Visibility <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+					  <li><button id="tradebar">Trade Bar<span class="glyphicon close"></span> </button></li>
+					  <li><button id="sitefooter">Footer<span class="glyphicon close"></span> </button></li>
+					  <li><button id="headertexts">Header Texts<span class="glyphicon close"></span> </button></li>
+					  <li><button id="attendant">Attendant<span class="glyphicon close"></span> </button></li>
+					</ul>
+				  </li>
+				  <li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Theme <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+					  <li><button id="nature" >Nature</button></li>
+					  <li><button id="night" >Night</button></li>
+					  <li><button id="sunny" >Sunny</button></li>
+					  <li><button id="cloudy" >Cloudy</button></li>
+					  <li><button id="romance" >Romance</button></li>
+					  <li><button id="royal" >Royal</button></li>
+					  <li><button id="aqua" >Aqua</button></li>
+					  <li><button id="teal" >Teal</button></li>
+					  <li><button id="deeproyal" >DeepRoyal</button></li>
+					  <li><button id="silver" >Silver</button></li>
+					</ul>
+				  </li>
+				  <li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+					  <li><a href="../../../../redirects/login.html">App Store</a></li>
+					  <li><a href="../../../../redirects/login.html">Third-Party Exchanges</a></li>
+					  <li><a href="../../../../redirects/login.html">Currency Markets</a></li>
+					  <li><a href="../../../../redirects/login.html">Chat</a></li>
+					  <li><a href="../../../../redirects/login.html">Vote for Witness</a></li>
+					  <li><a href="../../../contact-us-eu/"><span class="glyphicon glyphicon-envelope"></span> Contact Us</a></li>
+					  <li><a href="../../../../redirects/open-account/"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+					  <li><a href="../../../../redirects/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					  <li><a href="../../../../redirects/login.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+					  <li><a href="../../../../redirects/my-account/change-password/">Reset Password</a></li>
+					</ul>
+				  </li>
+				  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Legal <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+					  <li class="dropdown-submenu"><a class="droplevel2" tabindex="-1" href="#">Terms of Service <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+						  <li><button tabindex="-1" id="catpolicy">Client Categorisation Policy</button></li>
+						  <li><button tabindex="-1" id="bonuspolicy">Bonuses</button></li>
+						  <li><button tabindex="-1" id="compinfo">Company Information</button></li>
+						  <li><button tabindex="-1" id="complainproc">Complaints Procedure for Clients</button></li>
+						  <li><button tabindex="-1" id="confintpolicy">Conflicts of Interest Policy</button></li>
+						  <li><button tabindex="-1" id="genfeespolicy">General Fees</button></li>
+						  <li><button tabindex="-1" id="riskdiscs">Risk Disclosure</button></li>
+						  <li><button tabindex="-1" id="bestintpolicy">Best Interest and Order Execution Policy</button></li>
+						</ul>
+					  </li>
+					  <li><a href="../../../about-us-eu/index.html">About Tutusfx</a></li>
+					  <li><a href="../../../../assets/docs/whitepaper.pdf">Tutusfx Whitepaper</a></li>
+					  <li><a href="../../../../redirects/login.html">Privacy Policy</a></li>
+					</ul>
+				  </li>
+				  <li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Guide <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+					  <li><a href="../../../../redirects/login.html">Sitemap</a></li>
+					  <li><a href="../../../faqs/index.html">Frequently Asked Questions</a></li>
+					</ul>
+				  </li>
+				</ul>
+			  </div>
+			</div>
+		  </nav>
 		</div>
 
 		<div class="container row">
 		  <div class="expandableColumn"><button class="glyphicon close">&times;</button>
-<div class="wysiwyg">
-<h3>Trading Binary options</h3>
-<p>Binary options trading combines the analytical aspects of day trading with the powerful features of traditional options trading.With binary options trading, you can potentially generate profits or loses, based on the rise or fall of an asset during a certain time period, ranging from 60 seconds to several days.</p>
-<h4>Start trading binary options!</h4>
-<p>One of the primary reasons for the popularity of Tutusfx's binary option trading is the ease-of-use of the Tutusfx trading platform. It is designed to be very user-friendly and provides features that can help you manage your independent trading decisions.  Once your <a href="../../faq-eu/account-types-eu/index.html">trading account</a> is setup, you can start trading immediately.</p>
-<p>When you trade binary options there are three essential steps:<br/>
-1. Choose an asset<br/>
-2. Choose the direction of the market price<br/>
-3. Choose the amount you wish to trade</p>
-<h3>Why is binary options trading so popular?</h3>
-<h4>Convenient</h4>
-<p><a href="http://www.tutusfx.com/eu/">Binary options</a> have exploded in popularity because of the comfort that traders receive by having the opportunity to know the exact amount that they can POTENTIALLY earn OR LOSE in case of a successful or not option from ahead of time</p>
-<p>Binary options are also popular because of the many opportunities to trade. With so many different global financial markets, traders can very often find numerous binary option trading opportunities available on the Tutusfx platform.</p>
-<h3>Acting and Reacting</h3>
-<h4>Daily market opportunities to trade</h4>
-<p>Due to the reactive nature of the financial markets from daily news reports among many other factors, the Tutusfx platform provides a diverse amount of trading opportunities. For example, whenever the value of a stock such as Facebook rises or falls due to a news announcement, its change in value can represent an investment opportunity where you can open a position on the Tutusfx platform.  There are many opportunities throughout the day in which you can take advantage.</p>
-<p>Keep in mind that like all investment opportunities, trading binary options involves a certain risk of loss of the invested capital. That’s why it’s important you visit the <u><a href="https://www.tutusfx.com/eu/education-center-eu/video-center-eu/" target="_blank">Video Trading Academy</a></u> to educate yourself before investing your funds; doing this you will minimize your risk of loss! <a href="https://www.tutusfx.com/eu/terms-and-conditions-eu/risk-disclosure-eu/" target="_blank">Click here</a> to visit the risk disclaimer.</p>
-<p>Check the <a href="../what-is-binary-options-trading-eu/" target="_blank">What is Binary Options Trading</a> page for more useful tips and information.</p>
-<h3></h3>
-</div>
-<div class="reg">
-</div>
+			<div class="wysiwyg">
+			<h3>Trading Binary options</h3>
+			<p>Binary options trading combines the analytical aspects of day trading with the powerful features of traditional options trading.With binary options trading, you can potentially generate profits or loses, based on the rise or fall of an asset during a certain time period, ranging from 60 seconds to several days.</p>
+			<h4>Start trading binary options!</h4>
+			<p>One of the primary reasons for the popularity of Tutusfx's binary option trading is the ease-of-use of the Tutusfx trading platform. It is designed to be very user-friendly and provides features that can help you manage your independent trading decisions.  Once your <a href="../../faq-eu/account-types-eu/index.html">trading account</a> is setup, you can start trading immediately.</p>
+			<p>When you trade binary options there are three essential steps:<br/>
+			1. Choose an asset<br/>
+			2. Choose the direction of the market price<br/>
+			3. Choose the amount you wish to trade</p>
+			<h3>Why is binary options trading so popular?</h3>
+			<h4>Convenient</h4>
+			<p><a href="http://www.tutusfx.com/eu/">Binary options</a> have exploded in popularity because of the comfort that traders receive by having the opportunity to know the exact amount that they can POTENTIALLY earn OR LOSE in case of a successful or not option from ahead of time</p>
+			<p>Binary options are also popular because of the many opportunities to trade. With so many different global financial markets, traders can very often find numerous binary option trading opportunities available on the Tutusfx platform.</p>
+			<h3>Acting and Reacting</h3>
+			<h4>Daily market opportunities to trade</h4>
+			<p>Due to the reactive nature of the financial markets from daily news reports among many other factors, the Tutusfx platform provides a diverse amount of trading opportunities. For example, whenever the value of a stock such as Facebook rises or falls due to a news announcement, its change in value can represent an investment opportunity where you can open a position on the Tutusfx platform.  There are many opportunities throughout the day in which you can take advantage.</p>
+			<p>Keep in mind that like all investment opportunities, trading binary options involves a certain risk of loss of the invested capital. That’s why it’s important you visit the <u><a href="https://www.tutusfx.com/eu/education-center-eu/video-center-eu/" target="_blank">Video Trading Academy</a></u> to educate yourself before investing your funds; doing this you will minimize your risk of loss! <a href="https://www.tutusfx.com/eu/terms-and-conditions-eu/risk-disclosure-eu/" target="_blank">Click here</a> to visit the risk disclaimer.</p>
+			<p>Check the <a href="../what-is-binary-options-trading-eu/" target="_blank">What is Binary Options Trading</a> page for more useful tips and information.</p>
+			<h3></h3>
+			</div>
+			<div class="reg"></div>
 		  </div>
 		  <div class="floatingColumn"><button class="glyphicon close">&times;</button>
-			<div class="card" id="segment">
-				<h3>Trending Posts</h3>
-				<div class="fakeimg picture"><p>Image</p></div>
-				<div class="fakeimg picture"><p>Image</p></div>
-				<div class="fakeimg picture"><p>Image</p></div>
+			<div class="card">
+			  <div id="segment"><br>
+				<h3>Blockchain Posts</h3><hr>
+				<span>
+				<h5><b>Title description</b></h5><br/><h6 class="rightAlign">Nov 15, 2018</h6><br/>
+				<div class="fakeimg largepicture">Image</div><hr>
+				<p>Some text from Post 1...</p>
+				<p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p><hr><br>
+				</span>
+				<span>
+				<h5><b>Title description</b></h5><br/><h6 class="rightAlign">Nov 22, 2018</h6><br/>
+				<div class="fakeimg largepicture">Image</div><hr>
+				<p>Some text from Post 2...</p>
+				<p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p><hr><br>
+				</span>
+				<span>
+				<h5><b>Title description</b></h5><br/><h6 class="rightAlign">Dec 10, 2018</h6><br/>
+				<div class="fakeimg largepicture">Image</div><hr>
+				<p>Some text from Post 3...</p>
+				<p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p><hr>
+				</span>
+			  </div>
 			</div>
-			<div id="returner"> <a href="#">Return to top <span class="glyphicon glyphicon-arrow-up"></span></a><br/> </div>
+			<span class="returner"> <a href="#">Return to top <span class="glyphicon glyphicon-arrow-up"></span></a><br/> </span>
 			<div class="assistant"><button id="closeassistant" class="glyphicon glyphicon-arrow-up btn badge"></button></div>
 		  </div>
 		</div>
 		
-		<div class="footer">
+		<div class="footer clearnav">
 		  <div class="upper-footer"><a href="">Sponsorship</a><a href="">Fund Safety &amp; Security</a><a href="../../../sitemap-eu/index.html">Sitemap</a><a href="">Networks</a><a href="../../../contact-us-eu/">Contact Us</a></div>
-		  <div class="card clearnav">
+		  <div class="card">
 			<div class="footerCard"><h6>QUICK LINKS</h6>
 				<a href="">DEVELOPERS</a><br/>
 				<a href="">MARKETPLACE</a><br/>
@@ -492,17 +505,17 @@
 			</div>
 			<div class="footerCard"><h6>CHOOSE LANGUAGE</h6>
 				<a href="">TUTUSFX.COM INTERNATIONAL</a><br/>
-				<a href="../../../de/binary-options-guide-de/trading-guide-de/what-is-binary-options-trading-de/index.html">TUTUSFX.COM DEUTSCHE</a><br/>
-				<a href="../../../it/binary-options-guide-it/trading-guide-it/what-is-binary-options-trading-it/index.html">TUTUSFX.COM ITALIANO</a><br/>
-				<a href="../../../fr/binary-options-guide-fr/trading-guide-fr/what-is-binary-options-trading-fr/index.html">TUTUSFX.COM FRANCAISE</a><br/>
-				<a href="../../../es/binary-options-guide-es/trading-guide-es/what-is-binary-options-trading-es/index.html">TUTUSFX.COM ESPAÑOL</a><br/>
-				<a href="../../../zh-tw/binary-options-guide-zh-tw/trading-guide-zh-tw/what-is-binary-options-trading-zh-tw/index.html">TUTUSFX.COM 中文</a><br/>
-				<a href="../../../hi-in/binary-options-guide-hi-in/trading-guide-hi-in/what-is-binary-options-trading-hi-in/index.html">TUTUSFX.COM HINDI</a><br/>
-				<a href="../../../ar-ar/binary-options-guide-ar/trading-guide-ar/what-is-binary-options-trading-ar/index.html">TUTUSFX.COM ARABIC</a><br/>
-				<a href="../../../us/binary-options-guide-us/trading-guide-us/what-is-binary-options-trading-us/index.html">TUTUSFX.COM AMERICAN</a><br/>
-				<a href="../../../ru-ru/binary-options-guide-ru/trading-guide-ru/what-is-binary-options-trading-ru/index.html">TUTUSFX.COM RUSSIAN</a><br/>
-				<a href="../../../ms/binary-options-guide-ms/trading-guide-ms/what-is-binary-options-trading-ms/index.html">TUTUSFX.COM MALAY</a><br/>
-				<a href="../../../pt-pt/binary-options-guide-pt-pt/trading-guide-pt-pt/what-is-binary-options-trading-pt-pt/index.html">TUTUSFX.COM PORTUGUESE (EU)</a><br/>
+				<a href="../../../../de/binary-options-guide-de/trading-guide-de/what-is-binary-options-trading-de/index.html">TUTUSFX.COM DEUTSCHE</a><br/>
+				<a href="../../../../it/binary-options-guide-it/trading-guide-it/what-is-binary-options-trading-it/index.html">TUTUSFX.COM ITALIANO</a><br/>
+				<a href="../../../../fr/binary-options-guide-fr/trading-guide-fr/what-is-binary-options-trading-fr/index.html">TUTUSFX.COM FRANCAISE</a><br/>
+				<a href="../../../../es/binary-options-guide-es/trading-guide-es/what-is-binary-options-trading-es/index.html">TUTUSFX.COM ESPAÑOL</a><br/>
+				<a href="../../../../zh-tw/binary-options-guide-zh-tw/trading-guide-zh-tw/what-is-binary-options-trading-zh-tw/index.html">TUTUSFX.COM 中文</a><br/>
+				<a href="../../../../hi-in/binary-options-guide-hi-in/trading-guide-hi-in/what-is-binary-options-trading-hi-in/index.html">TUTUSFX.COM HINDI</a><br/>
+				<a href="../../../../ar-ar/binary-options-guide-ar/trading-guide-ar/what-is-binary-options-trading-ar/index.html">TUTUSFX.COM ARABIC</a><br/>
+				<a href="../../../../us/binary-options-guide-us/trading-guide-us/what-is-binary-options-trading-us/index.html">TUTUSFX.COM AMERICAN</a><br/>
+				<a href="../../../../ru-ru/binary-options-guide-ru/trading-guide-ru/what-is-binary-options-trading-ru/index.html">TUTUSFX.COM RUSSIAN</a><br/>
+				<a href="../../../../ms/binary-options-guide-ms/trading-guide-ms/what-is-binary-options-trading-ms/index.html">TUTUSFX.COM MALAY</a><br/>
+				<a href="../../../../pt-pt/binary-options-guide-pt-pt/trading-guide-pt-pt/what-is-binary-options-trading-pt-pt/index.html">TUTUSFX.COM PORTUGUESE (EU)</a><br/>
 				<!-- OTHER LANGUAGE VERSIONS -->
 			</div>
 			<div class="footerCard"><h6>RELATED SITES</h6>
@@ -522,10 +535,10 @@
 				<a href="https://www.dukascopy.com/land/trading/eu/forex">DUKASCOPY</a><br/>
 			</div>
 			<div class="footerCard warning"><h6><strong>GENERAL RISK WARNING</strong></h6>
-				<span>TRADING IN CRYPTOCURRENCIES, FOREX & CFDS CARRY A HIGH LEVEL OF RISK AND MAY NOT BE APPROPRIATE FOR ALL INVESTORS.  IT IS POSSIBLE TO LOSE OF ALL OF YOUR INVESTED CAPITAL SO, YOU SHOULD NOT INVEST MONEY THAT YOU CANNOT AFFORD TO LOSE. FOR MORE INFORMATION ABOUT THE RISKS INVOLVED, PLEASE<a href="../terms-and-conditions-eu/risk-disclosure-eu/index.html"> CLICK HERE</a> .</span>
+				<span>TRADING IN CRYPTOCURRENCIES, FOREX & CFDS CARRY A HIGH LEVEL OF RISK AND MAY NOT BE APPROPRIATE FOR ALL INVESTORS.  IT IS POSSIBLE TO LOSE OF ALL OF YOUR INVESTED CAPITAL SO, YOU SHOULD NOT INVEST MONEY THAT YOU CANNOT AFFORD TO LOSE. FOR MORE INFORMATION ABOUT THE RISKS INVOLVED, PLEASE<a href="../../../terms-and-conditions-eu/risk-disclosure-eu/index.html"> CLICK HERE</a> .</span>
 			</div>
 			<div id="footerDiv"><h6 id="footerDivHeader">GENERAL RISK WARNING</h6><button id="close" class="glyphicon glyphicon-arrow-up btn badge"></button><br/><br/>
-				<span id="footerDivTexts">TRADING IN CRYPTOCURRENCIES, FOREX & CFDS CARRY A HIGH LEVEL OF RISK AND MAY NOT BE APPROPRIATE FOR ALL INVESTORS.  IT IS POSSIBLE TO LOSE OF ALL OF YOUR INVESTED CAPITAL SO, YOU SHOULD NOT INVEST MONEY THAT YOU CANNOT AFFORD TO LOSE. FOR MORE INFORMATION ABOUT THE RISKS INVOLVED, PLEASE<a href="../terms-and-conditions-eu/risk-disclosure-eu/index.html"> CLICK HERE</a> .</span>
+				<span id="footerDivTexts">TRADING IN CRYPTOCURRENCIES, FOREX & CFDS CARRY A HIGH LEVEL OF RISK AND MAY NOT BE APPROPRIATE FOR ALL INVESTORS.  IT IS POSSIBLE TO LOSE OF ALL OF YOUR INVESTED CAPITAL SO, YOU SHOULD NOT INVEST MONEY THAT YOU CANNOT AFFORD TO LOSE. FOR MORE INFORMATION ABOUT THE RISKS INVOLVED, PLEASE<a href="../../../terms-and-conditions-eu/risk-disclosure-eu/index.html"> CLICK HERE</a> .</span>
             </div>
 		  </div>
 		</div>
