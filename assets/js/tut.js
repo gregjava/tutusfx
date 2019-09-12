@@ -1,20 +1,20 @@
 	/* Script is written in Javascript/JQuery */
-	// These are tag selector variables
-	var body = $("body"); var img = $("img"); var marquee = $("marquee"); var thisselect = $("select"); var paragraph = $("p"); var allinputs = $("input");
-	var ul = $("ul"); var h3 = $("h3"); var h4 = $("h4"); var h5 = $("h5"); var h6 = $("h6"); var hr = $("hr"); var textinputarea = $("textarea");
+	// These are element selector variables
+	var body = $("body"); var img = $("img"); var marquee = $("marquee"); var thisselect = $("select"); var h3 = $("h3"); var paragraph = $("p"); var textinputarea = $("textarea"); var links = $("a"); var allinputs = $("input");
+	var navheaderinputs = $("li input"); var navheaderlinks = $("nav a");
 	 
 	// These are class selector variables
-	var upperFooter = $(".upper-footer"); var upperFooterlink = $(".upper-footer a"); var footer = $(".footer"); var footercard = $(".footerCard"); var closethis = $(".floatingColumn .close"); var closethat = $(".expandableColumn .close");
-	var trendingtrades = $(".trendingtrades"); var trendingtradescontent = $(".trendingtrades p"); var trendingtradeusername = $(".trendingtradeusername"); var expandablecolumn = $(".expandableColumn"); var siteassistant = $(".assistant");
-	var card = $(".card"); var cardlist = $(".cardlist"); var picture = $(".picture"); var cardp = $(".card p"); var warningTextDiv = $(".warning"); var warningspan = $(".warning span"); var maincolumn = $(".mainColumn");
+	var pagefootertopicr = $(".upper-footer"); var pagefooter = $(".footer"); var footerlinks = $(".footer a"); var pagefootercard = $(".footerCard"); var closethis = $(".floatingColumn .close"); var closethat = $(".expandableColumn .close");
+	var trendingtrades = $(".trendingtrades"); var trendingtradeusername = $(".trendingtradeusername"); var card = $(".card"); var cardlist = $(".cardlist"); var expandablecolumn = $(".expandableColumn"); var siteassistant = $(".assistant");
+	var cardahov = $(".card a:hover"); var carda = $(".card a"); var cardp = $(".card p"); var warningdiv = $(".warning"); var warningspan = $(".warning span"); var pagefootertopics = $(".upper-footer a"); var maincolumn = $(".mainColumn");
 	var navcontainer = $(".navbar"); var drawer = $(".collapse"); var dropdown = $(".contactUs-regardingSelect"); var toggledrawer = $(".navbar-toggle"); var rightalign = $(".rightAlign"); var floatingcolumn = $(".floatingColumn");
-	var atradeview = $(".tradeview"); var positiverate = $(".positiverate"); var negativerate = $(".negativerate"); var navbarcontainer = $(".container-fluid"); var navheaderinputs = $("li input"); var navheaderlinks = $("nav a");
-	var itemlist = $(".dropdown"); var menutitle = $(".dropdown-toggle"); var topheader = $(".header"); var elevatedObj = $(".elevatedObj"); var afterrow = $(".row:after"); var afterfooter = $(".footer:after"); var fakeimg = $(".fakeimg");
+	var atradeview = $(".tradeview"); var positiverate = $(".positiverate"); var negativerate = $(".negativerate"); var fakeimg = $(".fakeimg"); var navbarcontainer = $(".container-fluid");
 	
 	// These are id selector variables
-	var closebtn = $("#close"); var ratebar = $("#ratebar"); var backbtn = $("#back"); var nextbtn = $("#next"); var footerdivheader = $("#footerDivHeader"); var footerdivtexts = $("#footerDivTexts"); 
-	var menubar = $("#topnav"); var menuinput = $("#topnav input"); var menuimage = $("#topnav img"); var topheadertitle = $("#headertitle"); var topheadercontent = $("#headercontent");
-	var segments = $("#segment"); var progressBar = $("#progressBar"); var toggleicons = [$("#icon-bar1"),$("#icon-bar2"),$("#icon-bar3"),$("#icon-bar4")]; var myprogress = $("#myProgress"); 
+	var returner = $("#returner");  var returnerhov = $("#returner :hover"); var closebtn = $("#close"); var ratebar = $("#ratebar"); var backbtn = $("#back"); var nextbtn = $("#next"); 
+	var topnavahov = $("#topnav a:hover"); var topnavin = $("#topnav input"); var pagefooterdivheader = $("#footerDivHeader"); var pagefooterdivtexts = $("#footerDivTexts"); var topnavimg = $("#topnav img");
+	var topheader = $("#header"); var toolbar = $("#topnav"); var topheadertitle = $("#headertitle"); var topheadercontent = $("#headercontent"); var myprogress = $("#myProgress"); 
+	var segments = $("#segment"); var vueapp = $("#app"); var topnava = $("#topnav a"); var progressBar = $("#progressBar"); var toggleicons = [$("#icon-bar1"),$("#icon-bar2"),$("#icon-bar3"),$("#icon-bar4")];
 	
 	// These are utility variables and flags
 	var THEME; var i = 0; var HIDDEN = true; var footerclosing = true; var textclosed = false; var upperclosing = false; var floatingcolumnclosed = false; var QUERYING = false;
@@ -24,110 +24,96 @@
 	
 	/* Set element properties according to the defined theme */
 	function setTheme(THEME){
-		body.css("margin","0").css("padding","8.05% 0 0 0").css("width","auto").css("font-family","Cambria, Cochin, Georgia, Times, 'Times New Roman', serif");
-		navcontainer.css("border-radius","0px 0px 5px 5px").css("box-shadow","-3px 5px 3px #454");
-		segments.css("text-shadow","-1px 1px 1px #010");
-		paragraph.css("padding","2% 0.1%").css("margin","-1.5% 0"); 
-		afterrow.css("content","").css("display","table").css("clear","both");
-		card.css("margin","0 2.5% 10% 2.5%").css("padding","5%").css("width","95%").css("border-radius","3px").css("text-shadow","-1px 1px 1px #010");
+		img.css("position","relative").css("top","0").css("left","0").css("width","100%").css("height","100%").css("float","left top").css("border-radius","1.5px");
+		textinputarea.css("min-height","300px").css("min-width","100%").css("height","80%").css("width","100%").css("top","0").css("left","0").css("text-align","justify").css("float","center").css("border-radius","5px").css("padding","16px 4px");
+		topheader.css("text-align","center").css("text-shadow","-8px 8px 16px #B2D4B2").css("box-shadow","-3px 5px 3px #343").css("height","450px");
+		topheadertitle.css("z-index","-1000").css("font-family","Garamond").css("font-weight","bolder").css("font-stretch","expanded").css("font-size","90px");
+		topheadercontent.css("font-style","italic").css("font-family","Garamond").css("font-stretch","condensed").css("font-size","40px");
+		drawer.css("height","100%").css("width","auto").css("text-align","justify");
+		segments.css("padding","0.5% 5%").css("text-shadow","-1px 1px 1px #010").css("box-shadow","-5px 5px 3px #aba");
+		vueapp.css("padding","0.5% 5%").css("text-shadow","-1px 1px 1px #010").css("box-shadow","-5px 5px 3px #aba");
+		fakeimg.css("width","100%").css("padding","2%").css("margin","20px 0").css("border-radius","2px").css("box-shadow","-3px 3px 2px #aba");
+		body.css("font-family","Arial, Helvetica, sans-serif").css("padding","0.1% 0.1% 0.1% 0.1%");
+		h3.css("font-weight","bolder").css("text-align","center"); rightalign.css("float","right"); marquee.css("color","#ff0e").css("width","98%"); 
+		pagefootercard.css("float","left").css("text-align","justify").css("padding","0% 2%").css("font-size","90%").css("height","547px");
+		negativerate.css("color","#ff0000").css("font-family","Courier New, Times New Roman, Arial").css("font-size","100%").css("font-weight","lighter").css("font-stretch","condensed").css("text-decoration","blink");
+		positiverate.css("color","#ffffff").css("font-family","Courier New, Times New Roman, Arial").css("font-size","100%").css("font-weight","lighter").css("font-stretch","condensed").css("text-decoration","blink");
+		backbtn.css("border-radius","2.5px 0px 0px 2.5px").css("display","inline-block").css("width","70px").css("height","50px").css("padding","0").css("border","none").css("z-index","1000");
+		nextbtn.css("border-radius","0px 2.5px 2.5px 0px").css("display","inline-block").css("width","70px").css("height","50px").css("padding","0").css("border","none").css("z-index","1000");
+		thisselect.css("background-color","#eeeeee");
+		trendingtradeusername.css("background","none").css("color","#B2D4B2");
+		pagefootertopicr.css("padding","1%").css("text-align","center");
+		trendingtrades.css("padding","1%").css("margin-top","0.5%").css("color","#ffffff");
+		returner.css("float","right").css("font-weight","bolder").css("font-stretch","condensed").css("padding","2.5%").css("margin-top","1%").css("border-radius","25px").css("box-shadow","-5px 5px 3px #aba");
+		card.css("padding","2.5% 2.5% 12.5% 2.5%").css("margin-top","1%").css("border-radius","3px").css("box-shadow","-5px 5px 3px #aba");
+		toggledrawer.css("transition","all 0.3s ease-in"); toolbar.css("z-index","1000").css("display","block").css("margin-bottom","50px");
+		paragraph.css("padding","2%"); 
+		topnava.css("z-index","0").css("text-align","center").css("color","#f2f2f2").css("padding","14px 8px").css("text-decoration","none").css("display","block").css("transition","all 0.3s ease-in").css("-webkit-transition","all 0.3s ease-in").css("-moz-transition","all 0.3s ease-in").css("-o-transition","all 0.3s ease-in");
+		topnavahov.css("border-radius","2.5px").css("transition","all 0.3s ease-out").css("-webkit-transition","all 0.3s ease-out").css("-moz-transition","all 0.3s ease-out").css("-o-transition","all 0.3s ease-out");
+		topnavin.css("text-align","center").css("color","#f2f2f2").css("padding","14px 8px").css("text-decoration","none").css("display","inline").css("transition","all 0.3s ease-in").css("-webkit-transition","all 0.3s ease-in").css("-moz-transition","all 0.3s ease-in").css("-o-transition","all 0.3s ease-in");
+		allinputs.css("z-index","300");
+		topnavimg.css("width","40px");
+		atradeview.css("height","650px");
+		cardahov.css("color","#B2D4B2");
+		carda.css("text-decoration","none");
+		floatingcolumn.css("text-align","center");
 		cardp.css("text-align","justify");
 		cardlist.css("dropdown","100%"); 
-		picture.css("height","100px"); 
-		img.css("position","relative").css("top","0").css("left","0").css("width","100%").css("height","100%").css("float","left top").css("border-radius","1.5px");
-		textinputarea.css("min-height","300px").css("height","80%").css("width","100%").css("top","0").css("left","0").css("text-align","justify").css("float","center").css("border-radius","5px").css("padding","16px 4px");
-		topheader.css("text-align","center").css("text-shadow","-8px 8px 16px #B2D4B2").css("min-height","100%").css("height","450px");
-		topheadertitle.css("display","inline-block").css("font-family","Garamond").css("font-stretch","expanded");
-		topheadercontent.css("display","inline-block").css("font-style","italic").css("font-family","Garamond").css("font-stretch","condensed");
-		drawer.css("height","100%").css("width","auto").css("text-align","justify");
-		fakeimg.css("border-radius","2px").css("box-shadow","-3px 3px 2px #aba").css("transition","all 0.3s ease-in").css("-webkit-transition","all 0.3s ease-in").css("-moz-transition","all 0.3s ease-in").css("-o-transition","all 0.3s ease-in").css("transition-delay","0.05s");
-		h3.css("margin","-1% 0").css("font-size","30px").css("font-weight","bolder").css("color","#003200").css("text-transform","capitalize"); 
-		h4.css("margin","-2.5% 0").css("font-size","24px").css("font-weight","bold").css("font-stretch","ultra-condensed").css("color","#004300").css("float","left"); 
-		h5.css("margin","1% 0 2.5% 0").css("font-size","18px").css("color","#005400").css("text-transform","capitalize"); 
-		h6.css("margin","-1% 0").css("font-size","12px").css("color","#006500");
-		hr.css("width","100%").css("box-shadow","-1px 1px 1px #010").css("margin","2% 0 -0.1% 0");
-		ul.css("list-style-type","none"); 
-		rightalign.css("float","right"); 
-		marquee.css("width","99%"); 
-		negativerate.css("font-family","Courier New, Times New Roman, Arial").css("font-size","100%").css("font-weight","lighter").css("font-stretch","condensed").css("text-decoration","blink");
-		positiverate.css("font-family","Courier New, Times New Roman, Arial").css("font-size","100%").css("font-weight","lighter").css("font-stretch","condensed").css("text-decoration","blink");
-		backbtn.css("border-radius","2.5px 0px 0px 2.5px").css("text-align","center").css("width","50px").css("height","39px").css("margin","10% 5% 5% 10%").css("padding","0").css("border","none").css("z-index","1000");
-		nextbtn.css("border-radius","0px 2.5px 2.5px 0px").css("text-align","center").css("width","50px").css("height","39px").css("margin","11% 5% 5% 0").css("padding","0").css("border","none").css("z-index","1000");
-		elevatedObj.css("display","inline-block").css("width","auto").css("height","auto").css("margin","0").css("padding","0").css("border","none").css("z-index","1000");
-		trendingtrades.css("padding","3% 1%").css("margin","0");
-		trendingtradescontent.css("padding","0").css("margin","-2% 0");
-		upperFooter.css("padding","1%");
-		toggledrawer.css("transition","all 0.3s ease-in"); 
-		itemlist.css("z-index","1000").css("margin","0 0 -2.3% 0");
-		menubar.css("z-index","1000").css("display","block").css("margin","0 0 50px 0");
-		menutitle.css("font-size","100%").css("padding","5%").css("margin","0").css("min-width","80px");
-		menuinput.css("text-align","center").css("padding","14px 8px").css("text-decoration","none").css("display","inline").css("transition","all 0.3s ease-in").css("-webkit-transition","all 0.3s ease-in").css("-moz-transition","all 0.3s ease-in").css("-o-transition","all 0.3s ease-in");
-		allinputs.css("z-index","300");
-		menuimage.css("width","40px");
-		atradeview.css("height","650px").css("width","cover");
-		floatingcolumn.css("text-align","center");
 		expandablecolumn.css("margin","0").css("padding","0").css("left","0").css("top","0").css("height","100%");
 		siteassistant.css("margin","50px 0px").css("padding","0").css("display","inline-block").css("background","URL('https://www.tutusfx.com/assets/images/open.gif')").css("background-size","cover").css("height","250px").css("width","250px").css("border-radius","40%");
-		maincolumn.css("margin","0").css("padding","0").css("left","0").css("top","0");
+		maincolumn.css("margin","0"); maincolumn.css("padding","0"); maincolumn.css("left","0"); maincolumn.css("top","0");
 		closethis.css("border-radius","50%").css("width","50px").css("height","50px").css("margin","10px"); 
 		closethat.css("border-radius","50%").css("width","50px").css("height","50px").css("margin","10px"); 
-		closebtn.css("display","block");
-		footer.css("width","100%").css("height","600px").css("z-index","500").css("border-radius","5px 5px 0px 0px").css("margin-top","51px").css("padding","0").css("font-stretch","condensed").css("font-weight","lighter");
-		footerdivheader.css("font-weight","bold").css("font-size","100%");
-		footerdivtexts.css("text-align","justify").css("float","center").css("font-size","99%");
-		footercard.css("float","left").css("text-align","justify").css("padding","0% 2%");
-		afterfooter.css("content","").css("display","table").css("clear","both");
+		closebtn.css("display","block").css("background-color","white");
+		links.css("text-decoration","none").css("transition","all 0.3s ease-out").css("-webkit-transition","all 0.3s ease-out").css("-moz-transition","all 0.3s ease-out").css("-o-transition","all 0.3s ease-out");
+		pagefooter.css("height","600px").css("z-index","500").css("border-radius","5px 5px 0px 0px").css("margin-top","100px").css("padding","0").css("text-align","center").css("font-stretch","condensed").css("font-weight","lighter");
+		pagefooterdivheader.css("color","white").css("font-weight","bold").css("font-size","100%");
+		pagefooterdivtexts.css("color","white").css("text-align","justify").css("float","justify").css("font-size","99%");
+		navcontainer.css("border-radius","0px 0px 5px 5px").css("box-shadow","-3px 5px 3px #454");
 		
 		closethat.hide(); // Hide the close button on expandableColumns on default. The button will only be needed if floatingColumn is closed
 		
 		/* Apply theme, revtheme, bodybkgd, header & fakeimg colors, according to the current theme */
-		if (THEME==0){ applyTheme("#004300","#ffffff","#baf1ba","#fefefe","#bbfebb","#ff1234","#ff0e","#eeeeee","#B2D4B2"); } /* theme, revtheme, bodybkgd, header, fakeimg */ 
-		else if (THEME==1) { applyTheme("#000000","#ffffff","#444444","#fefefe","#aaaaaa","#ff1234","#ff0e","#eeeeee","#B2D4B2"); } 
-		else if (THEME==2) { applyTheme("#ffffff","#000000","#fefefe","#000000","#eeeeee","#ff1234","#ff0e","#eeeeee","#B2D4B2"); } 
-		else if (THEME==3) { applyTheme("#1234ab","#ffffff","#babaf1","#fefefe","#5678ef","#ff1234","#ff0e","#eeeeee","#B2D4B2"); } 
-		else if (THEME==4) { applyTheme("#ff1234","#ffffff","#f1baba","#fefefe","#44cdef","#1234ff","#ff0e","#eeeeee","#B2D4B2"); } 
-		else if (THEME==5) { applyTheme("#ff12ff","#ffffff","#f1baf1","#fefefe","#aaaaaa","#ff1234","#ff0e","#eeeeee","#B2D4B2"); } 
-		else if (THEME==6) { applyTheme("#12ffff","#ffffff","#baf1f1","#004300","#aaaaaa","#ff1234","#ff0e","#eeeeee","#B2D4B2"); } 
-		else if (THEME==7) { applyTheme("#008080","#ffffff","#f1f1f1","#fefefe","#aaaaaa","#ff1234","#ff0e","#eeeeee","#B2D4B2"); } 
-		else if (THEME==8) { applyTheme("#800080","#ffffff","#baf1f1","#fefefe","#aaaaaa","#ff1234","#ff0e","#eeeeee","#B2D4B2"); } 
-		else if (THEME==9) { applyTheme("#c0c0c0","#ffffff","#f1f1f1","#004300","#aaaaaa","#ff1234","#ff0e","#eeeeee","#B2D4B2"); } 
+		if (THEME==0){ applyTheme("#004300","#ffffff","#baf1ba","#fefefe","#bbfebb"); } /* theme, revtheme, bodybkgd, header, fakeimg */ 
+		else if (THEME==1) { applyTheme("#000000","#ffffff","#444444","#fefefe","#aaaaaa"); } 
+		else if (THEME==2) { applyTheme("#ffffff","#000000","#fefefe","#000000","#eeeeee"); } 
+		else if (THEME==3) { applyTheme("#1234ab","#ffffff","#babaf1","#ffffff","#5678ef"); } 
+		else if (THEME==4) { applyTheme("#ff1234","#ffffff","#f1baba","#ffffff","#44cdef"); } 
+		else if (THEME==5) { applyTheme("#ff12ff","#ffffff","#f1baf1","#ffffff","#aaaaaa"); } 
+		else if (THEME==6) { applyTheme("#12ffff","#ffffff","#baf1f1","#004300","#aaaaaa"); } 
+		else if (THEME==7) { applyTheme("#008080","#ffffff","#f1f1f1","#ffffff","#aaaaaa"); } 
+		else if (THEME==8) { applyTheme("#800080","#ffffff","#baf1f1","#ffffff","#aaaaaa"); } 
+		else if (THEME==9) { applyTheme("#c0c0c0","#ffffff","#f1f1f1","#004300","#aaaaaa"); } 
 		for (i=0; i<toggleicons.length; i++) { if (THEME==2) { toggleicons[i].css("background","#aaaaaa"); } else toggleicons[i].css("background","white"); } // Set menu button background color to white
 	}
 	
 	/* Apply theme-specific colors to related elements using JQuery */
-	function applyTheme(color1,color2,bodycolor,headercolor,fakeimgcolor,negratecolor,marqueecolor,selectcolor,trendingtradecolor){
-		elevatedObj.css("background",color1);
-		positiverate.css("color",color2);
-		body.css("background",bodycolor); 
-		topheader.css("background","none").css("color",headercolor);
-		fakeimg.css("background",fakeimgcolor); 
-		negativerate.css("color",negratecolor);
-		marquee.css("color",marqueecolor);
-		thisselect.css("background",selectcolor);
-		trendingtradeusername.css("background","none").css("color",trendingtradecolor);
-		topheadertitle.css("color",color2);
-		topheadercontent.css("color",color2);
-		backbtn.css("background","none").css("color",color2);
-		nextbtn.css("background","none").css("color",color2);
-		closethis.css("background",color2).css("color",color1); 
-		closethat.css("background",color2).css("color",color1); 
-		closebtn.css("background",color2); 
-		card.css("background",color2);
-		h3.css("color",color1); 
-		navbarcontainer.css("background",color1); 
-		navheaderlinks.css("background",color1).css("color",color2); 
-		navheaderinputs.css("background",color1).css("color",color2);
-		ratebar.css("background",color1); 
-		toggledrawer.css("background",color1); 
-		warningspan.css("background",color1).css("color",color2);
-		myprogress.css("background",color2);
-		progressBar.css("background",color1);	
-		footer.css("background",color1).css("color",color2);
-		footercard.css("background",color1).css("color",color2); 
-		footerdivtexts.css("color",color2);
-		footerdivheader.css("color",color2);
-		upperFooterlink.css("background","none").css("color",color2);
-		menubar.css("background",color1); 
-		menuinput.css("background",color1).css("color",headercolor);
+	function applyTheme(color1,color2,bodycolor,headercolor,fakeimgcolor){
+			body.css("background",bodycolor).css("color",color1); 
+			returnerhov.css("background",color2).css("color",color1); 
+			topheader.css("background",color2).css("color",color1); 
+			closethis.css("background",color2).css("color",color1); 
+			closethat.css("background",color2).css("color",color1); 
+			fakeimg.css("background-color",fakeimgcolor); 
+			h3.css("color",headercolor); 
+			topnavahov.css("background-color",headercolor); 
+			navbarcontainer.css("background-color",color1); 
+			navheaderlinks.css("background-color",color1).css("color",color2); 
+			navheaderinputs.css("background-color",color1).css("color",color2);
+			myprogress.css("background-color",color2); 
+			card.css("background-color",color1).css("color",color2);
+			returner.css("background-color",color1).css("color","white"); 
+			pagefootertopics.css("background-color",color1).css("color",color2);
+			topnava.css("background-color",color1); 
+			topnavin.css("background-color",color1);
+			ratebar.css("background-color",color1); 
+			toggledrawer.css("background",color1); 
+			pagefooterdivtexts.css("color",color2);
+			warningspan.css("background-color",color1).css("color",color2);
+			pagefooter.css("background-color",color1);
+			pagefootercard.css("background-color",color1).css("color",color2); 
+			toolbar.css("background-color",color1); 
+			progressBar.css("background-color",color1);				
 	}
 	
 	/* Apply theme-specific colors to bar (footer/ratebar) elements using Javascript */
@@ -197,12 +183,12 @@
 	}).on("mousedown", function() { if (!HIDDEN) { drawer.hide(); HIDDEN=true; } else { drawer.show(); HIDDEN=false; } });
 
 	// These are Javascript media query variables
-	var browserwidth = window.matchMedia("(max-width: 1200px)"); var browserwidth1 = window.matchMedia("(max-width: 880px)"); var browserwidth2 = window.matchMedia("(max-width: 480px)"); var browserwidth3 = window.matchMedia("(max-width: 345px)");
+	var browserwidth = window.matchMedia("(max-width: 1200px)"); var browserwidth1 = window.matchMedia("(max-width: 800px)");
 	
 	// These are Javascript id selector and utility variables
-	var menubar = document.getElementById("topnav"); var rates = document.getElementById("ratebar"); var title = document.getElementById("headertitle"); var headercontent = document.getElementById("headercontent");
+	var header = document.getElementById("topnav"); var rates = document.getElementById("ratebar"); var title = document.getElementById("headertitle"); var headercontent = document.getElementById("headercontent");
 	var footerdiv = document.getElementById("footerDiv"); var footerheader = document.getElementById("footerDivHeader"); var footertexts = document.getElementById("footerDivTexts"); var footerclosebtn = document.getElementById("close");
-	var ads = document.getElementById("ads"); var upperclosebtn = document.getElementById("upperclosebtn"); var headeroffset = menubar.offsetTop;
+	var ads = document.getElementById("ads"); var upperclosebtn = document.getElementById("upperclosebtn"); var headeroffset = header.offsetTop;
 	
 	/* Apply functionality to elements using JQuery */	
 	$(document).ready(function(){ $('.dropdown-submenu a.droplevel2').on("click", function(e){ $(this).next('ul').toggle(); e.stopPropagation(); e.preventDefault(); }); });
@@ -227,15 +213,15 @@
 	
 	$("#tradebar:first").on("mousedown", function() { doupperclosing(); } );
 	
-	$(".header:first").on("mousedown", function() { dotextclosing(); } );
+	$("#header:first").on("mousedown", function() { dotextclosing(); } );
 	
 	$("#headertexts:first").on("mousedown", function() { dotextclosing(); } );
 	
-	$(".expandableColumn:first").on("mousedown", function() { floatingcolumn.show(); floatingcolumnclosed = false; windowsize(browserwidth,browserwidth1,browserwidth2,browserwidth3); closethat.hide(); } );
+	$(".expandableColumn:first").on("mousedown", function() { floatingcolumn.show(); floatingcolumnclosed = false; windowsize(browserwidth,browserwidth1); closethat.hide(); } );
 	
-	$(".floatingColumn .close").on("mousedown", function() { floatingcolumn.hide(); floatingcolumnclosed = true; windowsize(browserwidth,browserwidth1,browserwidth2,browserwidth3); closethat.show(); } );
+	$(".floatingColumn .close").on("mousedown", function() { floatingcolumn.hide(); floatingcolumnclosed = true; windowsize(browserwidth,browserwidth1); closethat.show(); } );
 	
-	$(".floatingColumn .card:first").on("mousedown", function() { floatingcolumn.hide(); floatingcolumnclosed = true; windowsize(browserwidth,browserwidth1,browserwidth2,browserwidth3); closethat.show(); } );
+	$(".floatingColumn .card:first").on("mousedown", function() { floatingcolumn.hide(); floatingcolumnclosed = true; windowsize(browserwidth,browserwidth1); closethat.show(); } );
 	
 	$(".attendant:first").on("mousedown", function() { if (siteassistant.hide()) siteassistant.show(); else siteassistant.hide(); } );
 	
@@ -251,29 +237,31 @@
 	$("#sitefooter:first").on("mousedown", function() { dofooterclose(); } );
 	
 	/* Call screen resize listener function & attach listener function at run time to ensure consistency of 1-col layouts */	
-	windowsize(browserwidth,browserwidth1,browserwidth2,browserwidth3); browserwidth.addListener(windowsize);
+	windowsize(browserwidth,browserwidth1); browserwidth.addListener(windowsize);
 	
 	/* Set element properties according to browser's current width; used for 1-col layouts */	
-	function windowsize(browserwidth,browserwidth1,browserwidth2,browserwidth3) { // ensure mainColumn remains spread across the page once user closes the floatingColumn
+	function windowsize(browserwidth,browserwidth1) { // ensure mainColumn remains spread across the page once user closes the floatingColumn
 		if (browserwidth1.matches) { /* Ensures mainColumn is spread across the page at browserwidth <=800px */ expandablecolumn.css("width","99%").css("margin","0.5%"); } 
-		else if (browserwidth.matches) { /* Maintain element properties using JQuery, at 880px < browserwidth <= 1200px */ if (floatingcolumnclosed==true) expandablecolumn.css("width","99%").css("margin","0.5%"); else expandablecolumn.css("width","65%"); } 
+		else if (browserwidth.matches) { /* Maintain element properties using JQuery, at 800px < browserwidth <= 1200px */ if (floatingcolumnclosed==true) expandablecolumn.css("width","99%").css("margin","0.5%"); else expandablecolumn.css("width","65%"); } 
 		else { /* Maintain element properties using JQuery, at browserwidth > 1200px */ if (floatingcolumnclosed==true) expandablecolumn.css("width","99%").css("margin","0.5%"); else expandablecolumn.css("width","65%"); }
 	}
 	
 	/* Default Page-Setter Function */
 	function myFunction() {
 		if (window.pageYOffset > (headeroffset-(headeroffset/10)-50)) { 
-			if (upperclosing==true) { if (window.pageYOffset > (headeroffset-(headeroffset/10))) { floatingcolumn.css("top","110px"); menubar.classList.remove("sticky"); menubar.classList.add("sticky2"); } } else { floatingcolumn.css("top","160px"); menubar.classList.remove("sticky2"); menubar.classList.add("sticky"); } 
+			if (upperclosing==true) { if (window.pageYOffset > (headeroffset-(headeroffset/10))) { floatingcolumn.css("top","110px"); header.classList.remove("sticky"); header.classList.add("sticky2"); } } else { floatingcolumn.css("top","160px"); header.classList.remove("sticky2"); header.classList.add("sticky"); } 
 		} else { if (upperclosing==true) { floatingcolumn.css("top","55px"); } else { floatingcolumn.css("top","105px"); }
-			if (upperclosing==true) { menubar.classList.remove("sticky2"); } else { menubar.classList.remove("sticky"); } 
+			title.style.paddingTop = (window.pageYOffset+30)+"px"; title.style.fontSize = (90-(3*window.pageYOffset/25))+"px"; 
+			headercontent.style.paddingTop = (window.pageYOffset-220)+"px"; headercontent.style.fontSize = (40-(window.pageYOffset/25))+"px";
+			if (window.pageYOffset > 250) { (window.pageYOffset/2)+"px"; headercontent.style.fontSize = "0px"; } 
+			if (upperclosing==true) { header.classList.remove("sticky2"); } else { header.classList.remove("sticky"); } 
 		}
 		if (upperclosing==true) { rates.classList.remove("upperbar"); rates.style.height = "0px"; rates.style.float = "top";  
 			upperclosebtn.classList.remove("glyphicon-arrow-right"); upperclosebtn.classList.add("glyphicon-arrow-left"); ads.style.fontSize = "0%";
 		} else { rates.classList.add("upperbar"); rates.style.height = "50px"; rates.style.top = "0px"; rates.style.zIndex = "1000";
-			upperclosebtn.classList.remove("glyphicon-arrow-left"); upperclosebtn.classList.add("glyphicon-arrow-right"); ads.style.fontSize = "100%"; 
-			setBarTheme(rates,upperclosebtn); 
+			upperclosebtn.classList.remove("glyphicon-arrow-left"); upperclosebtn.classList.add("glyphicon-arrow-right"); ads.style.fontSize = "100%"; setBarTheme(rates,upperclosebtn); 
 		} if (textclosed==true) { topheadertitle.hide(); topheadercontent.hide(); } else { topheadertitle.show(); topheadercontent.show(); } 
-		windowsize(browserwidth,browserwidth1,browserwidth2,browserwidth3); // Call screen resize listener function to ensure consistency in browser properties for 1-col layouts
+		windowsize(browserwidth,browserwidth1); // Call screen resize listener function to ensure consistency in browser properties for 1-col layouts
 	} myFunction(); // call default page setter function at runtime
 	
 	window.onscroll = function() { myFunction(); } // call default page setter function on scroll
